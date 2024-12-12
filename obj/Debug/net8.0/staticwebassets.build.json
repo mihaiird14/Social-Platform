@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "k2b8CNHfdxo+sCFUUDbg/N5gP0kNvJB7TiI3GBLCGdg=",
+  "Hash": "Yee4ZWgmoDcASdOXzHi5JT7tul0vVj0Gb0Vd3yiKCIk=",
   "Source": "Social Life",
   "BasePath": "_content/Social Life",
   "Mode": "Default",
@@ -1438,8 +1438,8 @@
       "RelatedAsset": "",
       "AssetTraitName": "",
       "AssetTraitValue": "",
-      "Fingerprint": "5bdcnctr5c",
-      "Integrity": "YYUANa4+pWZTxyCLbkbaSY0Bk0a0d/79EW4L96HIEeU=",
+      "Fingerprint": "b1qjt2dhoc",
+      "Integrity": "cWCXMPC+X3K8i5dxE3N63Ty4freeOGPHaD54DOQq01E=",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\css\\profil.css"
@@ -1485,6 +1485,27 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\css\\profileThread.css"
+    },
+    {
+      "Identity": "C:\\Users\\mihai\\OneDrive\\Desktop\\DAW\\Social Life\\wwwroot\\css\\Search.css",
+      "SourceId": "Social Life",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\mihai\\OneDrive\\Desktop\\DAW\\Social Life\\wwwroot\\",
+      "BasePath": "_content/Social Life",
+      "RelativePath": "css/Search#[.{fingerprint}]?.css",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "7gdcowut7p",
+      "Integrity": "F4cA+/mjSdIQwbexmeMrXX7NZiNoRnwZNGl4QF/SUyw=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\css\\Search.css"
     },
     {
       "Identity": "C:\\Users\\mihai\\OneDrive\\Desktop\\DAW\\Social Life\\wwwroot\\css\\site.css",
@@ -3411,7 +3432,7 @@
       ]
     },
     {
-      "Route": "css/profil.5bdcnctr5c.css",
+      "Route": "css/profil.b1qjt2dhoc.css",
       "AssetFile": "C:\\Users\\mihai\\OneDrive\\Desktop\\DAW\\Social Life\\wwwroot\\css\\profil.css",
       "Selectors": [],
       "ResponseHeaders": [
@@ -3421,7 +3442,7 @@
         },
         {
           "Name": "Content-Length",
-          "Value": "4565"
+          "Value": "4545"
         },
         {
           "Name": "Content-Type",
@@ -3429,11 +3450,11 @@
         },
         {
           "Name": "ETag",
-          "Value": "\"YYUANa4+pWZTxyCLbkbaSY0Bk0a0d/79EW4L96HIEeU=\""
+          "Value": "\"cWCXMPC+X3K8i5dxE3N63Ty4freeOGPHaD54DOQq01E=\""
         },
         {
           "Name": "Last-Modified",
-          "Value": "Thu, 12 Dec 2024 14:38:35 GMT"
+          "Value": "Thu, 12 Dec 2024 18:21:03 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -3443,7 +3464,7 @@
       "EndpointProperties": [
         {
           "Name": "fingerprint",
-          "Value": "5bdcnctr5c"
+          "Value": "b1qjt2dhoc"
         },
         {
           "Name": "label",
@@ -3451,7 +3472,7 @@
         },
         {
           "Name": "integrity",
-          "Value": "sha256-YYUANa4+pWZTxyCLbkbaSY0Bk0a0d/79EW4L96HIEeU="
+          "Value": "sha256-cWCXMPC+X3K8i5dxE3N63Ty4freeOGPHaD54DOQq01E="
         }
       ]
     },
@@ -3466,7 +3487,7 @@
         },
         {
           "Name": "Content-Length",
-          "Value": "4565"
+          "Value": "4545"
         },
         {
           "Name": "Content-Type",
@@ -3474,11 +3495,11 @@
         },
         {
           "Name": "ETag",
-          "Value": "\"YYUANa4+pWZTxyCLbkbaSY0Bk0a0d/79EW4L96HIEeU=\""
+          "Value": "\"cWCXMPC+X3K8i5dxE3N63Ty4freeOGPHaD54DOQq01E=\""
         },
         {
           "Name": "Last-Modified",
-          "Value": "Thu, 12 Dec 2024 14:38:35 GMT"
+          "Value": "Thu, 12 Dec 2024 18:21:03 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -3488,7 +3509,7 @@
       "EndpointProperties": [
         {
           "Name": "integrity",
-          "Value": "sha256-YYUANa4+pWZTxyCLbkbaSY0Bk0a0d/79EW4L96HIEeU="
+          "Value": "sha256-cWCXMPC+X3K8i5dxE3N63Ty4freeOGPHaD54DOQq01E="
         }
       ]
     },
@@ -3653,6 +3674,88 @@
         {
           "Name": "integrity",
           "Value": "sha256-vcdGgV5IRx4yilaVof52buONshjP9dhAVjo+fGrDxFc="
+        }
+      ]
+    },
+    {
+      "Route": "css/Search.7gdcowut7p.css",
+      "AssetFile": "C:\\Users\\mihai\\OneDrive\\Desktop\\DAW\\Social Life\\wwwroot\\css\\Search.css",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "2379"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/css"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"F4cA+/mjSdIQwbexmeMrXX7NZiNoRnwZNGl4QF/SUyw=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Thu, 12 Dec 2024 19:02:42 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "7gdcowut7p"
+        },
+        {
+          "Name": "label",
+          "Value": "css/Search.css"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-F4cA+/mjSdIQwbexmeMrXX7NZiNoRnwZNGl4QF/SUyw="
+        }
+      ]
+    },
+    {
+      "Route": "css/Search.css",
+      "AssetFile": "C:\\Users\\mihai\\OneDrive\\Desktop\\DAW\\Social Life\\wwwroot\\css\\Search.css",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "2379"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/css"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"F4cA+/mjSdIQwbexmeMrXX7NZiNoRnwZNGl4QF/SUyw=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Thu, 12 Dec 2024 19:02:42 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "no-cache"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-F4cA+/mjSdIQwbexmeMrXX7NZiNoRnwZNGl4QF/SUyw="
         }
       ]
     },
@@ -6145,7 +6248,7 @@
         },
         {
           "Name": "Last-Modified",
-          "Value": "Thu, 12 Dec 2024 14:27:27 GMT"
+          "Value": "Thu, 12 Dec 2024 14:57:54 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -6190,7 +6293,7 @@
         },
         {
           "Name": "Last-Modified",
-          "Value": "Thu, 12 Dec 2024 14:27:27 GMT"
+          "Value": "Thu, 12 Dec 2024 14:57:54 GMT"
         },
         {
           "Name": "Cache-Control",

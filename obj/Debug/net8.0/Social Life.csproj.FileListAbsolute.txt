@@ -642,3 +642,4 @@ C:\Users\mihai\OneDrive\Desktop\DAW\Social Life\obj\Debug\net8.0\staticwebassets
 C:\Users\mihai\OneDrive\Desktop\DAW\Social Life\bin\Debug\net8.0\Microsoft.AspNetCore.JsonPatch.dll
 C:\Users\mihai\OneDrive\Desktop\DAW\Social Life\bin\Debug\net8.0\Microsoft.AspNetCore.Mvc.NewtonsoftJson.dll
 C:\Users\mihai\OneDrive\Desktop\DAW\Social Life\bin\Debug\net8.0\Newtonsoft.Json.Bson.dll
+C:\Users\mihai\OneDrive\Desktop\DAW\Social Life\obj\Debug\net8.0\Social Life.sourcelink.json

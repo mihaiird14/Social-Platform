@@ -6,6 +6,7 @@ wwwroot\css\logout.css
 wwwroot\css\profil.css
 wwwroot\css\profilEdit.css
 wwwroot\css\profileThread.css
+wwwroot\css\Search.css
 wwwroot\css\site.css
 wwwroot\css\threadForm.css
 wwwroot\favicon.ico

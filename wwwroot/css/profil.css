@@ -157,11 +157,11 @@ i{
     width: 10vw;
     height: 36px;
 }
-    #AddPoza:hover, #AddNotita:hover, #EditProfil:hover, #Arhiva:hover {
-        color: #36353d;
-        border: 1px solid white;
-        background-color: white;
-    }
+#AddPoza:hover, #AddNotita:hover, #EditProfil:hover, #Arhiva:hover {
+    color: #36353d;
+    border: 1px solid white;
+    background-color: white;
+}
 #bio{
     margin-top: -3vh;
     width: 80%;

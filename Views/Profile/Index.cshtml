@@ -34,7 +34,7 @@
     <link rel="stylesheet" href="css/CommentBox.css">
     <style>
         ::-webkit-scrollbar {
-        width: 4px; /* Lățimea scrollbar-ului */
+        width: 4px; 
         }
 
         ::-webkit-scrollbar-thumb {
@@ -92,7 +92,7 @@
             </div>
             <div id="buton">
                 <i class="fa fa-search" aria-hidden="true"></i>
-                <a href="#">CAUTĂ</a>
+                <a href="@Url.Action("Search1", "Search")">CAUTĂ</a>
             </div>
             <div id="buton">
                 <i class="fas fa-user-friends"></i>
@@ -114,21 +114,18 @@
                 <i class="fa fa-cog" aria-hidden="true"></i>
                 <a href="#">SETĂRI</a>
             </div>
+            <div id="buton">
+                <a href="Identity/Account/Logout">DECONECTEAZĂ-TE</a>
+            </div>
         }
         else{
             <div id="buton1">
                 <i class="fa-solid fa-right-to-bracket"></i>
-                <a href="Identity/Account/Login">AUTENTIFICARE</a>
+                <a href="/Identity/Account/Login">AUTENTIFICARE</a>
             </div>
             <div id="buton">
                 <i class="fa fa-search" aria-hidden="true"></i>
                 <a href="#">CAUTĂ</a>
-            </div>
-        }
-        @if (SignInManager.IsSignedIn(User))
-        {
-            <div id="buton">
-                <a href="Identity/Account/Logout">DECONECTEAZĂ-TE</a>
             </div>
         }
     </div>
