@@ -88,10 +88,10 @@
     @if (Model.Any())
     {
         @foreach (var x in Model){
-            <div id="UserSection">
+            <a href="@Url.Action("Index", "Users", new { username = x.Username})"><div id="UserSection">
                 <img id="UserImage" src="@x.ProfileImage" />
                 <p id="UserUsername">@x.Username</p>
-            </div>
+            </div></a>
             <br />
         }
 

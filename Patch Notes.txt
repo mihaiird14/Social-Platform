@@ -95,3 +95,6 @@
 12.12.2024
 	- Utilizatorii neautentificati nu mai vad butoanele de Edit si Arhiva pe pagina de profil
 	- Utilizatorii neautentificati au doar optiunile de Autentificare si Cauta in meniul lateral
+	- Adaugare Pagina pentru cautarea useri-lor
+	- Adaugare Functionalitatea Cauta Useri
+	- Fix bug afisare comentarii postate de alti useri

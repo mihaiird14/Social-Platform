@@ -27,15 +27,9 @@ namespace Social_Life.Controllers
             int NrThread = db.Threads.Count(p => p.Id_User == userId);
             ViewBag.NrThread = NrThread;
             
+
             var pr = db.Profiles.FirstOrDefault(p => p.Id_User == userId);
-            if (pr == null)
-            {
-                ViewBag.PozaProfil = "/imagini/pozaDefaultProfil.jpg";
-            }
-            else
-            {
-                ViewBag.PozaProfil = pr.ProfileImage;
-            }
+            
             return View();
          }
         public IActionResult Edit()
