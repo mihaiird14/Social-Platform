@@ -1,0 +1,163 @@
+﻿@{
+    ViewBag.PageName = "Index";
+}
+@using Microsoft.AspNetCore.Identity
+@inject SignInManager<IdentityUser> SignInManager
+@inject UserManager<IdentityUser> UserManager
+<!DOCTYPE html>
+<html>
+<head>
+    <title>SOCIAL LIFE</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="css/profil.css">
+    <script src="js/profil.js"></script>
+    @if (SignInManager.IsSignedIn(User))
+    {
+        <style>
+            #user{
+                margin-top: 4.3vh;
+            }
+            #NumeUser{
+                margin-top: -27vh;
+            }
+            #Stats{
+                margin-top: -1vh;
+            }
+        </style>
+    }
+    else
+    {
+        <style>
+            #Privat{
+                visibility: hidden;
+            }
+            #NumeUser{
+                margin-top: -24vh;
+            }
+   
+        </style>
+    }
+</head>
+<body>
+    <div id="header">
+        <img id="logo" src="imagini/logoAlb.png">
+    </div>
+    <div class="sideMenu">
+        <div id="buton1">
+            <i class="fa fa-home" aria-hidden="true"></i>
+            <a href="#">FOR YOU</a>
+        </div>
+        <div id="buton">
+            <i class="fa fa-search" aria-hidden="true"></i>
+            <a href="#">CAUTĂ</a>
+        </div>
+        <div id="buton">
+            <i class="fas fa-user-friends"></i>
+            <a href="#">URMĂRITORI</a>
+        </div>
+        <div id="buton">
+            <i class="fas fa-user-plus"></i>
+            <a href="#">URMĂRIRI</a>
+        </div>
+        <div id="buton">
+            <i class="fa-solid fa-bell"></i>
+            <a href="#">NOTIFICĂRI</a>
+        </div>
+        <div id="buton">
+            <i class="fa fa-users" aria-hidden="true"></i>
+            <a href="#">GRUPURI</a>
+        </div>
+        <div id="buton">
+            <i class="fab fa-facebook-messenger"></i>
+            <a href="#">CONVERSAȚII</a>
+        </div>
+        <div id="buton">
+            <i class="fa fa-cog" aria-hidden="true"></i>
+            <a href="#">SETĂRI</a>
+        </div>
+        <div id="buton">
+            <a href="Identity/Account/Logout">DECONECTEAZĂ-TE</a>
+        </div>
+    </div>
+    <div class="paginaPrincipala">
+        <img id="pozaDefaultProfil" src="imagini/pozaDefaultProfil.jpg">
+        <div id="NumeUser">
+            @if (SignInManager.IsSignedIn(User)){
+                <h4 id="user">@User.Identity?.Name</h4>
+            }
+            else
+            {
+                <a href="Identity/Account/Login"><button id="Aut">Autentificare</button></a>
+            }
+            <button id="EditProfil">Editează</button>
+            <button id="Arhiva">Arhivă</button>
+        </div>
+        <div id="Stats">
+            <div id="Vizibile">
+                <div id="Postari">
+                    <h4 id="HV">0</h4>
+                    <h4 id="HV">POSTĂRI</h4>
+                </div>
+                <div id="Urmaritori">
+                    <h4 id="HV">0</h4>
+                    <h4 id="HV">URMĂRITORI</h4>
+                </div>
+                <div id="Urmariri">
+                    <h4 id="HV">0</h4>
+                    <h4 id="HV">URMĂRIRI</h4>
+                </div>
+            </div>
+            <div id="Privat">
+                <div id="GrupStats">
+                    <h4 id="HV">0</h4>
+                    <h4 id="HV">GRUPURI</h4>
+                </div>
+                <div id="NoteStats">
+                    <h4 id="HV">0</h4>
+                    <h4 id="HV">NOTIȚE</h4>
+                </div>
+            </div>
+        </div>
+        <div id="bio">
+            <h3>@ViewBag.Profil[0].Nume @ViewBag.Profil[0].Prenume</h3>
+            <p>p1</p>
+            <p>p2</p>
+            <p>p3</p>
+        </div>
+        <div id="sectiuni">
+            <p onclick="afisPagina1()">POSTĂRI</p>
+            <p onclick="afisPagina2()">MENȚIUNI</p>
+            <p onclick="afisPagina3()">NOTIȚE</p>
+        </div>
+        <div id="PostariPage">
+            <img id="nuPoze" src="imagini/logoPozeAlb.png">
+            <h3 id="nuPozeText">NU AI POZE ÎNCĂRCATE!</h3>
+            @if (SignInManager.IsSignedIn(User)){
+                <button id="AddPoza">Adauga</button>
+            }
+            else
+            {
+                <a href="Identity/Account/Login"><button id="AddPoza">Adauga</button></a>
+            }
+                 
+        </div>
+        <div id="MentiuniPage">
+            <img id="nuPoze" src="imagini/logoPozeAlb.png">
+            <h3 id="nuPozeText">NU EȘTI MENȚIONAT ÎN NICIO POZĂ!</h3>
+        </div>
+        <div id="NotitePage">
+            <img id="nuPoze" src="imagini/noTextAlb.jpg">
+            <h3 id="nuPozeText">NU AI SCRIS NICIO NOTIȚĂ!</h3>
+            @if (SignInManager.IsSignedIn(User))
+            {
+                <button id="AddNotita">Adauga</button>
+            }
+            else
+            {
+                <a href="Identity/Account/Login"><button id="AddNotita">Adauga</button></a>
+            }
+        </div>
+    </div>
+</body>
+</html>

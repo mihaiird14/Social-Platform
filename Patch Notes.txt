@@ -1,0 +1,97 @@
+03.11.2024
+	- adaugare schita pagina profil
+	- adaugare ruta /profil
+	- pagina de profil este momentan ruta principala
+04.11.2024
+	- adaugare model Profil.cs(mai trebuie completat)
+	- modificare pagina profil a.i sa extraga din clasa nume, prenume, username
+	- restructurare cod prin adaugarea de fisiere externe css si js
+05.11.2024
+	- integrare metoda autentificare default
+06.11.2024
+	- fix bug autentificare
+	- adaugare animatie meniu lateral
+07.11.2024
+	- mici ajustari design
+	- username-ul de pe profil este acum email-ul pe care il foloseste utilizatorul cand se conecteaza
+	- adaugare buton "Autentificare" in locul username-ului atunci cand pagina este accesata de
+		un utilizator neautentificat
+	- adaugare ruta catre Logout butonului "Deconecteaza-te"
+09.11.2024
+	- adaugare buton in sectiunile Postari si Notite
+	- butonul te redirectioneaza pe pagina de login daca user-ul nu este autentificat
+11.11.2024
+	- mici ajustari design
+	- nr de grupuri si notite sunt ascunde daca user-ul nu este autentificat
+27.11.2024
+	- modificari design
+29.11.2024
+	- Adaugare Baza de Data SocialLifeBD
+	- Modificare Baza de date de inregistrare astfel incat sa stocheze si Numele, Prenumele, Data Nasterii
+	- Modificare Baza de date de inregistrare astfel incat sa stocheze si Username-ul
+	- Login-ul se face acum pe baza Username-ului
+	- Username-ul este cel afisat in pagina de profil al utilizatorului
+30.11.2024
+	- Numele si Prenumele pe care utilizatorul le-a folosit in formularul register se gasesc acum si pe
+		pagina de profil.
+	- O parte din datele pe care utilizatorul le foloseste la inregistrare se stocheaza acum si in baza de 
+		date Profil
+02.12.2024
+	- Bio-ul user-ului este preluat din tabela Profile (default = "New user profile")
+	- Fix bug preluare date din AspNetUser in Profile
+03.12.2024
+	- Adaugare Textbox pentru Threads
+	- Adaugare clasa Threads
+04.12.2024
+	- Threads sunt salvate in baza de date
+05.12.2024
+	- Adaugarea primului thread modifica sectiunea, pentru a putea fi postate
+	- Se modifica automat numarul de thread-uri postate (din Stats)
+	- Adaugarea coloanei ProfilePublic tabelui Profile (default=true)
+	- Adaugare pagina Edit in care utilizatorul poate sa isi modifice poza si descrierea
+	- Adaugare functionalitate edit pentru descriere
+06.12.2024
+	- Adaugare functionalitate edit pentru poza de profil
+	- Adaugare buton ce permite schimbarea pozei de profil cu cea default
+	- Ajustari design pagina de Edit Profil
+	- Fix bug care nu lasa postarea a mai mult de un thread
+	- Fix bug care lasa  userii sa vada thread-uri care nu le apartin
+	- Ajustari Design Thread Box
+	- Redesign Pagina Register
+	- Redesign Pagina Login
+	- Redesign Pagina Logout
+	- Utilizatorii neautentificati nu mai au acces la butonul "DECONECTEAZA-TE" din meniul lateral
+07.12.2024
+	- Adaugare functionalitate like
+	- Pagina nu isi mai da refresh cand dai like (Fetch API)
+	- Dupa orice actiune care implica CRUD, utilizatorul ramane in sectiunea deschisa
+		(Postari,Mentiuni,Threads) (sessionStorage)
+	- Adaugare optiuni (edit, delete, report) pentru fiecare thread
+	- Adaugare avertizare inainte de stergere
+	- Implementare Stergere Thread
+08.12.2024
+	- Adaugare functionalitate Edit
+	- Adaugare posibilitate sa stergi un like de la un thread
+09.12.2024
+	- Editarea thread-ului se realizeaza acum in interiorul chenarului in care a fost postat
+		thread-ul initial
+	- Thread-urile editate sunt acum semnalate
+	- Fix bug care nu te lasa se te deconectezi daca erai in pagina de editare a profilului
+10.12.2024
+	- Fix bug inchidere optiune Edit
+	- Fix bug in care numele si imagine utilizatorului care a postat un thread erau in realitate a 
+		utilizatorului curent
+	- Adaugare buton de comentarii pentru fiecare thread
+	- Adaugare sectiune pentru postarea comentariilor pentru fiecare thread
+	- Adaugare functionalitatea de a posta un comentariu
+	- Adaugare meniu cu optiuni pentru fiecare comentariu
+11.12.2024
+	- Cand se adauga un comentariu la un thread, sectiunea in care se poate vizualiza ramane deschisa
+	- Fix bug in care fiecare thread avea comentariile ultimului thread postat
+	- Adaugare functionalitate delete a unui comentariu
+	- Adaugare functionalitate edit pentru comentarii
+	- Adaugare functionalitatea de a da un like unui comentariu
+	- Ajustari Design pagina Edit Profile
+12.12.2024
+	- Utilizatorii neautentificati nu mai vad butoanele de Edit si Arhiva pe pagina de profil
+	- Utilizatorii neautentificati au doar optiunile de Autentificare si Cauta in meniul lateral

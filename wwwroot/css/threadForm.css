@@ -1,0 +1,55 @@
+#threadbox {
+    display: none;
+    background-color: #1a1a1a;
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    width: 50vw;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    border: 2px solid #00ffcc;
+    transform: translate(0%, -50%);
+    position: absolute;
+    z-index: 1000;
+
+}
+.note-label {
+    display: block;
+    font-size: 18px;
+    margin-bottom: 10px;
+    color: white;
+}
+#xThread{
+    margin-left: auto;
+    margin-top: 0vh;
+}
+#xThread:hover{
+    color: red;
+}
+.note-textarea {
+    width: 100%;
+    height: 150px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    font-size: 16px;
+    resize: none;
+    box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.1);
+    margin-bottom: 15px;
+}
+
+.submit-button {
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 8px;
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.submit-button:hover {
+    background-color: #0056b3;
+}

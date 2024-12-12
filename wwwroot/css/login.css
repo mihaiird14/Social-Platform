@@ -1,0 +1,53 @@
+body {
+    background-color: #1a1a1a;
+    overflow: hidden;
+}
+
+#linie {
+    width: 1%;
+    height: 100vh;
+    transform: translate(5000%, 0%);
+    border-right: 2px solid white;
+}
+
+.row {
+    margin-top: -98vh;
+}
+
+h2 {
+    color: white;
+}
+
+img {
+    display: block;
+    position: fixed;
+    width: 450px;
+    height: 450px;
+    transform: translate(140%,10%);
+    margin-left: 650px;
+    margin-top: -80px;
+
+}
+img {
+    animation: heart-beat 2s infinite ease-in-out;
+}
+@keyframes heart-beat {
+    0% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(1.25);
+    }
+
+    100% {
+        transform: scale(1);
+    }
+}
+#reg{
+    color: white;
+    text-decoration: none;
+}
+#rmm{
+    color: white;
+}
