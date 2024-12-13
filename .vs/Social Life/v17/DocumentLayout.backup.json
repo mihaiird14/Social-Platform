@@ -177,7 +177,7 @@
               "RelativeDocumentMoniker": "Views\\Profile\\Index.cshtml",
               "ToolTip": "C:\\Users\\mihai\\OneDrive\\Desktop\\DAW\\Social Life\\Views\\Profile\\Index.cshtml",
               "RelativeToolTip": "Views\\Profile\\Index.cshtml",
-              "ViewState": "AgIAAC8BAAAAAAAAAAAiwDwBAABoAAAAAAAAAA==",
+              "ViewState": "AgIAAHgBAAAAAAAAAADwv34BAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
               "WhenOpened": "2024-11-29T10:51:28.084Z",
               "IsPinned": true,
@@ -191,7 +191,7 @@
               "RelativeDocumentMoniker": "Views\\Users\\Index.cshtml",
               "ToolTip": "C:\\Users\\mihai\\OneDrive\\Desktop\\DAW\\Social Life\\Views\\Users\\Index.cshtml*",
               "RelativeToolTip": "Views\\Users\\Index.cshtml*",
-              "ViewState": "AgIAADsBAAAAAAAAAAAAADgBAABoAAAAAAAAAA==",
+              "ViewState": "AgIAAOYAAAAAAAAAAAAAAO4AAAAkAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
               "WhenOpened": "2024-12-12T19:58:10.668Z",
               "IsPinned": true,
@@ -207,8 +207,7 @@
               "RelativeToolTip": "Controllers\\UsersController.cs",
               "ViewState": "AgIAACkAAAAAAAAAAADwvzwAAAANAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-12T19:58:45.399Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-12-12T19:58:45.399Z"
             },
             {
               "$type": "Document",

@@ -236,19 +236,11 @@
                             <div class="dropdown">
                                 <i class="fa fa-ellipsis-v dropdown-toggle" aria-hidden="true"></i>
                                 <div class="dropdown-menu">
-                                    <form class="edit-thread-form" style="display: inline;" data-thread-id="@thread.ThreadId">
-                                        <input type="hidden" name="id" value="@thread.ThreadId" />
-                                        <button type="submit" id="EditBT" class=" dropdown-item"><i class="fas fa-edit"></i>Editează</button>
-                                    </form>
-                                    <form method="post" style="display: inline;" data-thread-id="@thread.ThreadId">
+                                     <form method="post" style="display: inline;" data-thread-id="@thread.ThreadId">
                                         <input type="hidden" name="id" value="@thread.ThreadId" />
                                         <button type="submit" id="DeleteBT" class="dropdown-item"><i class="fa-solid fa-flag"></i>Raportează</button>
                                     </form>
-                                    <form method="post" class="delete-thread-form" style="display: inline;" data-thread-id="@thread.ThreadId">
-                                        <input type="hidden" name="id" value="@thread.ThreadId" />
-                                        <button type="submit" id="DeleteBT" class="dropdown-item"><i class="fa fa-trash" aria-hidden="true"></i>Șterge</button>
-                                    </form>
-                                </div>
+                                 </div>
                             </div>
                             <p id="ThreadContinut">@thread.ThreadText</p>
                             <p id="ora">
@@ -277,23 +269,6 @@
                                 </form>
                             </div>
                         </div>
-                        <div id="deleteBox" class="delete-@thread.ThreadId">
-                            <i id="xDelete" class="fa-solid fa-x" data-thread-id="@thread.ThreadId"></i>
-                            <i id="dng" class="fa fa-exclamation-triangle" aria-hidden="true"></i>
-                            <form id="confButton" method="post" asp-controller="Thread" asp-action="Delete" asp-route-id="@thread.ThreadId">
-                                <input type="hidden" name="threadId" value="@thread.ThreadId" />
-                                <button type="submit" id="confirmaButton">CONFIRMĂ!</button>
-                            </form>
-                        </div>
-                        <div id="editBox" class="editThreadBox-@thread.ThreadId">
-                            <i id="xEdit" class="fa-solid fa-x" data-thread-id="@thread.ThreadId"></i>
-                            <label for="note" class="note-label-edit">EDITEAZĂ THREAD-UL</label>
-                            <form method="post" asp-controller="Thread" asp-action="EditThread" id="editThreadBox-@thread.ThreadId">
-                                <input type="hidden" id="ThreadId" name="ThreadId" value="@thread.ThreadId" />
-                                <textarea class="note-textarea-edit-@thread.ThreadId" placeholder="editeaza thread-ul..." name="ThreadText">@thread.ThreadText</textarea>
-                                <button class="submit-button-edit" type="submit">Editează!</button>
-                            </form>
-                        </div>
                         <div id="CommentBox-@thread.ThreadId" class="CommentBox">
                             <i id="xCom" class="fa-solid fa-x" onclick="xCom(@thread.ThreadId)"></i>
                             <div id="ComBoxContinut">
@@ -315,17 +290,9 @@
                                     <div class="dropdown-comentarii">
                                         <i id="meniuComentarii" class="fa fa-ellipsis-v dropdown-toggle-comentarii" aria-hidden="true"></i>
                                         <div class="dropdown-menu-comentarii">
-                                            <form class="edit-thread-form-com" data-com-id="@com.ThreadCommentId" style="display: inline;" data-thread-id="@thread.ThreadId">
-                                                <input type="hidden" name="id" value="@thread.ThreadId" />
-                                                <button type="submit" id="EditCom" class="dropdown-item-comentarii"><i class="fas fa-edit"></i>Editează</button>
-                                            </form>
                                             <form style="display: inline;" data-thread-id="@thread.ThreadId">
                                                 <input type="hidden" name="id" value="@thread.ThreadId" />
                                                 <button type="submit" id="DeleteCom" class="dropdown-item-comentarii"><i class="fa-solid fa-flag"></i>Raportează</button>
-                                            </form>
-                                            <form class="delete-thread-form-com" style="display: inline;" data-com-id="@com.ThreadCommentId" data-thread-id="@thread.ThreadId">
-                                                <input type="hidden" name="ThreadCommentId" value="@com.ThreadCommentId" />
-                                                <button type="submit" id="DeleteCom" class="dropdown-item-comentarii"><i class="fa fa-trash" aria-hidden="true"></i>Șterge</button>
                                             </form>
                                         </div>
                                     </div>
@@ -345,23 +312,6 @@
                                                 <span id="NrCMLike">@com.Likes</span>
                                             </i>
                                         </button>
-                                    </form>
-                                </div>
-                                <div id="deleteComBox" class="delete-com-@com.ThreadCommentId">
-                                    <i id="xComDelete" class="fa-solid fa-x" data-com-id="@com.ThreadCommentId"></i>
-                                    <i id="dngCom" class="fa fa-exclamation-triangle" aria-hidden="true"></i>
-                                    <form id="confButton" method="post" asp-controller="Thread" asp-action="DeleteCom" asp-route-id="@thread.ThreadId">
-                                        <input type="hidden" name="ThreadCommentId" value="@com.ThreadCommentId" />
-                                        <button type="submit" id="confirmaButtonCom">CONFIRMĂ!</button>
-                                    </form>
-                                </div>
-                                <div id="editComBox" class="editComBox-@com.ThreadCommentId">
-                                    <i id="xComEdit" class="fa-solid fa-x" data-com-id="@com.ThreadCommentId"></i>
-                                    <label for="note" class="note-label-edit-com"></label>
-                                    <form method="post" asp-controller="Thread" asp-action="EditCom" id="editThreadBox-@thread.ThreadId">
-                                        <input type="hidden" id="ThreadId" name="ThreadCommentId" value="@com.ThreadCommentId" />
-                                        <textarea class="note-textarea-edit-com-@com.ThreadCommentId" placeholder="editeaza thread-ul..." name="CommentText">@com.CommentText</textarea>
-                                        <button class="submit-button-edit-com" type="submit">Editează!</button>
                                     </form>
                                 </div>
                             }
@@ -398,7 +348,13 @@
                 } else {
                      const likeSpan = form.querySelector("#NrLike");
                      if(data.likes==null){
-                        likeSpan.textContent = 0;
+                         if (likeSpan.textContent == 1){
+                             likeSpan.textContent=0;
+                         }
+                         else{
+                             likeSpan.textContent= likeSpan.textContent-1;
+                         }
+
                      }
                       else{
                         likeSpan.textContent = data.likes;
@@ -427,8 +383,14 @@
                     likeSpan.textContent = data.likes;
                 } else {
                      const likeSpan = form.querySelector("#NrCMLike");
-                     if(data.likes==null){
-                        likeSpan.textContent = 0;
+                 if(data.likes==null){
+                        if (likeSpan.textContent == 1){
+                            likeSpan.textContent=0;
+                        }
+                        else{
+                            likeSpan.textContent= likeSpan.textContent-1;
+                        }
+
                      }
                       else{
                         likeSpan.textContent = data.likes;

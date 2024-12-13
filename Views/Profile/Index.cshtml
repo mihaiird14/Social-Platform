@@ -402,7 +402,13 @@
                 } else {
                      const likeSpan = form.querySelector("#NrLike");
                      if(data.likes==null){
-                        likeSpan.textContent = 0;
+                         if (likeSpan.textContent == 1){
+                             likeSpan.textContent=0;
+                         }
+                         else{
+                             likeSpan.textContent= likeSpan.textContent-1;
+                         }
+                       
                      }
                       else{
                         likeSpan.textContent = data.likes;
@@ -431,8 +437,14 @@
                     likeSpan.textContent = data.likes;
                 } else {
                      const likeSpan = form.querySelector("#NrCMLike");
-                     if(data.likes==null){
-                        likeSpan.textContent = 0;
+                 if(data.likes==null){
+                        if (likeSpan.textContent == 1){
+                            likeSpan.textContent=0;
+                        }
+                        else{
+                            likeSpan.textContent= likeSpan.textContent-1;
+                        }
+
                      }
                       else{
                         likeSpan.textContent = data.likes;

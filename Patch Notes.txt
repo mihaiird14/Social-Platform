@@ -98,3 +98,8 @@
 	- Adaugare Pagina pentru cautarea useri-lor
 	- Adaugare Functionalitatea Cauta Useri
 	- Fix bug afisare comentarii postate de alti useri
+13.12.2024
+	- Fix bug afisare numar like-uri daca un thread avea like-uri de la mai multi utilizatori
+	- Fix bug afisare numer like-uri daca un comentariu avea like-uri de la mai multi utilizatori
+	- Eliminarea optiunilor de stergere si editare (a profilului, thread-urilor si a comentariilor)
+		de pe paginiile altor utilizatori
