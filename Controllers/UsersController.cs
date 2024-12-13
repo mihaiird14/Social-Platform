@@ -40,6 +40,7 @@ namespace Social_Life.Controllers
             try
             {
                 var thread = db.Threads.FirstOrDefault(tl => tl.ThreadId == comentariu.ThreadId);
+                thread.Profile = db.Profiles.FirstOrDefault(u => u.Id_User == thread.Id_User);
                 if (thread == null)
                 {
                     return NotFound("Thread-ul nu a fost găsit.");
@@ -55,7 +56,7 @@ namespace Social_Life.Controllers
                 thread.ThreadComments += 1;
                 db.ThreadComments.Add(comentariu);
                 db.SaveChanges();
-                return RedirectToAction("Index", "Profile");
+                return RedirectToAction("Index", "Users", new { username = thread.Profile.Username });
             }
             catch (Exception e)
             {

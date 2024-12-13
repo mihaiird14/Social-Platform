@@ -120,8 +120,8 @@
       <RelatedAsset></RelatedAsset>
       <AssetTraitName></AssetTraitName>
       <AssetTraitValue></AssetTraitValue>
-      <Fingerprint>tcwo10fkio</Fingerprint>
-      <Integrity>zUqMB6b0UDoYoAUUk3B040EtwI4/hFPYsk5qNYSiIpE=</Integrity>
+      <Fingerprint>iz1fwzy84q</Fingerprint>
+      <Integrity>MpxuKNIwmn7NRThA/wK89rXRrN0WlYXe9uqC+DWz4sE=</Integrity>
       <CopyToOutputDirectory>Never</CopyToOutputDirectory>
       <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
       <OriginalItemSpec>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\css\profilEdit.css'))</OriginalItemSpec>

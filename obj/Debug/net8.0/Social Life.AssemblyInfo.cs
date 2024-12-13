@@ -16,7 +16,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("Social Life")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+5e85a99285ac290d95c4cb081b83f6a4fe41449c")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+d8a13f0860681bcfff1d39a164c20e31c357f8cf")]
 [assembly: System.Reflection.AssemblyProductAttribute("Social Life")]
 [assembly: System.Reflection.AssemblyTitleAttribute("Social Life")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
