@@ -35,34 +35,34 @@
     <link rel="stylesheet" href="css/CommentBox.css">
     <style>
         #liked {
-            color: green;
+        color: green;
         }
 
         #dislked {
-            color: white;
+        color: white;
         }
 
         i[liked="liked"] {
-            color: green;
+        color: green;
         }
 
         i[liked="disliked"] {
-            color: white;
+        color: white;
         }
         ::-webkit-scrollbar {
-            width: 4px;
+        width: 4px;
         }
 
         ::-webkit-scrollbar-thumb {
-            background-color: #00ffcc;
-            border-radius: 5px;
-            width: 6px;
-            height: 40px;
+        background-color: #00ffcc;
+        border-radius: 5px;
+        width: 6px;
+        height: 40px;
         }
 
         ::-webkit-scrollbar-track {
-            background-color: transparent;
-            border-radius: 20px;
+        background-color: transparent;
+        border-radius: 20px;
         }
 
         scrollbar-width: thin;
@@ -72,15 +72,15 @@
     {
         <style>
             #user {
-                margin-top: 4.3vh;
+            margin-top: 4.3vh;
             }
 
             #NumeUser {
-                margin-top: -27vh;
+            margin-top: -27vh;
             }
 
             #Stats {
-                margin-top: -1vh;
+            margin-top: -1vh;
             }
         </style>
     }
@@ -88,11 +88,11 @@
     {
         <style>
             #Privat {
-                visibility: hidden;
+            visibility: hidden;
             }
 
             #NumeUser {
-                margin-top: -24vh;
+            margin-top: -24vh;
             }
 
         </style>
@@ -160,20 +160,30 @@
         }
     </div>
     <div class="paginaPrincipala">
-        @if (SignInManager.IsSignedIn(User))
-        {
-            <img id="pozaDefaultProfil" src="@Model.ProfileImage">
-        }
-        else
-        {
-            <img id="pozaDefaultProfil" src="~/imagini/pozaDefaultProfil.jpg">
-        }
+        <img id="pozaDefaultProfil" src="@Model.ProfileImage">
         <div id="NumeUser">
-            @if (SignInManager.IsSignedIn(User))
-            {
-                <h4 id="user">@Model.Username</h4>
-
+            <h4 id="user">@Model.Username</h4>
+            @{
+                var currentUserId = User.FindFirstValue(ClaimTypes.NameIdentifier);
+                var alreadyFollowing = db.Follows
+                .Any(f => f.Id_Urmaritor == currentUserId && f.Id_Urmarit == Model.Id_User);
             }
+
+            <form method="post" asp-controller="Follow" asp-action="ToggleFollow">
+                <input type="hidden" name="userToFollowId" value="@Model.Id_User" />
+                @if (alreadyFollowing)
+
+                {
+                    <button type="submit" id="EditProfil" class="btn btn-danger">Unfollow</button>
+                }
+
+                else
+
+                {
+                    <button type="submit" id="EditProfil" class="btn btn-primary">Follow</button>
+                }
+            </form>
+
             @if (!SignInManager.IsSignedIn(User))
             {
                 <style>
@@ -194,15 +204,15 @@
                     <h4 id="HV">POSTĂRI</h4>
                 </div>
                 <div id="Urmaritori">
-                    <h4 id="HV">0</h4>
+                    <h4 id="HV">@Model.NrFollowers</h4>
                     <h4 id="HV">URMĂRITORI</h4>
                 </div>
                 <div id="Urmariri">
-                    <h4 id="HV">0</h4>
+                    <h4 id="HV">@Model.NrFollowing</h4>
                     <h4 id="HV">URMĂRIRI</h4>
                 </div>
             </div>
-            <div id="Privat">
+            <div id="Visible2">
                 <div id="GrupStats">
                     <h4 id="HV">0</h4>
                     <h4 id="HV">GRUPURI</h4>
@@ -214,13 +224,10 @@
             </div>
         </div>
         <div id="bio">
-            @if (currentUser != null)
-            {
-                <br />
-                <h3>@Model?.Nume @Model?.Prenume</h3>
-                <br />
-                <p>@Model?.Bio</p>
-            }
+            <br />
+            <h3>@Model?.Nume @Model?.Prenume</h3>
+            <br />
+            <p>@Model?.Bio</p>
         </div>
         <div id="sectiuni">
             <p onclick="afisPagina1()">POSTĂRI</p>
@@ -251,21 +258,25 @@
             }
             else
             {
-                <button id="AddNotita2" onclick="threadfunction()">Adauga</button>
+                @if (SignInManager.IsSignedIn(User) && user_Id==Model.Id_User)
+                {
+                    <button id="AddNotita2" onclick="threadfunction()">Adauga</button>
+                }
                 <div id="thread-list">
                     @foreach (var thread in db.Threads.Where(t => t.Id_User == Model.Id_User).OrderByDescending(t => t.Date))
                     {
+
                         <div id="thread-box" class="thread-@thread.ThreadId">
                             <img src="@thread.Profile?.ProfileImage" alt="Profil" class="profile-picture">
                             <p class="profile-name">@thread.Profile?.Username</p>
                             <div class="dropdown">
                                 <i class="fa fa-ellipsis-v dropdown-toggle" aria-hidden="true"></i>
                                 <div class="dropdown-menu">
-                                     <form method="post" style="display: inline;" data-thread-id="@thread.ThreadId">
+                                    <form method="post" style="display: inline;" data-thread-id="@thread.ThreadId">
                                         <input type="hidden" name="id" value="@thread.ThreadId" />
                                         <button type="submit" id="DeleteBT" class="dropdown-item"><i class="fa-solid fa-flag"></i>Raportează</button>
                                     </form>
-                                 </div>
+                                </div>
                             </div>
                             <p id="ThreadContinut">@thread.ThreadText</p>
                             <p id="ora">
@@ -275,8 +286,14 @@
                                     <em>    (editat)</em>
                                 }
                             </p>
+
                             @{
-                                var userLiked = db.ThreadLikes.Any(like => like.ThreadId == thread.ThreadId && like.ProfileId == UserManager.GetUserId(User));
+
+                                var userLiked = db.ThreadLikes.Any(like => like.ThreadId == thread.ThreadId && like.ProfileId == Model.Id_User);
+                                if (!SignInManager.IsSignedIn(User)) {
+                                    userLiked = false;
+                                }
+
                             }
                             <div class="ButoaneThread">
                                 <form id="flike" method="post" asp-controller="Thread" asp-action="ToggleLike" onsubmit="LikeDislike(event, this)">
@@ -305,12 +322,15 @@
                                 <p id="continut"></p>
                                 <p id="ComOra"></p>
                             </div>
-                            <form id="formCom" asp-controller="Users" asp-action="NewCom_User">
-                                <input type="hidden" id="ThreadId" name="ThreadId" value="@thread.ThreadId" />
-                                <input type="hidden" id="Username" name="username" value="@profile.Username" />
-                                <textarea id="addCom" name="CommentText" placeholder="Adauga Comentariu..."></textarea>
-                                <button type="submit" id="ButonCom">Adauga</button>
-                            </form>
+                            @if (SignInManager.IsSignedIn(User))
+                            {
+                                <form id="formCom" asp-controller="Users" asp-action="NewCom_User">
+                                    <input type="hidden" id="ThreadId" name="ThreadId" value="@thread.ThreadId" />
+                                    <input type="hidden" id="Username" name="username" value="@profile.Username" />
+                                    <textarea id="addCom" name="CommentText" placeholder="Adauga Comentariu..."></textarea>
+                                    <button type="submit" id="ButonCom">Adauga</button>
+                                </form>
+                            }
                             @foreach (var com in db.ThreadComments.Where(c => c.ThreadId == thread.ThreadId).OrderByDescending(t => t.Date))
                             {
                                 com.Profile = db.Profiles.FirstOrDefault(p => p.Id_User == com.Id_User);
@@ -335,6 +355,7 @@
                                     </p>
                                     @{
                                         var userCMLiked = db.ThreadCommentsLikes.Any(like => like.Comment_Id == com.ThreadCommentId && like.User_id == UserManager.GetUserId(User));
+                                        
                                     }
                                     <form id="clike" method="post" asp-controller="Thread" asp-action="ToggleLikeComment" onsubmit="LikeDislikeCom(event, this)">
                                         <input type="hidden" name="ThreadCommentId" value="@com.ThreadCommentId" />

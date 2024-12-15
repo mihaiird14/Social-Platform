@@ -119,3 +119,7 @@
 	- Adaugare eroare daca se incearca editarea thread-ului si textul nu are intre 5-100 caractere
 	- Adaugare eroare daca un comentariu nu are intre 5-100 caractere
 	- Adaugare eroare daca se incearca editarea unui comentariu si textul nu are intre 5-100 caractere
+	- Fix bug in care userul conectat putea scrie thread-uri pe pagina altui utilizator, daca acesta 
+		avea cel putin un thread postat
+	- Utilizatorii neconectati pot acum vizualiza pagina altor useri
+	- Adaugare Functionalitate Follow/Unfollow

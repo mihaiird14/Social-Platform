@@ -177,14 +177,26 @@
                     <h4 id="HV">0</h4>
                     <h4 id="HV">POSTĂRI</h4>
                 </div>
-                <div id="Urmaritori">
-                    <h4 id="HV">0</h4>
-                    <h4 id="HV">URMĂRITORI</h4>
-                </div>
-                <div id="Urmariri">
-                    <h4 id="HV">0</h4>
-                    <h4 id="HV">URMĂRIRI</h4>
-                </div>
+                @if(SignInManager.IsSignedIn(User)){
+                    <div id="Urmaritori">
+                        <h4 id="HV">@profile.NrFollowers</h4>
+                        <h4 id="HV">URMĂRITORI</h4>
+                    </div>
+                    <div id="Urmariri">
+                        <h4 id="HV">@profile.NrFollowing</h4>
+                        <h4 id="HV">URMĂRIRI</h4>
+                    </div>
+                }
+                else{
+                    <div id="Urmaritori">
+                        <h4 id="HV">0</h4>
+                        <h4 id="HV">URMĂRITORI</h4>
+                    </div>
+                    <div id="Urmariri">
+                        <h4 id="HV">0</h4>
+                        <h4 id="HV">URMĂRIRI</h4>
+                    </div>
+                }
             </div>
             <div id="Privat">
                 <div id="GrupStats">

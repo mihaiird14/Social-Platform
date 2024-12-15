@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "oLBcMe434ZXBGKR2hcmq14XwfyOv9yLhFCl+tHaBV5I=",
+  "Hash": "Qr86V3P1eFKgCUu/YoQUIYEAiJ/orUQuunzTBOvhFmM=",
   "Source": "Social Life",
   "BasePath": "_content/Social Life",
   "Mode": "Default",
@@ -1438,8 +1438,8 @@
       "RelatedAsset": "",
       "AssetTraitName": "",
       "AssetTraitValue": "",
-      "Fingerprint": "k4tcdtyofc",
-      "Integrity": "jACABRAfkR3zEpxvF/lsF33RX7nOtEim2+Nwg/BpDR0=",
+      "Fingerprint": "5vyel93z8i",
+      "Integrity": "AZEUEfrVPmFAW0s/SNbYX2lvbXIW2H31MuTmKFhpieQ=",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\css\\profil.css"
@@ -3432,6 +3432,51 @@
       ]
     },
     {
+      "Route": "css/profil.5vyel93z8i.css",
+      "AssetFile": "C:\\Users\\mihai\\OneDrive\\Desktop\\DAW\\Social Life\\wwwroot\\css\\profil.css",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "4869"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/css"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"AZEUEfrVPmFAW0s/SNbYX2lvbXIW2H31MuTmKFhpieQ=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Sun, 15 Dec 2024 18:18:09 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "5vyel93z8i"
+        },
+        {
+          "Name": "label",
+          "Value": "css/profil.css"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-AZEUEfrVPmFAW0s/SNbYX2lvbXIW2H31MuTmKFhpieQ="
+        }
+      ]
+    },
+    {
       "Route": "css/profil.css",
       "AssetFile": "C:\\Users\\mihai\\OneDrive\\Desktop\\DAW\\Social Life\\wwwroot\\css\\profil.css",
       "Selectors": [],
@@ -3442,7 +3487,7 @@
         },
         {
           "Name": "Content-Length",
-          "Value": "4767"
+          "Value": "4869"
         },
         {
           "Name": "Content-Type",
@@ -3450,11 +3495,11 @@
         },
         {
           "Name": "ETag",
-          "Value": "\"jACABRAfkR3zEpxvF/lsF33RX7nOtEim2+Nwg/BpDR0=\""
+          "Value": "\"AZEUEfrVPmFAW0s/SNbYX2lvbXIW2H31MuTmKFhpieQ=\""
         },
         {
           "Name": "Last-Modified",
-          "Value": "Sun, 15 Dec 2024 12:08:23 GMT"
+          "Value": "Sun, 15 Dec 2024 18:18:09 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -3464,52 +3509,7 @@
       "EndpointProperties": [
         {
           "Name": "integrity",
-          "Value": "sha256-jACABRAfkR3zEpxvF/lsF33RX7nOtEim2+Nwg/BpDR0="
-        }
-      ]
-    },
-    {
-      "Route": "css/profil.k4tcdtyofc.css",
-      "AssetFile": "C:\\Users\\mihai\\OneDrive\\Desktop\\DAW\\Social Life\\wwwroot\\css\\profil.css",
-      "Selectors": [],
-      "ResponseHeaders": [
-        {
-          "Name": "Accept-Ranges",
-          "Value": "bytes"
-        },
-        {
-          "Name": "Content-Length",
-          "Value": "4767"
-        },
-        {
-          "Name": "Content-Type",
-          "Value": "text/css"
-        },
-        {
-          "Name": "ETag",
-          "Value": "\"jACABRAfkR3zEpxvF/lsF33RX7nOtEim2+Nwg/BpDR0=\""
-        },
-        {
-          "Name": "Last-Modified",
-          "Value": "Sun, 15 Dec 2024 12:08:23 GMT"
-        },
-        {
-          "Name": "Cache-Control",
-          "Value": "max-age=31536000, immutable"
-        }
-      ],
-      "EndpointProperties": [
-        {
-          "Name": "fingerprint",
-          "Value": "k4tcdtyofc"
-        },
-        {
-          "Name": "label",
-          "Value": "css/profil.css"
-        },
-        {
-          "Name": "integrity",
-          "Value": "sha256-jACABRAfkR3zEpxvF/lsF33RX7nOtEim2+Nwg/BpDR0="
+          "Value": "sha256-AZEUEfrVPmFAW0s/SNbYX2lvbXIW2H31MuTmKFhpieQ="
         }
       ]
     },

@@ -147,5 +147,34 @@ namespace Social_Life.Controllers
                 return RedirectToAction("Edit", "Profile");
             }
         }
+        [HttpPost]
+        public async Task<IActionResult> ToggleFollow(string userToFollowId)
+        {
+            var currentUser = await _userManager.GetUserAsync(User);
+            if (currentUser == null || userToFollowId == null)
+                return RedirectToAction("Index", "Home");
+
+            var existingFollow = db.Follows
+                .FirstOrDefault(f => f.Id_Urmaritor == currentUser.Id && f.Id_Urmarit == userToFollowId);
+
+            if (existingFollow == null)
+            {
+
+                var newFollow = new Follow
+                {
+                    Id_Urmaritor = currentUser.Id,
+                    Id_Urmarit = userToFollowId,
+                    Data = DateTime.Now
+                };
+                db.Follows.Add(newFollow);
+            }
+            else
+            {
+                db.Follows.Remove(existingFollow);
+            }
+
+            await db.SaveChangesAsync();
+            return RedirectToAction("Index", "Profile", new { id = userToFollowId });
+        }
     }
 }

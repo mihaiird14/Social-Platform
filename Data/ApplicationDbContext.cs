@@ -17,6 +17,7 @@ namespace Social_Life.Data
         public DbSet<ThreadLike> ThreadLikes { get; set; }
         public DbSet<ThreadComment> ThreadComments { get; set; }
         public DbSet<ThreadCommentsLike> ThreadCommentsLikes { get; set; }
+        public DbSet<Follow> Follows { get; set; }
         protected override void OnModelCreating(ModelBuilder builder)
         {
 
@@ -70,7 +71,18 @@ namespace Social_Life.Data
                 .HasOne(tl => tl.ThreadComment)
                 .WithMany(p => p.Comment_Likes)
                 .HasForeignKey(tl => tl.Comment_Id);
-                
+
+            builder.Entity<Follow>()
+                .HasOne(f => f.Urmaritor)
+               .WithMany(p => p.Urmariti)
+                .HasForeignKey(f => f.Id_Urmaritor)
+                .OnDelete(DeleteBehavior.Restrict);
+
+            builder.Entity<Follow>()
+                .HasOne(f => f.Urmarit)
+                .WithMany(p => p.Urmaritori)
+                .HasForeignKey(f => f.Id_Urmarit)
+                .OnDelete(DeleteBehavior.Restrict);
         }
     }
 }
