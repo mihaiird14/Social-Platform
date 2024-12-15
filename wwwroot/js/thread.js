@@ -1,10 +1,12 @@
 ﻿function threadfunction() {
     document.getElementById('threadbox').style.display = 'flex';
-
+    sessionStorage.setItem('addThread', 'on');
+    document.getElementById('btnMenu').style.display = 'none';
 }
 function threadCloseFunction() {
     document.getElementById('threadbox').style.display = 'none';
-
+    sessionStorage.setItem('addThread', 'off');
+    document.getElementById('btnMenu').style.display = 'flex';
 }
 function EditthreadCloseFunction(id) {
     document.getElementById('editThreadBox-'+id).style.display = 'none';
@@ -96,4 +98,12 @@ document.addEventListener("DOMContentLoaded", function () {
             document.querySelector('.editThreadBox-' + threadId).style.display = 'none';
         });
     });
+});
+document.addEventListener("DOMContentLoaded", function () {
+    const ax = sessionStorage.getItem('addThread');
+    if (ax === 'on') {
+        threadfunction();
+    } else {
+        threadCloseFunction();
+    }
 });

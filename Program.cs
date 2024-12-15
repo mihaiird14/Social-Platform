@@ -3,6 +3,7 @@ using Microsoft.EntityFrameworkCore;
 using Social_Life.Data;
 using Social_Life.Models;
 
+
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.

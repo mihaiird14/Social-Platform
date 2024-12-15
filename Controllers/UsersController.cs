@@ -54,6 +54,12 @@ namespace Social_Life.Controllers
                 comentariu.Id_User = userId;
                 comentariu.Date = DateTime.Now;
                 thread.ThreadComments += 1;
+                if (comentariu.CommentText.Length < 5 || comentariu.CommentText.Length > 100)
+                {
+                    TempData["EditTh"] = "Comentariul trebuie sa fie intre 5 si 100 caractere";
+                    return RedirectToAction("Index", "Users", new { username = thread.Profile.Username });
+                }
+                TempData["EditTh"] = null;
                 db.ThreadComments.Add(comentariu);
                 db.SaveChanges();
                 return RedirectToAction("Index", "Users", new { username = thread.Profile.Username });

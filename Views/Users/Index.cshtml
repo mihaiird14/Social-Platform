@@ -34,6 +34,21 @@
     <link rel="stylesheet" href="css/editThread.css">
     <link rel="stylesheet" href="css/CommentBox.css">
     <style>
+        #liked {
+            color: green;
+        }
+
+        #dislked {
+            color: white;
+        }
+
+        i[liked="liked"] {
+            color: green;
+        }
+
+        i[liked="disliked"] {
+            color: white;
+        }
         ::-webkit-scrollbar {
             width: 4px;
         }
@@ -84,6 +99,12 @@
     }
 </head>
 <body>
+    @if (TempData["EditTh"] != null)
+    {
+        <div id="eroare">
+            @TempData["EditTh"]
+        </div>
+    }
     <div id="header">
         <img id="logo" src="imagini/logoAlb.png">
     </div>
@@ -254,11 +275,14 @@
                                     <em>    (editat)</em>
                                 }
                             </p>
+                            @{
+                                var userLiked = db.ThreadLikes.Any(like => like.ThreadId == thread.ThreadId && like.ProfileId == UserManager.GetUserId(User));
+                            }
                             <div class="ButoaneThread">
                                 <form id="flike" method="post" asp-controller="Thread" asp-action="ToggleLike" onsubmit="LikeDislike(event, this)">
                                     <input type="hidden" name="threadId" value="@thread.ThreadId" />
                                     <button type="submit" id="LikeButton">
-                                        <i class="fas fa-thumbs-up">
+                                        <i id="@(userLiked ? "liked":"disliked")" class="fas fa-thumbs-up">
                                             <span id="NrLike">@thread.ThreadLikes</span>
                                         </i>
                                     </button>
@@ -309,10 +333,13 @@
                                             <em>(editat)</em>
                                         }
                                     </p>
+                                    @{
+                                        var userCMLiked = db.ThreadCommentsLikes.Any(like => like.Comment_Id == com.ThreadCommentId && like.User_id == UserManager.GetUserId(User));
+                                    }
                                     <form id="clike" method="post" asp-controller="Thread" asp-action="ToggleLikeComment" onsubmit="LikeDislikeCom(event, this)">
                                         <input type="hidden" name="ThreadCommentId" value="@com.ThreadCommentId" />
                                         <button type="submit" id="LikeComButton">
-                                            <i id="ilike" class="fas fa-thumbs-up">
+                                            <i id="ilike" class="fas fa-thumbs-up" liked="@(userCMLiked ? "liked":"disliked")">
                                                 <span id="NrCMLike">@com.Likes</span>
                                             </i>
                                         </button>
@@ -331,7 +358,7 @@
     <script src="js/thread.js"></script>
     <script src="js/CommentBox.js"></script>
     <script>
-        function LikeDislike(event, form) {
+                function LikeDislike(event, form) {
             event.preventDefault();
 
             const formData = new FormData(form);
@@ -346,12 +373,21 @@
             })
             .then(response => response.json())
             .then(data => {
+
                 if (data.success) {
                     const likeSpan = form.querySelector("#NrLike");
+                    const btn = form.querySelector("i");
                     likeSpan.textContent = data.likes;
+                    likeSpan.style.color="green";
+                    btn.style.color="green";
                 } else {
+
                      const likeSpan = form.querySelector("#NrLike");
+
                      if(data.likes==null){
+                          likeSpan.style.color="";
+                         const btn = form.querySelector("i");
+                        btn.style.color="";
                          if (likeSpan.textContent == 1){
                              likeSpan.textContent=0;
                          }
@@ -361,13 +397,16 @@
 
                      }
                       else{
+                         likeSpan.style.color="";
+                         const btn = form.querySelector("i");
+                        btn.style.color="";
                         likeSpan.textContent = data.likes;
                       }
                 }
             })
             .catch(error => console.error("Eroare la cerere:", error));
         }
-        function LikeDislikeCom(event, form) {
+                function LikeDislikeCom(event, form) {
             event.preventDefault();
 
             const formData = new FormData(form);
@@ -384,10 +423,23 @@
             .then(data => {
                 if (data.success) {
                     const likeSpan = form.querySelector("#NrCMLike");
+                    const btn = form.querySelector("i");
                     likeSpan.textContent = data.likes;
+                    likeSpan.style.color="green";
+                    btn.style.color="green";
                 } else {
                      const likeSpan = form.querySelector("#NrCMLike");
                  if(data.likes==null){
+                        document.querySelector("#afisCom").addEventListener("mouseover",()=>{
+                                     likeSpan.style.color="black";
+                                const btn = form.querySelector("i");
+                                btn.style.color="black";
+                          });
+                           document.querySelector("#afisCom").addEventListener("mouseleave",()=>{
+                                likeSpan.style.color="white";
+                                const btn = form.querySelector("i");
+                                btn.style.color="white";
+                          });
                         if (likeSpan.textContent == 1){
                             likeSpan.textContent=0;
                         }
@@ -397,6 +449,16 @@
 
                      }
                       else{
+                        document.querySelector("#afisCom").addEventListener("mouseover",()=>{
+                                     likeSpan.style.color="black";
+                                const btn = form.querySelector("i");
+                                btn.style.color="black";
+                          });
+                           document.querySelector("#afisCom").addEventListener("mouseleave",()=>{
+                                likeSpan.style.color="white";
+                                const btn = form.querySelector("i");
+                                btn.style.color="white";
+                          });
                         likeSpan.textContent = data.likes;
                       }
                 }

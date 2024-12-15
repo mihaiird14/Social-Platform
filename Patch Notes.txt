@@ -109,3 +109,13 @@
 	- In momentul in care un user posteaza un comentariu pe pagina altui user, el nu mai este
 		redirectionat pe pagina sa, ci ramane pe pagina user-ului
 	- Utilizatorul nu se mai poate cauta pe el insasi
+14.12.2024
+	- Acum butonul de like la un thread este verde daca utilizatorul a dat like
+	- Acum butonul de like la un comenatariu este verde daca utilizatorul a dat like
+15.12.2024
+	- Fix bug in care butonul de optiuni de la thread se suprapunea cu meniul de adaugare a unui thread
+	- Adaugare eroare daca continutul thread-ului nu are intre 5-100 caractere
+	- Adaugare eroare daca descrierea (bio) nu are intre 3-50 caractere
+	- Adaugare eroare daca se incearca editarea thread-ului si textul nu are intre 5-100 caractere
+	- Adaugare eroare daca un comentariu nu are intre 5-100 caractere
+	- Adaugare eroare daca se incearca editarea unui comentariu si textul nu are intre 5-100 caractere

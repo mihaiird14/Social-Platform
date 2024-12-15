@@ -1,5 +1,6 @@
 ﻿using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
+using System.Runtime.InteropServices;
 
 namespace Social_Life.Models
 {
@@ -11,7 +12,8 @@ namespace Social_Life.Models
         [Required]
         public string Id_User { set; get; }
         [Required(ErrorMessage = "Textul este obligatoriu!")]
-        [MaxLength(450,ErrorMessage="Textul depaseste dimensiunea maxima!")]
+        [StringLength(100, ErrorMessage = "Thread-ul nu poate avea mai mult de 100 de caractere")]
+        [MinLength(5, ErrorMessage = "Thread-ul trebuie sa aibă mai mult de 5 caractere")]
         public string ThreadText { get; set; }
         public int ThreadLikes { get; set; } = 0;
         public int ThreadComments { get; set; } = 0;

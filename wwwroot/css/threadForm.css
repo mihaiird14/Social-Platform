@@ -11,7 +11,7 @@
     border: 2px solid #00ffcc;
     transform: translate(0%, -50%);
     position: absolute;
-    z-index: 1000;
+    z-index: 100;
 
 }
 .note-label {
@@ -23,6 +23,7 @@
 #xThread{
     margin-left: auto;
     margin-top: 0vh;
+    z-index: 0;
 }
 #xThread:hover{
     color: red;

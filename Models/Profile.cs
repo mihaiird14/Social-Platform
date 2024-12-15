@@ -13,6 +13,8 @@ namespace Social_Life.Models
         public string Email { get; set; }
         public DateTime DateOfBirth { get; set; }
         [Required(ErrorMessage = "Descrierea este obligatorie")]
+        [StringLength(50, ErrorMessage = "Descrierea nu poate avea mai mult de 50 de caractere")]
+        [MinLength(5, ErrorMessage = "Descrierea trebuie sa aibă mai mult de 5 caractere")]
         public string Bio { get; set; }
         public bool ProfilPublic { get; set; } = true;
         public string ProfileImage { get; set; }

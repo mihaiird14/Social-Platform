@@ -320,3 +320,6 @@
 #afisCom:hover #ilike{
     color: black;
 }
+#afisCom:hover i[liked="disliked"] {
+    color: black;
+}

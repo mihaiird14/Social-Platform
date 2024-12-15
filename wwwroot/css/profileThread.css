@@ -242,3 +242,6 @@
     border: none;
     color: #007bff;
 }
+.text-danger{
+    color: red;
+}

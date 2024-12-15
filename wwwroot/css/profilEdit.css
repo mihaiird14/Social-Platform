@@ -90,3 +90,7 @@
     word-wrap: break-word;
     text-align: center;
 }
+.text-danger{
+    margin-top: 40px;
+    color: red;
+}

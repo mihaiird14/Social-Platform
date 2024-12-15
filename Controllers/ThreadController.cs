@@ -53,6 +53,12 @@ namespace Social_Life.Controllers
             }
             existingThread.Edited = true;
             existingThread.ThreadText = thread.ThreadText;
+            if(thread.ThreadText.Length<5 || thread.ThreadText.Length > 100)
+            {
+                TempData["EditTh"] = "Thread-ul trebuie sa fie intre 5 si 100 caractere";
+                return RedirectToAction("Index", "Profile");
+            }
+            TempData["EditTh"] = null;
             db.SaveChanges();
 
             return RedirectToAction("Index", "Profile");
@@ -104,6 +110,12 @@ namespace Social_Life.Controllers
                 comentariu.Id_User = userId;
                 comentariu.Date = DateTime.Now;
                 thread.ThreadComments += 1;
+                if(comentariu.CommentText.Length<5 || comentariu.CommentText.Length > 100)
+                {
+                    TempData["EditTh"] = "Comentariul trebuie sa fie intre 5 si 100 caractere";
+                    return RedirectToAction("Index", "Profile");
+                }
+                TempData["EditTh"] = null;
                 db.ThreadComments.Add(comentariu);
                 db.SaveChanges();
                 return RedirectToAction("Index", "Profile");
@@ -137,6 +149,12 @@ namespace Social_Life.Controllers
             {
                 return NotFound("Thread not found.");
             }
+            if (comentariu.CommentText.Length < 5 || comentariu.CommentText.Length > 100)
+            {
+                TempData["EditTh"] = "Comentariul trebuie sa fie intre 5 si 100 caractere";
+                return RedirectToAction("Index", "Profile");
+            }
+            TempData["EditTh"] = null;
             exCom.Edited = true;
             exCom.CommentText = comentariu.CommentText;
             db.SaveChanges();

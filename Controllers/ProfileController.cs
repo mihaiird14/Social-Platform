@@ -26,10 +26,12 @@ namespace Social_Life.Controllers
             var userId = _userManager.GetUserId(User);
             int NrThread = db.Threads.Count(p => p.Id_User == userId);
             ViewBag.NrThread = NrThread;
-            
+            if (TempData["ErrorMessage"] != null)
+            {
+                ViewBag.ErrorMessage = TempData["ErrorMessage"].ToString();
+            }
 
-            var pr = db.Profiles.FirstOrDefault(p => p.Id_User == userId);
-            
+            var pr = db.Profiles.FirstOrDefault(p => p.Id_User == userId);          
             return View();
          }
         public IActionResult Edit()
@@ -56,21 +58,28 @@ namespace Social_Life.Controllers
                 var userId = _userManager.GetUserId(User);
                 thread.Id_User = userId;
                 thread.Date = DateTime.Now;
+                if(thread.ThreadText.Length<5 || thread.ThreadText.Length > 100)
+                {
+                    TempData["ErrorMessage"] = "Textul trebuie sa fie intre 5 si 100 caractere";
+                    return RedirectToAction("Index", "Profile");
+                }
                 db.Threads.Add(thread);
                 db.SaveChanges();
+                TempData["ErrorMessage"] = null;
                 return RedirectToAction("Index");
+                
             }
 
-            catch (Exception)
+            catch
             {
-                Console.WriteLine(thread.ThreadText);
+                TempData["ErrorMessage"] = "Textul trebuie sa fie intre 5 si 100 caractere";
                 return RedirectToAction("Index","Profile");
             }
         }
         [HttpPost]
         public async Task<IActionResult> EditProfile(int id, Profile profile, IFormFile ProfileImage)
         {
-            
+
             var userId = _userManager.GetUserId(User);
             var pr = db.Profiles.FirstOrDefault(p => p.Id_User == userId);
             if (pr == null)
@@ -82,14 +91,14 @@ namespace Social_Life.Controllers
             {
                 if (ProfileImage != null && ProfileImage.Length > 0)
                 {
-                    var allowedExtensions = new[] { ".jpg", ".jpeg", ".png"};
+                    var allowedExtensions = new[] { ".jpg", ".jpeg", ".png" };
                     var fileExtension = Path.GetExtension(ProfileImage.FileName).ToLower();
                     if (!allowedExtensions.Contains(fileExtension))
                     {
                         return View();
                     }
                     // Cale stocare
-                    var storagePath = Path.Combine(_env.WebRootPath, "imagini",ProfileImage.FileName);
+                    var storagePath = Path.Combine(_env.WebRootPath, "imagini", ProfileImage.FileName);
                     var databaseFileName = "/imagini/" + ProfileImage.FileName;
                     using (var fileStream = new FileStream(storagePath, FileMode.Create))
                     {
@@ -98,13 +107,20 @@ namespace Social_Life.Controllers
                     ModelState.Remove(nameof(pr.ProfileImage));
                     pr.ProfileImage = databaseFileName;
                 }
+                if (profile.Bio.Length < 3 || profile.Bio.Length > 50) {
+         
+                    TempData["EroareEdit"] = "Descrierea trebuie sa aiba intre 3-50 caractere";
+                    
+                    return RedirectToAction("Edit", "Profile");
+                }
                 pr.Bio = profile.Bio;
+                TempData["EroareEdit"] = null;
                 db.SaveChanges();
                 return RedirectToAction("Index", "Profile");
             }
             catch (Exception e)
             {
-       
+                
                 return RedirectToAction("Edit", "Profile");
             }
         }

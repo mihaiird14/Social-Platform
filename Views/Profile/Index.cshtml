@@ -1,7 +1,8 @@
 ﻿@{
     ViewBag.PageName = "Index";
 }
-@model Profile;
+
+@model Social_Life.Models.Thread2;
 @inject UserManager<ApplicationUser> UserManager
 @using System.Security.Claims
 @inject ApplicationDbContext db
@@ -24,6 +25,7 @@
 <!DOCTYPE html>
 <html>
 <head>
+    <meta charset="UTF-8">
     <title>SOCIAL LIFE</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
@@ -33,6 +35,15 @@
     <link rel="stylesheet" href="css/editThread.css">
     <link rel="stylesheet" href="css/CommentBox.css">
     <style>
+        #liked{
+            color: green;
+        }
+        i[liked="liked"]{
+            color: green;
+        }
+        #disliked{
+            color: white;
+        }
         ::-webkit-scrollbar {
         width: 4px; 
         }
@@ -80,6 +91,11 @@
     }
 </head>
 <body>
+    @if(TempData["EditTh"]!=null){
+        <div id="eroare">
+            @TempData["EditTh"]
+        </div>
+    }
     <div id="header">
         <img id="logo" src="imagini/logoAlb.png">
     </div>
@@ -216,8 +232,16 @@
             <form method="post" id="threadbox" asp-action="New" >
 
                 <i id="xThread" class="fa-solid fa-x" onclick="threadCloseFunction()"></i>
-                <label for="note" class="note-label">ADAUGĂ UN THREAD</label>
-                <textarea id="note" class="note-textarea" placeholder="Scrie un thread..." name="ThreadText"></textarea>
+                <label  asp-for="ThreadText" class="note-label">ADAUGĂ UN THREAD</label>
+                <textarea asp-for ="ThreadText" id="note" class="note-textarea" placeholder="Scrie un thread..." name="ThreadText"></textarea>
+                @if (ViewBag.ErrorMessage != null){
+                    <span asp-validation-for="ThreadText" class="text-danger"> @ViewBag.ErrorMessage</span>
+                }
+                else{
+                    <script>
+                        sessionStorage.setItem('addThread', 'off');
+                    </script>
+                }
                 <button class="submit-button" type="submit">Trimite</button>
             </form>
             @if(ViewBag.NrThread ==0){
@@ -241,7 +265,7 @@
                             <img src="@thread.Profile?.ProfileImage" alt="Profil" class="profile-picture">
                             <p class="profile-name">@thread.Profile?.Username</p>
                             <div class="dropdown">
-                                <i class="fa fa-ellipsis-v dropdown-toggle" aria-hidden="true"></i>
+                                <i id="btnMenu" class="fa fa-ellipsis-v dropdown-toggle" aria-hidden="true"></i>
                                 <div class="dropdown-menu">
                                     <form class="edit-thread-form" style="display: inline;" data-thread-id="@thread.ThreadId">
                                         <input type="hidden" name="id" value="@thread.ThreadId" />
@@ -264,11 +288,14 @@
                                     <em>    (editat)</em>
                                 }
                             </p>
+                            @{
+                                var userLiked = db.ThreadLikes.Any(like => like.ThreadId == thread.ThreadId && like.ProfileId == UserManager.GetUserId(User));
+                            }
                             <div class="ButoaneThread">
                                 <form id="flike" method="post" asp-controller="Thread" asp-action="ToggleLike" onsubmit="LikeDislike(event, this)">
                                     <input type="hidden" name="threadId" value="@thread.ThreadId" />
                                     <button type="submit" id="LikeButton">
-                                        <i class="fas fa-thumbs-up">
+                                        <i id="@(userLiked ? "liked":"disliked")" class="fas fa-thumbs-up">
                                             <span id="NrLike">@thread.ThreadLikes</span>
                                         </i>
                                     </button>
@@ -341,10 +368,13 @@
                                             <em>(editat)</em>
                                         }
                                     </p>
+                                    @{
+                                        var userCMLiked = db.ThreadCommentsLikes.Any(like => like.Comment_Id == com.ThreadCommentId && like.User_id == UserManager.GetUserId(User));
+                                    }
                                     <form id="clike" method="post" asp-controller="Thread" asp-action="ToggleLikeComment" onsubmit="LikeDislikeCom(event, this)">
                                         <input type="hidden" name="ThreadCommentId" value="@com.ThreadCommentId" />
                                         <button type="submit" id="LikeComButton">
-                                            <i id="ilike"class="fas fa-thumbs-up">
+                                            <i id="ilike" class="fas fa-thumbs-up" liked="@(userCMLiked ? "liked":"disliked")">
                                                 <span id="NrCMLike">@com.Likes</span>
                                             </i>
                                         </button>
@@ -396,12 +426,21 @@
             })
             .then(response => response.json())
             .then(data => {
+                
                 if (data.success) {
                     const likeSpan = form.querySelector("#NrLike");
+                    const btn = form.querySelector("i");
                     likeSpan.textContent = data.likes;
+                    likeSpan.style.color="green";
+                    btn.style.color="green";
                 } else {
+                    
                      const likeSpan = form.querySelector("#NrLike");
+             
                      if(data.likes==null){
+                          likeSpan.style.color="white";
+                         const btn = form.querySelector("i");
+                        btn.style.color="white";
                          if (likeSpan.textContent == 1){
                              likeSpan.textContent=0;
                          }
@@ -411,6 +450,10 @@
                        
                      }
                       else{
+                         
+                         likeSpan.style.color="white";
+                         const btn = form.querySelector("i");
+                        btn.style.color="white";
                         likeSpan.textContent = data.likes;
                       }
                 }
@@ -434,10 +477,23 @@
             .then(data => {
                 if (data.success) {
                     const likeSpan = form.querySelector("#NrCMLike");
+                    const btn = form.querySelector("i");
                     likeSpan.textContent = data.likes;
+                    likeSpan.style.color="green";
+                    btn.style.color="green";
                 } else {
                      const likeSpan = form.querySelector("#NrCMLike");
                  if(data.likes==null){
+                          document.querySelector("#afisCom").addEventListener("mouseenter",()=>{
+                                likeSpan.style.color="black";
+                                const btn = form.querySelector("i");
+                                btn.style.color="black";
+                          });
+                          document.querySelector("#afisCom").addEventListener("mouseleave",()=>{
+                                likeSpan.style.color="white";
+                                const btn = form.querySelector("i");
+                                btn.style.color="white";
+                          });
                         if (likeSpan.textContent == 1){
                             likeSpan.textContent=0;
                         }
@@ -447,6 +503,16 @@
 
                      }
                       else{
+                           document.querySelector("#afisCom").addEventListener("mouseover",()=>{
+                                     likeSpan.style.color="black";
+                                const btn = form.querySelector("i");
+                                btn.style.color="black";
+                          });
+                           document.querySelector("#afisCom").addEventListener("mouseleave",()=>{
+                                likeSpan.style.color="white";
+                                const btn = form.querySelector("i");
+                                btn.style.color="white";
+                          });
                         likeSpan.textContent = data.likes;
                       }
                 }
