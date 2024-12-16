@@ -338,10 +338,23 @@
                                     <div class="dropdown-comentarii">
                                         <i id="meniuComentarii" class="fa fa-ellipsis-v dropdown-toggle-comentarii" aria-hidden="true"></i>
                                         <div class="dropdown-menu-comentarii">
+                                            @if (SignInManager.IsSignedIn(User) && user_Id == com.Profile.Id_User){
+                                                <form class="edit-thread-form-com" data-com-id="@com.ThreadCommentId" style="display: inline;" data-thread-id="@thread.ThreadId">
+                                                    <input type="hidden" name="id" value="@thread.ThreadId" />
+                                                    <button type="submit" id="EditCom" class="dropdown-item-comentarii"><i class="fas fa-edit"></i>Editează</button>
+                                                </form>
+                                            }
                                             <form style="display: inline;" data-thread-id="@thread.ThreadId">
                                                 <input type="hidden" name="id" value="@thread.ThreadId" />
                                                 <button type="submit" id="DeleteCom" class="dropdown-item-comentarii"><i class="fa-solid fa-flag"></i>Raportează</button>
                                             </form>
+                                            @if (SignInManager.IsSignedIn(User) && user_Id == com.Profile.Id_User)
+                                            {
+                                                <form class="delete-thread-form-com" style="display: inline;" data-com-id="@com.ThreadCommentId" data-thread-id="@thread.ThreadId">
+                                                    <input type="hidden" name="ThreadCommentId" value="@com.ThreadCommentId" />
+                                                    <button type="submit" id="DeleteCom" class="dropdown-item-comentarii"><i class="fa fa-trash" aria-hidden="true"></i>Șterge</button>
+                                                </form>
+                                            }
                                         </div>
                                     </div>
                                     <p id="afisUser">@com.Profile.Username</p>
@@ -364,6 +377,25 @@
                                                 <span id="NrCMLike">@com.Likes</span>
                                             </i>
                                         </button>
+                                    </form>
+                                </div>
+                                <div id="deleteComBox" class="delete-com-@com.ThreadCommentId">
+                                    <i id="xComDelete" class="fa-solid fa-x" data-com-id="@com.ThreadCommentId"></i>
+                                    <i id="dngCom" class="fa fa-exclamation-triangle" aria-hidden="true"></i>
+                                    <form id="confButton" method="post" asp-controller="Users" asp-action="DeleteCom_User" asp-route-id="@thread.ThreadId">
+                                        <input type="hidden" name="ThreadCommentId" value="@com.ThreadCommentId" />
+                                        <input type="hidden" id="Username" name="username" value="@thread.Profile.Username" />
+                                        <button type="submit" id="confirmaButtonCom">CONFIRMĂ!</button>
+                                    </form>
+                                </div>
+                                <div id="editComBox" class="editComBox-@com.ThreadCommentId">
+                                    <i id="xComEdit" class="fa-solid fa-x" data-com-id="@com.ThreadCommentId"></i>
+                                    <label for="note" class="note-label-edit-com"></label>
+                                    <form method="post" asp-controller="Users" asp-action="EditCom_User" id="editThreadBox-@thread.ThreadId">
+                                        <input type="hidden" id="ThreadId" name="ThreadCommentId" value="@com.ThreadCommentId" />
+                                        <input type="hidden" id="Username" name="username" value="@thread.Profile.Username" />
+                                        <textarea class="note-textarea-edit-com-@com.ThreadCommentId" placeholder="editeaza thread-ul..." name="CommentText">@com.CommentText</textarea>
+                                        <button class="submit-button-edit-com" type="submit">Editează!</button>
                                     </form>
                                 </div>
                             }

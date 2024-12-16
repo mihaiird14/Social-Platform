@@ -123,3 +123,7 @@
 		avea cel putin un thread postat
 	- Utilizatorii neconectati pot acum vizualiza pagina altor useri
 	- Adaugare Functionalitate Follow/Unfollow
+16.12.2024
+	- Useri pot acum sa isi stearga propriile comentarii de pe paginiile altor useri
+	- Useri pot acum sa isi editeze propriile comentarii de pe paginiile altor useri
+	- Ajustari design pagini Login, Logout, Register

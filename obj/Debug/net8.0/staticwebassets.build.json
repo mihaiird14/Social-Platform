@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "Qr86V3P1eFKgCUu/YoQUIYEAiJ/orUQuunzTBOvhFmM=",
+  "Hash": "EMctyxYhMNUXW1qcOSXVjfEKcU3mJSq6CmaYWys9LlY=",
   "Source": "Social Life",
   "BasePath": "_content/Social Life",
   "Mode": "Default",
@@ -1333,8 +1333,8 @@
       "RelatedAsset": "",
       "AssetTraitName": "",
       "AssetTraitValue": "",
-      "Fingerprint": "lzhx1o6za2",
-      "Integrity": "rwWwF0cRQWDPrux598jR5Vb+IPH3BjNASR+R5ld5LW8=",
+      "Fingerprint": "xvmm2nfjue",
+      "Integrity": "XctePxPSKsY4c5MODsh1zqLOsLDmkISle75zyoPXozg=",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\css\\aut.css"
@@ -1396,8 +1396,8 @@
       "RelatedAsset": "",
       "AssetTraitName": "",
       "AssetTraitValue": "",
-      "Fingerprint": "jcg18fa37z",
-      "Integrity": "Aw1C9WEDEdp0hpKJ84ik3aQTj0EJmWJMmdOUs3IKTzg=",
+      "Fingerprint": "zg5cwn40t3",
+      "Integrity": "s8IWT2bTfKwRZ9kgvzufm9ZEc5zlXAOG6M7NSzrVuEU=",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\css\\login.css"
@@ -1417,8 +1417,8 @@
       "RelatedAsset": "",
       "AssetTraitName": "",
       "AssetTraitValue": "",
-      "Fingerprint": "r3cw68z36j",
-      "Integrity": "uSR+0UiRBPf2/aWEAlWRwj6VgTVgpLP1xMUzXZbAlZo=",
+      "Fingerprint": "mlxq02i6jl",
+      "Integrity": "mhS09P+QHS9fPjAg+GZllwVldE0swhb60r+eoNp3tlc=",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\css\\logout.css"
@@ -3032,7 +3032,7 @@
         },
         {
           "Name": "Content-Length",
-          "Value": "634"
+          "Value": "619"
         },
         {
           "Name": "Content-Type",
@@ -3040,11 +3040,11 @@
         },
         {
           "Name": "ETag",
-          "Value": "\"rwWwF0cRQWDPrux598jR5Vb+IPH3BjNASR+R5ld5LW8=\""
+          "Value": "\"XctePxPSKsY4c5MODsh1zqLOsLDmkISle75zyoPXozg=\""
         },
         {
           "Name": "Last-Modified",
-          "Value": "Thu, 12 Dec 2024 14:27:27 GMT"
+          "Value": "Mon, 16 Dec 2024 10:45:38 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -3054,12 +3054,12 @@
       "EndpointProperties": [
         {
           "Name": "integrity",
-          "Value": "sha256-rwWwF0cRQWDPrux598jR5Vb+IPH3BjNASR+R5ld5LW8="
+          "Value": "sha256-XctePxPSKsY4c5MODsh1zqLOsLDmkISle75zyoPXozg="
         }
       ]
     },
     {
-      "Route": "css/aut.lzhx1o6za2.css",
+      "Route": "css/aut.xvmm2nfjue.css",
       "AssetFile": "C:\\Users\\mihai\\OneDrive\\Desktop\\DAW\\Social Life\\wwwroot\\css\\aut.css",
       "Selectors": [],
       "ResponseHeaders": [
@@ -3069,7 +3069,7 @@
         },
         {
           "Name": "Content-Length",
-          "Value": "634"
+          "Value": "619"
         },
         {
           "Name": "Content-Type",
@@ -3077,11 +3077,11 @@
         },
         {
           "Name": "ETag",
-          "Value": "\"rwWwF0cRQWDPrux598jR5Vb+IPH3BjNASR+R5ld5LW8=\""
+          "Value": "\"XctePxPSKsY4c5MODsh1zqLOsLDmkISle75zyoPXozg=\""
         },
         {
           "Name": "Last-Modified",
-          "Value": "Thu, 12 Dec 2024 14:27:27 GMT"
+          "Value": "Mon, 16 Dec 2024 10:45:38 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -3091,7 +3091,7 @@
       "EndpointProperties": [
         {
           "Name": "fingerprint",
-          "Value": "lzhx1o6za2"
+          "Value": "xvmm2nfjue"
         },
         {
           "Name": "label",
@@ -3099,7 +3099,7 @@
         },
         {
           "Name": "integrity",
-          "Value": "sha256-rwWwF0cRQWDPrux598jR5Vb+IPH3BjNASR+R5ld5LW8="
+          "Value": "sha256-XctePxPSKsY4c5MODsh1zqLOsLDmkISle75zyoPXozg="
         }
       ]
     },
@@ -3278,7 +3278,7 @@
         },
         {
           "Name": "Content-Length",
-          "Value": "714"
+          "Value": "698"
         },
         {
           "Name": "Content-Type",
@@ -3286,11 +3286,11 @@
         },
         {
           "Name": "ETag",
-          "Value": "\"Aw1C9WEDEdp0hpKJ84ik3aQTj0EJmWJMmdOUs3IKTzg=\""
+          "Value": "\"s8IWT2bTfKwRZ9kgvzufm9ZEc5zlXAOG6M7NSzrVuEU=\""
         },
         {
           "Name": "Last-Modified",
-          "Value": "Thu, 12 Dec 2024 14:27:27 GMT"
+          "Value": "Mon, 16 Dec 2024 10:44:49 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -3300,12 +3300,12 @@
       "EndpointProperties": [
         {
           "Name": "integrity",
-          "Value": "sha256-Aw1C9WEDEdp0hpKJ84ik3aQTj0EJmWJMmdOUs3IKTzg="
+          "Value": "sha256-s8IWT2bTfKwRZ9kgvzufm9ZEc5zlXAOG6M7NSzrVuEU="
         }
       ]
     },
     {
-      "Route": "css/login.jcg18fa37z.css",
+      "Route": "css/login.zg5cwn40t3.css",
       "AssetFile": "C:\\Users\\mihai\\OneDrive\\Desktop\\DAW\\Social Life\\wwwroot\\css\\login.css",
       "Selectors": [],
       "ResponseHeaders": [
@@ -3315,7 +3315,7 @@
         },
         {
           "Name": "Content-Length",
-          "Value": "714"
+          "Value": "698"
         },
         {
           "Name": "Content-Type",
@@ -3323,11 +3323,11 @@
         },
         {
           "Name": "ETag",
-          "Value": "\"Aw1C9WEDEdp0hpKJ84ik3aQTj0EJmWJMmdOUs3IKTzg=\""
+          "Value": "\"s8IWT2bTfKwRZ9kgvzufm9ZEc5zlXAOG6M7NSzrVuEU=\""
         },
         {
           "Name": "Last-Modified",
-          "Value": "Thu, 12 Dec 2024 14:27:27 GMT"
+          "Value": "Mon, 16 Dec 2024 10:44:49 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -3337,7 +3337,7 @@
       "EndpointProperties": [
         {
           "Name": "fingerprint",
-          "Value": "jcg18fa37z"
+          "Value": "zg5cwn40t3"
         },
         {
           "Name": "label",
@@ -3345,7 +3345,7 @@
         },
         {
           "Name": "integrity",
-          "Value": "sha256-Aw1C9WEDEdp0hpKJ84ik3aQTj0EJmWJMmdOUs3IKTzg="
+          "Value": "sha256-s8IWT2bTfKwRZ9kgvzufm9ZEc5zlXAOG6M7NSzrVuEU="
         }
       ]
     },
@@ -3360,7 +3360,7 @@
         },
         {
           "Name": "Content-Length",
-          "Value": "660"
+          "Value": "646"
         },
         {
           "Name": "Content-Type",
@@ -3368,11 +3368,11 @@
         },
         {
           "Name": "ETag",
-          "Value": "\"uSR+0UiRBPf2/aWEAlWRwj6VgTVgpLP1xMUzXZbAlZo=\""
+          "Value": "\"mhS09P+QHS9fPjAg+GZllwVldE0swhb60r+eoNp3tlc=\""
         },
         {
           "Name": "Last-Modified",
-          "Value": "Thu, 12 Dec 2024 14:27:27 GMT"
+          "Value": "Mon, 16 Dec 2024 10:43:01 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -3382,12 +3382,12 @@
       "EndpointProperties": [
         {
           "Name": "integrity",
-          "Value": "sha256-uSR+0UiRBPf2/aWEAlWRwj6VgTVgpLP1xMUzXZbAlZo="
+          "Value": "sha256-mhS09P+QHS9fPjAg+GZllwVldE0swhb60r+eoNp3tlc="
         }
       ]
     },
     {
-      "Route": "css/logout.r3cw68z36j.css",
+      "Route": "css/logout.mlxq02i6jl.css",
       "AssetFile": "C:\\Users\\mihai\\OneDrive\\Desktop\\DAW\\Social Life\\wwwroot\\css\\logout.css",
       "Selectors": [],
       "ResponseHeaders": [
@@ -3397,7 +3397,7 @@
         },
         {
           "Name": "Content-Length",
-          "Value": "660"
+          "Value": "646"
         },
         {
           "Name": "Content-Type",
@@ -3405,11 +3405,11 @@
         },
         {
           "Name": "ETag",
-          "Value": "\"uSR+0UiRBPf2/aWEAlWRwj6VgTVgpLP1xMUzXZbAlZo=\""
+          "Value": "\"mhS09P+QHS9fPjAg+GZllwVldE0swhb60r+eoNp3tlc=\""
         },
         {
           "Name": "Last-Modified",
-          "Value": "Thu, 12 Dec 2024 14:27:27 GMT"
+          "Value": "Mon, 16 Dec 2024 10:43:01 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -3419,7 +3419,7 @@
       "EndpointProperties": [
         {
           "Name": "fingerprint",
-          "Value": "r3cw68z36j"
+          "Value": "mlxq02i6jl"
         },
         {
           "Name": "label",
@@ -3427,7 +3427,7 @@
         },
         {
           "Name": "integrity",
-          "Value": "sha256-uSR+0UiRBPf2/aWEAlWRwj6VgTVgpLP1xMUzXZbAlZo="
+          "Value": "sha256-mhS09P+QHS9fPjAg+GZllwVldE0swhb60r+eoNp3tlc="
         }
       ]
     },

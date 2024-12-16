@@ -70,7 +70,42 @@ namespace Social_Life.Controllers
                 return RedirectToAction("Index", "Profile");
             }
         }
+        [HttpPost]
+        public IActionResult DeleteCom_User(int ThreadCommentId, string username)
+        {
 
+            var comentariu = db.ThreadComments.FirstOrDefault(t => t.ThreadCommentId == ThreadCommentId);
+            var thread = db.Threads.FirstOrDefault(tl => tl.ThreadId == comentariu.ThreadId);
+           
+            if (comentariu == null)
+            {
+                return NotFound("Thread not found.");
+            }
+            thread.ThreadComments -= 1;
+            db.ThreadComments.Remove(comentariu);
+            db.SaveChanges();
 
+            return RedirectToAction("Index", "Users", new { username = username});
+        }
+        [HttpPost]
+        public IActionResult EditCom_User(ThreadComment comentariu,string username)
+        {
+            var exCom = db.ThreadComments.FirstOrDefault(t => t.ThreadCommentId == comentariu.ThreadCommentId);
+            if (exCom == null)
+            {
+                return NotFound("Thread not found.");
+            }
+            if (comentariu.CommentText.Length < 5 || comentariu.CommentText.Length > 100)
+            {
+                TempData["EditTh"] = "Comentariul trebuie sa fie intre 5 si 100 caractere";
+                return RedirectToAction("Index", "Users", new { username = username });
+            }
+            TempData["EditTh"] = null;
+            exCom.Edited = true;
+            exCom.CommentText = comentariu.CommentText;
+            db.SaveChanges();
+
+            return RedirectToAction("Index", "Users", new { username = username });
+        }
     }
 }

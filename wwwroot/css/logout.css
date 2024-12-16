@@ -20,11 +20,12 @@ h1 {
 img {
     display: block;
     position: fixed;
-    width: 250px;
-    height: 250px;
-    transform: translate(240%,10%);
-    margin-left: 750px;
-    margin-top: 0px;
+    width: 25vw;
+    height: 32vh;
+    left: 0;
+    top:0;
+    margin-left: 62vw;
+    margin-top: 35vh;
 }
 
 img {

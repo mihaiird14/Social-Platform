@@ -21,12 +21,12 @@ h2 {
 img {
     display: block;
     position: fixed;
-    width: 450px;
-    height: 450px;
-    transform: translate(140%,10%);
-    margin-left: 650px;
-    margin-top: -80px;
-
+    width: 35vw;
+    height: 42vh;
+    left: 0;
+    top: 0;
+    margin-left: 58vw;
+    margin-top: 35vh;
 }
 img {
     animation: heart-beat 2s infinite ease-in-out;
