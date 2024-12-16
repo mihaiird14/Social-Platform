@@ -105,6 +105,11 @@ namespace Social_Life.Controllers
         {
             try
             {
+                if (comentariu.CommentText == null)
+                {
+                    TempData["EditTh"] = "Comentariul este obligatoriu!";
+                    return RedirectToAction("Index", "Profile");
+                }
                 var thread = db.Threads.FirstOrDefault(tl => tl.ThreadId == comentariu.ThreadId);
                 var userId = _userManager.GetUserId(User);
                 comentariu.Id_User = userId;

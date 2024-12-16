@@ -55,6 +55,11 @@ namespace Social_Life.Controllers
         {
             try
             {
+                if (thread.ThreadText == null)
+                {
+                    TempData["ErrorMessage"] = "Textul este obligatoriu!";
+                    return RedirectToAction("Index", "Profile");
+                }
                 var userId = _userManager.GetUserId(User);
                 thread.Id_User = userId;
                 thread.Date = DateTime.Now;
@@ -106,6 +111,12 @@ namespace Social_Life.Controllers
                     }
                     ModelState.Remove(nameof(pr.ProfileImage));
                     pr.ProfileImage = databaseFileName;
+                }
+                if (profile.Bio == null)
+                {
+                    TempData["EroareEdit"] = "Descrierea este obligatorie!";
+
+                    return RedirectToAction("Edit", "Profile");
                 }
                 if (profile.Bio.Length < 3 || profile.Bio.Length > 50) {
          

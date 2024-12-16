@@ -30,8 +30,8 @@
       <RelatedAsset></RelatedAsset>
       <AssetTraitName></AssetTraitName>
       <AssetTraitValue></AssetTraitValue>
-      <Fingerprint>5dpq52a8sx</Fingerprint>
-      <Integrity>F/Ceg0hV4k6iGXoflgFaPlOn56HEpYbGuCIMlim5/DA=</Integrity>
+      <Fingerprint>yr67jv22s0</Fingerprint>
+      <Integrity>8nIDiW7SjrraD+iE01USv7YN98ay2Xsp53oZrh0R5xM=</Integrity>
       <CopyToOutputDirectory>Never</CopyToOutputDirectory>
       <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
       <OriginalItemSpec>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\css\CommentBox.css'))</OriginalItemSpec>

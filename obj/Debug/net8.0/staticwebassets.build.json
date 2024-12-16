@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "EMctyxYhMNUXW1qcOSXVjfEKcU3mJSq6CmaYWys9LlY=",
+  "Hash": "inMRTEaiCkz1qIy3bIZ82puGr6k4VJsjlbf3pnO27ZU=",
   "Source": "Social Life",
   "BasePath": "_content/Social Life",
   "Mode": "Default",
@@ -1354,8 +1354,8 @@
       "RelatedAsset": "",
       "AssetTraitName": "",
       "AssetTraitValue": "",
-      "Fingerprint": "5dpq52a8sx",
-      "Integrity": "F/Ceg0hV4k6iGXoflgFaPlOn56HEpYbGuCIMlim5/DA=",
+      "Fingerprint": "yr67jv22s0",
+      "Integrity": "8nIDiW7SjrraD+iE01USv7YN98ay2Xsp53oZrh0R5xM=",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\css\\CommentBox.css"
@@ -3104,51 +3104,6 @@
       ]
     },
     {
-      "Route": "css/CommentBox.5dpq52a8sx.css",
-      "AssetFile": "C:\\Users\\mihai\\OneDrive\\Desktop\\DAW\\Social Life\\wwwroot\\css\\CommentBox.css",
-      "Selectors": [],
-      "ResponseHeaders": [
-        {
-          "Name": "Accept-Ranges",
-          "Value": "bytes"
-        },
-        {
-          "Name": "Content-Length",
-          "Value": "6170"
-        },
-        {
-          "Name": "Content-Type",
-          "Value": "text/css"
-        },
-        {
-          "Name": "ETag",
-          "Value": "\"F/Ceg0hV4k6iGXoflgFaPlOn56HEpYbGuCIMlim5/DA=\""
-        },
-        {
-          "Name": "Last-Modified",
-          "Value": "Sat, 14 Dec 2024 13:26:49 GMT"
-        },
-        {
-          "Name": "Cache-Control",
-          "Value": "max-age=31536000, immutable"
-        }
-      ],
-      "EndpointProperties": [
-        {
-          "Name": "fingerprint",
-          "Value": "5dpq52a8sx"
-        },
-        {
-          "Name": "label",
-          "Value": "css/CommentBox.css"
-        },
-        {
-          "Name": "integrity",
-          "Value": "sha256-F/Ceg0hV4k6iGXoflgFaPlOn56HEpYbGuCIMlim5/DA="
-        }
-      ]
-    },
-    {
       "Route": "css/CommentBox.css",
       "AssetFile": "C:\\Users\\mihai\\OneDrive\\Desktop\\DAW\\Social Life\\wwwroot\\css\\CommentBox.css",
       "Selectors": [],
@@ -3167,11 +3122,11 @@
         },
         {
           "Name": "ETag",
-          "Value": "\"F/Ceg0hV4k6iGXoflgFaPlOn56HEpYbGuCIMlim5/DA=\""
+          "Value": "\"8nIDiW7SjrraD+iE01USv7YN98ay2Xsp53oZrh0R5xM=\""
         },
         {
           "Name": "Last-Modified",
-          "Value": "Sat, 14 Dec 2024 13:26:49 GMT"
+          "Value": "Mon, 16 Dec 2024 11:52:02 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -3181,7 +3136,52 @@
       "EndpointProperties": [
         {
           "Name": "integrity",
-          "Value": "sha256-F/Ceg0hV4k6iGXoflgFaPlOn56HEpYbGuCIMlim5/DA="
+          "Value": "sha256-8nIDiW7SjrraD+iE01USv7YN98ay2Xsp53oZrh0R5xM="
+        }
+      ]
+    },
+    {
+      "Route": "css/CommentBox.yr67jv22s0.css",
+      "AssetFile": "C:\\Users\\mihai\\OneDrive\\Desktop\\DAW\\Social Life\\wwwroot\\css\\CommentBox.css",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "6170"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/css"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"8nIDiW7SjrraD+iE01USv7YN98ay2Xsp53oZrh0R5xM=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Mon, 16 Dec 2024 11:52:02 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "yr67jv22s0"
+        },
+        {
+          "Name": "label",
+          "Value": "css/CommentBox.css"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-8nIDiW7SjrraD+iE01USv7YN98ay2Xsp53oZrh0R5xM="
         }
       ]
     },
