@@ -127,3 +127,7 @@
 	- Useri pot acum sa isi stearga propriile comentarii de pe paginiile altor useri
 	- Useri pot acum sa isi editeze propriile comentarii de pe paginiile altor useri
 	- Ajustari design pagini Login, Logout, Register
+17.12.2024
+	- Fix bug care oprea fortat aplicatia daca un user incerca sa editeze un thread/comentariu,
+		lasand spatiu gol in caseta de text
+		

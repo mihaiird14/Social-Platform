@@ -100,6 +100,11 @@ namespace Social_Life.Controllers
             {
                 return NotFound("Thread not found.");
             }
+            if (comentariu.CommentText == null)
+            {
+                TempData["EditTh"] = "Comentariul trebuie sa fie intre 5 si 100 caractere";
+                return RedirectToAction("Index", "Users", new { username = username });
+            }
             if (comentariu.CommentText.Length < 5 || comentariu.CommentText.Length > 100)
             {
                 TempData["EditTh"] = "Comentariul trebuie sa fie intre 5 si 100 caractere";

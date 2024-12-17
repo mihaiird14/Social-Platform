@@ -53,9 +53,14 @@ namespace Social_Life.Controllers
             }
             existingThread.Edited = true;
             existingThread.ThreadText = thread.ThreadText;
-            if(thread.ThreadText.Length<5 || thread.ThreadText.Length > 100)
+            if(thread.ThreadText == null)
             {
-                TempData["EditTh"] = "Thread-ul trebuie sa fie intre 5 si 100 caractere";
+                TempData["EditTh"] = "Thread-ul este obligatoriu!";
+                return RedirectToAction("Index", "Profile");
+            }
+            if(thread.ThreadText.Length<5 || thread.ThreadText.Length > 400)
+            {
+                TempData["EditTh"] = "Thread-ul trebuie sa fie intre 5 si 400 caractere";
                 return RedirectToAction("Index", "Profile");
             }
             TempData["EditTh"] = null;
@@ -153,6 +158,11 @@ namespace Social_Life.Controllers
             if (exCom == null)
             {
                 return NotFound("Thread not found.");
+            }
+            if (comentariu.CommentText == null)
+            {
+                TempData["EditTh"] = "Comentariul este obligatoriu!";
+                return RedirectToAction("Index", "Profile");
             }
             if (comentariu.CommentText.Length < 5 || comentariu.CommentText.Length > 100)
             {

@@ -12,7 +12,7 @@ namespace Social_Life.Models
         [Required]
         public string Id_User { set; get; }
         [Required(ErrorMessage = "Textul este obligatoriu!")]
-        [StringLength(100, ErrorMessage = "Thread-ul nu poate avea mai mult de 100 de caractere")]
+        [StringLength(400, ErrorMessage = "Thread-ul nu poate avea mai mult de 400 de caractere")]
         [MinLength(5, ErrorMessage = "Thread-ul trebuie sa aibă mai mult de 5 caractere")]
         public string ThreadText { get; set; }
         public int ThreadLikes { get; set; } = 0;
