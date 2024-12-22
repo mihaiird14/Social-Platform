@@ -21,6 +21,10 @@
       "PackagePath": "staticwebassets\\css\\editThread.css"
     },
     {
+      "Id": "C:\\Users\\mihai\\OneDrive\\Desktop\\DAW\\Social Life\\wwwroot\\css\\fisaUrmaritori.css",
+      "PackagePath": "staticwebassets\\css\\fisaUrmaritori.css"
+    },
+    {
       "Id": "C:\\Users\\mihai\\OneDrive\\Desktop\\DAW\\Social Life\\wwwroot\\css\\login.css",
       "PackagePath": "staticwebassets\\css\\login.css"
     },
@@ -87,6 +91,10 @@
     {
       "Id": "C:\\Users\\mihai\\OneDrive\\Desktop\\DAW\\Social Life\\wwwroot\\js\\CommentBox.js",
       "PackagePath": "staticwebassets\\js\\CommentBox.js"
+    },
+    {
+      "Id": "C:\\Users\\mihai\\OneDrive\\Desktop\\DAW\\Social Life\\wwwroot\\js\\fisaUrmaritori.js",
+      "PackagePath": "staticwebassets\\js\\fisaUrmaritori.js"
     },
     {
       "Id": "C:\\Users\\mihai\\OneDrive\\Desktop\\DAW\\Social Life\\wwwroot\\js\\profil.js",

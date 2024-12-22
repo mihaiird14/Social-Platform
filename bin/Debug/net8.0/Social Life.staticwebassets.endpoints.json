@@ -2413,7 +2413,7 @@
         },
         {
           "Name": "Last-Modified",
-          "Value": "Thu, 12 Dec 2024 19:02:42 GMT"
+          "Value": "Sat, 21 Dec 2024 11:59:49 GMT"
         }
       ],
       "EndpointProperties": [
@@ -2458,7 +2458,7 @@
         },
         {
           "Name": "Last-Modified",
-          "Value": "Thu, 12 Dec 2024 19:02:42 GMT"
+          "Value": "Sat, 21 Dec 2024 11:59:49 GMT"
         }
       ],
       "EndpointProperties": [
@@ -2629,6 +2629,88 @@
         {
           "Name": "label",
           "Value": "css/editThread.css"
+        }
+      ]
+    },
+    {
+      "Route": "css/fisaUrmaritori.au02mpa1pf.css",
+      "AssetFile": "css/fisaUrmaritori.css",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "2146"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/css"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"wiop2yQ1cqcvYoAqCqQ5RnsBg8dgeZju5wPXkIyqLHk=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Sun, 22 Dec 2024 11:39:58 GMT"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "au02mpa1pf"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-wiop2yQ1cqcvYoAqCqQ5RnsBg8dgeZju5wPXkIyqLHk="
+        },
+        {
+          "Name": "label",
+          "Value": "css/fisaUrmaritori.css"
+        }
+      ]
+    },
+    {
+      "Route": "css/fisaUrmaritori.css",
+      "AssetFile": "css/fisaUrmaritori.css",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "no-cache"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "2146"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/css"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"wiop2yQ1cqcvYoAqCqQ5RnsBg8dgeZju5wPXkIyqLHk=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Sun, 22 Dec 2024 11:39:58 GMT"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-wiop2yQ1cqcvYoAqCqQ5RnsBg8dgeZju5wPXkIyqLHk="
         }
       ]
     },
@@ -4023,6 +4105,88 @@
         {
           "Name": "integrity",
           "Value": "sha256-Xzw6nD0E2SCRC0Qf7LZavrzSDhGMaO49bR1FVcO6dOA="
+        }
+      ]
+    },
+    {
+      "Route": "js/fisaUrmaritori.js",
+      "AssetFile": "js/fisaUrmaritori.js",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "no-cache"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "911"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/javascript"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"XGpOgmwB8i7C7uSkRdA4PiDnZh7ZgpGY4kmALWnCAss=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Sun, 22 Dec 2024 11:54:18 GMT"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-XGpOgmwB8i7C7uSkRdA4PiDnZh7ZgpGY4kmALWnCAss="
+        }
+      ]
+    },
+    {
+      "Route": "js/fisaUrmaritori.o3ykodgpox.js",
+      "AssetFile": "js/fisaUrmaritori.js",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "911"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/javascript"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"XGpOgmwB8i7C7uSkRdA4PiDnZh7ZgpGY4kmALWnCAss=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Sun, 22 Dec 2024 11:54:18 GMT"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "o3ykodgpox"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-XGpOgmwB8i7C7uSkRdA4PiDnZh7ZgpGY4kmALWnCAss="
+        },
+        {
+          "Name": "label",
+          "Value": "js/fisaUrmaritori.js"
         }
       ]
     },

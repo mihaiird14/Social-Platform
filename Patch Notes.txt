@@ -130,4 +130,15 @@
 17.12.2024
 	- Fix bug care oprea fortat aplicatia daca un user incerca sa editeze un thread/comentariu,
 		lasand spatiu gol in caseta de text
-		
+21.12.2024
+	- Eliminarea coloanelor "NrFollowers" si "NrFollowing" din tabelul Profile. Calculul nu se mai face 
+		in controller ci in View folosind functia Count()
+	- Posibilitatea useri-lor de a vizualiza lista cu persoanele pe care le urmareste.
+	- Posibilitatea de a elimina o persoana pe care o urmareste direct din lista.
+22.12.2024
+	- Posibilitatea useri-lor de a vizualiza lista cu persoanele care-l urmaresc.
+	- Posibilitatea de a elimina un follower direct din lista.
+	- Eliminarea butoanelor "Urmaritori", "Urmariri", "Notificari" din paginile "Search" si 				"Edit Profile"
+	- Eliminarea butoanelor "Setari" si "Notificari" de pe paginiile altor useri
+	- Posibilitatea de a vizualiza utilizatorii care ii urmareste/ care-l urmaresc pe un user
+		(diferit de cel curent), fara a putea cauta in lista sau a accesa paginile lor din lista

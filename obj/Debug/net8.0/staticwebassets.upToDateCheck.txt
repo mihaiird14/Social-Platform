@@ -1,6 +1,7 @@
 wwwroot\css\aut.css
 wwwroot\css\CommentBox.css
 wwwroot\css\editThread.css
+wwwroot\css\fisaUrmaritori.css
 wwwroot\css\login.css
 wwwroot\css\logout.css
 wwwroot\css\profil.css
@@ -19,6 +20,7 @@ wwwroot\imagini\pozaDefaultProfil.jpg
 wwwroot\imagini\sad.png
 wwwroot\imagini\thread.png
 wwwroot\js\CommentBox.js
+wwwroot\js\fisaUrmaritori.js
 wwwroot\js\profil.js
 wwwroot\js\site.js
 wwwroot\js\thread.js

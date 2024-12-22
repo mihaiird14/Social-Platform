@@ -1,10 +1,10 @@
 ﻿@{
     ViewBag.PageName = "Index";
 }
-
 @model Social_Life.Models.Thread2;
 @inject UserManager<ApplicationUser> UserManager
 @using System.Security.Claims
+@using Newtonsoft.Json;
 @inject ApplicationDbContext db
 @{
     var user_Id = User.FindFirst(System.Security.Claims.ClaimTypes.NameIdentifier)?.Value;
@@ -34,15 +34,16 @@
     <link rel="stylesheet" href="css/profileThread.css">
     <link rel="stylesheet" href="css/editThread.css">
     <link rel="stylesheet" href="css/CommentBox.css">
+    <link rel="stylesheet" href="css/fisaUrmaritori.css">
     <style>
         #liked{
-            color: green;
+        color: green;
         }
         i[liked="liked"]{
-            color: green;
+        color: green;
         }
         #disliked{
-            color: white;
+        color: white;
         }
         ::-webkit-scrollbar {
         width: 4px; 
@@ -110,11 +111,11 @@
                 <i class="fa fa-search" aria-hidden="true"></i>
                 <a href="@Url.Action("Search1", "Search")">CAUTĂ</a>
             </div>
-            <div id="buton">
+            <div id="buton" onclick="afisUrmariri()">
                 <i class="fas fa-user-friends"></i>
                 <a href="#">URMĂRITORI</a>
             </div>
-            <div id="buton">
+            <div id="buton" onclick="afisUrmaritori()">
                 <i class="fas fa-user-plus"></i>
                 <a href="#">URMĂRIRI</a>
             </div>
@@ -179,11 +180,11 @@
                 </div>
                 @if(SignInManager.IsSignedIn(User)){
                     <div id="Urmaritori">
-                        <h4 id="HV">@profile.NrFollowers</h4>
+                        <h4 id="HV">@((db.Follows.Where(t=> t.Id_Urmarit==user_Id)).Count())</h4>
                         <h4 id="HV">URMĂRITORI</h4>
                     </div>
                     <div id="Urmariri">
-                        <h4 id="HV">@profile.NrFollowing</h4>
+                        <h4 id="HV">@((db.Follows.Where(t => t.Id_Urmaritor == user_Id)).Count())</h4>
                         <h4 id="HV">URMĂRIRI</h4>
                     </div>
                 }
@@ -223,6 +224,7 @@
             <!-- <p onclick="afisPagina2()">MENȚIUNI</p> -->
             <p onclick="afisPagina3()">THREADS</p>
         </div>
+
         <div id="PostariPage">
             <img id="nuPoze" src="imagini/logoPozeAlb.png">
             <h3 id="nuPozeText">NU AI POZE ÎNCĂRCATE!</h3>
@@ -234,7 +236,6 @@
             {
                 <a href="Identity/Account/Login"><button id="AddPoza">Adauga</button></a>
             }
-
         </div>
         <div id="MentiuniPage">
             <img id="nuPoze" src="imagini/logoPozeAlb.png">
@@ -409,19 +410,111 @@
                                         <button class="submit-button-edit-com" type="submit">Editează!</button>
                                     </form>
                                 </div>
-                             }
-                            
+                            }
                         </div>
                     }
                 </div>
 
             }
         </div>
-
+        <div id="FisaUrmaritori">
+            <i onclick="xFollow()" id="xFollow" class="fa-solid fa-x" aria-hidden="true"></i>
+            <form id="SearchBox" method="get" asp-controller="Profile" asp-action="SearchFollow">
+                <div class="input-group mb-3">
+                    <input id="SearchChenar" type="text" class="form-control" name="query" placeholder="Cauta..." value="@ViewBag.Query" />
+                    <button class="btn btn-primary" type="submit"><i id="SearchIcon" class="fa fa-search" aria-hidden="true"></i></button>
+                </div>
+            </form>
+            <br />
+            @if(TempData["ListaF"]==null){
+                @foreach (var x in db.Follows.Where(p => p.Id_Urmaritor == user_Id).OrderByDescending(p=>p.Data))
+                {
+                    x.Urmarit = db.Profiles.FirstOrDefault(t => t.Id_User == x.Id_Urmarit);
+                    <a id="link" href="/Users?username=@x.Urmarit.Username"><div id="fUsername">
+                        <img id="fPoza" src="@x.Urmarit.ProfileImage" />
+                        <br />
+                        <p>@x.Urmarit.Username</p>
+                        <form method="post" asp-controller="Profile" asp-action="DeleteFollower">
+                            <input type="hidden" name="IdUrmaritor" value="@x.Id_Urmaritor" />
+                            <input type="hidden" name="IdUrmarit" value="@x.Id_Urmarit" />
+                            <button id="deleteF" type="submit">Șterge</button>
+                        </form>
+                    </div></a>
+                    <br />
+                }
+            }
+            else{
+                @foreach (var x in JsonConvert.DeserializeObject<List<Profile>>(TempData["ListaF"]?.ToString()).OrderBy(p => p.Username))
+                {
+                   <a id="link" href="/Users?username=@x.Username"> <div id="fUsername">
+                        <img id="fPoza" src="@x.ProfileImage" />
+                        <br />
+                        <p>@x.Username</p>
+                        <form method="post" asp-controller="Profile" asp-action="DeleteFollower">
+                        <input type="hidden" name="IdUrmaritor" value="@user_Id" />
+                        <input type="hidden" name="IdUrmarit" value="@x.Id_User" />
+                        <button id="deleteF" type="submit">Șterge</button>
+                        </form>
+                    </div></a>
+                    <br />
+                }
+            }
+        </div>
+        <div id="FisaUrmariri">
+            <i onclick="xFollow()" id="xFollow" class="fa-solid fa-x" aria-hidden="true"></i>
+            <form id="SearchBox" method="get" asp-controller="Profile" asp-action="SearchFollowing">
+                <div class="input-group mb-3">
+                    <input id="SearchChenar" type="text" class="form-control" name="query" placeholder="Cauta..." value="@ViewBag.Query" />
+                    <button class="btn btn-primary" type="submit"><i id="SearchIcon" class="fa fa-search" aria-hidden="true"></i></button>
+                </div>
+            </form>
+            <br />
+            @if (TempData["ListaFF"] == null)
+            {
+                @foreach (var x in db.Follows.Where(p => p.Id_Urmarit == user_Id).OrderByDescending(p => p.Data))
+                {
+                    x.Urmaritor = db.Profiles.FirstOrDefault(t => t.Id_User == x.Id_Urmaritor);
+                    <a id="link" href="/Users?username=@x.Urmaritor.Username">
+                        <div id="fUsername">
+                            <img id="fPoza" src="@x.Urmaritor.ProfileImage" />
+                            <br />
+                            <p>@x.Urmaritor.Username</p>
+                            <form method="post" asp-controller="Profile" asp-action="DeleteFollower2">
+                                <input type="hidden" name="IdUrmaritor" value="@x.Id_Urmaritor" />
+                                <input type="hidden" name="IdUrmarit" value="@x.Id_Urmarit" />
+                                <button id="deleteF" type="submit">Șterge</button>
+                            </form>
+                        </div>
+                    </a>
+                    <br />
+                }
+            }
+            else
+            {
+                @foreach (var x in JsonConvert.DeserializeObject<List<Profile>>(TempData["ListaFF"]?.ToString()).OrderBy(p => p.Username))
+                {
+                    <a id="link" href="/Users?username=@x.Username">
+                        <div id="fUsername">
+                            <img id="fPoza" src="@x.ProfileImage" />
+                            <br />
+                            <p>@x.Username</p>
+                            <form method="post" asp-controller="Profile" asp-action="DeleteFollower2">
+                                <input type="hidden" name="IdUrmaritor" value="@x.Id_User" />
+                                <input type="hidden" name="IdUrmarit" value="@user_Id" />
+                                <button id="deleteF" type="submit">Șterge</button>
+                            </form>
+                        </div>
+                    </a>
+                    <br />
+                }
+            }
+        </div>
     </div>
+
     <script src="js/profil.js"></script>
     <script src="js/thread.js"></script>
     <script src="js/CommentBox.js"></script>
+    <script src="js/fisaUrmaritori.js"></script>
     <script>
         function LikeDislike(event, form) {
             event.preventDefault(); 

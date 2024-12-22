@@ -2,6 +2,7 @@
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Data.SqlClient;
 using Microsoft.EntityFrameworkCore;
+using Newtonsoft.Json;
 using Social_Life.Data;
 using Social_Life.Models;
 using System;
@@ -186,6 +187,83 @@ namespace Social_Life.Controllers
 
             await db.SaveChangesAsync();
             return RedirectToAction("Index", "Profile", new { id = userToFollowId });
+        }
+        [HttpGet]
+        public IActionResult SearchFollow(string query)
+        {
+            if (string.IsNullOrEmpty(query))
+            {
+                TempData["ListaF"] = null;
+                return RedirectToAction("Index", "Profile");
+            }
+            var currentUserId = User.FindFirstValue(ClaimTypes.NameIdentifier);
+
+            var results = db.Profiles
+     .Where(p => db.Follows
+         .Any(f => f.Id_Urmaritor == currentUserId && f.Id_Urmarit == p.Id_User) &&
+                 (p.Username.Contains(query) || p.Nume.Contains(query) || p.Prenume.Contains(query)) &&
+                 p.Id_User != currentUserId)
+     .OrderBy(p => p.Username)
+     .ToList();
+
+
+            ViewBag.Query = query;
+            TempData["ListaF"] = JsonConvert.SerializeObject(results);
+            return RedirectToAction("Index", "Profile");
+        }
+        [HttpPost]
+        public IActionResult DeleteFollower(string idUrmaritor, string idUrmarit)
+        {
+
+            var f = db.Follows.FirstOrDefault(t => t.Id_Urmaritor == idUrmaritor && t.Id_Urmarit==idUrmarit);
+            Console.WriteLine(f);
+            if (f == null)
+            {
+                return NotFound();
+            }
+            db.Follows.Remove(f);
+            db.SaveChanges();
+
+            return RedirectToAction("Index", "Profile");
+        }
+        [HttpGet]
+        public IActionResult SearchFollowing(string query)
+        {
+            if (string.IsNullOrEmpty(query))
+            {
+                TempData["ListaFF"] = null;
+                return RedirectToAction("Index", "Profile");
+            }
+            var currentUserId = User.FindFirstValue(ClaimTypes.NameIdentifier);
+
+            var results = db.Profiles
+     .Where(p => db.Follows
+         .Any(f => f.Id_Urmarit == currentUserId && f.Id_Urmaritor == p.Id_User) &&
+                 (p.Username.Contains(query) || p.Nume.Contains(query) || p.Prenume.Contains(query)) &&
+                 p.Id_User != currentUserId)
+     .OrderBy(p => p.Username)
+     .ToList();
+
+
+            ViewBag.Query = query;
+            TempData["ListaFF"] = JsonConvert.SerializeObject(results);
+            return RedirectToAction("Index", "Profile");
+        }
+        [HttpPost]
+        public IActionResult DeleteFollower2(string idUrmaritor, string idUrmarit)
+        {
+
+            var f = db.Follows.FirstOrDefault(t => t.Id_Urmarit == idUrmarit && t.Id_Urmaritor == idUrmaritor);
+            
+            if (f == null)
+            {
+                Console.WriteLine("ewewewewewew");
+                return NotFound();
+            }
+            db.Follows.Remove(f);
+            db.SaveChanges();
+ 
+            return RedirectToAction("Index", "Profile");
         }
     }
 }

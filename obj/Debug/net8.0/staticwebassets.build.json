@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "inMRTEaiCkz1qIy3bIZ82puGr6k4VJsjlbf3pnO27ZU=",
+  "Hash": "8RP1X40OppJcrNgiGWyuo2A0EiPLvcQ7q4kTbHNzHao=",
   "Source": "Social Life",
   "BasePath": "_content/Social Life",
   "Mode": "Default",
@@ -1382,6 +1382,27 @@
       "OriginalItemSpec": "wwwroot\\css\\editThread.css"
     },
     {
+      "Identity": "C:\\Users\\mihai\\OneDrive\\Desktop\\DAW\\Social Life\\wwwroot\\css\\fisaUrmaritori.css",
+      "SourceId": "Social Life",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\mihai\\OneDrive\\Desktop\\DAW\\Social Life\\wwwroot\\",
+      "BasePath": "_content/Social Life",
+      "RelativePath": "css/fisaUrmaritori#[.{fingerprint}]?.css",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "au02mpa1pf",
+      "Integrity": "wiop2yQ1cqcvYoAqCqQ5RnsBg8dgeZju5wPXkIyqLHk=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\css\\fisaUrmaritori.css"
+    },
+    {
       "Identity": "C:\\Users\\mihai\\OneDrive\\Desktop\\DAW\\Social Life\\wwwroot\\css\\login.css",
       "SourceId": "Social Life",
       "SourceType": "Discovered",
@@ -1758,6 +1779,27 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\js\\CommentBox.js"
+    },
+    {
+      "Identity": "C:\\Users\\mihai\\OneDrive\\Desktop\\DAW\\Social Life\\wwwroot\\js\\fisaUrmaritori.js",
+      "SourceId": "Social Life",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\mihai\\OneDrive\\Desktop\\DAW\\Social Life\\wwwroot\\",
+      "BasePath": "_content/Social Life",
+      "RelativePath": "js/fisaUrmaritori#[.{fingerprint}]?.js",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "o3ykodgpox",
+      "Integrity": "XGpOgmwB8i7C7uSkRdA4PiDnZh7ZgpGY4kmALWnCAss=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\js\\fisaUrmaritori.js"
     },
     {
       "Identity": "C:\\Users\\mihai\\OneDrive\\Desktop\\DAW\\Social Life\\wwwroot\\js\\profil.js",
@@ -3268,6 +3310,88 @@
       ]
     },
     {
+      "Route": "css/fisaUrmaritori.au02mpa1pf.css",
+      "AssetFile": "C:\\Users\\mihai\\OneDrive\\Desktop\\DAW\\Social Life\\wwwroot\\css\\fisaUrmaritori.css",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "2146"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/css"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"wiop2yQ1cqcvYoAqCqQ5RnsBg8dgeZju5wPXkIyqLHk=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Sun, 22 Dec 2024 11:39:58 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "au02mpa1pf"
+        },
+        {
+          "Name": "label",
+          "Value": "css/fisaUrmaritori.css"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-wiop2yQ1cqcvYoAqCqQ5RnsBg8dgeZju5wPXkIyqLHk="
+        }
+      ]
+    },
+    {
+      "Route": "css/fisaUrmaritori.css",
+      "AssetFile": "C:\\Users\\mihai\\OneDrive\\Desktop\\DAW\\Social Life\\wwwroot\\css\\fisaUrmaritori.css",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "2146"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/css"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"wiop2yQ1cqcvYoAqCqQ5RnsBg8dgeZju5wPXkIyqLHk=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Sun, 22 Dec 2024 11:39:58 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "no-cache"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-wiop2yQ1cqcvYoAqCqQ5RnsBg8dgeZju5wPXkIyqLHk="
+        }
+      ]
+    },
+    {
       "Route": "css/login.css",
       "AssetFile": "C:\\Users\\mihai\\OneDrive\\Desktop\\DAW\\Social Life\\wwwroot\\css\\login.css",
       "Selectors": [],
@@ -3700,7 +3824,7 @@
         },
         {
           "Name": "Last-Modified",
-          "Value": "Thu, 12 Dec 2024 19:02:42 GMT"
+          "Value": "Sat, 21 Dec 2024 11:59:49 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -3745,7 +3869,7 @@
         },
         {
           "Name": "Last-Modified",
-          "Value": "Thu, 12 Dec 2024 19:02:42 GMT"
+          "Value": "Sat, 21 Dec 2024 11:59:49 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -6960,6 +7084,88 @@
         {
           "Name": "integrity",
           "Value": "sha256-Xzw6nD0E2SCRC0Qf7LZavrzSDhGMaO49bR1FVcO6dOA="
+        }
+      ]
+    },
+    {
+      "Route": "js/fisaUrmaritori.js",
+      "AssetFile": "C:\\Users\\mihai\\OneDrive\\Desktop\\DAW\\Social Life\\wwwroot\\js\\fisaUrmaritori.js",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "911"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/javascript"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"XGpOgmwB8i7C7uSkRdA4PiDnZh7ZgpGY4kmALWnCAss=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Sun, 22 Dec 2024 11:54:18 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "no-cache"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-XGpOgmwB8i7C7uSkRdA4PiDnZh7ZgpGY4kmALWnCAss="
+        }
+      ]
+    },
+    {
+      "Route": "js/fisaUrmaritori.o3ykodgpox.js",
+      "AssetFile": "C:\\Users\\mihai\\OneDrive\\Desktop\\DAW\\Social Life\\wwwroot\\js\\fisaUrmaritori.js",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "911"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/javascript"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"XGpOgmwB8i7C7uSkRdA4PiDnZh7ZgpGY4kmALWnCAss=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Sun, 22 Dec 2024 11:54:18 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "o3ykodgpox"
+        },
+        {
+          "Name": "label",
+          "Value": "js/fisaUrmaritori.js"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-XGpOgmwB8i7C7uSkRdA4PiDnZh7ZgpGY4kmALWnCAss="
         }
       ]
     },

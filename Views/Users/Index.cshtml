@@ -4,6 +4,7 @@
 @model Profile;
 @inject UserManager<ApplicationUser> UserManager
 @using System.Security.Claims
+@using Newtonsoft.Json;
 @inject ApplicationDbContext db
 @{
     var user_Id = User.FindFirst(System.Security.Claims.ClaimTypes.NameIdentifier)?.Value;
@@ -33,6 +34,7 @@
     <link rel="stylesheet" href="css/profileThread.css">
     <link rel="stylesheet" href="css/editThread.css">
     <link rel="stylesheet" href="css/CommentBox.css">
+    <link rel="stylesheet" href="css/fisaUrmaritori.css">
     <style>
         #liked {
         color: green;
@@ -123,25 +125,17 @@
                 <i class="fa fa-user" aria-hidden="true"></i>
                 <a href="@Url.Action("Index", "Profile")">PROFIL</a>
             </div>
-            <div id="buton">
+            <div id="buton" onclick="afisUrmariri()">
                 <i class="fas fa-user-friends"></i>
                 <a href="#">URMĂRITORI</a>
             </div>
-            <div id="buton">
+            <div id="buton" onclick="afisUrmaritori()">
                 <i class="fas fa-user-plus"></i>
                 <a href="#">URMĂRIRI</a>
             </div>
             <div id="buton">
-                <i class="fa-solid fa-bell"></i>
-                <a href="#">NOTIFICĂRI</a>
-            </div>
-            <div id="buton">
                 <i class="fa fa-users" aria-hidden="true"></i>
                 <a href="#">GRUPURI</a>
-            </div>
-            <div id="buton">
-                <i class="fa fa-cog" aria-hidden="true"></i>
-                <a href="#">SETĂRI</a>
             </div>
             <div id="buton">
                 <a href="Identity/Account/Logout">DECONECTEAZĂ-TE</a>
@@ -204,11 +198,11 @@
                     <h4 id="HV">POSTĂRI</h4>
                 </div>
                 <div id="Urmaritori">
-                    <h4 id="HV">@Model.NrFollowers</h4>
+                    <h4 id="HV">@((db.Follows.Where(t => t.Id_Urmarit == Model.Id_User)).Count())</h4>
                     <h4 id="HV">URMĂRITORI</h4>
                 </div>
                 <div id="Urmariri">
-                    <h4 id="HV">@Model.NrFollowing</h4>
+                    <h4 id="HV">@((db.Follows.Where(t => t.Id_Urmaritor == Model.Id_User)).Count())</h4>
                     <h4 id="HV">URMĂRIRI</h4>
                 </div>
             </div>
@@ -405,11 +399,78 @@
 
             }
         </div>
-
+        <div id="FisaUrmaritori">
+            <i onclick="xFollow()" id="xFollow" class="fa-solid fa-x" aria-hidden="true"></i>
+            <br />
+            @if (TempData["ListaF"] == null)
+            {
+                @foreach (var x in db.Follows.Where(p => p.Id_Urmaritor == Model.Id_User).OrderByDescending(p => p.Data))
+                {
+                    x.Urmarit = db.Profiles.FirstOrDefault(t => t.Id_User == x.Id_Urmarit);
+                    <a id="link" href="#">
+                        <div id="fUsername2">
+                            <img id="fPoza" src="@x.Urmarit.ProfileImage" />
+                            <br />
+                            <p>@x.Urmarit.Username</p>
+                        </div>
+                    </a>
+                    <br />
+                }
+            }
+            else
+            {
+                @foreach (var x in JsonConvert.DeserializeObject<List<Profile>>(TempData["ListaF"]?.ToString()).OrderBy(p => p.Username))
+                {
+                    <a id="link" href="#">
+                        <div id="fUsername2">
+                            <img id="fPoza" src="@x.ProfileImage" />
+                            <br />
+                            <p>@x.Username</p>
+                        </div>
+                    </a>
+                    <br />
+                }
+            }
+        </div>
+        <div id="FisaUrmariri">
+            <i onclick="xFollow()" id="xFollow" class="fa-solid fa-x" aria-hidden="true"></i>
+            <br />
+            @if (TempData["ListaFF"] == null)
+            {
+                @foreach (var x in db.Follows.Where(p => p.Id_Urmarit == Model.Id_User).OrderByDescending(p => p.Data))
+                {
+                    x.Urmaritor = db.Profiles.FirstOrDefault(t => t.Id_User == x.Id_Urmaritor);
+                    <a id="link" href="#">
+                        <div id="fUsername2">
+                            <img id="fPoza" src="@x.Urmaritor.ProfileImage" />
+                            <br />
+                            <p>@x.Urmaritor.Username</p>
+                        </div>
+                    </a>
+                    <br />
+                }
+            }
+            else
+            {
+                @foreach (var x in JsonConvert.DeserializeObject<List<Profile>>(TempData["ListaFF"]?.ToString()).OrderBy(p => p.Username))
+                {
+                    <a id="link" href="#">
+                        <div id="fUsername2">
+                            <img id="fPoza" src="@x.ProfileImage" />
+                            <br />
+                            <p>@x.Username</p>
+                
+                        </div>
+                    </a>
+                    <br />
+                }
+            }
+        </div>
     </div>
     <script src="js/profil.js"></script>
     <script src="js/thread.js"></script>
     <script src="js/CommentBox.js"></script>
+    <script src="js/fisaUrmaritori.js"></script>
     <script>
                 function LikeDislike(event, form) {
             event.preventDefault();

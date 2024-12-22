@@ -16,8 +16,6 @@ namespace Social_Life.Models
         [StringLength(50, ErrorMessage = "Descrierea nu poate avea mai mult de 50 de caractere")]
         [MinLength(5, ErrorMessage = "Descrierea trebuie sa aibă mai mult de 5 caractere")]
         public string Bio { get; set; }
-        public int NrFollowers { get; set; } = 0;
-        public int NrFollowing { get; set; } = 0;
         public bool ProfilPublic { get; set; } = true;
         public string ProfileImage { get; set; }
         public virtual ApplicationUser User { get; set; }

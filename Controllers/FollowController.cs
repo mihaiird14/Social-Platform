@@ -29,16 +29,6 @@ namespace Social_Life.Controllers
             if (existingFollow != null)
             {
                 db.Follows.Remove(existingFollow);
-
-                var userToUnfollow = db.Profiles.FirstOrDefault(p => p.Id_User == userToFollowId);
-                var currentUser = db.Profiles.FirstOrDefault(p => p.Id_User == currentUserId);
-
-                if (userToUnfollow != null)
-                    userToUnfollow.NrFollowers -= 1;
-
-                if (currentUser != null)
-                    currentUser.NrFollowing -= 1;
-
                 db.SaveChanges();
             }
             else
@@ -50,16 +40,6 @@ namespace Social_Life.Controllers
                     Data = DateTime.Now
                 };
                 db.Follows.Add(follow);
-
-                var userToFollow = db.Profiles.FirstOrDefault(p => p.Id_User == userToFollowId);
-                var currentUser = db.Profiles.FirstOrDefault(p => p.Id_User == currentUserId);
-
-                if (userToFollow != null)
-                    userToFollow.NrFollowers += 1;
-
-                if (currentUser != null)
-                    currentUser.NrFollowing += 1;
-
                 db.SaveChanges();
             }
 

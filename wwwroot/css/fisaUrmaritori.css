@@ -1,0 +1,113 @@
+#FisaUrmaritori, #FisaUrmariri {
+    position: absolute;
+    background-color: #1a1a1a;
+    width: 50vw;
+    height: 80vh;
+    display: none;
+    margin-left: 30vw;
+    margin-top: -90vh;
+    border: 2px solid #00ffcc;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+    align-items: center;
+    overflow: auto;
+}
+.dropdown{
+    z-index: -1;
+}
+#xFollow{
+    position: absolute;
+    margin-left: 47vw;
+    margin-top: 2vh;
+}
+#xFollow:hover{
+    color:red;
+}
+#fUsername {
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    text-align: center;
+    color: white;
+    border: 1px solid white;
+    width: 30vw;
+    border-radius: 20vh;
+    align-items: center;
+    align-self: center;
+    justify-content: space-between;
+}
+#fUsername2 {
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    text-align: center;
+    color: white;
+    border: 1px solid white;
+    width: 30vw;
+    border-radius: 20vh;
+    align-items: center;
+    align-self: center;
+    justify-content: space-between;
+}
+#fUsername:hover  {
+    background-color: white;
+    color: black;
+    border: 1px solid #00ffcc;
+}
+#fUsername2:hover {
+    background-color: white;
+    color: black;
+    border: 1px solid #00ffcc;
+}
+#fPoza {
+    border-radius: 25vw;
+    margin-right: -10vw;
+    margin-left: 2vw;
+    height: 5vh;
+}
+#fUsername2 p{
+    margin-right: 12vw;
+}
+#SearchBox {
+    margin-top: 5vh;
+}
+
+#SearchChenar {
+    width: 18vw;
+    height: 5vh;
+    border-radius: 25vw;
+    background: none;
+    border: 1px solid #00ffcc;
+    color: white;
+    text-align: center;
+}
+
+#SearchChenar::placeholder {
+    text-align: center;
+}
+
+#SearchIcon {
+    color: #00ffcc;
+    font-size: 3vh;
+}
+#SearchIcon:hover {
+    color: white;
+}
+form button {
+    background: none;
+    border: none;
+}
+#link{
+    font-size: 15px;
+}
+#deleteF{
+    border: 1px solid white;
+    border-radius: 20vw;
+    margin-right: 2vw;
+    color: white;
+}
+#fUsername:hover #deleteF {
+    color: black;
+    border: 1px solid black;
+}
