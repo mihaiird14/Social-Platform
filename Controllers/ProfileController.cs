@@ -257,7 +257,6 @@ namespace Social_Life.Controllers
             
             if (f == null)
             {
-                Console.WriteLine("ewewewewewew");
                 return NotFound();
             }
             db.Follows.Remove(f);

@@ -129,7 +129,7 @@
             </div>
             <div id="buton">
                 <i class="fa fa-cog" aria-hidden="true"></i>
-                <a href="#">SETĂRI</a>
+                <a asp-controller="Setari" asp-action="Index">SETĂRI</a>
             </div>
             <div id="buton">
                 <a href="Identity/Account/Logout">DECONECTEAZĂ-TE</a>
@@ -156,7 +156,12 @@
         <div id="NumeUser">
             @if (SignInManager.IsSignedIn(User))
             {
-                <h4 id="user">@User.Identity?.Name</h4>
+                @if(profile.ProfilPublic==true){
+                    <h4 id="user">@User.Identity?.Name</h4>
+                }
+                else{
+                    <h4 id="user"><i class="fa-solid fa-lock"></i> @User.Identity?.Name</h4>
+                }
 
             }
             <a href="/Profile/Edit"><button id="EditProfil">Editează</button></a>
@@ -430,7 +435,7 @@
                 @foreach (var x in db.Follows.Where(p => p.Id_Urmaritor == user_Id).OrderByDescending(p=>p.Data))
                 {
                     x.Urmarit = db.Profiles.FirstOrDefault(t => t.Id_User == x.Id_Urmarit);
-                    <a id="link" href="/Users?username=@x.Urmarit.Username"><div id="fUsername">
+                    <a id="link" onclick="xFollow()" href="/Users?username=@x.Urmarit.Username"><div id="fUsername">
                         <img id="fPoza" src="@x.Urmarit.ProfileImage" />
                         <br />
                         <p>@x.Urmarit.Username</p>
@@ -446,7 +451,7 @@
             else{
                 @foreach (var x in JsonConvert.DeserializeObject<List<Profile>>(TempData["ListaF"]?.ToString()).OrderBy(p => p.Username))
                 {
-                   <a id="link" href="/Users?username=@x.Username"> <div id="fUsername">
+                   <a id="link" onclick="xFollow()" href="/Users?username=@x.Username"> <div id="fUsername">
                         <img id="fPoza" src="@x.ProfileImage" />
                         <br />
                         <p>@x.Username</p>
@@ -474,7 +479,7 @@
                 @foreach (var x in db.Follows.Where(p => p.Id_Urmarit == user_Id).OrderByDescending(p => p.Data))
                 {
                     x.Urmaritor = db.Profiles.FirstOrDefault(t => t.Id_User == x.Id_Urmaritor);
-                    <a id="link" href="/Users?username=@x.Urmaritor.Username">
+                    <a id="link" onclick="xFollow()" href="/Users?username=@x.Urmaritor.Username">
                         <div id="fUsername">
                             <img id="fPoza" src="@x.Urmaritor.ProfileImage" />
                             <br />
@@ -493,7 +498,7 @@
             {
                 @foreach (var x in JsonConvert.DeserializeObject<List<Profile>>(TempData["ListaFF"]?.ToString()).OrderBy(p => p.Username))
                 {
-                    <a id="link" href="/Users?username=@x.Username">
+                    <a id="link" onclick="xFollow()" href="/Users?username=@x.Username">
                         <div id="fUsername">
                             <img id="fPoza" src="@x.ProfileImage" />
                             <br />

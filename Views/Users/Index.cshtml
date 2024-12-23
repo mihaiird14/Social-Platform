@@ -156,16 +156,20 @@
     <div class="paginaPrincipala">
         <img id="pozaDefaultProfil" src="@Model.ProfileImage">
         <div id="NumeUser">
-            <h4 id="user">@Model.Username</h4>
+            @if(Model.ProfilPublic==true){
+                <h4 id="user">@Model.Username</h4>
+            }
+            else{
+                <h4 id="user"><i class="fa-solid fa-lock"></i>@Model.Username</h4>
+            }
             @{
                 var currentUserId = User.FindFirstValue(ClaimTypes.NameIdentifier);
-                var alreadyFollowing = db.Follows
-                .Any(f => f.Id_Urmaritor == currentUserId && f.Id_Urmarit == Model.Id_User);
+                var urmareste = db.Follows.Any(f => f.Id_Urmaritor == currentUserId && f.Id_Urmarit == Model.Id_User);
             }
 
             <form method="post" asp-controller="Follow" asp-action="ToggleFollow">
                 <input type="hidden" name="userToFollowId" value="@Model.Id_User" />
-                @if (alreadyFollowing)
+                @if (urmareste)
 
                 {
                     <button type="submit" id="EditProfil" class="btn btn-danger">Unfollow</button>
@@ -223,249 +227,263 @@
             <br />
             <p>@Model?.Bio</p>
         </div>
+        @if (Model.ProfilPublic || urmareste)
+        {
         <div id="sectiuni">
-            <p onclick="afisPagina1()">POSTĂRI</p>
-            <!-- <p onclick="afisPagina2()">MENȚIUNI</p> -->
-            <p onclick="afisPagina3()">THREADS</p>
-        </div>
-        <div id="PostariPage">
-            <img id="nuPoze" src="imagini/logoPozeAlb.png">
-            <h3 id="nuPozeText">NU ARE POZE ÎNCĂRCATE!</h3>
+                <p onclick="afisPagina1()">POSTĂRI</p>
+                <!-- <p onclick="afisPagina2()">MENȚIUNI</p> -->
+                <p onclick="afisPagina3()">THREADS</p>
+            </div>
+            <div id="PostariPage">
+                <img id="nuPoze" src="imagini/logoPozeAlb.png">
+                <h3 id="nuPozeText">NU ARE POZE ÎNCĂRCATE!</h3>
 
-        </div>
-        <div id="MentiuniPage">
-            <img id="nuPoze" src="imagini/logoPozeAlb.png">
-            <h3 id="nuPozeText">NU EȘTI MENȚIONAT ÎN NICIO POZĂ!</h3>
-        </div>
-        <div id="NotitePage">
-            <form method="post" id="threadbox" asp-action="New">
+            </div>
+            <div id="MentiuniPage">
+                <img id="nuPoze" src="imagini/logoPozeAlb.png">
+                <h3 id="nuPozeText">NU EȘTI MENȚIONAT ÎN NICIO POZĂ!</h3>
+            </div>
+            <div id="NotitePage">
+                <form method="post" id="threadbox" asp-action="New">
 
-                <i id="xThread" class="fa-solid fa-x" onclick="threadCloseFunction()"></i>
-                <label for="note" class="note-label">ADAUGĂ UN THREAD</label>
-                <textarea id="note" class="note-textarea" placeholder="Scrie un thread..." name="ThreadText"></textarea>
-                <button class="submit-button" type="submit">Trimite</button>
-            </form>
-            @if (ViewBag.NrThread == 0)
-            {
-                <img id="nuPoze" src="imagini/thread.png">
-                <h3 id="nuPozeText">NU ARE SCRIS NICIUN THREAD!</h3>
-            }
-            else
-            {
-                @if (SignInManager.IsSignedIn(User) && user_Id==Model.Id_User)
+                    <i id="xThread" class="fa-solid fa-x" onclick="threadCloseFunction()"></i>
+                    <label for="note" class="note-label">ADAUGĂ UN THREAD</label>
+                    <textarea id="note" class="note-textarea" placeholder="Scrie un thread..." name="ThreadText"></textarea>
+                    <button class="submit-button" type="submit">Trimite</button>
+                </form>
+                @if (ViewBag.NrThread == 0)
                 {
-                    <button id="AddNotita2" onclick="threadfunction()">Adauga</button>
+                    <img id="nuPoze" src="imagini/thread.png">
+                    <h3 id="nuPozeText">NU ARE SCRIS NICIUN THREAD!</h3>
                 }
-                <div id="thread-list">
-                    @foreach (var thread in db.Threads.Where(t => t.Id_User == Model.Id_User).OrderByDescending(t => t.Date))
+                else
+                {
+                    @if (SignInManager.IsSignedIn(User) && user_Id==Model.Id_User)
                     {
+                        <button id="AddNotita2" onclick="threadfunction()">Adauga</button>
+                    }
+                    <div id="thread-list">
+                        @foreach (var thread in db.Threads.Where(t => t.Id_User == Model.Id_User).OrderByDescending(t => t.Date))
+                        {
 
-                        <div id="thread-box" class="thread-@thread.ThreadId">
-                            <img src="@thread.Profile?.ProfileImage" alt="Profil" class="profile-picture">
-                            <p class="profile-name">@thread.Profile?.Username</p>
-                            <div class="dropdown">
-                                <i class="fa fa-ellipsis-v dropdown-toggle" aria-hidden="true"></i>
-                                <div class="dropdown-menu">
-                                    <form method="post" style="display: inline;" data-thread-id="@thread.ThreadId">
-                                        <input type="hidden" name="id" value="@thread.ThreadId" />
-                                        <button type="submit" id="DeleteBT" class="dropdown-item"><i class="fa-solid fa-flag"></i>Raportează</button>
-                                    </form>
-                                </div>
-                            </div>
-                            <p id="ThreadContinut">@thread.ThreadText</p>
-                            <p id="ora">
-                                <small>@thread.Date.ToString("dd MMM yyyy, HH:mm")</small>&nbsp;
-                                @if (thread.Edited == true)
-                                {
-                                    <em>    (editat)</em>
-                                }
-                            </p>
-
-                            @{
-
-                                var userLiked = db.ThreadLikes.Any(like => like.ThreadId == thread.ThreadId && like.ProfileId == Model.Id_User);
-                                if (!SignInManager.IsSignedIn(User)) {
-                                    userLiked = false;
-                                }
-
-                            }
-                            <div class="ButoaneThread">
-                                <form id="flike" method="post" asp-controller="Thread" asp-action="ToggleLike" onsubmit="LikeDislike(event, this)">
-                                    <input type="hidden" name="threadId" value="@thread.ThreadId" />
-                                    <button type="submit" id="LikeButton">
-                                        <i id="@(userLiked ? "liked":"disliked")" class="fas fa-thumbs-up">
-                                            <span id="NrLike">@thread.ThreadLikes</span>
-                                        </i>
-                                    </button>
-                                </form>
-                                <form id="fThread" method="post" onsubmit="CommentBox(event,@thread.ThreadId)">
-                                    <input type="hidden" name="threadId" value="@thread.ThreadId" />
-                                    <button type="submit" id="ThreadButton">
-                                        <i class="fa-solid fa-comment">
-                                            <span id="NrLike">@thread.ThreadComments</span>
-                                        </i>
-                                    </button>
-                                </form>
-                            </div>
-                        </div>
-                        <div id="CommentBox-@thread.ThreadId" class="CommentBox">
-                            <i id="xCom" class="fa-solid fa-x" onclick="xCom(@thread.ThreadId)"></i>
-                            <div id="ComBoxContinut">
-                                <img alt="Profil" id="comImg">
-                                <p id="username"></p>
-                                <p id="continut"></p>
-                                <p id="ComOra"></p>
-                            </div>
-                            @if (SignInManager.IsSignedIn(User))
-                            {
-                                <form id="formCom" asp-controller="Users" asp-action="NewCom_User">
-                                    <input type="hidden" id="ThreadId" name="ThreadId" value="@thread.ThreadId" />
-                                    <input type="hidden" id="Username" name="username" value="@profile.Username" />
-                                    <textarea id="addCom" name="CommentText" placeholder="Adauga Comentariu..."></textarea>
-                                    <button type="submit" id="ButonCom">Adauga</button>
-                                </form>
-                            }
-                            @foreach (var com in db.ThreadComments.Where(c => c.ThreadId == thread.ThreadId).OrderByDescending(t => t.Date))
-                            {
-                                com.Profile = db.Profiles.FirstOrDefault(p => p.Id_User == com.Id_User);
-                                <div id="afisCom" class="afisCom-@com.ThreadCommentId">
-                                    <div class="dropdown-comentarii">
-                                        <i id="meniuComentarii" class="fa fa-ellipsis-v dropdown-toggle-comentarii" aria-hidden="true"></i>
-                                        <div class="dropdown-menu-comentarii">
-                                            @if (SignInManager.IsSignedIn(User) && user_Id == com.Profile.Id_User){
-                                                <form class="edit-thread-form-com" data-com-id="@com.ThreadCommentId" style="display: inline;" data-thread-id="@thread.ThreadId">
-                                                    <input type="hidden" name="id" value="@thread.ThreadId" />
-                                                    <button type="submit" id="EditCom" class="dropdown-item-comentarii"><i class="fas fa-edit"></i>Editează</button>
-                                                </form>
-                                            }
-                                            <form style="display: inline;" data-thread-id="@thread.ThreadId">
-                                                <input type="hidden" name="id" value="@thread.ThreadId" />
-                                                <button type="submit" id="DeleteCom" class="dropdown-item-comentarii"><i class="fa-solid fa-flag"></i>Raportează</button>
-                                            </form>
-                                            @if (SignInManager.IsSignedIn(User) && user_Id == com.Profile.Id_User)
-                                            {
-                                                <form class="delete-thread-form-com" style="display: inline;" data-com-id="@com.ThreadCommentId" data-thread-id="@thread.ThreadId">
-                                                    <input type="hidden" name="ThreadCommentId" value="@com.ThreadCommentId" />
-                                                    <button type="submit" id="DeleteCom" class="dropdown-item-comentarii"><i class="fa fa-trash" aria-hidden="true"></i>Șterge</button>
-                                                </form>
-                                            }
-                                        </div>
+                            <div id="thread-box" class="thread-@thread.ThreadId">
+                                <img src="@thread.Profile?.ProfileImage" alt="Profil" class="profile-picture">
+                                <p class="profile-name">@thread.Profile?.Username</p>
+                                <div class="dropdown">
+                                    <i class="fa fa-ellipsis-v dropdown-toggle" aria-hidden="true"></i>
+                                    <div class="dropdown-menu">
+                                        <form method="post" style="display: inline;" data-thread-id="@thread.ThreadId">
+                                            <input type="hidden" name="id" value="@thread.ThreadId" />
+                                            <button type="submit" id="DeleteBT" class="dropdown-item"><i class="fa-solid fa-flag"></i>Raportează</button>
+                                        </form>
                                     </div>
-                                    <p id="afisUser">@com.Profile.Username</p>
-                                    <p id="afisComText">@com.CommentText</p>
-                                    <p id="afisOra">
-                                        @com.Date
-                                        @if (com.Edited == true)
-                                        {
-                                            <em>(editat)</em>
-                                        }
-                                    </p>
-                                    @{
-                                        var userCMLiked = db.ThreadCommentsLikes.Any(like => like.Comment_Id == com.ThreadCommentId && like.User_id == UserManager.GetUserId(User));
-                                        
+                                </div>
+                                <p id="ThreadContinut">@thread.ThreadText</p>
+                                <p id="ora">
+                                    <small>@thread.Date.ToString("dd MMM yyyy, HH:mm")</small>&nbsp;
+                                    @if (thread.Edited == true)
+                                    {
+                                        <em>    (editat)</em>
                                     }
-                                    <form id="clike" method="post" asp-controller="Thread" asp-action="ToggleLikeComment" onsubmit="LikeDislikeCom(event, this)">
-                                        <input type="hidden" name="ThreadCommentId" value="@com.ThreadCommentId" />
-                                        <button type="submit" id="LikeComButton">
-                                            <i id="ilike" class="fas fa-thumbs-up" liked="@(userCMLiked ? "liked":"disliked")">
-                                                <span id="NrCMLike">@com.Likes</span>
+                                </p>
+
+                                @{
+
+                                    var userLiked = db.ThreadLikes.Any(like => like.ThreadId == thread.ThreadId && like.ProfileId == Model.Id_User);
+                                    if (!SignInManager.IsSignedIn(User)) {
+                                        userLiked = false;
+                                    }
+
+                                }
+                                <div class="ButoaneThread">
+                                    <form id="flike" method="post" asp-controller="Thread" asp-action="ToggleLike" onsubmit="LikeDislike(event, this)">
+                                        <input type="hidden" name="threadId" value="@thread.ThreadId" />
+                                        <button type="submit" id="LikeButton">
+                                            <i id="@(userLiked ? "liked":"disliked")" class="fas fa-thumbs-up">
+                                                <span id="NrLike">@thread.ThreadLikes</span>
+                                            </i>
+                                        </button>
+                                    </form>
+                                    <form id="fThread" method="post" onsubmit="CommentBox(event,@thread.ThreadId)">
+                                        <input type="hidden" name="threadId" value="@thread.ThreadId" />
+                                        <button type="submit" id="ThreadButton">
+                                            <i class="fa-solid fa-comment">
+                                                <span id="NrLike">@thread.ThreadComments</span>
                                             </i>
                                         </button>
                                     </form>
                                 </div>
-                                <div id="deleteComBox" class="delete-com-@com.ThreadCommentId">
-                                    <i id="xComDelete" class="fa-solid fa-x" data-com-id="@com.ThreadCommentId"></i>
-                                    <i id="dngCom" class="fa fa-exclamation-triangle" aria-hidden="true"></i>
-                                    <form id="confButton" method="post" asp-controller="Users" asp-action="DeleteCom_User" asp-route-id="@thread.ThreadId">
-                                        <input type="hidden" name="ThreadCommentId" value="@com.ThreadCommentId" />
-                                        <input type="hidden" id="Username" name="username" value="@thread.Profile.Username" />
-                                        <button type="submit" id="confirmaButtonCom">CONFIRMĂ!</button>
-                                    </form>
+                            </div>
+                            <div id="CommentBox-@thread.ThreadId" class="CommentBox">
+                                <i id="xCom" class="fa-solid fa-x" onclick="xCom(@thread.ThreadId)"></i>
+                                <div id="ComBoxContinut">
+                                    <img alt="Profil" id="comImg">
+                                    <p id="username"></p>
+                                    <p id="continut"></p>
+                                    <p id="ComOra"></p>
                                 </div>
-                                <div id="editComBox" class="editComBox-@com.ThreadCommentId">
-                                    <i id="xComEdit" class="fa-solid fa-x" data-com-id="@com.ThreadCommentId"></i>
-                                    <label for="note" class="note-label-edit-com"></label>
-                                    <form method="post" asp-controller="Users" asp-action="EditCom_User" id="editThreadBox-@thread.ThreadId">
-                                        <input type="hidden" id="ThreadId" name="ThreadCommentId" value="@com.ThreadCommentId" />
-                                        <input type="hidden" id="Username" name="username" value="@thread.Profile.Username" />
-                                        <textarea class="note-textarea-edit-com-@com.ThreadCommentId" placeholder="editeaza thread-ul..." name="CommentText">@com.CommentText</textarea>
-                                        <button class="submit-button-edit-com" type="submit">Editează!</button>
+                                @if (SignInManager.IsSignedIn(User))
+                                {
+                                    <form id="formCom" asp-controller="Users" asp-action="NewCom_User">
+                                        <input type="hidden" id="ThreadId" name="ThreadId" value="@thread.ThreadId" />
+                                        <input type="hidden" id="Username" name="username" value="@profile.Username" />
+                                        <textarea id="addCom" name="CommentText" placeholder="Adauga Comentariu..."></textarea>
+                                        <button type="submit" id="ButonCom">Adauga</button>
                                     </form>
-                                </div>
-                            }
-                        </div>
-                    }
-                </div>
+                                }
+                                @foreach (var com in db.ThreadComments.Where(c => c.ThreadId == thread.ThreadId).OrderByDescending(t => t.Date))
+                                {
+                                    com.Profile = db.Profiles.FirstOrDefault(p => p.Id_User == com.Id_User);
+                                    <div id="afisCom" class="afisCom-@com.ThreadCommentId">
+                                        <div class="dropdown-comentarii">
+                                            <i id="meniuComentarii" class="fa fa-ellipsis-v dropdown-toggle-comentarii" aria-hidden="true"></i>
+                                            <div class="dropdown-menu-comentarii">
+                                                @if (SignInManager.IsSignedIn(User) && user_Id == com.Profile.Id_User){
+                                                    <form class="edit-thread-form-com" data-com-id="@com.ThreadCommentId" style="display: inline;" data-thread-id="@thread.ThreadId">
+                                                        <input type="hidden" name="id" value="@thread.ThreadId" />
+                                                        <button type="submit" id="EditCom" class="dropdown-item-comentarii"><i class="fas fa-edit"></i>Editează</button>
+                                                    </form>
+                                                }
+                                                <form style="display: inline;" data-thread-id="@thread.ThreadId">
+                                                    <input type="hidden" name="id" value="@thread.ThreadId" />
+                                                    <button type="submit" id="DeleteCom" class="dropdown-item-comentarii"><i class="fa-solid fa-flag"></i>Raportează</button>
+                                                </form>
+                                                @if (SignInManager.IsSignedIn(User) && user_Id == com.Profile.Id_User)
+                                                {
+                                                    <form class="delete-thread-form-com" style="display: inline;" data-com-id="@com.ThreadCommentId" data-thread-id="@thread.ThreadId">
+                                                        <input type="hidden" name="ThreadCommentId" value="@com.ThreadCommentId" />
+                                                        <button type="submit" id="DeleteCom" class="dropdown-item-comentarii"><i class="fa fa-trash" aria-hidden="true"></i>Șterge</button>
+                                                    </form>
+                                                }
+                                            </div>
+                                        </div>
+                                        <p id="afisUser">@com.Profile.Username</p>
+                                        <p id="afisComText">@com.CommentText</p>
+                                        <p id="afisOra">
+                                            @com.Date
+                                            @if (com.Edited == true)
+                                            {
+                                                <em>(editat)</em>
+                                            }
+                                        </p>
+                                        @{
+                                            var userCMLiked = db.ThreadCommentsLikes.Any(like => like.Comment_Id == com.ThreadCommentId && like.User_id == UserManager.GetUserId(User));
+                                        
+                                        }
+                                        <form id="clike" method="post" asp-controller="Thread" asp-action="ToggleLikeComment" onsubmit="LikeDislikeCom(event, this)">
+                                            <input type="hidden" name="ThreadCommentId" value="@com.ThreadCommentId" />
+                                            <button type="submit" id="LikeComButton">
+                                                <i id="ilike" class="fas fa-thumbs-up" liked="@(userCMLiked ? "liked":"disliked")">
+                                                    <span id="NrCMLike">@com.Likes</span>
+                                                </i>
+                                            </button>
+                                        </form>
+                                    </div>
+                                    <div id="deleteComBox" class="delete-com-@com.ThreadCommentId">
+                                        <i id="xComDelete" class="fa-solid fa-x" data-com-id="@com.ThreadCommentId"></i>
+                                        <i id="dngCom" class="fa fa-exclamation-triangle" aria-hidden="true"></i>
+                                        <form id="confButton" method="post" asp-controller="Users" asp-action="DeleteCom_User" asp-route-id="@thread.ThreadId">
+                                            <input type="hidden" name="ThreadCommentId" value="@com.ThreadCommentId" />
+                                            <input type="hidden" id="Username" name="username" value="@thread.Profile.Username" />
+                                            <button type="submit" id="confirmaButtonCom">CONFIRMĂ!</button>
+                                        </form>
+                                    </div>
+                                    <div id="editComBox" class="editComBox-@com.ThreadCommentId">
+                                        <i id="xComEdit" class="fa-solid fa-x" data-com-id="@com.ThreadCommentId"></i>
+                                        <label for="note" class="note-label-edit-com"></label>
+                                        <form method="post" asp-controller="Users" asp-action="EditCom_User" id="editThreadBox-@thread.ThreadId">
+                                            <input type="hidden" id="ThreadId" name="ThreadCommentId" value="@com.ThreadCommentId" />
+                                            <input type="hidden" id="Username" name="username" value="@thread.Profile.Username" />
+                                            <textarea class="note-textarea-edit-com-@com.ThreadCommentId" placeholder="editeaza thread-ul..." name="CommentText">@com.CommentText</textarea>
+                                            <button class="submit-button-edit-com" type="submit">Editează!</button>
+                                        </form>
+                                    </div>
+                                }
+                            </div>
+                        }
+                    </div>
 
-            }
-        </div>
-        <div id="FisaUrmaritori">
-            <i onclick="xFollow()" id="xFollow" class="fa-solid fa-x" aria-hidden="true"></i>
-            <br />
-            @if (TempData["ListaF"] == null)
-            {
-                @foreach (var x in db.Follows.Where(p => p.Id_Urmaritor == Model.Id_User).OrderByDescending(p => p.Data))
-                {
-                    x.Urmarit = db.Profiles.FirstOrDefault(t => t.Id_User == x.Id_Urmarit);
-                    <a id="link" href="#">
-                        <div id="fUsername2">
-                            <img id="fPoza" src="@x.Urmarit.ProfileImage" />
-                            <br />
-                            <p>@x.Urmarit.Username</p>
-                        </div>
-                    </a>
-                    <br />
                 }
-            }
-            else
-            {
-                @foreach (var x in JsonConvert.DeserializeObject<List<Profile>>(TempData["ListaF"]?.ToString()).OrderBy(p => p.Username))
+            </div>
+            <div id="FisaUrmaritori">
+                <i onclick="xFollow()" id="xFollow" class="fa-solid fa-x" aria-hidden="true"></i>
+                <br />
+                @if (TempData["ListaF"] == null)
                 {
-                    <a id="link" href="#">
-                        <div id="fUsername2">
-                            <img id="fPoza" src="@x.ProfileImage" />
-                            <br />
-                            <p>@x.Username</p>
-                        </div>
-                    </a>
-                    <br />
+                    @foreach (var x in db.Follows.Where(p => p.Id_Urmaritor == Model.Id_User).OrderByDescending(p => p.Data))
+                    {
+                        x.Urmarit = db.Profiles.FirstOrDefault(t => t.Id_User == x.Id_Urmarit);
+                        <a id="link" href="#">
+                            <div id="fUsername2">
+                                <img id="fPoza" src="@x.Urmarit.ProfileImage" />
+                                <br />
+                                <p>@x.Urmarit.Username</p>
+                            </div>
+                        </a>
+                        <br />
+                    }
                 }
-            }
-        </div>
-        <div id="FisaUrmariri">
-            <i onclick="xFollow()" id="xFollow" class="fa-solid fa-x" aria-hidden="true"></i>
-            <br />
-            @if (TempData["ListaFF"] == null)
-            {
-                @foreach (var x in db.Follows.Where(p => p.Id_Urmarit == Model.Id_User).OrderByDescending(p => p.Data))
+                else
                 {
-                    x.Urmaritor = db.Profiles.FirstOrDefault(t => t.Id_User == x.Id_Urmaritor);
-                    <a id="link" href="#">
-                        <div id="fUsername2">
-                            <img id="fPoza" src="@x.Urmaritor.ProfileImage" />
-                            <br />
-                            <p>@x.Urmaritor.Username</p>
-                        </div>
-                    </a>
-                    <br />
+                    @foreach (var x in JsonConvert.DeserializeObject<List<Profile>>(TempData["ListaF"]?.ToString()).OrderBy(p => p.Username))
+                    {
+                        <a id="link" href="#">
+                            <div id="fUsername2">
+                                <img id="fPoza" src="@x.ProfileImage" />
+                                <br />
+                                <p>@x.Username</p>
+                            </div>
+                        </a>
+                        <br />
+                    }
                 }
-            }
-            else
-            {
-                @foreach (var x in JsonConvert.DeserializeObject<List<Profile>>(TempData["ListaFF"]?.ToString()).OrderBy(p => p.Username))
+            </div>
+            <div id="FisaUrmariri">
+                <i onclick="xFollow()" id="xFollow" class="fa-solid fa-x" aria-hidden="true"></i>
+                <br />
+                @if (TempData["ListaFF"] == null)
                 {
-                    <a id="link" href="#">
-                        <div id="fUsername2">
-                            <img id="fPoza" src="@x.ProfileImage" />
-                            <br />
-                            <p>@x.Username</p>
+                    @foreach (var x in db.Follows.Where(p => p.Id_Urmarit == Model.Id_User).OrderByDescending(p => p.Data))
+                    {
+                        x.Urmaritor = db.Profiles.FirstOrDefault(t => t.Id_User == x.Id_Urmaritor);
+                        <a id="link" href="#">
+                            <div id="fUsername2">
+                                <img id="fPoza" src="@x.Urmaritor.ProfileImage" />
+                                <br />
+                                <p>@x.Urmaritor.Username</p>
+                            </div>
+                        </a>
+                        <br />
+                    }
+                }
+                else
+                {
+                    @foreach (var x in JsonConvert.DeserializeObject<List<Profile>>(TempData["ListaFF"]?.ToString()).OrderBy(p => p.Username))
+                    {
+                        <a id="link" href="#">
+                            <div id="fUsername2">
+                                <img id="fPoza" src="@x.ProfileImage" />
+                                <br />
+                                <p>@x.Username</p>
                 
-                        </div>
-                    </a>
-                    <br />
+                            </div>
+                        </a>
+                        <br />
+                    }
                 }
-            }
-        </div>
+            </div>
+        }
+        else{
+            
+            <img id="ImgPrivat" src="/imagini/privat.png"/>
+            <style>
+                #ImgPrivat {
+                    height: 47vh;
+                    margin-left: 45vw;
+                    margin-top: 7vh;
+                }
+            </style>
+        }
     </div>
     <script src="js/profil.js"></script>
     <script src="js/thread.js"></script>

@@ -142,3 +142,10 @@
 	- Eliminarea butoanelor "Setari" si "Notificari" de pe paginiile altor useri
 	- Posibilitatea de a vizualiza utilizatorii care ii urmareste/ care-l urmaresc pe un user
 		(diferit de cel curent), fara a putea cauta in lista sau a accesa paginile lor din lista
+23.12.2024
+	- Adaugare pagina Setari
+	- Adaugare posibilitatea de a seta profilul pe public/privat
+	- Profilurile private sunt marcate cu un simbol langa username
+	- Un user nu poate vizualiza postarile, thread-urile, lista de urmaritori si de urmari a unui
+		user daca acesta are contul privat si nu il urmareste
+	- Fix bug care lasa deschisa lista de urmaritori/urmariri daca dadeai click pe un user din lista

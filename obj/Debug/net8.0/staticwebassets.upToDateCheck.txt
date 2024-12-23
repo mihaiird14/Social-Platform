@@ -8,6 +8,7 @@ wwwroot\css\profil.css
 wwwroot\css\profilEdit.css
 wwwroot\css\profileThread.css
 wwwroot\css\Search.css
+wwwroot\css\setari.css
 wwwroot\css\site.css
 wwwroot\css\threadForm.css
 wwwroot\favicon.ico
@@ -17,6 +18,7 @@ wwwroot\imagini\logoAlb.png
 wwwroot\imagini\logoPozeAlb.png
 wwwroot\imagini\noTextAlb.jpg
 wwwroot\imagini\pozaDefaultProfil.jpg
+wwwroot\imagini\privat.png
 wwwroot\imagini\sad.png
 wwwroot\imagini\thread.png
 wwwroot\js\CommentBox.js
