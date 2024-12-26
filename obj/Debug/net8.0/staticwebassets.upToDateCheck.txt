@@ -6,6 +6,7 @@ wwwroot\css\login.css
 wwwroot\css\logout.css
 wwwroot\css\profil.css
 wwwroot\css\profilEdit.css
+wwwroot\css\profilePostare.css
 wwwroot\css\profileThread.css
 wwwroot\css\Search.css
 wwwroot\css\setari.css
@@ -23,6 +24,7 @@ wwwroot\imagini\sad.png
 wwwroot\imagini\thread.png
 wwwroot\js\CommentBox.js
 wwwroot\js\fisaUrmaritori.js
+wwwroot\js\postare.js
 wwwroot\js\profil.js
 wwwroot\js\site.js
 wwwroot\js\thread.js
@@ -83,3 +85,8 @@ wwwroot\lib\jquery-validation\LICENSE.md
 wwwroot\lib\jquery-validation-unobtrusive\jquery.validate.unobtrusive.js
 wwwroot\lib\jquery-validation-unobtrusive\jquery.validate.unobtrusive.min.js
 wwwroot\lib\jquery-validation-unobtrusive\LICENSE.txt
+wwwroot\postari\images.jpg
+wwwroot\postari\logoAlb.png
+wwwroot\postari\noTextAlb.jpg
+wwwroot\postari\privat.png
+wwwroot\postari\sad.png

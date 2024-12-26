@@ -18,6 +18,7 @@ namespace Social_Life.Data
         public DbSet<ThreadComment> ThreadComments { get; set; }
         public DbSet<ThreadCommentsLike> ThreadCommentsLikes { get; set; }
         public DbSet<Follow> Follows { get; set; }
+        public DbSet<Postare> Postari { get; set; }
         protected override void OnModelCreating(ModelBuilder builder)
         {
 
@@ -83,6 +84,10 @@ namespace Social_Life.Data
                 .WithMany(p => p.Urmaritori)
                 .HasForeignKey(f => f.Id_Urmarit)
                 .OnDelete(DeleteBehavior.Restrict);
+            builder.Entity<Postare>()
+                .HasOne(p => p.Profile)
+                .WithMany(f=>f.Postari)
+                .HasForeignKey(p=>p.UserId);
         }
     }
 }

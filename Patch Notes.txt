@@ -149,3 +149,7 @@
 	- Un user nu poate vizualiza postarile, thread-urile, lista de urmaritori si de urmari a unui
 		user daca acesta are contul privat si nu il urmareste
 	- Fix bug care lasa deschisa lista de urmaritori/urmariri daca dadeai click pe un user din lista
+24.12.2024
+	- Design pentru butonul de la inputul pentru fisiere de pe pagina de editare a profilului
+26.12.2024
+	- Adaugare Postari (Adaugare + Vizualizare)

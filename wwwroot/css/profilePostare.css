@@ -1,0 +1,66 @@
+#PostareDetaliata
+{
+    display: none;
+    border: 2px solid #00ffcc;
+    position: absolute;
+    width: 45vw;
+    height: 80vh;
+    margin-top: -50vh;
+    margin-left: 10vw;
+    background-color: #1a1a1a;
+    justify-content: flex-start;
+    flex-direction: column;
+    align-items: center;
+}
+#pozaDT{
+    max-width: 30vw;
+    max-height: 30vh;
+    min-height: 20vh;
+    max-height: 30vh;
+    border: 1px solid #00ffcc;
+    margin-top: 2vh;
+}
+#descrierePostare{
+    border: 1px solid white;
+    margin-top: 1vh;
+    border-radius: 20px;
+    justify-content: center;
+    align-items: center;
+    padding: 0;
+    overflow-wrap: break-word;
+}
+#descReal{
+    color: white;
+    text-align: center;
+    padding: 0;
+    margin:1px;
+}
+#xVizualizare{
+    position: absolute;
+    margin-left: 42vw;
+    margin-top: 2vh;
+}
+#xVizualizare:hover{
+    color: red;
+}
+#butoanePostare{
+    display: flex;
+    flex-direction: row;
+    margin-top: 1vh;
+}
+#btnLikePostare{
+    margin-top: 1vh;
+    margin-left: 0.5vw;
+    border: 1px solid white;
+    border-radius: 50px;
+    min-width: 5vw;
+    justify-content: center;
+    text-align: center;
+}
+#btnLikePostare:hover{
+    color: black;
+    background-color: white;
+}
+#btnLikePostare:hover i{
+    color: black;
+}

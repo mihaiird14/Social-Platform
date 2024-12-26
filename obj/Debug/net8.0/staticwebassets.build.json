@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "nrafInPPo2VnpTgiAnXNUnu8REVybvKXNf2XgnyAFaA=",
+  "Hash": "IeDCYkfTqhqEMncXCNSJm7GW8TiOArCcGAwfPONJLVc=",
   "Source": "Social Life",
   "BasePath": "_content/Social Life",
   "Mode": "Default",
@@ -1459,8 +1459,8 @@
       "RelatedAsset": "",
       "AssetTraitName": "",
       "AssetTraitValue": "",
-      "Fingerprint": "5vyel93z8i",
-      "Integrity": "AZEUEfrVPmFAW0s/SNbYX2lvbXIW2H31MuTmKFhpieQ=",
+      "Fingerprint": "iuwpwghnrn",
+      "Integrity": "iqLfqgRcLBcFus+drwfMcRJIpQbrahK7hw1ANJLfzT4=",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\css\\profil.css"
@@ -1480,11 +1480,32 @@
       "RelatedAsset": "",
       "AssetTraitName": "",
       "AssetTraitValue": "",
-      "Fingerprint": "z27v6d1ta2",
-      "Integrity": "ZWC3pFuzoHDs6q5YfAxY6JD/JwGMPcPzn8x8eUPsU+c=",
+      "Fingerprint": "e3szpq9yah",
+      "Integrity": "+ukIPNJOmW8kCjoenvB5ctW9t7yT1DW5q2yqebJzrcM=",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\css\\profilEdit.css"
+    },
+    {
+      "Identity": "C:\\Users\\mihai\\OneDrive\\Desktop\\DAW\\Social Life\\wwwroot\\css\\profilePostare.css",
+      "SourceId": "Social Life",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\mihai\\OneDrive\\Desktop\\DAW\\Social Life\\wwwroot\\",
+      "BasePath": "_content/Social Life",
+      "RelativePath": "css/profilePostare#[.{fingerprint}]?.css",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "0fl7kfabtn",
+      "Integrity": "1Af+fTSy0YXK/XlLKvDy6z8WDzpAHsRCifwWPLKlduk=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\css\\profilePostare.css"
     },
     {
       "Identity": "C:\\Users\\mihai\\OneDrive\\Desktop\\DAW\\Social Life\\wwwroot\\css\\profileThread.css",
@@ -1844,6 +1865,27 @@
       "OriginalItemSpec": "wwwroot\\js\\fisaUrmaritori.js"
     },
     {
+      "Identity": "C:\\Users\\mihai\\OneDrive\\Desktop\\DAW\\Social Life\\wwwroot\\js\\postare.js",
+      "SourceId": "Social Life",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\mihai\\OneDrive\\Desktop\\DAW\\Social Life\\wwwroot\\",
+      "BasePath": "_content/Social Life",
+      "RelativePath": "js/postare#[.{fingerprint}]?.js",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "pu9koslzpg",
+      "Integrity": "4YbXsP9RvxRRAy3jpiktf/MlpbO0E1Oj7TLXg/aTKis=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\js\\postare.js"
+    },
+    {
       "Identity": "C:\\Users\\mihai\\OneDrive\\Desktop\\DAW\\Social Life\\wwwroot\\js\\profil.js",
       "SourceId": "Social Life",
       "SourceType": "Discovered",
@@ -1858,8 +1900,8 @@
       "RelatedAsset": "",
       "AssetTraitName": "",
       "AssetTraitValue": "",
-      "Fingerprint": "16j76pu0ob",
-      "Integrity": "N/meRNpdGiiVeANe4uYfGa8NSSw4b7WQLnymYM9l364=",
+      "Fingerprint": "qy6rpz91op",
+      "Integrity": "AlFqwZCWMkxk4tI5iDTQZjsQqMUH/t+EOOueKVfXWG8=",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\js\\profil.js"
@@ -3102,6 +3144,111 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\lib\\jquery-validation-unobtrusive\\LICENSE.txt"
+    },
+    {
+      "Identity": "C:\\Users\\mihai\\OneDrive\\Desktop\\DAW\\Social Life\\wwwroot\\postari\\images.jpg",
+      "SourceId": "Social Life",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\mihai\\OneDrive\\Desktop\\DAW\\Social Life\\wwwroot\\",
+      "BasePath": "_content/Social Life",
+      "RelativePath": "postari/images#[.{fingerprint}]?.jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "w99o6wxhd9",
+      "Integrity": "DCXMZAdDTeiLWp9gojhHIje7W2hg+hGzxqJt0+BNHdw=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\postari\\images.jpg"
+    },
+    {
+      "Identity": "C:\\Users\\mihai\\OneDrive\\Desktop\\DAW\\Social Life\\wwwroot\\postari\\logoAlb.png",
+      "SourceId": "Social Life",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\mihai\\OneDrive\\Desktop\\DAW\\Social Life\\wwwroot\\",
+      "BasePath": "_content/Social Life",
+      "RelativePath": "postari/logoAlb#[.{fingerprint}]?.png",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "t5nag8piuy",
+      "Integrity": "PyxaZNG0hSLoXUBmlcOPdjHV1yDoQYd40Xin+iOhcxM=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\postari\\logoAlb.png"
+    },
+    {
+      "Identity": "C:\\Users\\mihai\\OneDrive\\Desktop\\DAW\\Social Life\\wwwroot\\postari\\noTextAlb.jpg",
+      "SourceId": "Social Life",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\mihai\\OneDrive\\Desktop\\DAW\\Social Life\\wwwroot\\",
+      "BasePath": "_content/Social Life",
+      "RelativePath": "postari/noTextAlb#[.{fingerprint}]?.jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "yimeoboc9p",
+      "Integrity": "ig34G3R0LGRyqpctp32RFUznl4dXTnEgMMUtxkRKdsc=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\postari\\noTextAlb.jpg"
+    },
+    {
+      "Identity": "C:\\Users\\mihai\\OneDrive\\Desktop\\DAW\\Social Life\\wwwroot\\postari\\privat.png",
+      "SourceId": "Social Life",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\mihai\\OneDrive\\Desktop\\DAW\\Social Life\\wwwroot\\",
+      "BasePath": "_content/Social Life",
+      "RelativePath": "postari/privat#[.{fingerprint}]?.png",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "xh9nbw3u2s",
+      "Integrity": "1aqJfYbKyc07g4R5Edf/C20x1l5t6OyC2Oxx2BWPg3c=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\postari\\privat.png"
+    },
+    {
+      "Identity": "C:\\Users\\mihai\\OneDrive\\Desktop\\DAW\\Social Life\\wwwroot\\postari\\sad.png",
+      "SourceId": "Social Life",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\mihai\\OneDrive\\Desktop\\DAW\\Social Life\\wwwroot\\",
+      "BasePath": "_content/Social Life",
+      "RelativePath": "postari/sad#[.{fingerprint}]?.png",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "odkftes917",
+      "Integrity": "7EmqmvkYYCtBTIDglY9YKh+qnzWZFviGkVyaSjFdKeY=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\postari\\sad.png"
     }
   ],
   "Endpoints": [
@@ -3598,51 +3745,6 @@
       ]
     },
     {
-      "Route": "css/profil.5vyel93z8i.css",
-      "AssetFile": "C:\\Users\\mihai\\OneDrive\\Desktop\\DAW\\Social Life\\wwwroot\\css\\profil.css",
-      "Selectors": [],
-      "ResponseHeaders": [
-        {
-          "Name": "Accept-Ranges",
-          "Value": "bytes"
-        },
-        {
-          "Name": "Content-Length",
-          "Value": "4869"
-        },
-        {
-          "Name": "Content-Type",
-          "Value": "text/css"
-        },
-        {
-          "Name": "ETag",
-          "Value": "\"AZEUEfrVPmFAW0s/SNbYX2lvbXIW2H31MuTmKFhpieQ=\""
-        },
-        {
-          "Name": "Last-Modified",
-          "Value": "Mon, 23 Dec 2024 15:19:04 GMT"
-        },
-        {
-          "Name": "Cache-Control",
-          "Value": "max-age=31536000, immutable"
-        }
-      ],
-      "EndpointProperties": [
-        {
-          "Name": "fingerprint",
-          "Value": "5vyel93z8i"
-        },
-        {
-          "Name": "label",
-          "Value": "css/profil.css"
-        },
-        {
-          "Name": "integrity",
-          "Value": "sha256-AZEUEfrVPmFAW0s/SNbYX2lvbXIW2H31MuTmKFhpieQ="
-        }
-      ]
-    },
-    {
       "Route": "css/profil.css",
       "AssetFile": "C:\\Users\\mihai\\OneDrive\\Desktop\\DAW\\Social Life\\wwwroot\\css\\profil.css",
       "Selectors": [],
@@ -3653,7 +3755,7 @@
         },
         {
           "Name": "Content-Length",
-          "Value": "4869"
+          "Value": "8023"
         },
         {
           "Name": "Content-Type",
@@ -3661,11 +3763,11 @@
         },
         {
           "Name": "ETag",
-          "Value": "\"AZEUEfrVPmFAW0s/SNbYX2lvbXIW2H31MuTmKFhpieQ=\""
+          "Value": "\"iqLfqgRcLBcFus+drwfMcRJIpQbrahK7hw1ANJLfzT4=\""
         },
         {
           "Name": "Last-Modified",
-          "Value": "Mon, 23 Dec 2024 15:19:04 GMT"
+          "Value": "Thu, 26 Dec 2024 12:27:52 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -3675,7 +3777,52 @@
       "EndpointProperties": [
         {
           "Name": "integrity",
-          "Value": "sha256-AZEUEfrVPmFAW0s/SNbYX2lvbXIW2H31MuTmKFhpieQ="
+          "Value": "sha256-iqLfqgRcLBcFus+drwfMcRJIpQbrahK7hw1ANJLfzT4="
+        }
+      ]
+    },
+    {
+      "Route": "css/profil.iuwpwghnrn.css",
+      "AssetFile": "C:\\Users\\mihai\\OneDrive\\Desktop\\DAW\\Social Life\\wwwroot\\css\\profil.css",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "8023"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/css"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"iqLfqgRcLBcFus+drwfMcRJIpQbrahK7hw1ANJLfzT4=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Thu, 26 Dec 2024 12:27:52 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "iuwpwghnrn"
+        },
+        {
+          "Name": "label",
+          "Value": "css/profil.css"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-iqLfqgRcLBcFus+drwfMcRJIpQbrahK7hw1ANJLfzT4="
         }
       ]
     },
@@ -3690,7 +3837,7 @@
         },
         {
           "Name": "Content-Length",
-          "Value": "1836"
+          "Value": "2245"
         },
         {
           "Name": "Content-Type",
@@ -3698,11 +3845,11 @@
         },
         {
           "Name": "ETag",
-          "Value": "\"ZWC3pFuzoHDs6q5YfAxY6JD/JwGMPcPzn8x8eUPsU+c=\""
+          "Value": "\"+ukIPNJOmW8kCjoenvB5ctW9t7yT1DW5q2yqebJzrcM=\""
         },
         {
           "Name": "Last-Modified",
-          "Value": "Sun, 15 Dec 2024 11:38:16 GMT"
+          "Value": "Tue, 24 Dec 2024 11:45:20 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -3712,12 +3859,12 @@
       "EndpointProperties": [
         {
           "Name": "integrity",
-          "Value": "sha256-ZWC3pFuzoHDs6q5YfAxY6JD/JwGMPcPzn8x8eUPsU+c="
+          "Value": "sha256-+ukIPNJOmW8kCjoenvB5ctW9t7yT1DW5q2yqebJzrcM="
         }
       ]
     },
     {
-      "Route": "css/profilEdit.z27v6d1ta2.css",
+      "Route": "css/profilEdit.e3szpq9yah.css",
       "AssetFile": "C:\\Users\\mihai\\OneDrive\\Desktop\\DAW\\Social Life\\wwwroot\\css\\profilEdit.css",
       "Selectors": [],
       "ResponseHeaders": [
@@ -3727,7 +3874,7 @@
         },
         {
           "Name": "Content-Length",
-          "Value": "1836"
+          "Value": "2245"
         },
         {
           "Name": "Content-Type",
@@ -3735,11 +3882,11 @@
         },
         {
           "Name": "ETag",
-          "Value": "\"ZWC3pFuzoHDs6q5YfAxY6JD/JwGMPcPzn8x8eUPsU+c=\""
+          "Value": "\"+ukIPNJOmW8kCjoenvB5ctW9t7yT1DW5q2yqebJzrcM=\""
         },
         {
           "Name": "Last-Modified",
-          "Value": "Sun, 15 Dec 2024 11:38:16 GMT"
+          "Value": "Tue, 24 Dec 2024 11:45:20 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -3749,7 +3896,7 @@
       "EndpointProperties": [
         {
           "Name": "fingerprint",
-          "Value": "z27v6d1ta2"
+          "Value": "e3szpq9yah"
         },
         {
           "Name": "label",
@@ -3757,7 +3904,89 @@
         },
         {
           "Name": "integrity",
-          "Value": "sha256-ZWC3pFuzoHDs6q5YfAxY6JD/JwGMPcPzn8x8eUPsU+c="
+          "Value": "sha256-+ukIPNJOmW8kCjoenvB5ctW9t7yT1DW5q2yqebJzrcM="
+        }
+      ]
+    },
+    {
+      "Route": "css/profilePostare.0fl7kfabtn.css",
+      "AssetFile": "C:\\Users\\mihai\\OneDrive\\Desktop\\DAW\\Social Life\\wwwroot\\css\\profilePostare.css",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "1312"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/css"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"1Af+fTSy0YXK/XlLKvDy6z8WDzpAHsRCifwWPLKlduk=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Thu, 26 Dec 2024 14:04:36 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "0fl7kfabtn"
+        },
+        {
+          "Name": "label",
+          "Value": "css/profilePostare.css"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-1Af+fTSy0YXK/XlLKvDy6z8WDzpAHsRCifwWPLKlduk="
+        }
+      ]
+    },
+    {
+      "Route": "css/profilePostare.css",
+      "AssetFile": "C:\\Users\\mihai\\OneDrive\\Desktop\\DAW\\Social Life\\wwwroot\\css\\profilePostare.css",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "1312"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/css"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"1Af+fTSy0YXK/XlLKvDy6z8WDzpAHsRCifwWPLKlduk=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Thu, 26 Dec 2024 14:04:36 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "no-cache"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-1Af+fTSy0YXK/XlLKvDy6z8WDzpAHsRCifwWPLKlduk="
         }
       ]
     },
@@ -7376,8 +7605,8 @@
       ]
     },
     {
-      "Route": "js/profil.16j76pu0ob.js",
-      "AssetFile": "C:\\Users\\mihai\\OneDrive\\Desktop\\DAW\\Social Life\\wwwroot\\js\\profil.js",
+      "Route": "js/postare.js",
+      "AssetFile": "C:\\Users\\mihai\\OneDrive\\Desktop\\DAW\\Social Life\\wwwroot\\js\\postare.js",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -7386,7 +7615,7 @@
         },
         {
           "Name": "Content-Length",
-          "Value": "1230"
+          "Value": "733"
         },
         {
           "Name": "Content-Type",
@@ -7394,11 +7623,48 @@
         },
         {
           "Name": "ETag",
-          "Value": "\"N/meRNpdGiiVeANe4uYfGa8NSSw4b7WQLnymYM9l364=\""
+          "Value": "\"4YbXsP9RvxRRAy3jpiktf/MlpbO0E1Oj7TLXg/aTKis=\""
         },
         {
           "Name": "Last-Modified",
-          "Value": "Thu, 12 Dec 2024 14:27:27 GMT"
+          "Value": "Thu, 26 Dec 2024 14:03:39 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "no-cache"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-4YbXsP9RvxRRAy3jpiktf/MlpbO0E1Oj7TLXg/aTKis="
+        }
+      ]
+    },
+    {
+      "Route": "js/postare.pu9koslzpg.js",
+      "AssetFile": "C:\\Users\\mihai\\OneDrive\\Desktop\\DAW\\Social Life\\wwwroot\\js\\postare.js",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "733"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/javascript"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"4YbXsP9RvxRRAy3jpiktf/MlpbO0E1Oj7TLXg/aTKis=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Thu, 26 Dec 2024 14:03:39 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -7408,15 +7674,15 @@
       "EndpointProperties": [
         {
           "Name": "fingerprint",
-          "Value": "16j76pu0ob"
+          "Value": "pu9koslzpg"
         },
         {
           "Name": "label",
-          "Value": "js/profil.js"
+          "Value": "js/postare.js"
         },
         {
           "Name": "integrity",
-          "Value": "sha256-N/meRNpdGiiVeANe4uYfGa8NSSw4b7WQLnymYM9l364="
+          "Value": "sha256-4YbXsP9RvxRRAy3jpiktf/MlpbO0E1Oj7TLXg/aTKis="
         }
       ]
     },
@@ -7431,7 +7697,7 @@
         },
         {
           "Name": "Content-Length",
-          "Value": "1230"
+          "Value": "1592"
         },
         {
           "Name": "Content-Type",
@@ -7439,11 +7705,11 @@
         },
         {
           "Name": "ETag",
-          "Value": "\"N/meRNpdGiiVeANe4uYfGa8NSSw4b7WQLnymYM9l364=\""
+          "Value": "\"AlFqwZCWMkxk4tI5iDTQZjsQqMUH/t+EOOueKVfXWG8=\""
         },
         {
           "Name": "Last-Modified",
-          "Value": "Thu, 12 Dec 2024 14:27:27 GMT"
+          "Value": "Thu, 26 Dec 2024 12:59:18 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -7453,7 +7719,52 @@
       "EndpointProperties": [
         {
           "Name": "integrity",
-          "Value": "sha256-N/meRNpdGiiVeANe4uYfGa8NSSw4b7WQLnymYM9l364="
+          "Value": "sha256-AlFqwZCWMkxk4tI5iDTQZjsQqMUH/t+EOOueKVfXWG8="
+        }
+      ]
+    },
+    {
+      "Route": "js/profil.qy6rpz91op.js",
+      "AssetFile": "C:\\Users\\mihai\\OneDrive\\Desktop\\DAW\\Social Life\\wwwroot\\js\\profil.js",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "1592"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/javascript"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"AlFqwZCWMkxk4tI5iDTQZjsQqMUH/t+EOOueKVfXWG8=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Thu, 26 Dec 2024 12:59:18 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "qy6rpz91op"
+        },
+        {
+          "Name": "label",
+          "Value": "js/profil.js"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-AlFqwZCWMkxk4tI5iDTQZjsQqMUH/t+EOOueKVfXWG8="
         }
       ]
     },
@@ -12292,6 +12603,416 @@
         {
           "Name": "integrity",
           "Value": "sha256-z8IfXovWVa6ZfuyRYTi3B7HSkLgycsAqlcn4IbjIcxA="
+        }
+      ]
+    },
+    {
+      "Route": "postari/images.jpg",
+      "AssetFile": "C:\\Users\\mihai\\OneDrive\\Desktop\\DAW\\Social Life\\wwwroot\\postari\\images.jpg",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "8767"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/jpeg"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"DCXMZAdDTeiLWp9gojhHIje7W2hg+hGzxqJt0+BNHdw=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Wed, 25 Dec 2024 17:39:26 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=3600, must-revalidate"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-DCXMZAdDTeiLWp9gojhHIje7W2hg+hGzxqJt0+BNHdw="
+        }
+      ]
+    },
+    {
+      "Route": "postari/images.w99o6wxhd9.jpg",
+      "AssetFile": "C:\\Users\\mihai\\OneDrive\\Desktop\\DAW\\Social Life\\wwwroot\\postari\\images.jpg",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "8767"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/jpeg"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"DCXMZAdDTeiLWp9gojhHIje7W2hg+hGzxqJt0+BNHdw=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Wed, 25 Dec 2024 17:39:26 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "w99o6wxhd9"
+        },
+        {
+          "Name": "label",
+          "Value": "postari/images.jpg"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-DCXMZAdDTeiLWp9gojhHIje7W2hg+hGzxqJt0+BNHdw="
+        }
+      ]
+    },
+    {
+      "Route": "postari/logoAlb.png",
+      "AssetFile": "C:\\Users\\mihai\\OneDrive\\Desktop\\DAW\\Social Life\\wwwroot\\postari\\logoAlb.png",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "59166"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/png"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"PyxaZNG0hSLoXUBmlcOPdjHV1yDoQYd40Xin+iOhcxM=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Thu, 26 Dec 2024 12:28:23 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=3600, must-revalidate"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-PyxaZNG0hSLoXUBmlcOPdjHV1yDoQYd40Xin+iOhcxM="
+        }
+      ]
+    },
+    {
+      "Route": "postari/logoAlb.t5nag8piuy.png",
+      "AssetFile": "C:\\Users\\mihai\\OneDrive\\Desktop\\DAW\\Social Life\\wwwroot\\postari\\logoAlb.png",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "59166"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/png"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"PyxaZNG0hSLoXUBmlcOPdjHV1yDoQYd40Xin+iOhcxM=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Thu, 26 Dec 2024 12:28:23 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "t5nag8piuy"
+        },
+        {
+          "Name": "label",
+          "Value": "postari/logoAlb.png"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-PyxaZNG0hSLoXUBmlcOPdjHV1yDoQYd40Xin+iOhcxM="
+        }
+      ]
+    },
+    {
+      "Route": "postari/noTextAlb.jpg",
+      "AssetFile": "C:\\Users\\mihai\\OneDrive\\Desktop\\DAW\\Social Life\\wwwroot\\postari\\noTextAlb.jpg",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "10489"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/jpeg"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"ig34G3R0LGRyqpctp32RFUznl4dXTnEgMMUtxkRKdsc=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Thu, 26 Dec 2024 12:15:48 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=3600, must-revalidate"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-ig34G3R0LGRyqpctp32RFUznl4dXTnEgMMUtxkRKdsc="
+        }
+      ]
+    },
+    {
+      "Route": "postari/noTextAlb.yimeoboc9p.jpg",
+      "AssetFile": "C:\\Users\\mihai\\OneDrive\\Desktop\\DAW\\Social Life\\wwwroot\\postari\\noTextAlb.jpg",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "10489"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/jpeg"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"ig34G3R0LGRyqpctp32RFUznl4dXTnEgMMUtxkRKdsc=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Thu, 26 Dec 2024 12:15:48 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "yimeoboc9p"
+        },
+        {
+          "Name": "label",
+          "Value": "postari/noTextAlb.jpg"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-ig34G3R0LGRyqpctp32RFUznl4dXTnEgMMUtxkRKdsc="
+        }
+      ]
+    },
+    {
+      "Route": "postari/privat.png",
+      "AssetFile": "C:\\Users\\mihai\\OneDrive\\Desktop\\DAW\\Social Life\\wwwroot\\postari\\privat.png",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "95737"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/png"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"1aqJfYbKyc07g4R5Edf/C20x1l5t6OyC2Oxx2BWPg3c=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Thu, 26 Dec 2024 12:27:36 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=3600, must-revalidate"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-1aqJfYbKyc07g4R5Edf/C20x1l5t6OyC2Oxx2BWPg3c="
+        }
+      ]
+    },
+    {
+      "Route": "postari/privat.xh9nbw3u2s.png",
+      "AssetFile": "C:\\Users\\mihai\\OneDrive\\Desktop\\DAW\\Social Life\\wwwroot\\postari\\privat.png",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "95737"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/png"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"1aqJfYbKyc07g4R5Edf/C20x1l5t6OyC2Oxx2BWPg3c=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Thu, 26 Dec 2024 12:27:36 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "xh9nbw3u2s"
+        },
+        {
+          "Name": "label",
+          "Value": "postari/privat.png"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-1aqJfYbKyc07g4R5Edf/C20x1l5t6OyC2Oxx2BWPg3c="
+        }
+      ]
+    },
+    {
+      "Route": "postari/sad.odkftes917.png",
+      "AssetFile": "C:\\Users\\mihai\\OneDrive\\Desktop\\DAW\\Social Life\\wwwroot\\postari\\sad.png",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "49238"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/png"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"7EmqmvkYYCtBTIDglY9YKh+qnzWZFviGkVyaSjFdKeY=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Thu, 26 Dec 2024 13:38:47 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "odkftes917"
+        },
+        {
+          "Name": "label",
+          "Value": "postari/sad.png"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-7EmqmvkYYCtBTIDglY9YKh+qnzWZFviGkVyaSjFdKeY="
+        }
+      ]
+    },
+    {
+      "Route": "postari/sad.png",
+      "AssetFile": "C:\\Users\\mihai\\OneDrive\\Desktop\\DAW\\Social Life\\wwwroot\\postari\\sad.png",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "49238"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/png"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"7EmqmvkYYCtBTIDglY9YKh+qnzWZFviGkVyaSjFdKeY=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Thu, 26 Dec 2024 13:38:47 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=3600, must-revalidate"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-7EmqmvkYYCtBTIDglY9YKh+qnzWZFviGkVyaSjFdKeY="
         }
       ]
     },

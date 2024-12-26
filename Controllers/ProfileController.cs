@@ -27,6 +27,8 @@ namespace Social_Life.Controllers
             var userId = _userManager.GetUserId(User);
             int NrThread = db.Threads.Count(p => p.Id_User == userId);
             ViewBag.NrThread = NrThread;
+            int NrPostari = db.Postari.Count(p => p.UserId == userId);
+            ViewBag.NrPostari = NrPostari;
             if (TempData["ErrorMessage"] != null)
             {
                 ViewBag.ErrorMessage = TempData["ErrorMessage"].ToString();
@@ -263,6 +265,45 @@ namespace Social_Life.Controllers
             db.SaveChanges();
  
             return RedirectToAction("Index", "Profile");
+        }
+        public async Task<IActionResult> AddPostare(IFormFile ProfileImage)
+        {
+
+            var userId = _userManager.GetUserId(User);
+            var pr = db.Profiles.FirstOrDefault(p => p.Id_User == userId);
+            if (pr == null)
+            {
+                return NotFound("Profilul nu a fost găsit.");
+            }
+
+            try
+            {
+                if (ProfileImage != null && ProfileImage.Length > 0)
+                {
+                    var allowedExtensions = new[] { ".jpg", ".jpeg", ".png" };
+                    var fileExtension = Path.GetExtension(ProfileImage.FileName).ToLower();
+                    if (!allowedExtensions.Contains(fileExtension))
+                    {
+                        return View();
+                    }
+                    // Cale stocare
+                    var storagePath = Path.Combine(_env.WebRootPath, "imagini", ProfileImage.FileName);
+                    var databaseFileName = "/imagini/" + ProfileImage.FileName;
+                    using (var fileStream = new FileStream(storagePath, FileMode.Create))
+                    {
+                        await ProfileImage.CopyToAsync(fileStream);
+                    }
+                    ModelState.Remove(nameof(pr.ProfileImage));
+                    pr.ProfileImage = databaseFileName;
+                }
+                db.SaveChanges();
+                return RedirectToAction("Index", "Profile");
+            }
+            catch (Exception e)
+            {
+
+                return RedirectToAction("Edit", "Profile");
+            }
         }
     }
 }

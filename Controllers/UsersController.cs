@@ -31,6 +31,8 @@ namespace Social_Life.Controllers
             }
             int NrThread = db.Threads.Count(p => p.Id_User == user.Id);
             ViewBag.NrThread = NrThread;
+            int NrPostari = db.Postari.Count(p => p.UserId == user.Id);
+            ViewBag.NrPostari = NrPostari;
 
             return View(profile);
         }

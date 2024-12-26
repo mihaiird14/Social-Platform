@@ -41,6 +41,10 @@
       "PackagePath": "staticwebassets\\css\\profilEdit.css"
     },
     {
+      "Id": "C:\\Users\\mihai\\OneDrive\\Desktop\\DAW\\Social Life\\wwwroot\\css\\profilePostare.css",
+      "PackagePath": "staticwebassets\\css\\profilePostare.css"
+    },
+    {
       "Id": "C:\\Users\\mihai\\OneDrive\\Desktop\\DAW\\Social Life\\wwwroot\\css\\profileThread.css",
       "PackagePath": "staticwebassets\\css\\profileThread.css"
     },
@@ -103,6 +107,10 @@
     {
       "Id": "C:\\Users\\mihai\\OneDrive\\Desktop\\DAW\\Social Life\\wwwroot\\js\\fisaUrmaritori.js",
       "PackagePath": "staticwebassets\\js\\fisaUrmaritori.js"
+    },
+    {
+      "Id": "C:\\Users\\mihai\\OneDrive\\Desktop\\DAW\\Social Life\\wwwroot\\js\\postare.js",
+      "PackagePath": "staticwebassets\\js\\postare.js"
     },
     {
       "Id": "C:\\Users\\mihai\\OneDrive\\Desktop\\DAW\\Social Life\\wwwroot\\js\\profil.js",
@@ -343,6 +351,26 @@
     {
       "Id": "C:\\Users\\mihai\\OneDrive\\Desktop\\DAW\\Social Life\\wwwroot\\lib\\jquery\\dist\\jquery.min.map",
       "PackagePath": "staticwebassets\\lib\\jquery\\dist\\jquery.min.map"
+    },
+    {
+      "Id": "C:\\Users\\mihai\\OneDrive\\Desktop\\DAW\\Social Life\\wwwroot\\postari\\images.jpg",
+      "PackagePath": "staticwebassets\\postari\\images.jpg"
+    },
+    {
+      "Id": "C:\\Users\\mihai\\OneDrive\\Desktop\\DAW\\Social Life\\wwwroot\\postari\\logoAlb.png",
+      "PackagePath": "staticwebassets\\postari\\logoAlb.png"
+    },
+    {
+      "Id": "C:\\Users\\mihai\\OneDrive\\Desktop\\DAW\\Social Life\\wwwroot\\postari\\noTextAlb.jpg",
+      "PackagePath": "staticwebassets\\postari\\noTextAlb.jpg"
+    },
+    {
+      "Id": "C:\\Users\\mihai\\OneDrive\\Desktop\\DAW\\Social Life\\wwwroot\\postari\\privat.png",
+      "PackagePath": "staticwebassets\\postari\\privat.png"
+    },
+    {
+      "Id": "C:\\Users\\mihai\\OneDrive\\Desktop\\DAW\\Social Life\\wwwroot\\postari\\sad.png",
+      "PackagePath": "staticwebassets\\postari\\sad.png"
     },
     {
       "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.Social Life.Microsoft.AspNetCore.StaticWebAssetEndpoints.props",

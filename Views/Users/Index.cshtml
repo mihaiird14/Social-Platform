@@ -186,11 +186,11 @@
             {
                 <style>
                     #Arhiva, #EditProfil {
-                        visibility: hidden;
+                    visibility: hidden;
                     }
 
                     #Stats {
-                        margin-top: -15px;
+                    margin-top: -15px;
                     }
                 </style>
             }
@@ -198,7 +198,7 @@
         <div id="Stats">
             <div id="Vizibile">
                 <div id="Postari">
-                    <h4 id="HV">0</h4>
+                    <h4 id="HV">@(db.Postari.Where(t => t.UserId == Model.Id_User).Count())</h4>
                     <h4 id="HV">POSTĂRI</h4>
                 </div>
                 <div id="Urmaritori">
@@ -229,15 +229,28 @@
         </div>
         @if (Model.ProfilPublic || urmareste)
         {
-        <div id="sectiuni">
+            <div id="sectiuni">
                 <p onclick="afisPagina1()">POSTĂRI</p>
                 <!-- <p onclick="afisPagina2()">MENȚIUNI</p> -->
                 <p onclick="afisPagina3()">THREADS</p>
             </div>
             <div id="PostariPage">
-                <img id="nuPoze" src="imagini/logoPozeAlb.png">
-                <h3 id="nuPozeText">NU ARE POZE ÎNCĂRCATE!</h3>
-
+                @if (ViewBag.NrPostari == 0)
+                {
+                    <img id="nuPoze" src="imagini/logoPozeAlb.png">
+                    <h3 id="nuPozeText">NU ARE POZE ÎNCĂRCATE!</h3>
+                }
+                else
+                {
+                    <div class="grid-container">
+                        @foreach (var postare in db.Postari.Where(t => t.UserId == Model.Id_User).OrderByDescending(t => t.Data))
+                        {
+                            <div class="pozaPostata" id="postare-@postare.Id">
+                                <img src="@postare.Imagine" />
+                            </div>
+                        }
+                    </div>
+                }
             </div>
             <div id="MentiuniPage">
                 <img id="nuPoze" src="imagini/logoPozeAlb.png">

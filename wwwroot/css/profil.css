@@ -252,7 +252,28 @@ i{
     height: 36px;
     transform: translate(320%,40%);
 }
+#AddPoza2 {
+    background: transparent;
+    font-weight: 600;
+    text-decoration: none;
+    border: 1px solid white;
+    border-radius: 25px;
+    margin-left: 0vh;
+    margin-top: 0.5vw;
+    outline: none;
+    color: white;
+    transition: color 0.3s 0.1s ease-out;
+    text-align: center;
+    width: 10vw;
+    height: 36px;
+    transform: translate(320%,40%);
+}
 #AddNotita2:hover {
+    color: #36353d;
+    border: 1px solid white;
+    background-color: white;
+}
+#AddPoza2:hover {
     color: #36353d;
     border: 1px solid white;
     background-color: white;
@@ -268,4 +289,140 @@ i{
     background: rgba(255, 0, 0, 0.5);
     justify-content: center;
     align-items: center;
+}
+#addPostareDiv {
+    position: absolute;
+    display: none;
+    justify-content: center;
+    background-color: #1a1a1a;
+    width: 50vw;
+    margin-top: -45vh;
+    border: 1px solid #00ffcc;
+    height: 90vh;
+}
+#addPostareDiv h3{
+    position: absolute;
+    color: white;
+    text-align: center;
+}
+#addPostareForm{
+    margin-top: 55vh;
+    margin-left: -1vw;
+}
+input[type="file"]::file-selector-button {
+    background: none;
+    color: white;
+    border: 1px solid white;
+    border-radius: 25px;
+    transition: color 0.3s 0.1s ease-out;
+    text-align: center;
+    width: 10vw;
+    height: 5vh;
+    margin-left: 6vw;
+}
+
+input[type="file"]::file-selector-button:hover {
+    color: #36353d;
+    border: 1px solid white;
+    background-color: white;
+}
+
+input[type="file"] {
+    color: #1a1a1a
+}
+#pozaVizualizare{
+    align-self: center;
+    position: absolute;
+    min-width: 20vw;
+    max-width: 40vw;
+    height: 40vh;
+    margin-top: -30vh;
+    border: 1px solid white;
+}
+#stergePoza {
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: none;
+    color: white;
+    border: 1px solid white;
+    border-radius: 25px;
+    transition: color 0.3s 0.1s ease-out;
+    text-align: center;
+    width: 10vw;
+    height: 5vh;
+    margin-top: 55vh;
+    margin-left: 12vw;
+}
+#stergePoza:hover {
+    color: #36353d;
+    border: 1px solid white;
+    background-color: white;
+}
+#textAddDesc{
+    position:absolute;
+    margin-top: 5vh;
+    margin-left: 4vw;
+    color: white;
+}
+#TextareaDesc {
+    position: absolute;
+    margin-top: 17vh;
+    margin-left: -24vw;
+    width: 30vw;
+    text-align: center;
+    border-radius: 20px;
+    overflow: hidden;
+    word-wrap: break-word;
+    background-color: #1a1a1a;
+    border: 1px solid white;
+    color: white;
+}
+#TextareaDesc::placeholder {
+    text-align: center;
+    opacity: 0.7;
+}
+#btnPosteaza {
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: none;
+    color: white;
+    border: 1px solid white;
+    border-radius: 25px;
+    transition: color 0.3s 0.1s ease-out;
+    text-align: center;
+    width: 10vw;
+    height: 5vh;
+    margin-top: 22vh;
+    margin-left: 6vw;
+}
+#btnPosteaza:hover {
+    color: #36353d;
+    border: 1px solid white;
+    background-color: white;
+}
+#xPostare {
+    position: absolute;
+    margin-left: 45vw;
+    margin-top: 3vh;
+}
+#xPostare:hover{
+    color: red;
+}
+.grid-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1vw; 
+    margin-top: 5vh;
+    margin-left: 3vw;
+}
+.pozaPostata{
+    border: 2px solid white;
+}
+.pozaPostata img{
+    width: 20vw;
+    height: 30vh;
 }
