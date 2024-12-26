@@ -11,8 +11,12 @@
     justify-content: flex-start;
     flex-direction: column;
     align-items: center;
+    z-index:100;
 }
-#pozaDT{
+.pozaPostata:hover{
+    transform: scale(1.1);
+}
+#pozaDT {
     max-width: 30vw;
     max-height: 30vh;
     min-height: 20vh;
@@ -63,4 +67,17 @@
 }
 #btnLikePostare:hover i{
     color: black;
+}
+#meniuPostare{
+    position: absolute;
+    margin-left: 42vw;
+    margin-top: 6vh;
+}
+#meniuPostare:hover{
+    color: #00ffcc;
+}
+#meniuDeschisPostare{
+    display: none;
+    position:absolute;
+    background-color: red;
 }

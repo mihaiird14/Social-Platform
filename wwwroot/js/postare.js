@@ -11,3 +11,6 @@ function arataPostareDetaliata(id) {
 function xPostareDeschisa() {
     document.getElementById("PostareDetaliata").style.display = "none";
 }
+function openMeniuPostare() {
+    document.getElementById("meniuDeschisPostare").style.display = "flex";
+}

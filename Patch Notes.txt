@@ -153,3 +153,4 @@
 	- Design pentru butonul de la inputul pentru fisiere de pe pagina de editare a profilului
 26.12.2024
 	- Adaugare Postari (Adaugare + Vizualizare)
+	- Fix bug care nu permitea deschiderea meniului de optiuni pentru Threads

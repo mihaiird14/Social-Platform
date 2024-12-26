@@ -1,24 +1,22 @@
 ﻿function threadfunction() {
     document.getElementById('threadbox').style.display = 'flex';
     sessionStorage.setItem('addThread', 'on');
-    document.getElementById('btnMenu').style.display = 'none';
+ 
 }
 function threadCloseFunction() {
     document.getElementById('threadbox').style.display = 'none';
     sessionStorage.setItem('addThread', 'off');
-    document.getElementById('btnMenu').style.display = 'flex';
 }
 function EditthreadCloseFunction(id) {
     document.getElementById('editThreadBox-'+id).style.display = 'none';
 
 }
-document.addEventListener("DOMContentLoaded", function () {
-    const dropdownToggles = document.querySelectorAll('.dropdown-toggle');
-
+/*document.addEventListener("DOMContentLoaded", function () {
+    const dropdownToggles = document.querySelectorAll('#dropdownThread');
     dropdownToggles.forEach(toggle => {
         toggle.addEventListener('click', function (e) {
-            e.stopPropagation(); 
-            const menu = this.nextElementSibling;
+            e.stopPropagation();
+            const menu = document.getElementById("dropdownMenuThread");
 
             if (menu.style.display == "block") {
                 menu.style.display = "none";
@@ -28,11 +26,19 @@ document.addEventListener("DOMContentLoaded", function () {
         });
     });
     document.addEventListener('click', function () {
-        document.querySelectorAll('.dropdown-menu').forEach(menu => {
+        document.querySelectorAll('#dropdownMenuThread').forEach(menu => {
             menu.style.display = "none";
         });
     });
-});
+});*/
+function openMenuThreads(id) {
+    if (document.getElementById("dropdownMenuThread-" + id).style.display === "block") {
+        document.getElementById("dropdownMenuThread-" + id).style.display = "none";
+    }
+    else {
+        document.getElementById("dropdownMenuThread-" + id).style.display = "block";
+    }
+}
 document.addEventListener("DOMContentLoaded", function () {
 
     const buttons = document.querySelectorAll('.delete-thread-form');
