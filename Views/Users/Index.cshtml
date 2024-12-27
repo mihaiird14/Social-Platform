@@ -35,7 +35,11 @@
     <link rel="stylesheet" href="css/editThread.css">
     <link rel="stylesheet" href="css/CommentBox.css">
     <link rel="stylesheet" href="css/fisaUrmaritori.css">
+    <link rel="stylesheet" href="css/profilePostare.css">
     <style>
+        .pozaPostata:hover {
+            transform: scale(1.1);
+        }
         #liked {
         color: green;
         }
@@ -245,8 +249,31 @@
                     <div class="grid-container">
                         @foreach (var postare in db.Postari.Where(t => t.UserId == Model.Id_User).OrderByDescending(t => t.Data))
                         {
-                            <div class="pozaPostata" id="postare-@postare.Id">
-                                <img src="@postare.Imagine" />
+                            <div class="pozaPostata" id="postare-@postare.Id" onclick="arataPostareDetaliata(@postare.Id)">
+
+                                <img id="img-@postare.Id" src="@postare.Imagine" />
+                                <p id="descAscuns-@postare.Id" style="display:none">@postare.Descriere</p>
+                            </div>
+                            <div id="PostareDetaliata-@postare.Id">
+                                <i id="xVizualizare" class="fa-solid fa-x" onclick="xPostareDeschisa(@postare.Id)"></i>
+                                <i id="btnMenuPostare" onclick="openDropdownPostari(@postare.Id)" class="fa fa-ellipsis-v dropdown-toggle"></i>
+                                <div id="dropdownPostare-@postare.Id" class="ddPostare">
+                                   <!-- <div id="StergePostare" onclick="openConfirmareStergerePostare(@postare.Id)"><i class="fa fa-trash" aria-hidden="true"></i>Șterge</div>-->
+                                </div>
+                                <img id="pozaDT-@postare.Id" />
+                                <div id="butoanePostare">
+                                    <div id="descrierePostare-@postare.Id"><p id="descReal-@postare.Id"></p></div>
+                                    <div id="btnLikePostare"><i class="fas fa-thumbs-up"> 0 </i></div>
+                                    <div id="btnLikePostare"> <i class="fa-solid fa-comment"> 0 </i></div>
+                                </div>
+                            </div>
+                            <div id="ConfirmareStergere-@postare.Id">
+                                <i id="xConfirmaStergere" onclick="inchideConfirmaStergerePostare(@postare.Id)" class="fa-solid fa-x"></i>
+                                <i id="dngPostare" class="fa fa-exclamation-triangle" aria-hidden="true"></i>
+                                <form id="confButton" method="post" asp-controller="Postare" asp-action="Delete">
+                                    <input type="hidden" name="postareId" value="@postare.Id" />
+                                    <button type="submit" id="confirmaButtonPostare">CONFIRMĂ!</button>
+                                </form>
                             </div>
                         }
                     </div>
@@ -282,9 +309,10 @@
                             <div id="thread-box" class="thread-@thread.ThreadId">
                                 <img src="@thread.Profile?.ProfileImage" alt="Profil" class="profile-picture">
                                 <p class="profile-name">@thread.Profile?.Username</p>
-                                <div class="dropdown">
-                                    <i class="fa fa-ellipsis-v dropdown-toggle" aria-hidden="true"></i>
-                                    <div class="dropdown-menu">
+                                <div id="dropdownThread">
+
+                                    <i id="btnMenu" onclick="openMenuThreads(@thread.ThreadId)" class="fa fa-ellipsis-v dropdown-toggle" aria-hidden="true"></i>
+                                    <div id="dropdownMenuThread-@thread.ThreadId">
                                         <form method="post" style="display: inline;" data-thread-id="@thread.ThreadId">
                                             <input type="hidden" name="id" value="@thread.ThreadId" />
                                             <button type="submit" id="DeleteBT" class="dropdown-item"><i class="fa-solid fa-flag"></i>Raportează</button>
@@ -502,6 +530,7 @@
     <script src="js/thread.js"></script>
     <script src="js/CommentBox.js"></script>
     <script src="js/fisaUrmaritori.js"></script>
+    <script src="js/postare.js"></script>
     <script>
                 function LikeDislike(event, form) {
             event.preventDefault();

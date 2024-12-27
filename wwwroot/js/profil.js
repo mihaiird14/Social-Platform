@@ -3,6 +3,22 @@
     document.getElementById('MentiuniPage').style.display = 'none';
     document.getElementById('NotitePage').style.display = 'none';
     sessionStorage.setItem('activeSection', 'Postari');
+    const elemente = document.querySelectorAll('[id^="PostareDetaliata"]');
+    elemente.forEach(element => {
+        element.style.display = "none";
+    });
+    document.querySelectorAll('.ddPostare').forEach(menu => {
+        menu.style.display = "none";
+    });
+    const sterge = document.querySelectorAll('[id^="ConfirmareStergere"]');
+    sterge.forEach(x => {
+        x.style.display = "none";
+    });
+    const ddTh = document.querySelectorAll('[id^="dropdownMenuThread"]');
+    ddTh.forEach(x => {
+        x.style.display = "none";
+    });
+    document.getElementById("threadbox").style.display = "none";
 }
 
 function afisPagina2() {
@@ -17,10 +33,25 @@ function afisPagina3() {
     document.getElementById('MentiuniPage').style.display = 'none';
     document.getElementById('NotitePage').style.display = 'flex';
     sessionStorage.setItem('activeSection', 'Threads');
+    const elemente = document.querySelectorAll('[id^="PostareDetaliata"]');
+    elemente.forEach(element => {
+        element.style.display = "none";
+    });
+    document.querySelectorAll('.ddPostare').forEach(menu => {
+        menu.style.display = "none";
+    });
+    const sterge = document.querySelectorAll('[id^="ConfirmareStergere"]');
+    sterge.forEach(x => {
+        x.style.display = "none";
+    });
+    const ddTh = document.querySelectorAll('[id^="dropdownMenuThread"]');
+    ddTh.forEach(x => {
+        x.style.display = "none";
+    });
+    document.getElementById("threadbox").style.display = "none";
 }
 function postareFunction() {
     window.scrollTo({ top: 0, behavior: 'smooth' });
-    document.getElementById("PostareDetaliata").style.display = "none";
     document.getElementById("addPostareDiv").style.display = "flex";
 }
 function xPostare() {

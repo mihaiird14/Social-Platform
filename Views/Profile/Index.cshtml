@@ -262,22 +262,36 @@
                 {
                     <div class="grid-container">
                         @foreach (var postare in db.Postari.Where(t => t.UserId == user_Id).OrderByDescending(t => t.Data)){
-                                <div class="pozaPostata" id="postare-@postare.Id" onclick="arataPostareDetaliata(@postare.Id)">
+                            <div class="pozaPostata" id="postare-@postare.Id" onclick="arataPostareDetaliata(@postare.Id)">
                              
-                                <img id="img-@postare.Id"src="@postare.Imagine" />
+                                <img id="img-@postare.Id" src="@postare.Imagine" />
                                 <p id="descAscuns-@postare.Id" style="display:none">@postare.Descriere</p>
                             </div>
-                            <div id="PostareDetaliata">
-                                <i id="xVizualizare" class="fa-solid fa-x" onclick="xPostareDeschisa()"></i>
-                                <img id="pozaDT" />
+                            <div id="PostareDetaliata-@postare.Id">
+                                <i id="xVizualizare" class="fa-solid fa-x" onclick="xPostareDeschisa(@postare.Id)"></i>
+                                <i id="btnMenuPostare" onclick="openDropdownPostari(@postare.Id)" class="fa fa-ellipsis-v dropdown-toggle"></i>
+                                <div id="dropdownPostare-@postare.Id" class="ddPostare">
+                                    <div id="EditeazaPostare" onclick="openEditeazaPostarea(@postare.Id)"><i class="fas fa-edit"></i>Editează</div>
+                                    <div id="StergePostare" onclick="openConfirmareStergerePostare(@postare.Id)"><i class="fa fa-trash" aria-hidden="true"></i>Șterge</div>
+                                </div>
+                                <img id="pozaDT-@postare.Id" />
                                 <div id="butoanePostare">
-                                    <div id="descrierePostare"><p id="descReal"></p></div>
+                                    <div id="descrierePostare-@postare.Id"><p id="descReal-@postare.Id"></p></div>
                                     <div id="btnLikePostare"><i class="fas fa-thumbs-up"> 0 </i></div>
                                     <div id="btnLikePostare"> <i class="fa-solid fa-comment"> 0 </i></div>
                                 </div>
                             </div>
-                            <div id="meniuDeschisPostare">
-                                <div id="StergePostare"><i class="fa fa-trash" aria-hidden="true"></i>Șterge</div>
+                            <div id="ConfirmareStergere-@postare.Id">
+                                <i id="xConfirmaStergere" onclick="inchideConfirmaStergerePostare(@postare.Id)" class="fa-solid fa-x"></i>
+                                <i id="dngPostare" class="fa fa-exclamation-triangle" aria-hidden="true"></i>
+                                <form id="confButton" method="post" asp-controller="Postare" asp-action="Delete">
+                                    <input type="hidden" name="postareId" value="@postare.Id" />
+                                    <button type="submit" id="confirmaButtonPostare">CONFIRMĂ!</button>
+                                </form>
+                            </div>
+                            <div id="EditPostare-@postare.Id">
+                                <img id="pozaDT2-@postare.Id"/>
+                                <div id="descrierePostare2-@postare.Id"><textarea placeholder="Descriere..." id="descReal2-@postare.Id"></textarea></div>
                             </div>
                         }
                      </div>

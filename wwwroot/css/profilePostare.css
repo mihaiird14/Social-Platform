@@ -1,5 +1,4 @@
-#PostareDetaliata
-{
+[id^="PostareDetaliata"] {
     display: none;
     border: 2px solid #00ffcc;
     position: absolute;
@@ -11,12 +10,12 @@
     justify-content: flex-start;
     flex-direction: column;
     align-items: center;
-    z-index:100;
+    z-index: 100;
 }
 .pozaPostata:hover{
     transform: scale(1.1);
 }
-#pozaDT {
+[id^="pozaDT"] {
     max-width: 30vw;
     max-height: 30vh;
     min-height: 20vh;
@@ -24,7 +23,15 @@
     border: 1px solid #00ffcc;
     margin-top: 2vh;
 }
-#descrierePostare{
+[id^="pozaDT2"] {
+    max-width: 30vw;
+    max-height: 30vh;
+    min-height: 20vh;
+    max-height: 30vh;
+    border: 1px solid #00ffcc;
+    margin-top: -19vh;
+}
+[id^="descrierePostare"] {
     border: 1px solid white;
     margin-top: 1vh;
     border-radius: 20px;
@@ -33,11 +40,34 @@
     padding: 0;
     overflow-wrap: break-word;
 }
-#descReal{
+[id^="descrierePostare2"] {
+    display: flex;
+    border: 1px solid white;
+    margin-top: 4vh;
+    border-radius: 20px;
+    justify-content: center;
+    align-items: center;
+    padding: 0;
+    height: 6vh;
+    overflow-wrap: break-word;
+}
+[id^="descrierePostare2"] textarea{
+    background: none;
+    border: none;
+    width: 100%;
+    border-radius: 20px;
+}
+    [id^="descReal"] {
+        color: white;
+        text-align: center;
+        padding: 0;
+        margin: 1px;
+    }
+[id^="descReal2"] {
     color: white;
     text-align: center;
     padding: 0;
-    margin:1px;
+    margin: 1px;
 }
 #xVizualizare{
     position: absolute;
@@ -80,4 +110,101 @@
     display: none;
     position:absolute;
     background-color: red;
+}
+#btnMenuPostare {
+    position: absolute;
+    margin-left: 42vw;
+    margin-top: 6vh;
+}
+
+#btnMenuPostare:hover {
+    color: #00ffcc;
+}
+
+[id^="dropdownPostare"]{
+    display: none;
+    position: absolute;
+    background-color: #1a1a1a;
+    margin-left: 56vw;
+    margin-top: 4.8vh;
+    width: 9vw;
+    border: 1px solid #00ffcc;
+    color: white;
+    justify-content: center;
+    flex-direction: column;
+}
+#StergePostare{
+    width: 100%;
+}
+#StergePostare i {
+    color: white;
+}
+#StergePostare:hover i{
+    color: black;
+}
+#StergePostare:hover{
+    background-color: red;
+    color: black;
+}
+[id^="ConfirmareStergere"]{
+    display: none;
+    background-color: #1a1a1a;
+    position: absolute;
+    border: 2px solid #00ffcc;
+    width: 50vw;
+    height: 40vh;
+    z-index: 100;
+    margin-left: 8vw;
+    margin-top: -30vh;
+    justify-content: center;
+}
+#dngPostare{
+    font-size: 7vh;
+    margin-top: 8vh;
+}
+#confirmaButtonPostare {
+    font-size: 20px;
+    align-self: center;
+    border-radius: 25px;
+    background: none;
+    color: white;
+    background-color: red;
+    border: 1px solid red;
+    margin-top: 5vh;
+    margin-left: -7vw;
+    position: absolute;
+}
+
+#confirmaButtonPostare:hover {
+    transform: scale(1.3);
+    transition: transform ease-in 0.1s;
+}
+#xConfirmaStergere{
+    position: absolute;
+    margin-left: 45vw;
+    margin-top: 2vh;
+}
+#xConfirmaStergere:hover{
+    color: red;
+}
+#EditeazaPostare:hover{
+    background-color:white;
+    color: black;
+}
+#EditeazaPostare:hover i{
+    color: black;
+}
+[id^="EditPostare"] {
+    display: none;
+    background-color: #1a1a1a;
+    position: absolute;
+    border: 2px solid #00ffcc;
+    width: 50vw;
+    height: 60vh;
+    z-index: 100;
+    margin-left: 8vw;
+    margin-top: -30vh;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
 }

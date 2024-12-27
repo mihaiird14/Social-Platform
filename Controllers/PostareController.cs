@@ -54,5 +54,21 @@ namespace Social_Life.Controllers
             }
             return RedirectToAction("Index", "Profile");
         }
+        [HttpPost]
+        public IActionResult Delete(int postareId)
+        {
+
+            var postare = db.Postari.FirstOrDefault(t => t.Id == postareId);
+
+            if (postare == null)
+            {
+                return NotFound("Thread not found.");
+            }
+
+            db.Postari.Remove(postare);
+            db.SaveChanges();
+
+            return RedirectToAction("Index", "Profile");
+        }
     }
 }

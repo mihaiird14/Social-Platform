@@ -11,26 +11,6 @@ function EditthreadCloseFunction(id) {
     document.getElementById('editThreadBox-'+id).style.display = 'none';
 
 }
-/*document.addEventListener("DOMContentLoaded", function () {
-    const dropdownToggles = document.querySelectorAll('#dropdownThread');
-    dropdownToggles.forEach(toggle => {
-        toggle.addEventListener('click', function (e) {
-            e.stopPropagation();
-            const menu = document.getElementById("dropdownMenuThread");
-
-            if (menu.style.display == "block") {
-                menu.style.display = "none";
-            } else {
-                menu.style.display = "block";
-            }
-        });
-    });
-    document.addEventListener('click', function () {
-        document.querySelectorAll('#dropdownMenuThread').forEach(menu => {
-            menu.style.display = "none";
-        });
-    });
-});*/
 function openMenuThreads(id) {
     if (document.getElementById("dropdownMenuThread-" + id).style.display === "block") {
         document.getElementById("dropdownMenuThread-" + id).style.display = "none";
