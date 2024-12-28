@@ -19,6 +19,10 @@
         x.style.display = "none";
     });
     document.getElementById("threadbox").style.display = "none";
+    const edtPost = document.querySelectorAll('[id^="EditPostare"]');
+    edtPost.forEach(x => {
+        x.style.display = "none";
+    });
 }
 
 function afisPagina2() {
@@ -49,6 +53,10 @@ function afisPagina3() {
         x.style.display = "none";
     });
     document.getElementById("threadbox").style.display = "none";
+    const edtPost = document.querySelectorAll('[id^="EditPostare"]');
+    edtPost.forEach(x => {
+        x.style.display = "none";
+    });
 }
 function postareFunction() {
     window.scrollTo({ top: 0, behavior: 'smooth' });

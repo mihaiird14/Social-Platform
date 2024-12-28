@@ -262,8 +262,7 @@
                 {
                     <div class="grid-container">
                         @foreach (var postare in db.Postari.Where(t => t.UserId == user_Id).OrderByDescending(t => t.Data)){
-                            <div class="pozaPostata" id="postare-@postare.Id" onclick="arataPostareDetaliata(@postare.Id)">
-                             
+                            <div class="pozaPostata" id="postare-@postare.Id" onclick="arataPostareDetaliata(@postare.Id)">           
                                 <img id="img-@postare.Id" src="@postare.Imagine" />
                                 <p id="descAscuns-@postare.Id" style="display:none">@postare.Descriere</p>
                             </div>
@@ -272,6 +271,7 @@
                                 <i id="btnMenuPostare" onclick="openDropdownPostari(@postare.Id)" class="fa fa-ellipsis-v dropdown-toggle"></i>
                                 <div id="dropdownPostare-@postare.Id" class="ddPostare">
                                     <div id="EditeazaPostare" onclick="openEditeazaPostarea(@postare.Id)"><i class="fas fa-edit"></i>Editează</div>
+                                    <div id="StergePostare"><i class="fa-solid fa-flag"></i>Raportează</div>
                                     <div id="StergePostare" onclick="openConfirmareStergerePostare(@postare.Id)"><i class="fa fa-trash" aria-hidden="true"></i>Șterge</div>
                                 </div>
                                 <img id="pozaDT-@postare.Id" />
@@ -290,8 +290,14 @@
                                 </form>
                             </div>
                             <div id="EditPostare-@postare.Id">
-                                <img id="pozaDT2-@postare.Id"/>
-                                <div id="descrierePostare2-@postare.Id"><textarea placeholder="Descriere..." id="descReal2-@postare.Id"></textarea></div>
+                                <i id="xEditPostare" onclick="inchideEditPostare(@postare.Id)" class="fa-solid fa-x"></i>
+                                <form method="post" asp-controller="Postare" asp-action="EditPostare">
+                                    <img id="pozaDT2-@postare.Id" name="Imagine" value="@postare.Imagine" />
+                                    <input type="hidden" name="Id" value="@postare.Id" />
+                                    <div id="descrierePostare2-@postare.Id"><textarea name="Descriere" placeholder="Descriere..." id="descReal2-@postare.Id"></textarea></div>
+                                    <h5 id="AtentieEdit">* Poza unei postări nu poate fi editată!</h5>
+                                    <button id="ConfirmaEditeazaButon" type="submit">Editează!</button>
+                                </form>
                             </div>
                         }
                      </div>

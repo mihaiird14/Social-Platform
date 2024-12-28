@@ -41,3 +41,9 @@ function openEditeazaPostarea(id) {
     }
     document.getElementById("descReal2-" + id).innerHTML = document.getElementById("descAscuns-" + id).innerHTML
 }
+function inchideEditPostare(id) {
+    const edtPost = document.querySelectorAll('[id^="EditPostare"]');
+    edtPost.forEach(x => {
+        x.style.display = "none";
+    });
+}

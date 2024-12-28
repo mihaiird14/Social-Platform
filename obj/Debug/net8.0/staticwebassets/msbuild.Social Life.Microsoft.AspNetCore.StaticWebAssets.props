@@ -156,8 +156,8 @@
       <RelatedAsset></RelatedAsset>
       <AssetTraitName></AssetTraitName>
       <AssetTraitValue></AssetTraitValue>
-      <Fingerprint>mp02kxembh</Fingerprint>
-      <Integrity>GoisejhsR3ARLYuHyflEp1T4ptBiGfzOdlcasiAL9VY=</Integrity>
+      <Fingerprint>p8u3s87zoz</Fingerprint>
+      <Integrity>2aclGLEfXC0SQyYRuG08/ExTGJczVmoRMT1Oc1HXHrY=</Integrity>
       <CopyToOutputDirectory>Never</CopyToOutputDirectory>
       <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
       <OriginalItemSpec>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\css\profilePostare.css'))</OriginalItemSpec>
@@ -480,8 +480,8 @@
       <RelatedAsset></RelatedAsset>
       <AssetTraitName></AssetTraitName>
       <AssetTraitValue></AssetTraitValue>
-      <Fingerprint>6asnhh1aa8</Fingerprint>
-      <Integrity>7hNhxmGfKZdxOMhR5r1dWewEY9J9mox4C9ngeF27su8=</Integrity>
+      <Fingerprint>3gzqvqccqc</Fingerprint>
+      <Integrity>8xzM8YS7S28zbXDuZXqHdxFthK/XNotIHM8DYLeWxys=</Integrity>
       <CopyToOutputDirectory>Never</CopyToOutputDirectory>
       <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
       <OriginalItemSpec>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\js\postare.js'))</OriginalItemSpec>
@@ -498,8 +498,8 @@
       <RelatedAsset></RelatedAsset>
       <AssetTraitName></AssetTraitName>
       <AssetTraitValue></AssetTraitValue>
-      <Fingerprint>hkw7u8v997</Fingerprint>
-      <Integrity>XzGsUA1z5CWztZtjrz9N4Bq+U+XsdbVQASEZIH8lISA=</Integrity>
+      <Fingerprint>agjjt9tlal</Fingerprint>
+      <Integrity>OvoictTJG0kH8O6gjpSIk0o9MXKf45Z9I8E7wjQG3AY=</Integrity>
       <CopyToOutputDirectory>Never</CopyToOutputDirectory>
       <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
       <OriginalItemSpec>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\js\profil.js'))</OriginalItemSpec>
@@ -1619,6 +1619,24 @@
       <CopyToOutputDirectory>Never</CopyToOutputDirectory>
       <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
       <OriginalItemSpec>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\postari\noTextAlb.jpg'))</OriginalItemSpec>
+    </StaticWebAsset>
+    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\postari\pexels-photo-443446.jpeg'))">
+      <SourceType>Package</SourceType>
+      <SourceId>Social Life</SourceId>
+      <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
+      <BasePath>_content/Social Life</BasePath>
+      <RelativePath>postari/pexels-photo-443446.jpeg</RelativePath>
+      <AssetKind>All</AssetKind>
+      <AssetMode>All</AssetMode>
+      <AssetRole>Primary</AssetRole>
+      <RelatedAsset></RelatedAsset>
+      <AssetTraitName></AssetTraitName>
+      <AssetTraitValue></AssetTraitValue>
+      <Fingerprint>ytc4h0r2v4</Fingerprint>
+      <Integrity>CgWnFZdP9RuHEPGIN1Cf4tvwFrCUuxSDB3qqiZRDwpI=</Integrity>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+      <OriginalItemSpec>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\postari\pexels-photo-443446.jpeg'))</OriginalItemSpec>
     </StaticWebAsset>
     <StaticWebAsset Include="$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\postari\privat.png'))">
       <SourceType>Package</SourceType>

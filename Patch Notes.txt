@@ -157,3 +157,5 @@
 27.12.2024
 	- Adaugare posibilitatea de a sterge o postare
 	- Adaugare vizualizare detaliata a unei postari pe paginiile altori utilizatori
+28.12.2024
+	- Adaugare posibilitatea de a edita descrierea unei postari

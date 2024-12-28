@@ -70,5 +70,29 @@ namespace Social_Life.Controllers
 
             return RedirectToAction("Index", "Profile");
         }
+        [HttpPost]
+        public IActionResult EditPostare(Postare postare)
+        {
+            var existingPostare = db.Postari.FirstOrDefault(t => t.Id == postare.Id);
+            if (existingPostare == null)
+            {
+                return NotFound("Thread not found.");
+            }
+            existingPostare.Descriere = postare.Descriere;
+            if (postare.Descriere == null)
+            {
+                TempData["EditTh"] = "Descrierea este obligatorie!";
+                return RedirectToAction("Index", "Profile");
+            }
+            if (postare.Descriere.Length < 5 || postare.Descriere.Length > 400)
+            {
+                TempData["EditTh"] = "Descrierea trebuie sa fie intre 5 si 100 caractere";
+                return RedirectToAction("Index", "Profile");
+            }
+            TempData["EditTh"] = null;
+            db.SaveChanges();
+
+            return RedirectToAction("Index", "Profile");
+        }
     }
 }
