@@ -86,8 +86,4 @@ wwwroot\lib\jquery-validation-unobtrusive\jquery.validate.unobtrusive.js
 wwwroot\lib\jquery-validation-unobtrusive\jquery.validate.unobtrusive.min.js
 wwwroot\lib\jquery-validation-unobtrusive\LICENSE.txt
 wwwroot\postari\images.jpg
-wwwroot\postari\logoAlb.png
-wwwroot\postari\noTextAlb.jpg
 wwwroot\postari\pexels-photo-443446.jpeg
-wwwroot\postari\privat.png
-wwwroot\postari\sad.png

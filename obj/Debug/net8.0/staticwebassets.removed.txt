@@ -1,4 +1,1 @@
-C:\Users\mihai\OneDrive\Desktop\DAW\Social Life\wwwroot\postari\logoAlb.png
-C:\Users\mihai\OneDrive\Desktop\DAW\Social Life\wwwroot\postari\noTextAlb.jpg
-C:\Users\mihai\OneDrive\Desktop\DAW\Social Life\wwwroot\postari\privat.png
-C:\Users\mihai\OneDrive\Desktop\DAW\Social Life\wwwroot\postari\sad.png
+C:\Users\mihai\OneDrive\Desktop\DAW\Social Life\wwwroot\js\Like.js

@@ -263,7 +263,13 @@
                                 <img id="pozaDT-@postare.Id" />
                                 <div id="butoanePostare">
                                     <div id="descrierePostare-@postare.Id"><p id="descReal-@postare.Id"></p></div>
-                                    <div id="btnLikePostare"><i class="fas fa-thumbs-up"> 0 </i></div>
+                                    @{
+                                        var userLiked = db.PostareLikes.Any(like => like.PostareId == postare.Id && like.ProfileId == UserManager.GetUserId(User));
+                                    }
+                                    <form id="likeFormPost" method="post" asp-controller="Postare" asp-action="LikePostare" onsubmit="LikeDislikePost(event,this)">
+                                        <input type="hidden" name="postareId" value="@postare.Id" />
+                                        <button type="submit" id="btnLikePostare"><i id="@(userLiked ? "liked":"disliked")" class="fas fa-thumbs-up"><span id="NrLikePost"> @postare.NrLikePostare </span></i></button>
+                                    </form>
                                     <div id="btnLikePostare"> <i class="fa-solid fa-comment"> 0 </i></div>
                                 </div>
                             </div>
@@ -532,6 +538,55 @@
     <script src="js/fisaUrmaritori.js"></script>
     <script src="js/postare.js"></script>
     <script>
+                function LikeDislikePost(event, form) {
+            event.preventDefault();
+
+            const formData = new FormData(form);
+
+            fetch(form.action, {
+                method: form.method,
+                headers: {
+                    "Accept": "application/json",
+                },
+                body: formData,
+            })
+                .then(response => response.json())
+                .then(data => {
+
+                    if (data.success) {
+                        const likeSpan = form.querySelector("#NrLikePost");
+                        const btn = form.querySelector("i");
+                        likeSpan.textContent = data.likes;
+                        likeSpan.style.color = "green";
+                        btn.style.color = "green";
+                    } else {
+
+                        const likeSpan = form.querySelector("#NrLikePost");
+
+                        if (data.likes == null) {
+                            likeSpan.style.color = "white";
+                            const btn = form.querySelector("i");
+                            btn.style.color = "white";
+                            if (likeSpan.textContent == 1) {
+                                likeSpan.textContent = 0;
+                            }
+                            else {
+                                likeSpan.textContent = likeSpan.textContent - 1;
+                            }
+
+                        }
+                        else {
+
+                            likeSpan.style.color = "white";
+                            const btn = form.querySelector("i");
+                            btn.style.color = "white";
+                            likeSpan.textContent = data.likes;
+                        }
+                    }
+                })
+                .catch(error => console.error("Eroare la cerere:", error));
+        }
+
                 function LikeDislike(event, form) {
             event.preventDefault();
 

@@ -3,6 +3,7 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using Social_Life.Data;
 
@@ -11,9 +12,11 @@ using Social_Life.Data;
 namespace Social_Life.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    partial class ApplicationDbContextModelSnapshot : ModelSnapshot
+    [Migration("20241229091142_LikePosts3")]
+    partial class LikePosts3
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -283,6 +286,9 @@ namespace Social_Life.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
+                    b.Property<int>("NrLikePostare")
+                        .HasColumnType("int");
+
                     b.Property<string>("UserId")
                         .IsRequired()
                         .HasColumnType("nvarchar(450)");
@@ -292,6 +298,29 @@ namespace Social_Life.Migrations
                     b.HasIndex("UserId");
 
                     b.ToTable("Postari");
+                });
+
+            modelBuilder.Entity("Social_Life.Models.PostareLike", b =>
+                {
+                    b.Property<int>("PostareLikeId")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    b.Property<DateTime>("LikeDate")
+                        .HasColumnType("datetime2");
+
+                    b.Property<int>("PostareId")
+                        .HasColumnType("int");
+
+                    b.Property<string>("ProfileId")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(450)");
+
+                    b.HasKey("PostareLikeId");
+
+                    b.HasIndex("ProfileId");
+
+                    b.ToTable("PostareLikes");
                 });
 
             modelBuilder.Entity("Social_Life.Models.Profile", b =>
@@ -543,6 +572,25 @@ namespace Social_Life.Migrations
                     b.Navigation("Profile");
                 });
 
+            modelBuilder.Entity("Social_Life.Models.PostareLike", b =>
+                {
+                    b.HasOne("Social_Life.Models.Postare", "Postare")
+                        .WithMany("PostareLike")
+                        .HasForeignKey("PostareLikeId")
+                        .OnDelete(DeleteBehavior.Restrict)
+                        .IsRequired();
+
+                    b.HasOne("Social_Life.Models.Profile", "Profile")
+                        .WithMany("LikedPosts")
+                        .HasForeignKey("ProfileId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Postare");
+
+                    b.Navigation("Profile");
+                });
+
             modelBuilder.Entity("Social_Life.Models.Profile", b =>
                 {
                     b.HasOne("Social_Life.Models.ApplicationUser", "User")
@@ -628,11 +676,18 @@ namespace Social_Life.Migrations
                         .IsRequired();
                 });
 
+            modelBuilder.Entity("Social_Life.Models.Postare", b =>
+                {
+                    b.Navigation("PostareLike");
+                });
+
             modelBuilder.Entity("Social_Life.Models.Profile", b =>
                 {
                     b.Navigation("Comment_Likes");
 
                     b.Navigation("Comments");
+
+                    b.Navigation("LikedPosts");
 
                     b.Navigation("LikedThreads");
 

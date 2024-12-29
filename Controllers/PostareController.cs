@@ -41,6 +41,11 @@ namespace Social_Life.Controllers
                 {
                     await imagine.CopyToAsync(fileStream);
                 }
+                if(descriere.Length<5 || descriere.Length > 50)
+                {
+                    TempData["EditTh"] = "Descrierea trebuie sa fie intre 5 si 50 caractere";
+                    return RedirectToAction("Index", "Profile");
+                }
                 var postare = new Postare
                 {
                     UserId = User.FindFirst(ClaimTypes.NameIdentifier)?.Value, // Obține UserId-ul curent
@@ -51,6 +56,10 @@ namespace Social_Life.Controllers
                 db.Postari.Add(postare);
                 await db.SaveChangesAsync();
                 return RedirectToAction("Index", "Profile");
+            }
+            else
+            {
+                TempData["EditTh"] = "Poza este obligatorie!";
             }
             return RedirectToAction("Index", "Profile");
         }
@@ -84,15 +93,52 @@ namespace Social_Life.Controllers
                 TempData["EditTh"] = "Descrierea este obligatorie!";
                 return RedirectToAction("Index", "Profile");
             }
-            if (postare.Descriere.Length < 5 || postare.Descriere.Length > 400)
+            if (postare.Descriere.Length < 5 || postare.Descriere.Length > 50)
             {
-                TempData["EditTh"] = "Descrierea trebuie sa fie intre 5 si 100 caractere";
+                TempData["EditTh"] = "Descrierea trebuie sa fie intre 5 si 50 caractere";
                 return RedirectToAction("Index", "Profile");
             }
             TempData["EditTh"] = null;
             db.SaveChanges();
 
             return RedirectToAction("Index", "Profile");
+        }
+        [HttpPost]
+        public IActionResult LikePostare(int postareId)
+        {
+            var postare = db.Postari.FirstOrDefault(p => p.Id == postareId);
+            if (postare == null)
+            {
+                return NotFound();
+            }
+            var userId = User.FindFirstValue(ClaimTypes.NameIdentifier);
+
+            if (string.IsNullOrEmpty(userId))
+            {
+                return NotFound();
+            }
+            var userLike = db.PostareLikes.FirstOrDefault(tl => tl.PostareId == postareId && tl.ProfileId == userId);
+
+
+            if (userLike != null)
+            {
+                postare.NrLikePostare -= 1;
+                db.PostareLikes.Remove(userLike);
+                db.SaveChanges();
+                return Json(new { success = false });
+            }
+            var newLike = new PostareLike
+            {
+                PostareId = postareId,
+                ProfileId = userId,
+                LikeDate = DateTime.UtcNow
+            };
+
+            db.PostareLikes.Add(newLike);
+            postare.NrLikePostare += 1;
+
+            db.SaveChanges();
+            return Json(new { success = true, liked = true, likes = postare.NrLikePostare });
         }
     }
 }

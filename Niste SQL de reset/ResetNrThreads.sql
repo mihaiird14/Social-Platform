@@ -2,3 +2,4 @@ DBCC CHECKIDENT ('Threads', RESEED, 0);
 DBCC CHECKIDENT ('ThreadLikes', RESEED, 0);
 DBCC CHECKIDENT ('ThreadComment', RESEED, 0);
 DBCC CHECKIDENT ('Postari', RESEED, 0);
+DBCC CHECKIDENT ('PostareLikes', RESEED, 0);

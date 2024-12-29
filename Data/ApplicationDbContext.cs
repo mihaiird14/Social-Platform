@@ -19,6 +19,7 @@ namespace Social_Life.Data
         public DbSet<ThreadCommentsLike> ThreadCommentsLikes { get; set; }
         public DbSet<Follow> Follows { get; set; }
         public DbSet<Postare> Postari { get; set; }
+        public DbSet<PostareLike> PostareLikes { get; set; }
         protected override void OnModelCreating(ModelBuilder builder)
         {
 
@@ -32,6 +33,9 @@ namespace Social_Life.Data
            builder.Entity<Thread2>()
                 .Property(t => t.ThreadId)
                 .ValueGeneratedOnAdd();
+            builder.Entity<PostareLike>()
+                 .Property(t => t.PostareLikeId)
+                 .ValueGeneratedOnAdd();
             builder.Entity<Profile>()
                 .HasOne(p => p.User)
                 .WithOne(u => u.Profile)
@@ -88,6 +92,16 @@ namespace Social_Life.Data
                 .HasOne(p => p.Profile)
                 .WithMany(f=>f.Postari)
                 .HasForeignKey(p=>p.UserId);
+            builder.Entity<PostareLike>()
+                .HasOne(p => p.Postare)
+                .WithMany(t => t.PostareLike)
+                .HasForeignKey(p => p.PostareLikeId)
+                .OnDelete(DeleteBehavior.Restrict);
+
+            builder.Entity<PostareLike>()
+                .HasOne(tl => tl.Profile)
+                .WithMany(p => p.LikedPosts)
+                .HasForeignKey(p => p.ProfileId);
         }
     }
 }

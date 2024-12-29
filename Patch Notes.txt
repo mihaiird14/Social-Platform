@@ -159,3 +159,6 @@
 	- Adaugare vizualizare detaliata a unei postari pe paginiile altori utilizatori
 28.12.2024
 	- Adaugare posibilitatea de a edita descrierea unei postari
+29.12.2024
+	- Adaugare like-uri pentru postari
+	- Adaugare erori pentru descrieri prea scurte/lungi si lipsa unei poze

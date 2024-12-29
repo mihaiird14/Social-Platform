@@ -357,24 +357,8 @@
       "PackagePath": "staticwebassets\\postari\\images.jpg"
     },
     {
-      "Id": "C:\\Users\\mihai\\OneDrive\\Desktop\\DAW\\Social Life\\wwwroot\\postari\\logoAlb.png",
-      "PackagePath": "staticwebassets\\postari\\logoAlb.png"
-    },
-    {
-      "Id": "C:\\Users\\mihai\\OneDrive\\Desktop\\DAW\\Social Life\\wwwroot\\postari\\noTextAlb.jpg",
-      "PackagePath": "staticwebassets\\postari\\noTextAlb.jpg"
-    },
-    {
       "Id": "C:\\Users\\mihai\\OneDrive\\Desktop\\DAW\\Social Life\\wwwroot\\postari\\pexels-photo-443446.jpeg",
       "PackagePath": "staticwebassets\\postari\\pexels-photo-443446.jpeg"
-    },
-    {
-      "Id": "C:\\Users\\mihai\\OneDrive\\Desktop\\DAW\\Social Life\\wwwroot\\postari\\privat.png",
-      "PackagePath": "staticwebassets\\postari\\privat.png"
-    },
-    {
-      "Id": "C:\\Users\\mihai\\OneDrive\\Desktop\\DAW\\Social Life\\wwwroot\\postari\\sad.png",
-      "PackagePath": "staticwebassets\\postari\\sad.png"
     },
     {
       "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.Social Life.Microsoft.AspNetCore.StaticWebAssetEndpoints.props",

@@ -1,16 +1,15 @@
 ﻿using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
-
 namespace Social_Life.Models
 {
-    public class ThreadLike
+    public class PostareLike
     {
         [Key]
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
-        public int ThreadLikeId { get; set; }
-        public int ThreadId { get; set; } 
-        public virtual Thread2 Thread { get; set; }
-        public string ProfileId { get; set; } 
+        public int PostareLikeId { get; set; }
+        public int PostareId { get; set; }
+        public virtual Postare Postare { get; set; }
+        public string ProfileId { get; set; }
         public virtual Profile Profile { get; set; }
         public DateTime LikeDate { get; set; }
     }

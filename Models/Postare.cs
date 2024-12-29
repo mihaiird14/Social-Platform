@@ -12,6 +12,8 @@ namespace Social_Life.Models
         public string Imagine {  get; set; }
         [StringLength(50,ErrorMessage ="Descrierea trebuie sa aiba maxim 50 caractere!")]
         public string Descriere { get; set; }
+        public virtual ICollection <PostareLike> PostareLike { get; set; }
+        public int NrLikePostare { set; get; } = 0;
         public DateTime Data {  get; set; }
     }
 }
