@@ -1,4 +1,5 @@
 ﻿using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
+using Microsoft.Build.Framework;
 using Microsoft.EntityFrameworkCore;
 using Social_Life.Models;
 using System.Reflection.Emit;
@@ -20,19 +21,20 @@ namespace Social_Life.Data
         public DbSet<Follow> Follows { get; set; }
         public DbSet<Postare> Postari { get; set; }
         public DbSet<PostareLike> PostareLikes { get; set; }
+        public DbSet<PostsComment> PostsComments { get; set; }
         protected override void OnModelCreating(ModelBuilder builder)
         {
 
             base.OnModelCreating(builder);
             builder.Entity<Profile>(entity =>
             {
-                entity.HasKey(p => p.Id_User); 
+                entity.HasKey(p => p.Id_User);
                 entity.Property(p => p.Id_User)
-                      .ValueGeneratedNever(); 
+                      .ValueGeneratedNever();
             });
-           builder.Entity<Thread2>()
-                .Property(t => t.ThreadId)
-                .ValueGeneratedOnAdd();
+            builder.Entity<Thread2>()
+                 .Property(t => t.ThreadId)
+                 .ValueGeneratedOnAdd();
             builder.Entity<PostareLike>()
                  .Property(t => t.PostareLikeId)
                  .ValueGeneratedOnAdd();
@@ -42,8 +44,8 @@ namespace Social_Life.Data
                 .HasForeignKey<Profile>(p => p.Id_User)
                 .OnDelete(DeleteBehavior.Cascade);
             builder.Entity<Thread2>()
-                .HasOne(t => t.Profile)         
-                .WithMany(p => p.Threads)       
+                .HasOne(t => t.Profile)
+                .WithMany(p => p.Threads)
                 .HasForeignKey(t => t.Id_User)
                 .OnDelete(DeleteBehavior.Restrict);
 
@@ -62,15 +64,15 @@ namespace Social_Life.Data
                 .WithMany(c => c.Comments)
                 .HasForeignKey(t => t.ThreadId);
             builder.Entity<ThreadComment>()
-                .HasOne(p=>p.Profile)
-                .WithMany(c=>c.Comments)
-                .HasForeignKey(p=>p.Id_User)
+                .HasOne(p => p.Profile)
+                .WithMany(c => c.Comments)
+                .HasForeignKey(p => p.Id_User)
                 .OnDelete(DeleteBehavior.Restrict);
             builder.Entity<ThreadCommentsLike>()
                 .HasOne(tl => tl.Profile)
                 .WithMany(t => t.Comment_Likes)
                 .HasForeignKey(tl => tl.User_id);
-                
+
 
             builder.Entity<ThreadCommentsLike>()
                 .HasOne(tl => tl.ThreadComment)
@@ -90,8 +92,8 @@ namespace Social_Life.Data
                 .OnDelete(DeleteBehavior.Restrict);
             builder.Entity<Postare>()
                 .HasOne(p => p.Profile)
-                .WithMany(f=>f.Postari)
-                .HasForeignKey(p=>p.UserId);
+                .WithMany(f => f.Postari)
+                .HasForeignKey(p => p.UserId);
             builder.Entity<PostareLike>()
                 .HasOne(p => p.Postare)
                 .WithMany(t => t.PostareLike)
@@ -102,6 +104,15 @@ namespace Social_Life.Data
                 .HasOne(tl => tl.Profile)
                 .WithMany(p => p.LikedPosts)
                 .HasForeignKey(p => p.ProfileId);
+        builder.Entity<PostsComment>()
+                .HasOne(t=>t.Profile)
+                .WithMany(p=>p.PostsComments)
+                .HasForeignKey(t=>t.Id_User);
+            builder.Entity<PostsComment>()
+                .HasOne(t=>t.Postare)
+                .WithMany(t=>t.Comments)
+                .HasForeignKey(t=>t.PostId)
+                 .OnDelete(DeleteBehavior.Restrict);
         }
     }
 }

@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "a7P5mz1YQcEyvCOtlGRJIrPoXs2Wum6+scOR7O0y68s=",
+  "Hash": "o56Rz7D7L9HEZWYR0pkp1fSBYRXdYDVhLF46P2q5HCk=",
   "Source": "Social Life",
   "BasePath": "_content/Social Life",
   "Mode": "Default",
@@ -1354,8 +1354,8 @@
       "RelatedAsset": "",
       "AssetTraitName": "",
       "AssetTraitValue": "",
-      "Fingerprint": "yr67jv22s0",
-      "Integrity": "8nIDiW7SjrraD+iE01USv7YN98ay2Xsp53oZrh0R5xM=",
+      "Fingerprint": "wlkxrrfc1w",
+      "Integrity": "lB05g5rT5d9i04S/G7rzreh2bryiyVx190keAYX2UJY=",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\css\\CommentBox.css"
@@ -1879,8 +1879,8 @@
       "RelatedAsset": "",
       "AssetTraitName": "",
       "AssetTraitValue": "",
-      "Fingerprint": "3gzqvqccqc",
-      "Integrity": "8xzM8YS7S28zbXDuZXqHdxFthK/XNotIHM8DYLeWxys=",
+      "Fingerprint": "sigwd4c5wk",
+      "Integrity": "XCclxlTb2hLrtiEhJDAHz4FoGmzP226UF3hKq/dl1zs=",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\js\\postare.js"
@@ -3282,7 +3282,7 @@
         },
         {
           "Name": "Content-Length",
-          "Value": "6170"
+          "Value": "6834"
         },
         {
           "Name": "Content-Type",
@@ -3290,11 +3290,11 @@
         },
         {
           "Name": "ETag",
-          "Value": "\"8nIDiW7SjrraD+iE01USv7YN98ay2Xsp53oZrh0R5xM=\""
+          "Value": "\"lB05g5rT5d9i04S/G7rzreh2bryiyVx190keAYX2UJY=\""
         },
         {
           "Name": "Last-Modified",
-          "Value": "Mon, 16 Dec 2024 11:52:02 GMT"
+          "Value": "Fri, 03 Jan 2025 17:53:07 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -3304,12 +3304,12 @@
       "EndpointProperties": [
         {
           "Name": "integrity",
-          "Value": "sha256-8nIDiW7SjrraD+iE01USv7YN98ay2Xsp53oZrh0R5xM="
+          "Value": "sha256-lB05g5rT5d9i04S/G7rzreh2bryiyVx190keAYX2UJY="
         }
       ]
     },
     {
-      "Route": "css/CommentBox.yr67jv22s0.css",
+      "Route": "css/CommentBox.wlkxrrfc1w.css",
       "AssetFile": "C:\\Users\\mihai\\OneDrive\\Desktop\\DAW\\Social Life\\wwwroot\\css\\CommentBox.css",
       "Selectors": [],
       "ResponseHeaders": [
@@ -3319,7 +3319,7 @@
         },
         {
           "Name": "Content-Length",
-          "Value": "6170"
+          "Value": "6834"
         },
         {
           "Name": "Content-Type",
@@ -3327,11 +3327,11 @@
         },
         {
           "Name": "ETag",
-          "Value": "\"8nIDiW7SjrraD+iE01USv7YN98ay2Xsp53oZrh0R5xM=\""
+          "Value": "\"lB05g5rT5d9i04S/G7rzreh2bryiyVx190keAYX2UJY=\""
         },
         {
           "Name": "Last-Modified",
-          "Value": "Mon, 16 Dec 2024 11:52:02 GMT"
+          "Value": "Fri, 03 Jan 2025 17:53:07 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -3341,7 +3341,7 @@
       "EndpointProperties": [
         {
           "Name": "fingerprint",
-          "Value": "yr67jv22s0"
+          "Value": "wlkxrrfc1w"
         },
         {
           "Name": "label",
@@ -3349,7 +3349,7 @@
         },
         {
           "Name": "integrity",
-          "Value": "sha256-8nIDiW7SjrraD+iE01USv7YN98ay2Xsp53oZrh0R5xM="
+          "Value": "sha256-lB05g5rT5d9i04S/G7rzreh2bryiyVx190keAYX2UJY="
         }
       ]
     },
@@ -3868,7 +3868,7 @@
         },
         {
           "Name": "Last-Modified",
-          "Value": "Sat, 28 Dec 2024 15:58:41 GMT"
+          "Value": "Fri, 03 Jan 2025 17:49:58 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -3905,7 +3905,7 @@
         },
         {
           "Name": "Last-Modified",
-          "Value": "Sat, 28 Dec 2024 15:58:41 GMT"
+          "Value": "Fri, 03 Jan 2025 17:49:58 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -7542,51 +7542,6 @@
       ]
     },
     {
-      "Route": "js/postare.3gzqvqccqc.js",
-      "AssetFile": "C:\\Users\\mihai\\OneDrive\\Desktop\\DAW\\Social Life\\wwwroot\\js\\postare.js",
-      "Selectors": [],
-      "ResponseHeaders": [
-        {
-          "Name": "Accept-Ranges",
-          "Value": "bytes"
-        },
-        {
-          "Name": "Content-Length",
-          "Value": "2434"
-        },
-        {
-          "Name": "Content-Type",
-          "Value": "text/javascript"
-        },
-        {
-          "Name": "ETag",
-          "Value": "\"8xzM8YS7S28zbXDuZXqHdxFthK/XNotIHM8DYLeWxys=\""
-        },
-        {
-          "Name": "Last-Modified",
-          "Value": "Sat, 28 Dec 2024 15:59:32 GMT"
-        },
-        {
-          "Name": "Cache-Control",
-          "Value": "max-age=31536000, immutable"
-        }
-      ],
-      "EndpointProperties": [
-        {
-          "Name": "fingerprint",
-          "Value": "3gzqvqccqc"
-        },
-        {
-          "Name": "label",
-          "Value": "js/postare.js"
-        },
-        {
-          "Name": "integrity",
-          "Value": "sha256-8xzM8YS7S28zbXDuZXqHdxFthK/XNotIHM8DYLeWxys="
-        }
-      ]
-    },
-    {
       "Route": "js/postare.js",
       "AssetFile": "C:\\Users\\mihai\\OneDrive\\Desktop\\DAW\\Social Life\\wwwroot\\js\\postare.js",
       "Selectors": [],
@@ -7597,7 +7552,7 @@
         },
         {
           "Name": "Content-Length",
-          "Value": "2434"
+          "Value": "2236"
         },
         {
           "Name": "Content-Type",
@@ -7605,11 +7560,11 @@
         },
         {
           "Name": "ETag",
-          "Value": "\"8xzM8YS7S28zbXDuZXqHdxFthK/XNotIHM8DYLeWxys=\""
+          "Value": "\"XCclxlTb2hLrtiEhJDAHz4FoGmzP226UF3hKq/dl1zs=\""
         },
         {
           "Name": "Last-Modified",
-          "Value": "Sat, 28 Dec 2024 15:59:32 GMT"
+          "Value": "Fri, 03 Jan 2025 17:48:31 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -7619,7 +7574,52 @@
       "EndpointProperties": [
         {
           "Name": "integrity",
-          "Value": "sha256-8xzM8YS7S28zbXDuZXqHdxFthK/XNotIHM8DYLeWxys="
+          "Value": "sha256-XCclxlTb2hLrtiEhJDAHz4FoGmzP226UF3hKq/dl1zs="
+        }
+      ]
+    },
+    {
+      "Route": "js/postare.sigwd4c5wk.js",
+      "AssetFile": "C:\\Users\\mihai\\OneDrive\\Desktop\\DAW\\Social Life\\wwwroot\\js\\postare.js",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "2236"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/javascript"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"XCclxlTb2hLrtiEhJDAHz4FoGmzP226UF3hKq/dl1zs=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Fri, 03 Jan 2025 17:48:31 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "sigwd4c5wk"
+        },
+        {
+          "Name": "label",
+          "Value": "js/postare.js"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-XCclxlTb2hLrtiEhJDAHz4FoGmzP226UF3hKq/dl1zs="
         }
       ]
     },

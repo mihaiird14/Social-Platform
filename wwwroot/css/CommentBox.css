@@ -68,8 +68,8 @@
     background: none;
     border: 2px solid white;
     border-radius: 20px;
-    width: 400px;
-    height: 40px;
+    width: 30vw;
+    min-height: 5vh;
     color: white;
     overflow: hidden;
     word-wrap: break-word;
@@ -97,9 +97,9 @@
     outline: none;
     color: white;
     text-align: center;
-    height: 40px;
-    width: 100px;
-    margin-top: 0.5vh;
+    min-height: 5vh;
+    width: 8vw;
+    margin-top: 0.2vh;
     margin-left: 5px;
 }
 #ButonCom:hover {
@@ -322,4 +322,41 @@
 }
 #afisCom:hover i[liked="disliked"] {
     color: black;
+}
+#PostafisCom {
+    position: relative;
+    border: 2px solid white;
+    width: 30vw;
+    align-self: center;
+    margin-top: 4vh;
+    margin-left: 5vw;
+    border-radius: 25px;
+    word-wrap: break-word;
+}
+#PostafisCom:hover {
+    background-color: white;
+}
+
+#PostafisCom:hover #afisComText {
+    color: black;
+}
+#PostafisCom:hover #afisOra {
+    color: black;
+}
+#PostafisCom:hover #afisUser {
+    color: black;
+}
+.PostCommentBox{
+    margin-top: 2vh;
+    width:100%;
+    overflow: auto;
+    overflow-x: hidden;
+}
+.PostCommentBox #formCom{
+    margin-left: 5vw;
+    display: flex;
+    flex-direction: row;
+}
+.PostCommentBox #ButonCom{
+    position: relative;
 }

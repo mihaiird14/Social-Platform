@@ -140,5 +140,35 @@ namespace Social_Life.Controllers
             db.SaveChanges();
             return Json(new { success = true, liked = true, likes = postare.NrLikePostare });
         }
+        [HttpPost]
+        public IActionResult NewCom(PostsComment comentariu)
+        {
+            try
+            {
+                if (comentariu.CommentText == null)
+                {
+                    TempData["EditTh"] = "Comentariul este obligatoriu!";
+                    return RedirectToAction("Index", "Profile");
+                }
+                var postare = db.Postari.FirstOrDefault(tl => tl.Id == comentariu.PostId);
+                var userId = _userManager.GetUserId(User);
+                comentariu.Id_User = userId;
+                comentariu.Date = DateTime.Now;
+                if (comentariu.CommentText.Length < 5 || comentariu.CommentText.Length > 100)
+                {
+                    TempData["EditTh"] = "Comentariul trebuie sa fie intre 5 si 100 caractere";
+                    return RedirectToAction("Index", "Profile");
+                }
+                postare.NrComentarii += 1;
+                TempData["EditTh"] = null;
+                db.PostsComments.Add(comentariu);
+                db.SaveChanges();
+                return RedirectToAction("Index", "Profile");
+            }
+            catch (Exception e)
+            {
+                return RedirectToAction("Index", "Profile");
+            }
+        }
     }
 }

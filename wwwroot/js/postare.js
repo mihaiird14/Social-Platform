@@ -16,12 +16,7 @@ function xPostareDeschisa(id) {
     });
 }
 function openDropdownPostari(id) {
-    if (document.getElementById("dropdownPostare-" + id).style.display === "flex") {
-        document.getElementById("dropdownPostare-" + id).style.display = "none";
-    }
-    else {
-        document.getElementById("dropdownPostare-" + id).style.display = "flex";
-    }
+    document.getElementById("dropdownPostare-" + id).style.display = "flex";
 }
 function openConfirmareStergerePostare(id) {
     xPostareDeschisa(id);

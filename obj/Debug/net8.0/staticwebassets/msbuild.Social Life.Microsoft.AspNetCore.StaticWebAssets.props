@@ -30,8 +30,8 @@
       <RelatedAsset></RelatedAsset>
       <AssetTraitName></AssetTraitName>
       <AssetTraitValue></AssetTraitValue>
-      <Fingerprint>yr67jv22s0</Fingerprint>
-      <Integrity>8nIDiW7SjrraD+iE01USv7YN98ay2Xsp53oZrh0R5xM=</Integrity>
+      <Fingerprint>wlkxrrfc1w</Fingerprint>
+      <Integrity>lB05g5rT5d9i04S/G7rzreh2bryiyVx190keAYX2UJY=</Integrity>
       <CopyToOutputDirectory>Never</CopyToOutputDirectory>
       <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
       <OriginalItemSpec>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\css\CommentBox.css'))</OriginalItemSpec>
@@ -480,8 +480,8 @@
       <RelatedAsset></RelatedAsset>
       <AssetTraitName></AssetTraitName>
       <AssetTraitValue></AssetTraitValue>
-      <Fingerprint>3gzqvqccqc</Fingerprint>
-      <Integrity>8xzM8YS7S28zbXDuZXqHdxFthK/XNotIHM8DYLeWxys=</Integrity>
+      <Fingerprint>sigwd4c5wk</Fingerprint>
+      <Integrity>XCclxlTb2hLrtiEhJDAHz4FoGmzP226UF3hKq/dl1zs=</Integrity>
       <CopyToOutputDirectory>Never</CopyToOutputDirectory>
       <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
       <OriginalItemSpec>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\js\postare.js'))</OriginalItemSpec>

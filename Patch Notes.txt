@@ -162,3 +162,5 @@
 29.12.2024
 	- Adaugare like-uri pentru postari
 	- Adaugare erori pentru descrieri prea scurte/lungi si lipsa unei poze
+03.01.2025
+	- Adaugare comentarii la postari (adaugare si vizualizare)

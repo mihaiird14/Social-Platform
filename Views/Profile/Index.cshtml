@@ -285,7 +285,30 @@
                                         <input type="hidden" name="postareId" value="@postare.Id" />
                                         <button type="submit" id="btnLikePostare"><i id="@(userLiked ? "liked":"disliked")" class="fas fa-thumbs-up"><span id="NrLikePost"> @postare.NrLikePostare </span></i></button>
                                     </form>
-                                    <div id="btnLikePostare"> <i class="fa-solid fa-comment"> 0 </i></div>
+                                    <div id="btnLikePostare"> <i class="fa-solid fa-comment"> @postare.NrComentarii </i></div>
+                                </div>
+                                <div id="PostCommentBox-@postare.Id" class="PostCommentBox">
+                                    <form id="formCom" asp-controller="Postare" asp-action="NewCom">
+                                        <input type="hidden" id="Id" name="PostId" value="@postare.Id" />
+                                        <textarea id="addCom" name="CommentText" placeholder="Adauga Comentariu..."></textarea>
+                                        <button type="submit" id="ButonCom">Adauga</button>
+                                    </form>
+                                    @foreach (var com in db.PostsComments.Where(c => c.PostId == postare.Id).OrderByDescending(t => t.Date))
+                                    {
+                                        com.Profile = db.Profiles.FirstOrDefault(p => p.Id_User == com.Id_User);
+                                        <div id="PostafisCom" class="afisCom-@com.PostCommentId">
+                   
+                                            <p id="afisUser">@com.Profile?.Username</p>
+                                            <p id="afisComText">@com.CommentText</p>
+                                            <p id="afisOra">
+                                                @com.Date
+                                                @if (com.Edited == true)
+                                                {
+                                                    <em>(editat)</em>
+                                                }
+                                            </p>
+                                        </div>
+                                    }
                                 </div>
                             </div>
                             <div id="ConfirmareStergere-@postare.Id">
@@ -589,13 +612,13 @@
             }
         </div>
     </div>
-
+    <script src="js/postare.js"></script>
     <script src="js/thread.js"></script>
     <script src="js/profil.js"></script>
     <script src="js/CommentBox.js"></script>
     <script src="js/fisaUrmaritori.js"></script>
-    <script src="js/postare.js"></script>
     <script>
+
             function LikeDislikePost(event, form) {
             event.preventDefault();
 

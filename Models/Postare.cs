@@ -15,5 +15,7 @@ namespace Social_Life.Models
         public virtual ICollection <PostareLike> PostareLike { get; set; }
         public int NrLikePostare { set; get; } = 0;
         public DateTime Data {  get; set; }
+        public int NrComentarii { get; set; } = 0;
+        public virtual ICollection<PostsComment>? Comments { get; set; }
     }
 }
