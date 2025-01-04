@@ -2,10 +2,10 @@
     display: none;
     border: 2px solid #00ffcc;
     position: absolute;
-    width: 45vw;
+    width: 60vw;
     height: 80vh;
     margin-top: -50vh;
-    margin-left: 10vw;
+    margin-left: 0vw;
     background-color: #1a1a1a;
     justify-content: flex-start;
     flex-direction: column;
@@ -18,7 +18,7 @@
 .pozaPostata img{
     object-fit: fill;
 }
-    [id^="pozaDT"] {
+[id^="pozaDT"] {
     max-width: 30vw;
     max-height: 30vh;
     min-height: 20vh;
@@ -60,12 +60,12 @@
     width: 100%;
     border-radius: 20px;
 }
-    [id^="descReal"] {
-        color: white;
-        text-align: center;
-        padding: 0;
-        margin: 1px;
-    }
+[id^="descReal"] {
+    color: white;
+    text-align: center;
+    padding: 0;
+    margin: 1px;
+}
 [id^="descReal2"] {
     color: white;
     text-align: center;
@@ -74,7 +74,7 @@
 }
 #xVizualizare{
     position: absolute;
-    margin-left: 42vw;
+    margin-left: 55vw;
     margin-top: 2vh;
 }
 #xVizualizare:hover{
@@ -116,7 +116,7 @@
 }
 #btnMenuPostare {
     position: absolute;
-    margin-left: 42vw;
+    margin-left: 55vw;
     margin-top: 6vh;
 }
 
@@ -128,13 +128,14 @@
     display: none;
     position: absolute;
     background-color: #1a1a1a;
-    margin-left: 56vw;
+    margin-left: 72vw;
     margin-top: 4.8vh;
     width: 9vw;
     border: 1px solid #00ffcc;
     color: white;
     justify-content: center;
     flex-direction: column;
+    cursor: pointer;
 }
 #StergePostare{
     width: 100%;

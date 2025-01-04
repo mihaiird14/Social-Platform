@@ -78,6 +78,7 @@ document.addEventListener("DOMContentLoaded", function () {
             document.querySelector('.delete-com-' + comId).style.display = 'none';
             document.querySelector('.afisCom-' + comId).style.display = 'none';
             document.querySelector('.editComBox-' + comId).style.display = 'flex';
+          
         });
     });
 });

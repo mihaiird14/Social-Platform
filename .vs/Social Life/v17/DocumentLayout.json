@@ -3,8 +3,32 @@
   "WorkspaceRootPath": "C:\\Users\\mihai\\OneDrive\\Desktop\\DAW\\Social Life\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{39BFF346-A6CC-4ADF-BDBD-E714200FB2ED}|Social Life.csproj|c:\\users\\mihai\\onedrive\\desktop\\daw\\social life\\wwwroot\\js\\postare.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}",
+      "RelativeMoniker": "D:0:0:{39BFF346-A6CC-4ADF-BDBD-E714200FB2ED}|Social Life.csproj|solutionrelative:wwwroot\\js\\postare.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{39BFF346-A6CC-4ADF-BDBD-E714200FB2ED}|Social Life.csproj|c:\\users\\mihai\\onedrive\\desktop\\daw\\social life\\controllers\\postarecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{39BFF346-A6CC-4ADF-BDBD-E714200FB2ED}|Social Life.csproj|solutionrelative:controllers\\postarecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{39BFF346-A6CC-4ADF-BDBD-E714200FB2ED}|Social Life.csproj|c:\\users\\mihai\\onedrive\\desktop\\daw\\social life\\views\\users\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{39BFF346-A6CC-4ADF-BDBD-E714200FB2ED}|Social Life.csproj|solutionrelative:views\\users\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{39BFF346-A6CC-4ADF-BDBD-E714200FB2ED}|Social Life.csproj|c:\\users\\mihai\\onedrive\\desktop\\daw\\social life\\views\\profile\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
       "RelativeMoniker": "D:0:0:{39BFF346-A6CC-4ADF-BDBD-E714200FB2ED}|Social Life.csproj|solutionrelative:views\\profile\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{39BFF346-A6CC-4ADF-BDBD-E714200FB2ED}|Social Life.csproj|c:\\users\\mihai\\onedrive\\desktop\\daw\\social life\\wwwroot\\js\\thread.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}",
+      "RelativeMoniker": "D:0:0:{39BFF346-A6CC-4ADF-BDBD-E714200FB2ED}|Social Life.csproj|solutionrelative:wwwroot\\js\\thread.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{39BFF346-A6CC-4ADF-BDBD-E714200FB2ED}|Social Life.csproj|c:\\users\\mihai\\onedrive\\desktop\\daw\\social life\\wwwroot\\js\\profil.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}",
+      "RelativeMoniker": "D:0:0:{39BFF346-A6CC-4ADF-BDBD-E714200FB2ED}|Social Life.csproj|solutionrelative:wwwroot\\js\\profil.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{39BFF346-A6CC-4ADF-BDBD-E714200FB2ED}|Social Life.csproj|c:\\users\\mihai\\onedrive\\desktop\\daw\\social life\\controllers\\threadcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{39BFF346-A6CC-4ADF-BDBD-E714200FB2ED}|Social Life.csproj|solutionrelative:controllers\\threadcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{39BFF346-A6CC-4ADF-BDBD-E714200FB2ED}|Social Life.csproj|c:\\users\\mihai\\onedrive\\desktop\\daw\\social life\\wwwroot\\css\\commentbox.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}",
@@ -15,19 +39,15 @@
       "RelativeMoniker": "D:0:0:{39BFF346-A6CC-4ADF-BDBD-E714200FB2ED}|Social Life.csproj|solutionrelative:wwwroot\\css\\profilepostare.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{39BFF346-A6CC-4ADF-BDBD-E714200FB2ED}|Social Life.csproj|c:\\users\\mihai\\onedrive\\desktop\\daw\\social life\\wwwroot\\js\\postare.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}",
-      "RelativeMoniker": "D:0:0:{39BFF346-A6CC-4ADF-BDBD-E714200FB2ED}|Social Life.csproj|solutionrelative:wwwroot\\js\\postare.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}"
+      "AbsoluteMoniker": "D:0:0:{39BFF346-A6CC-4ADF-BDBD-E714200FB2ED}|Social Life.csproj|c:\\users\\mihai\\onedrive\\desktop\\daw\\social life\\wwwroot\\css\\profilethread.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}",
+      "RelativeMoniker": "D:0:0:{39BFF346-A6CC-4ADF-BDBD-E714200FB2ED}|Social Life.csproj|solutionrelative:wwwroot\\css\\profilethread.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{39BFF346-A6CC-4ADF-BDBD-E714200FB2ED}|Social Life.csproj|c:\\users\\mihai\\onedrive\\desktop\\daw\\social life\\views\\users\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{39BFF346-A6CC-4ADF-BDBD-E714200FB2ED}|Social Life.csproj|solutionrelative:views\\users\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+      "AbsoluteMoniker": "D:0:0:{39BFF346-A6CC-4ADF-BDBD-E714200FB2ED}|Social Life.csproj|c:\\users\\mihai\\onedrive\\desktop\\daw\\social life\\wwwroot\\js\\commentbox.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}",
+      "RelativeMoniker": "D:0:0:{39BFF346-A6CC-4ADF-BDBD-E714200FB2ED}|Social Life.csproj|solutionrelative:wwwroot\\js\\commentbox.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|ViewDataWindow_MSSQL__/_localdb__MSSQLLocalDB/SocialLifeBD/True/SqlTable/dbo.PostsComments.sql||{0058A1F7-65F3-4DB9-B3D0-CA7E64DD73CD}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{39BFF346-A6CC-4ADF-BDBD-E714200FB2ED}|Social Life.csproj|c:\\users\\mihai\\onedrive\\desktop\\daw\\social life\\controllers\\postarecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{39BFF346-A6CC-4ADF-BDBD-E714200FB2ED}|Social Life.csproj|solutionrelative:controllers\\postarecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{39BFF346-A6CC-4ADF-BDBD-E714200FB2ED}|Social Life.csproj|c:\\users\\mihai\\onedrive\\desktop\\daw\\social life\\models\\postare.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -40,10 +60,6 @@
     {
       "AbsoluteMoniker": "D:0:0:{39BFF346-A6CC-4ADF-BDBD-E714200FB2ED}|Social Life.csproj|c:\\users\\mihai\\onedrive\\desktop\\daw\\social life\\data\\applicationdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{39BFF346-A6CC-4ADF-BDBD-E714200FB2ED}|Social Life.csproj|solutionrelative:data\\applicationdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{39BFF346-A6CC-4ADF-BDBD-E714200FB2ED}|Social Life.csproj|c:\\users\\mihai\\onedrive\\desktop\\daw\\social life\\controllers\\threadcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{39BFF346-A6CC-4ADF-BDBD-E714200FB2ED}|Social Life.csproj|solutionrelative:controllers\\threadcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{39BFF346-A6CC-4ADF-BDBD-E714200FB2ED}|Social Life.csproj|c:\\users\\mihai\\onedrive\\desktop\\daw\\social life\\models\\profile.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -63,10 +79,6 @@
     {
       "AbsoluteMoniker": "D:0:0:{39BFF346-A6CC-4ADF-BDBD-E714200FB2ED}|Social Life.csproj|c:\\users\\mihai\\onedrive\\desktop\\daw\\social life\\models\\threadlike.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{39BFF346-A6CC-4ADF-BDBD-E714200FB2ED}|Social Life.csproj|solutionrelative:models\\threadlike.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{39BFF346-A6CC-4ADF-BDBD-E714200FB2ED}|Social Life.csproj|c:\\users\\mihai\\onedrive\\desktop\\daw\\social life\\wwwroot\\js\\profil.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}",
-      "RelativeMoniker": "D:0:0:{39BFF346-A6CC-4ADF-BDBD-E714200FB2ED}|Social Life.csproj|solutionrelative:wwwroot\\js\\profil.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{39BFF346-A6CC-4ADF-BDBD-E714200FB2ED}|Social Life.csproj|c:\\users\\mihai\\onedrive\\desktop\\daw\\social life\\controllers\\profilecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -179,17 +191,17 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 0,
+          "SelectedChildIndex": 2,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 3,
               "Title": "Index.cshtml",
               "DocumentMoniker": "C:\\Users\\mihai\\OneDrive\\Desktop\\DAW\\Social Life\\Views\\Profile\\Index.cshtml",
               "RelativeDocumentMoniker": "Views\\Profile\\Index.cshtml",
               "ToolTip": "C:\\Users\\mihai\\OneDrive\\Desktop\\DAW\\Social Life\\Views\\Profile\\Index.cshtml",
               "RelativeToolTip": "Views\\Profile\\Index.cshtml",
-              "ViewState": "AgIAACgBAAAAAAAAAAAAADYBAAAlAAAAAAAAAA==",
+              "ViewState": "AgIAADcBAAAAAAAAAAAiwEoBAACCAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
               "WhenOpened": "2024-11-29T10:51:28.084Z",
               "IsPinned": true,
@@ -197,7 +209,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 2,
               "Title": "Index.cshtml",
               "DocumentMoniker": "C:\\Users\\mihai\\OneDrive\\Desktop\\DAW\\Social Life\\Views\\Users\\Index.cshtml",
               "RelativeDocumentMoniker": "Views\\Users\\Index.cshtml",
@@ -211,13 +223,13 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 0,
               "Title": "postare.js",
               "DocumentMoniker": "C:\\Users\\mihai\\OneDrive\\Desktop\\DAW\\Social Life\\wwwroot\\js\\postare.js",
               "RelativeDocumentMoniker": "wwwroot\\js\\postare.js",
               "ToolTip": "C:\\Users\\mihai\\OneDrive\\Desktop\\DAW\\Social Life\\wwwroot\\js\\postare.js",
               "RelativeToolTip": "wwwroot\\js\\postare.js",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABEAAAAiAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA8AAAAHAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001646|",
               "WhenOpened": "2024-12-26T12:50:16.275Z",
               "IsPinned": true,
@@ -226,55 +238,119 @@
             {
               "$type": "Document",
               "DocumentIndex": 1,
-              "Title": "CommentBox.css",
-              "DocumentMoniker": "C:\\Users\\mihai\\OneDrive\\Desktop\\DAW\\Social Life\\wwwroot\\css\\CommentBox.css",
-              "RelativeDocumentMoniker": "wwwroot\\css\\CommentBox.css",
-              "ToolTip": "C:\\Users\\mihai\\OneDrive\\Desktop\\DAW\\Social Life\\wwwroot\\css\\CommentBox.css",
-              "RelativeToolTip": "wwwroot\\css\\CommentBox.css",
-              "ViewState": "AgIAAFIBAAAAAAAAAAAAAF4BAAANAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003000|",
-              "WhenOpened": "2025-01-03T16:23:23.01Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "profilePostare.css",
-              "DocumentMoniker": "C:\\Users\\mihai\\OneDrive\\Desktop\\DAW\\Social Life\\wwwroot\\css\\profilePostare.css",
-              "RelativeDocumentMoniker": "wwwroot\\css\\profilePostare.css",
-              "ToolTip": "C:\\Users\\mihai\\OneDrive\\Desktop\\DAW\\Social Life\\wwwroot\\css\\profilePostare.css",
-              "RelativeToolTip": "wwwroot\\css\\profilePostare.css",
-              "ViewState": "AgIAAHIAAAAAAAAAAAAAAIIAAAASAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003000|",
-              "WhenOpened": "2024-12-26T17:40:24.189Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 5,
-              "Title": "dbo.PostsComments [Data]",
-              "DocumentMoniker": "ViewDataWindow_MSSQL__/_localdb__MSSQLLocalDB/SocialLifeBD/True/SqlTable/dbo.PostsComments.sql",
-              "ToolTip": "dbo.PostsComments [Data]",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000826|",
-              "WhenOpened": "2025-01-03T16:55:19.118Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 6,
               "Title": "PostareController.cs",
               "DocumentMoniker": "C:\\Users\\mihai\\OneDrive\\Desktop\\DAW\\Social Life\\Controllers\\PostareController.cs",
               "RelativeDocumentMoniker": "Controllers\\PostareController.cs",
               "ToolTip": "C:\\Users\\mihai\\OneDrive\\Desktop\\DAW\\Social Life\\Controllers\\PostareController.cs",
               "RelativeToolTip": "Controllers\\PostareController.cs",
-              "ViewState": "AgIAAIsAAAAAAAAAAAAcwKIAAAAqAAAAAAAAAA==",
+              "ViewState": "AgIAAKIAAAAAAAAAAAAiwK0AAAAmAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-12-28T15:39:24.537Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "profil.js",
+              "DocumentMoniker": "C:\\Users\\mihai\\OneDrive\\Desktop\\DAW\\Social Life\\wwwroot\\js\\profil.js",
+              "RelativeDocumentMoniker": "wwwroot\\js\\profil.js",
+              "ToolTip": "C:\\Users\\mihai\\OneDrive\\Desktop\\DAW\\Social Life\\wwwroot\\js\\profil.js",
+              "RelativeToolTip": "wwwroot\\js\\profil.js",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAADcAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001646|",
+              "WhenOpened": "2024-12-27T11:36:30.004Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "thread.js",
+              "DocumentMoniker": "C:\\Users\\mihai\\OneDrive\\Desktop\\DAW\\Social Life\\wwwroot\\js\\thread.js",
+              "RelativeDocumentMoniker": "wwwroot\\js\\thread.js",
+              "ToolTip": "C:\\Users\\mihai\\OneDrive\\Desktop\\DAW\\Social Life\\wwwroot\\js\\thread.js",
+              "RelativeToolTip": "wwwroot\\js\\thread.js",
+              "ViewState": "AgIAAAgAAAAAAAAAAAAAwF4AAAADAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001646|",
+              "WhenOpened": "2025-01-04T10:20:59.701Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "ThreadController.cs",
+              "DocumentMoniker": "C:\\Users\\mihai\\OneDrive\\Desktop\\DAW\\Social Life\\Controllers\\ThreadController.cs",
+              "RelativeDocumentMoniker": "Controllers\\ThreadController.cs",
+              "ToolTip": "C:\\Users\\mihai\\OneDrive\\Desktop\\DAW\\Social Life\\Controllers\\ThreadController.cs",
+              "RelativeToolTip": "Controllers\\ThreadController.cs",
+              "ViewState": "AgIAAIAAAAAAAAAAAAAswIkAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-29T10:00:29.914Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
               "DocumentIndex": 7,
+              "Title": "CommentBox.css",
+              "DocumentMoniker": "C:\\Users\\mihai\\OneDrive\\Desktop\\DAW\\Social Life\\wwwroot\\css\\CommentBox.css",
+              "RelativeDocumentMoniker": "wwwroot\\css\\CommentBox.css",
+              "ToolTip": "C:\\Users\\mihai\\OneDrive\\Desktop\\DAW\\Social Life\\wwwroot\\css\\CommentBox.css",
+              "RelativeToolTip": "wwwroot\\css\\CommentBox.css",
+              "ViewState": "AgIAAHoBAAAAAAAAAAAAAJMBAAAUAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003000|",
+              "WhenOpened": "2025-01-03T16:23:23.01Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "profilePostare.css",
+              "DocumentMoniker": "C:\\Users\\mihai\\OneDrive\\Desktop\\DAW\\Social Life\\wwwroot\\css\\profilePostare.css",
+              "RelativeDocumentMoniker": "wwwroot\\css\\profilePostare.css",
+              "ToolTip": "C:\\Users\\mihai\\OneDrive\\Desktop\\DAW\\Social Life\\wwwroot\\css\\profilePostare.css",
+              "RelativeToolTip": "wwwroot\\css\\profilePostare.css",
+              "ViewState": "AgIAALIAAAAAAAAAAAAUwIkAAAAUAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003000|",
+              "WhenOpened": "2024-12-26T17:40:24.189Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "profileThread.css",
+              "DocumentMoniker": "C:\\Users\\mihai\\OneDrive\\Desktop\\DAW\\Social Life\\wwwroot\\css\\profileThread.css",
+              "RelativeDocumentMoniker": "wwwroot\\css\\profileThread.css",
+              "ToolTip": "C:\\Users\\mihai\\OneDrive\\Desktop\\DAW\\Social Life\\wwwroot\\css\\profileThread.css",
+              "RelativeToolTip": "wwwroot\\css\\profileThread.css",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003000|",
+              "WhenOpened": "2025-01-04T11:26:14.407Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
+              "Title": "CommentBox.js",
+              "DocumentMoniker": "C:\\Users\\mihai\\OneDrive\\Desktop\\DAW\\Social Life\\wwwroot\\js\\CommentBox.js",
+              "RelativeDocumentMoniker": "wwwroot\\js\\CommentBox.js",
+              "ToolTip": "C:\\Users\\mihai\\OneDrive\\Desktop\\DAW\\Social Life\\wwwroot\\js\\CommentBox.js",
+              "RelativeToolTip": "wwwroot\\js\\CommentBox.js",
+              "ViewState": "AgIAADoAAAAAAAAAAAAiwEwAAABKAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001646|",
+              "WhenOpened": "2025-01-04T10:54:04.371Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 11,
+              "Title": "dbo.PostsComments.sql",
+              "DocumentMoniker": "ViewDataWindow_MSSQL__/_localdb__MSSQLLocalDB/SocialLifeBD/True/SqlTable/dbo.PostsComments.sql",
+              "ToolTip": "ViewDataWindow_MSSQL__/_localdb__MSSQLLocalDB/SocialLifeBD/True/SqlTable/dbo.PostsComments.sql",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000826|",
+              "WhenOpened": "2025-01-03T16:55:19.118Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 12,
               "Title": "Postare.cs",
               "DocumentMoniker": "C:\\Users\\mihai\\OneDrive\\Desktop\\DAW\\Social Life\\Models\\Postare.cs",
               "RelativeDocumentMoniker": "Models\\Postare.cs",
@@ -282,12 +358,11 @@
               "RelativeToolTip": "Models\\Postare.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAABEAAAAfAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-01-03T17:00:27.164Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-01-03T17:00:27.164Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 8,
+              "DocumentIndex": 13,
               "Title": "PostsComment.cs",
               "DocumentMoniker": "C:\\Users\\mihai\\OneDrive\\Desktop\\DAW\\Social Life\\Models\\PostsComment.cs",
               "RelativeDocumentMoniker": "Models\\PostsComment.cs",
@@ -299,7 +374,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 9,
+              "DocumentIndex": 14,
               "Title": "ApplicationDbContext.cs",
               "DocumentMoniker": "C:\\Users\\mihai\\OneDrive\\Desktop\\DAW\\Social Life\\Data\\ApplicationDbContext.cs",
               "RelativeDocumentMoniker": "Data\\ApplicationDbContext.cs",
@@ -311,19 +386,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 10,
-              "Title": "ThreadController.cs",
-              "DocumentMoniker": "C:\\Users\\mihai\\OneDrive\\Desktop\\DAW\\Social Life\\Controllers\\ThreadController.cs",
-              "RelativeDocumentMoniker": "Controllers\\ThreadController.cs",
-              "ToolTip": "C:\\Users\\mihai\\OneDrive\\Desktop\\DAW\\Social Life\\Controllers\\ThreadController.cs",
-              "RelativeToolTip": "Controllers\\ThreadController.cs",
-              "ViewState": "AgIAAHcAAAAAAAAAAAAswIgAAAAJAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-29T10:00:29.914Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 42,
+              "DocumentIndex": 45,
               "Title": "20250103162017_postcomment.cs",
               "DocumentMoniker": "C:\\Users\\mihai\\OneDrive\\Desktop\\DAW\\Social Life\\Migrations\\20250103162017_postcomment.cs",
               "RelativeDocumentMoniker": "Migrations\\20250103162017_postcomment.cs",
@@ -335,7 +398,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 11,
+              "DocumentIndex": 15,
               "Title": "Profile.cs",
               "DocumentMoniker": "C:\\Users\\mihai\\OneDrive\\Desktop\\DAW\\Social Life\\Models\\Profile.cs",
               "RelativeDocumentMoniker": "Models\\Profile.cs",
@@ -347,7 +410,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 12,
+              "DocumentIndex": 16,
               "Title": "Thread2.cs",
               "DocumentMoniker": "C:\\Users\\mihai\\OneDrive\\Desktop\\DAW\\Social Life\\Models\\Thread2.cs",
               "RelativeDocumentMoniker": "Models\\Thread2.cs",
@@ -359,7 +422,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 13,
+              "DocumentIndex": 17,
               "Title": "dbo.PostareLikes.sql",
               "DocumentMoniker": "ViewDataWindow_MSSQL__/_localdb__MSSQLLocalDB/SocialLifeBD/True/SqlTable/dbo.PostareLikes.sql",
               "ToolTip": "ViewDataWindow_MSSQL__/_localdb__MSSQLLocalDB/SocialLifeBD/True/SqlTable/dbo.PostareLikes.sql",
@@ -368,7 +431,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 14,
+              "DocumentIndex": 18,
               "Title": "PostareLike.cs",
               "DocumentMoniker": "C:\\Users\\mihai\\OneDrive\\Desktop\\DAW\\Social Life\\Models\\PostareLike.cs",
               "RelativeDocumentMoniker": "Models\\PostareLike.cs",
@@ -380,7 +443,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 15,
+              "DocumentIndex": 19,
               "Title": "ThreadLike.cs",
               "DocumentMoniker": "C:\\Users\\mihai\\OneDrive\\Desktop\\DAW\\Social Life\\Models\\ThreadLike.cs",
               "RelativeDocumentMoniker": "Models\\ThreadLike.cs",
@@ -392,19 +455,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 16,
-              "Title": "profil.js",
-              "DocumentMoniker": "C:\\Users\\mihai\\OneDrive\\Desktop\\DAW\\Social Life\\wwwroot\\js\\profil.js",
-              "RelativeDocumentMoniker": "wwwroot\\js\\profil.js",
-              "ToolTip": "C:\\Users\\mihai\\OneDrive\\Desktop\\DAW\\Social Life\\wwwroot\\js\\profil.js",
-              "RelativeToolTip": "wwwroot\\js\\profil.js",
-              "ViewState": "AgIAACMAAAAAAAAAAAAQwDcAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001646|",
-              "WhenOpened": "2024-12-27T11:36:30.004Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 17,
+              "DocumentIndex": 20,
               "Title": "ProfileController.cs",
               "DocumentMoniker": "C:\\Users\\mihai\\OneDrive\\Desktop\\DAW\\Social Life\\Controllers\\ProfileController.cs",
               "RelativeDocumentMoniker": "Controllers\\ProfileController.cs",
@@ -416,7 +467,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 18,
+              "DocumentIndex": 21,
               "Title": "dbo.Postari.sql",
               "DocumentMoniker": "ViewDataWindow_MSSQL__/_localdb__MSSQLLocalDB/SocialLifeBD/True/SqlTable/dbo.Postari.sql",
               "ToolTip": "ViewDataWindow_MSSQL__/_localdb__MSSQLLocalDB/SocialLifeBD/True/SqlTable/dbo.Postari.sql",
@@ -425,7 +476,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 19,
+              "DocumentIndex": 22,
               "Title": "UsersController.cs",
               "DocumentMoniker": "C:\\Users\\mihai\\OneDrive\\Desktop\\DAW\\Social Life\\Controllers\\UsersController.cs",
               "RelativeDocumentMoniker": "Controllers\\UsersController.cs",
@@ -437,7 +488,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 20,
+              "DocumentIndex": 23,
               "Title": "Edit.cshtml",
               "DocumentMoniker": "C:\\Users\\mihai\\OneDrive\\Desktop\\DAW\\Social Life\\Views\\Profile\\Edit.cshtml",
               "RelativeDocumentMoniker": "Views\\Profile\\Edit.cshtml",
@@ -449,7 +500,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 21,
+              "DocumentIndex": 24,
               "Title": "profilEdit.css",
               "DocumentMoniker": "C:\\Users\\mihai\\OneDrive\\Desktop\\DAW\\Social Life\\wwwroot\\css\\profilEdit.css",
               "RelativeDocumentMoniker": "wwwroot\\css\\profilEdit.css",
@@ -461,7 +512,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 23,
+              "DocumentIndex": 26,
               "Title": "ApplicationUser.cs",
               "DocumentMoniker": "C:\\Users\\mihai\\OneDrive\\Desktop\\DAW\\Social Life\\Models\\ApplicationUser.cs",
               "RelativeDocumentMoniker": "Models\\ApplicationUser.cs",
@@ -473,7 +524,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 22,
+              "DocumentIndex": 25,
               "Title": "_ViewStart.cshtml",
               "DocumentMoniker": "C:\\Users\\mihai\\OneDrive\\Desktop\\DAW\\Social Life\\Areas\\Identity\\Pages\\_ViewStart.cshtml",
               "RelativeDocumentMoniker": "Areas\\Identity\\Pages\\_ViewStart.cshtml",
@@ -485,7 +536,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 24,
+              "DocumentIndex": 27,
               "Title": "20241206141053_m1.cs",
               "DocumentMoniker": "C:\\Users\\mihai\\OneDrive\\Desktop\\DAW\\Social Life\\Migrations\\20241206141053_m1.cs",
               "RelativeDocumentMoniker": "Migrations\\20241206141053_m1.cs",
@@ -496,7 +547,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 25,
+              "DocumentIndex": 28,
               "Title": "20241206140446_m.cs",
               "DocumentMoniker": "C:\\Users\\mihai\\OneDrive\\Desktop\\DAW\\Social Life\\Migrations\\20241206140446_m.cs",
               "RelativeDocumentMoniker": "Migrations\\20241206140446_m.cs",
@@ -507,7 +558,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 27,
+              "DocumentIndex": 30,
               "Title": "Register.cshtml.cs",
               "DocumentMoniker": "C:\\Users\\mihai\\OneDrive\\Desktop\\DAW\\Social Life\\Areas\\Identity\\Pages\\Account\\Register.cshtml.cs",
               "RelativeDocumentMoniker": "Areas\\Identity\\Pages\\Account\\Register.cshtml.cs",
@@ -519,7 +570,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 26,
+              "DocumentIndex": 29,
               "Title": "HomeController.cs",
               "DocumentMoniker": "C:\\Users\\mihai\\OneDrive\\Desktop\\DAW\\Social Life\\Controllers\\HomeController.cs",
               "RelativeDocumentMoniker": "Controllers\\HomeController.cs",
@@ -531,7 +582,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 28,
+              "DocumentIndex": 31,
               "Title": "appsettings.json",
               "DocumentMoniker": "C:\\Users\\mihai\\OneDrive\\Desktop\\DAW\\Social Life\\appsettings.json",
               "RelativeDocumentMoniker": "appsettings.json",
@@ -543,7 +594,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 29,
+              "DocumentIndex": 32,
               "Title": "20241130133640_noua.cs",
               "DocumentMoniker": "C:\\Users\\mihai\\OneDrive\\Desktop\\DAW\\Social Life\\Migrations\\20241130133640_noua.cs",
               "RelativeDocumentMoniker": "Migrations\\20241130133640_noua.cs",
@@ -554,7 +605,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 31,
+              "DocumentIndex": 34,
               "Title": "20241130132532_m1.cs",
               "DocumentMoniker": "C:\\Users\\mihai\\OneDrive\\Desktop\\DAW\\Social Life\\Migrations\\20241130132532_m1.cs",
               "RelativeDocumentMoniker": "Migrations\\20241130132532_m1.cs",
@@ -565,7 +616,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 30,
+              "DocumentIndex": 33,
               "Title": "20241130132652_m2.cs",
               "DocumentMoniker": "C:\\Users\\mihai\\OneDrive\\Desktop\\DAW\\Social Life\\Migrations\\20241130132652_m2.cs",
               "RelativeDocumentMoniker": "Migrations\\20241130132652_m2.cs",
@@ -576,7 +627,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 32,
+              "DocumentIndex": 35,
               "Title": "ErrorViewModel.cs",
               "DocumentMoniker": "C:\\Users\\mihai\\OneDrive\\Desktop\\DAW\\Social Life\\Models\\ErrorViewModel.cs",
               "RelativeDocumentMoniker": "Models\\ErrorViewModel.cs",
@@ -588,7 +639,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 33,
+              "DocumentIndex": 36,
               "Title": "20241130125307_m6.cs",
               "DocumentMoniker": "C:\\Users\\mihai\\OneDrive\\Desktop\\DAW\\Social Life\\Migrations\\20241130125307_m6.cs",
               "RelativeDocumentMoniker": "Migrations\\20241130125307_m6.cs",
@@ -599,7 +650,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 34,
+              "DocumentIndex": 37,
               "Title": "20241130122930_Net-Prof.cs",
               "DocumentMoniker": "C:\\Users\\mihai\\OneDrive\\Desktop\\DAW\\Social Life\\Migrations\\20241130122930_Net-Prof.cs",
               "RelativeDocumentMoniker": "Migrations\\20241130122930_Net-Prof.cs",
@@ -610,7 +661,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 35,
+              "DocumentIndex": 38,
               "Title": "Login.cshtml.cs",
               "DocumentMoniker": "C:\\Users\\mihai\\OneDrive\\Desktop\\DAW\\Social Life\\Areas\\Identity\\Pages\\Account\\Login.cshtml.cs",
               "RelativeDocumentMoniker": "Areas\\Identity\\Pages\\Account\\Login.cshtml.cs",
@@ -622,7 +673,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 36,
+              "DocumentIndex": 39,
               "Title": "20241129160107_NOCOM.cs",
               "DocumentMoniker": "C:\\Users\\mihai\\OneDrive\\Desktop\\DAW\\Social Life\\Data\\Migrations\\20241129160107_NOCOM.cs",
               "RelativeDocumentMoniker": "Data\\Migrations\\20241129160107_NOCOM.cs",
@@ -633,7 +684,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 37,
+              "DocumentIndex": 40,
               "Title": "20241129155641_ok3.cs",
               "DocumentMoniker": "C:\\Users\\mihai\\OneDrive\\Desktop\\DAW\\Social Life\\Data\\Migrations\\20241129155641_ok3.cs",
               "RelativeDocumentMoniker": "Data\\Migrations\\20241129155641_ok3.cs",
@@ -644,7 +695,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 38,
+              "DocumentIndex": 41,
               "Title": "20241129155236_Ok.cs",
               "DocumentMoniker": "C:\\Users\\mihai\\OneDrive\\Desktop\\DAW\\Social Life\\Data\\Migrations\\20241129155236_Ok.cs",
               "RelativeDocumentMoniker": "Data\\Migrations\\20241129155236_Ok.cs",
@@ -655,7 +706,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 41,
+              "DocumentIndex": 44,
               "Title": "Profil.cs",
               "DocumentMoniker": "C:\\Users\\mihai\\OneDrive\\Desktop\\DAW\\Social Life\\Models\\Profil.cs",
               "RelativeDocumentMoniker": "Models\\Profil.cs",
@@ -666,7 +717,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 39,
+              "DocumentIndex": 42,
               "Title": "site.css",
               "DocumentMoniker": "C:\\Users\\mihai\\OneDrive\\Desktop\\DAW\\Social Life\\wwwroot\\css\\site.css",
               "RelativeDocumentMoniker": "wwwroot\\css\\site.css",
@@ -678,7 +729,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 40,
+              "DocumentIndex": 43,
               "Title": "_ViewStart.cshtml",
               "DocumentMoniker": "C:\\Users\\mihai\\OneDrive\\Desktop\\DAW\\Social Life\\Views\\_ViewStart.cshtml",
               "RelativeDocumentMoniker": "Views\\_ViewStart.cshtml",

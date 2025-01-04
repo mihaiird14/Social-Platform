@@ -42,3 +42,14 @@ function inchideEditPostare(id) {
         x.style.display = "none";
     });
 }
+function editPostComm(id) {
+    var comBox = document.querySelector('.afisComPost-' + id);
+
+    if (comBox) {
+        var PostH = comBox.scrollHeight;
+        var wBox = comBox.scrollWidth;
+        document.querySelector('.delete-com-post-' + id).style.display = "flex";
+        comBox.style.display = "none";
+        document.querySelector('.delete-com-post-' + id).style.height = PostH + "px";
+    }
+}

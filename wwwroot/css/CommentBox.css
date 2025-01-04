@@ -256,10 +256,10 @@
     margin-left: -90px;
     border-radius: 25px;
     word-wrap: break-word;
-    height: auto;
+    height: 300px;
 }
 .submit-button-edit-com {
-    position: absolute;
+    position: relative;
     background: transparent;
     font-weight: 600;
     text-decoration: none;
@@ -273,6 +273,7 @@
     text-align: center;
     width: 10vw;
     height: 20px;
+    transform: translate(0%, -40%);
 }
 .submit-button-edit-com:hover {
     color: #36353d;
@@ -329,7 +330,7 @@
     width: 30vw;
     align-self: center;
     margin-top: 4vh;
-    margin-left: 5vw;
+    transform: translate(30%,0%);
     border-radius: 25px;
     word-wrap: break-word;
 }
@@ -353,10 +354,52 @@
     overflow-x: hidden;
 }
 .PostCommentBox #formCom{
-    margin-left: 5vw;
+    margin-left: 12vw;
     display: flex;
     flex-direction: row;
 }
 .PostCommentBox #ButonCom{
     position: relative;
+}
+#PostafisCom:hover #meniuComentarii {
+    color: black;
+}
+#PostafisCom{
+    margin-left: 2vw;
+}
+#deleteComBoxPost {
+    display: none;
+    border: 2px solid white;
+    width: 30vw;
+    align-self: center;
+    margin-top: 20px;
+    transform: translate(37%,0%);
+    border-radius: 25px;
+    word-wrap: break-word;
+    align-content: center;
+    flex-direction: column;
+    align-items: flex-start;
+ 
+}
+#dngComPost {
+    color: white;
+    font-size: 30px;
+    margin-top: -2vh;
+    font-size: 25px;
+    align-self: center;
+
+}
+#xComDeletePost {
+    color: white;
+    align-self: flex-start;
+    font-size: 13px;
+    margin-left: 27vw;
+    margin-top: 1.5vh;
+}
+
+#xComDeletePost:hover {
+    color: red;
+}
+#deleteComBoxPost #confirmaButtonCom{
+    margin-top: 2vh;
 }

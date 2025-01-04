@@ -296,8 +296,24 @@
                                     @foreach (var com in db.PostsComments.Where(c => c.PostId == postare.Id).OrderByDescending(t => t.Date))
                                     {
                                         com.Profile = db.Profiles.FirstOrDefault(p => p.Id_User == com.Id_User);
-                                        <div id="PostafisCom" class="afisCom-@com.PostCommentId">
-                   
+                                        <div id="PostafisCom" class="afisComPost-@com.PostCommentId">
+                                            <div class="dropdown-comentarii">
+                                                <i id="meniuComentarii" class="fa fa-ellipsis-v dropdown-toggle-comentarii" aria-hidden="true"></i>
+                                                <div class="dropdown-menu-comentarii">
+                                                    <form class="edit-thread-form-com" data-com-id="#" style="display: inline;" data-thread-id="#">
+                                                        <input type="hidden" name="id" value="#" />
+                                                        <button type="submit" id="EditCom" class="dropdown-item-comentarii"><i class="fas fa-edit"></i>Editează</button>
+                                                    </form>
+                                                    <form style="display: inline;" data-thread-id="#">
+                                                        <input type="hidden" name="id" value="#" />
+                                                        <button type="submit" id="DeleteCom" class="dropdown-item-comentarii"><i class="fa-solid fa-flag"></i>Raportează</button>
+                                                    </form>
+                                                    <form  class="delete-thread-form-com" style="display: inline;" data-com-id="#" data-thread-id="#">
+                                                        <input type="hidden" name="PostCommentId" value="@com.PostCommentId" />
+                                                        <button onclick="editPostComm(@com.PostCommentId)" type="submit" id="DeleteCom" class="dropdown-item-comentarii"><i class="fa fa-trash" aria-hidden="true"></i>Șterge</button>
+                                                    </form>
+                                                </div>
+                                            </div>
                                             <p id="afisUser">@com.Profile?.Username</p>
                                             <p id="afisComText">@com.CommentText</p>
                                             <p id="afisOra">
@@ -307,6 +323,15 @@
                                                     <em>(editat)</em>
                                                 }
                                             </p>
+
+                                        </div>
+                                       <div id="deleteComBoxPost" class="delete-com-post-@com.PostCommentId">
+                                            <i id="xComDeletePost" class="fa-solid fa-x" data-com-id="@com.PostCommentId"></i>
+                                            <i id="dngComPost" class="fa fa-exclamation-triangle" aria-hidden="true"></i>
+                                            <form id="confButtonPost" method="post" asp-controller="Postare" asp-action="DeleteCom">
+                                                <input type="hidden" name="PostCommentId" value="@com.PostCommentId" />
+                                                <button type="submit" id="confirmaButtonCom">CONFIRMĂ!</button>
+                                            </form>
                                         </div>
                                     }
                                 </div>

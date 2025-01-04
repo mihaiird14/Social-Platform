@@ -170,5 +170,21 @@ namespace Social_Life.Controllers
                 return RedirectToAction("Index", "Profile");
             }
         }
+        [HttpPost]
+        public IActionResult DeleteCom(int PostCommentId)
+        {
+
+            var comentariu = db.PostsComments.FirstOrDefault(t => t.PostCommentId == PostCommentId);
+            var post = db.Postari.FirstOrDefault(tl => tl.Id == comentariu.PostId);
+            if (comentariu == null)
+            {
+                return NotFound("Thread not found.");
+            }
+            post.NrComentarii -= 1;
+            db.PostsComments.Remove(comentariu);
+            db.SaveChanges();
+
+            return RedirectToAction("Index", "Profile");
+        }
     }
 }

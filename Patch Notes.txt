@@ -164,3 +164,6 @@
 	- Adaugare erori pentru descrieri prea scurte/lungi si lipsa unei poze
 03.01.2025
 	- Adaugare comentarii la postari (adaugare si vizualizare)
+04.01.2025
+	- Adaugare posibilitatea de a sterge comentarii de pe pagina utilizatorului curent
+	- Mici ajustari la design

@@ -56,12 +56,12 @@ function editCloseFunction(threadId) {
     if (threadBox) {
         var threadBoxHeight = threadBox.scrollHeight;
         var wBox = threadBox.scrollWidth;
-        document.querySelector('.editThreadBox-' + threadId).style.height = threadBoxHeight + 'px';
         var tarea = document.querySelector('.note-textarea-edit-'+threadId );
         tarea.style.width = '400px';
         tarea.style.height = threadBoxHeight - 100 + 'px';
         document.querySelector('.thread-' + threadId).style.display = 'none';
         document.querySelector('.editThreadBox-' + threadId).style.display = 'flex';
+        document.querySelector('.editThreadBox-' + threadId).style.height = threadBoxHeight + 'px';
     }
 }
 document.addEventListener("DOMContentLoaded", function () {
