@@ -270,15 +270,18 @@
                                         <input type="hidden" name="postareId" value="@postare.Id" />
                                         <button type="submit" id="btnLikePostare"><i id="@(userLiked ? "liked":"disliked")" class="fas fa-thumbs-up"><span id="NrLikePost"> @postare.NrLikePostare </span></i></button>
                                     </form>
-                                    <div id="btnLikePostare"> <i class="fa-solid fa-comment"> 0 </i></div>
+                                    <div id="btnLikePostare"> <i class="fa-solid fa-comment"> @postare.NrComentarii </i></div>
                                 </div>
                                 <div id="PostCommentBox-@postare.Id" class="PostCommentBox">
-                                    <form id="formCom" asp-controller="Users" asp-action="NewComPost">
-                                        <input type="hidden" id="Id" name="PostId" value="@postare.Id" />
-                                        <input type="hidden" id="Username" name="username" value="@postare.Profile.Username" />
-                                        <textarea id="addCom" name="CommentText" placeholder="Adauga Comentariu..."></textarea>
-                                        <button type="submit" id="ButonCom">Adauga</button>
-                                    </form>
+                                    @if (SignInManager.IsSignedIn(User))
+                                    {
+                                        <form id="formCom" asp-controller="Users" asp-action="NewComPost">
+                                            <input type="hidden" id="Id" name="PostId" value="@postare.Id" />
+                                            <input type="hidden" id="Username" name="username" value="@postare.Profile.Username" />
+                                            <textarea id="addCom" name="CommentText" placeholder="Adauga Comentariu..."></textarea>
+                                            <button type="submit" id="ButonCom">Adauga</button>
+                                        </form>
+                                    }
                                     @foreach (var com in db.PostsComments.Where(c => c.PostId == postare.Id).OrderByDescending(t => t.Date))
                                     {
                                         com.Profile = db.Profiles.FirstOrDefault(p => p.Id_User == com.Id_User);

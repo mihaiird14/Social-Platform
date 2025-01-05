@@ -30,8 +30,8 @@
       <RelatedAsset></RelatedAsset>
       <AssetTraitName></AssetTraitName>
       <AssetTraitValue></AssetTraitValue>
-      <Fingerprint>5r4cnhpyq0</Fingerprint>
-      <Integrity>EQ6SpAu+pr4EJaPTlsAcYacYlmY5iOaM/K69vc4mZ1A=</Integrity>
+      <Fingerprint>qi4zslumey</Fingerprint>
+      <Integrity>Xo4Gukh1iiSrYXJ4ULpENPBGosF45tBNmFDLD9uXPck=</Integrity>
       <CopyToOutputDirectory>Never</CopyToOutputDirectory>
       <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
       <OriginalItemSpec>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\css\CommentBox.css'))</OriginalItemSpec>
@@ -462,8 +462,8 @@
       <RelatedAsset></RelatedAsset>
       <AssetTraitName></AssetTraitName>
       <AssetTraitValue></AssetTraitValue>
-      <Fingerprint>hf7ui21sck</Fingerprint>
-      <Integrity>49T9TpG9aC+FjhoDP41JDaT/PEwTm9BScwc26qPmpRc=</Integrity>
+      <Fingerprint>a2o7hz26re</Fingerprint>
+      <Integrity>kjKEHBu9iCciY8qcU56dogq/XHe4z3/1JSGzDOvYhiQ=</Integrity>
       <CopyToOutputDirectory>Never</CopyToOutputDirectory>
       <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
       <OriginalItemSpec>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\js\fisaUrmaritori.js'))</OriginalItemSpec>

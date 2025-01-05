@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "T9N9TN+DZ8JfnpgDW6VolOturWvA1JcjWi4ENVO5tNA=",
+  "Hash": "/og66EsacPbenGLZ3sEtWYMc1kuABu38pR6E2V/FBAM=",
   "Source": "Social Life",
   "BasePath": "_content/Social Life",
   "Mode": "Default",
@@ -1354,8 +1354,8 @@
       "RelatedAsset": "",
       "AssetTraitName": "",
       "AssetTraitValue": "",
-      "Fingerprint": "5r4cnhpyq0",
-      "Integrity": "EQ6SpAu+pr4EJaPTlsAcYacYlmY5iOaM/K69vc4mZ1A=",
+      "Fingerprint": "qi4zslumey",
+      "Integrity": "Xo4Gukh1iiSrYXJ4ULpENPBGosF45tBNmFDLD9uXPck=",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\css\\CommentBox.css"
@@ -1858,8 +1858,8 @@
       "RelatedAsset": "",
       "AssetTraitName": "",
       "AssetTraitValue": "",
-      "Fingerprint": "hf7ui21sck",
-      "Integrity": "49T9TpG9aC+FjhoDP41JDaT/PEwTm9BScwc26qPmpRc=",
+      "Fingerprint": "a2o7hz26re",
+      "Integrity": "kjKEHBu9iCciY8qcU56dogq/XHe4z3/1JSGzDOvYhiQ=",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\js\\fisaUrmaritori.js"
@@ -3272,51 +3272,6 @@
       ]
     },
     {
-      "Route": "css/CommentBox.5r4cnhpyq0.css",
-      "AssetFile": "C:\\Users\\mihai\\OneDrive\\Desktop\\DAW\\Social Life\\wwwroot\\css\\CommentBox.css",
-      "Selectors": [],
-      "ResponseHeaders": [
-        {
-          "Name": "Accept-Ranges",
-          "Value": "bytes"
-        },
-        {
-          "Name": "Content-Length",
-          "Value": "9170"
-        },
-        {
-          "Name": "Content-Type",
-          "Value": "text/css"
-        },
-        {
-          "Name": "ETag",
-          "Value": "\"EQ6SpAu+pr4EJaPTlsAcYacYlmY5iOaM/K69vc4mZ1A=\""
-        },
-        {
-          "Name": "Last-Modified",
-          "Value": "Sun, 05 Jan 2025 13:30:15 GMT"
-        },
-        {
-          "Name": "Cache-Control",
-          "Value": "max-age=31536000, immutable"
-        }
-      ],
-      "EndpointProperties": [
-        {
-          "Name": "fingerprint",
-          "Value": "5r4cnhpyq0"
-        },
-        {
-          "Name": "label",
-          "Value": "css/CommentBox.css"
-        },
-        {
-          "Name": "integrity",
-          "Value": "sha256-EQ6SpAu+pr4EJaPTlsAcYacYlmY5iOaM/K69vc4mZ1A="
-        }
-      ]
-    },
-    {
       "Route": "css/CommentBox.css",
       "AssetFile": "C:\\Users\\mihai\\OneDrive\\Desktop\\DAW\\Social Life\\wwwroot\\css\\CommentBox.css",
       "Selectors": [],
@@ -3327,7 +3282,7 @@
         },
         {
           "Name": "Content-Length",
-          "Value": "9170"
+          "Value": "9193"
         },
         {
           "Name": "Content-Type",
@@ -3335,11 +3290,11 @@
         },
         {
           "Name": "ETag",
-          "Value": "\"EQ6SpAu+pr4EJaPTlsAcYacYlmY5iOaM/K69vc4mZ1A=\""
+          "Value": "\"Xo4Gukh1iiSrYXJ4ULpENPBGosF45tBNmFDLD9uXPck=\""
         },
         {
           "Name": "Last-Modified",
-          "Value": "Sun, 05 Jan 2025 13:30:15 GMT"
+          "Value": "Sun, 05 Jan 2025 13:54:09 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -3349,7 +3304,52 @@
       "EndpointProperties": [
         {
           "Name": "integrity",
-          "Value": "sha256-EQ6SpAu+pr4EJaPTlsAcYacYlmY5iOaM/K69vc4mZ1A="
+          "Value": "sha256-Xo4Gukh1iiSrYXJ4ULpENPBGosF45tBNmFDLD9uXPck="
+        }
+      ]
+    },
+    {
+      "Route": "css/CommentBox.qi4zslumey.css",
+      "AssetFile": "C:\\Users\\mihai\\OneDrive\\Desktop\\DAW\\Social Life\\wwwroot\\css\\CommentBox.css",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "9193"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/css"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"Xo4Gukh1iiSrYXJ4ULpENPBGosF45tBNmFDLD9uXPck=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Sun, 05 Jan 2025 13:54:09 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "qi4zslumey"
+        },
+        {
+          "Name": "label",
+          "Value": "css/CommentBox.css"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-Xo4Gukh1iiSrYXJ4ULpENPBGosF45tBNmFDLD9uXPck="
         }
       ]
     },
@@ -7460,7 +7460,7 @@
       ]
     },
     {
-      "Route": "js/fisaUrmaritori.hf7ui21sck.js",
+      "Route": "js/fisaUrmaritori.a2o7hz26re.js",
       "AssetFile": "C:\\Users\\mihai\\OneDrive\\Desktop\\DAW\\Social Life\\wwwroot\\js\\fisaUrmaritori.js",
       "Selectors": [],
       "ResponseHeaders": [
@@ -7470,7 +7470,7 @@
         },
         {
           "Name": "Content-Length",
-          "Value": "1345"
+          "Value": "1653"
         },
         {
           "Name": "Content-Type",
@@ -7478,11 +7478,11 @@
         },
         {
           "Name": "ETag",
-          "Value": "\"49T9TpG9aC+FjhoDP41JDaT/PEwTm9BScwc26qPmpRc=\""
+          "Value": "\"kjKEHBu9iCciY8qcU56dogq/XHe4z3/1JSGzDOvYhiQ=\""
         },
         {
           "Name": "Last-Modified",
-          "Value": "Sun, 05 Jan 2025 13:49:30 GMT"
+          "Value": "Sun, 05 Jan 2025 13:50:29 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -7492,7 +7492,7 @@
       "EndpointProperties": [
         {
           "Name": "fingerprint",
-          "Value": "hf7ui21sck"
+          "Value": "a2o7hz26re"
         },
         {
           "Name": "label",
@@ -7500,7 +7500,7 @@
         },
         {
           "Name": "integrity",
-          "Value": "sha256-49T9TpG9aC+FjhoDP41JDaT/PEwTm9BScwc26qPmpRc="
+          "Value": "sha256-kjKEHBu9iCciY8qcU56dogq/XHe4z3/1JSGzDOvYhiQ="
         }
       ]
     },
@@ -7515,7 +7515,7 @@
         },
         {
           "Name": "Content-Length",
-          "Value": "1345"
+          "Value": "1653"
         },
         {
           "Name": "Content-Type",
@@ -7523,11 +7523,11 @@
         },
         {
           "Name": "ETag",
-          "Value": "\"49T9TpG9aC+FjhoDP41JDaT/PEwTm9BScwc26qPmpRc=\""
+          "Value": "\"kjKEHBu9iCciY8qcU56dogq/XHe4z3/1JSGzDOvYhiQ=\""
         },
         {
           "Name": "Last-Modified",
-          "Value": "Sun, 05 Jan 2025 13:49:30 GMT"
+          "Value": "Sun, 05 Jan 2025 13:50:29 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -7537,7 +7537,7 @@
       "EndpointProperties": [
         {
           "Name": "integrity",
-          "Value": "sha256-49T9TpG9aC+FjhoDP41JDaT/PEwTm9BScwc26qPmpRc="
+          "Value": "sha256-kjKEHBu9iCciY8qcU56dogq/XHe4z3/1JSGzDOvYhiQ="
         }
       ]
     },

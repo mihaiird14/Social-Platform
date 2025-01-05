@@ -174,3 +174,5 @@
 	- Adaugare functionalitatile specifice si pe paginiile altor useri (CRUD cu restrictii)
 	- Fix bug care suprapunea listele de urmaritori si urmariri cu sectiuni de la
 		thread-uri si postari
+	- Fix numarul de comentarii pentru fiecare postare
+	- Fix bug care lasa userii neautentificati sa posteze comentarii la postari
