@@ -167,3 +167,10 @@
 04.01.2025
 	- Adaugare posibilitatea de a sterge comentarii de pe pagina utilizatorului curent
 	- Mici ajustari la design
+05.01.2025
+	- Adaugare posibilitatea de a edita un comentariu
+	- Fix bug care lasa utilizatorul curent sa editeze comentarii care nu-i apartin de la thread-uri
+	- Adaugare like-uri la comentariile de la postari
+	- Adaugare functionalitatile specifice si pe paginiile altor useri (CRUD cu restrictii)
+	- Fix bug care suprapunea listele de urmaritori si urmariri cu sectiuni de la
+		thread-uri si postari

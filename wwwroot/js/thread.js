@@ -1,5 +1,6 @@
 ﻿function threadfunction() {
     document.getElementById('threadbox').style.display = 'flex';
+    xFollow();
     sessionStorage.setItem('addThread', 'on');
  
 }
@@ -12,6 +13,7 @@ function EditthreadCloseFunction(id) {
 
 }
 function openMenuThreads(id) {
+    xFollow();
     if (document.getElementById("dropdownMenuThread-" + id).style.display === "block") {
         document.getElementById("dropdownMenuThread-" + id).style.display = "none";
     }

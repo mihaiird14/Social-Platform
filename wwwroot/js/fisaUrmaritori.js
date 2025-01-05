@@ -1,5 +1,14 @@
 function afisUrmaritori() {
     xFollow();
+    document.getElementById("threadbox").style.display = "none";
+    const comTh = document.querySelectorAll('[id^="CommentBox-"]');
+    comTh.forEach(element => {
+        element.style.display = "none";
+    });
+    const comP = document.querySelectorAll('[id^="PostareDetaliata-"]');
+    comP.forEach(element => {
+        element.style.display = "none";
+    });
     const d = document.getElementById("FisaUrmaritori");
     d.style.display = 'flex';
     
@@ -7,6 +16,15 @@ function afisUrmaritori() {
 }
 function afisUrmariri() {
     xFollow();
+    document.getElementById("threadbox").style.display = "none";
+    const comTh = document.querySelectorAll('[id^="CommentBox-"]');
+    comTh.forEach(element => {
+        element.style.display = "none";
+    });
+    const comP = document.querySelectorAll('[id^="PostareDetaliata-"]');
+    comP.forEach(element => {
+        element.style.display = "none";
+    });
     const d = document.getElementById("FisaUrmariri");
     d.style.display = 'flex';    
     sessionStorage.setItem('fisaUrmaritori', 'da2');

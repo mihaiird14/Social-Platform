@@ -22,6 +22,7 @@ namespace Social_Life.Data
         public DbSet<Postare> Postari { get; set; }
         public DbSet<PostareLike> PostareLikes { get; set; }
         public DbSet<PostsComment> PostsComments { get; set; }
+        public DbSet<PostCommentsLike> PostCommentsLikes { get; set; }
         protected override void OnModelCreating(ModelBuilder builder)
         {
 
@@ -113,6 +114,19 @@ namespace Social_Life.Data
                 .WithMany(t=>t.Comments)
                 .HasForeignKey(t=>t.PostId)
                  .OnDelete(DeleteBehavior.Restrict);
+
+            builder.Entity<PostCommentsLike>()
+                .HasOne(tl => tl.Profile)
+                .WithMany(t => t.Post_Com_Likes)
+                .HasForeignKey(tl => tl.User_id);
+                
+
+
+            builder.Entity<PostCommentsLike>()
+                .HasOne(tl => tl.PostsComment)
+                .WithMany(p => p.Post_Comment_Likes)
+                .HasForeignKey(tl => tl.Comment_Id)
+                .OnDelete(DeleteBehavior.Restrict);
         }
     }
 }

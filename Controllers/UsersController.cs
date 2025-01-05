@@ -119,5 +119,76 @@ namespace Social_Life.Controllers
 
             return RedirectToAction("Index", "Users", new { username = username });
         }
+        [HttpPost]
+        public IActionResult NewComPost(PostsComment comentariu, string username)
+        {
+            try
+            {
+                if (comentariu.CommentText == null)
+                {
+                    TempData["EditTh"] = "Comentariul este obligatoriu!";
+                    return RedirectToAction("Index", "Users", new { username = username });
+                }
+                var postare = db.Postari.FirstOrDefault(tl => tl.Id == comentariu.PostId);
+                var userId = _userManager.GetUserId(User);
+                comentariu.Id_User = userId;
+                comentariu.Date = DateTime.Now;
+                if (comentariu.CommentText.Length < 5 || comentariu.CommentText.Length > 100)
+                {
+                    TempData["EditTh"] = "Comentariul trebuie sa fie intre 5 si 100 caractere";
+                    return RedirectToAction("Index", "Users", new { username = username });
+                }
+                postare.NrComentarii += 1;
+                TempData["EditTh"] = null;
+                db.PostsComments.Add(comentariu);
+                db.SaveChanges();
+                return RedirectToAction("Index", "Users", new { username = username });
+            }
+            catch (Exception e)
+            {
+                return RedirectToAction("Index", "Users", new { username = username });
+            }
+        }
+        [HttpPost]
+        public IActionResult DeleteComPost(int PostCommentId, string username)
+        {
+
+            var comentariu = db.PostsComments.FirstOrDefault(t => t.PostCommentId == PostCommentId);
+            var post = db.Postari.FirstOrDefault(tl => tl.Id == comentariu.PostId);
+            if (comentariu == null)
+            {
+                return NotFound("Thread not found.");
+            }
+            post.NrComentarii -= 1;
+            db.PostsComments.Remove(comentariu);
+            db.SaveChanges();
+
+            return RedirectToAction("Index", "Users", new { username = username });
+        }
+        [HttpPost]
+        public IActionResult EditComPost(PostsComment comentariu,string username)
+        {
+            var exCom = db.PostsComments.FirstOrDefault(t => t.PostCommentId == comentariu.PostCommentId);
+            if (exCom == null)
+            {
+                return NotFound("Thread not found.");
+            }
+            if (comentariu.CommentText == null)
+            {
+                TempData["EditTh"] = "Comentariul este obligatoriu!";
+                return RedirectToAction("Index", "Users", new { username = username });
+            }
+            if (comentariu.CommentText.Length < 5 || comentariu.CommentText.Length > 100)
+            {
+                TempData["EditTh"] = "Comentariul trebuie sa fie intre 5 si 100 caractere";
+                return RedirectToAction("Index", "Users", new { username = username });
+            }
+            TempData["EditTh"] = null;
+            exCom.Edited = true;
+            exCom.CommentText = comentariu.CommentText;
+            db.SaveChanges();
+
+            return RedirectToAction("Index", "Users", new { username = username });
+        }
     }
 }

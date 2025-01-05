@@ -38,7 +38,7 @@
     <link rel="stylesheet" href="css/profilePostare.css">
     <style>
         .pozaPostata:hover {
-            transform: scale(1.1);
+        transform: scale(1.1);
         }
         #liked {
         color: green;
@@ -272,6 +272,82 @@
                                     </form>
                                     <div id="btnLikePostare"> <i class="fa-solid fa-comment"> 0 </i></div>
                                 </div>
+                                <div id="PostCommentBox-@postare.Id" class="PostCommentBox">
+                                    <form id="formCom" asp-controller="Users" asp-action="NewComPost">
+                                        <input type="hidden" id="Id" name="PostId" value="@postare.Id" />
+                                        <input type="hidden" id="Username" name="username" value="@postare.Profile.Username" />
+                                        <textarea id="addCom" name="CommentText" placeholder="Adauga Comentariu..."></textarea>
+                                        <button type="submit" id="ButonCom">Adauga</button>
+                                    </form>
+                                    @foreach (var com in db.PostsComments.Where(c => c.PostId == postare.Id).OrderByDescending(t => t.Date))
+                                    {
+                                        com.Profile = db.Profiles.FirstOrDefault(p => p.Id_User == com.Id_User);
+                                        <div id="PostafisCom" class="afisComPost-@com.PostCommentId">
+                                            <div class="dropdown-comentarii">
+                                                <i id="meniuComentarii" class="fa fa-ellipsis-v dropdown-toggle-comentarii" aria-hidden="true"></i>
+                                                <div class="dropdown-menu-comentarii">
+                                                    @if (SignInManager.IsSignedIn(User) && user_Id == com.Profile.Id_User)
+                                                    {
+                                                        <form class="edit-thread-form-com" data-com-id="#" style="display: inline;" data-thread-id="#">
+                                                            <input type="hidden" name="id" value="#" />
+                                                            <button onclick="editComPost(@com.PostCommentId)" type="submit" id="EditCom" class="dropdown-item-comentarii"><i class="fas fa-edit"></i>Editează</button>
+                                                        </form>
+                                                    }
+                                                    <form style="display: inline;" data-thread-id="#">
+                                                        <input type="hidden" name="id" value="#" />
+                                                        <button type="submit" id="DeleteCom" class="dropdown-item-comentarii"><i class="fa-solid fa-flag"></i>Raportează</button>
+                                                    </form>
+                                                    @if (SignInManager.IsSignedIn(User) && user_Id == com.Profile.Id_User)
+                                                    {
+                                                        <form class="delete-thread-form-com" style="display: inline;" data-com-id="#" data-thread-id="#">
+                                                            <input type="hidden" name="PostCommentId" value="@com.PostCommentId" />
+                                                            <button onclick="deletePostComm(@com.PostCommentId)" type="submit" id="DeleteCom" class="dropdown-item-comentarii"><i class="fa fa-trash" aria-hidden="true"></i>Șterge</button>
+                                                        </form>
+                                                    }
+                                                </div>
+                                            </div>
+                                            <p id="afisUser">@com.Profile?.Username</p>
+                                            <p id="afisComText">@com.CommentText</p>
+                                            <p id="afisOra">
+                                                @com.Date
+                                                @if (com.Edited == true)
+                                                {
+                                                    <em>(editat)</em>
+                                                }
+                                            </p>
+                                            @{
+                                                var userLikedPCom = db.PostCommentsLikes.Any(like => like.Comment_Id == com.PostCommentId && like.User_id == UserManager.GetUserId(User));
+                                            }
+                                            <form id="Postclike" method="post" asp-controller="Postare" asp-action="ToggleLikeComment" onsubmit="LikeDislikePostCom(event, this)">
+                                                <input type="hidden" name="PostCommentId" value="@com.PostCommentId" />
+                                                <button type="submit" id="LikeComButton">
+                                                    <i id="ilike" class="fas fa-thumbs-up" liked="@(userLikedPCom ? "liked":"disliked")">
+                                                        <span id="NrCMLikePost">@com.Likes</span>
+                                                    </i>
+                                                </button>
+                                            </form>
+                                        </div>
+                                        <div id="deleteComBoxPost" class="delete-com-post-@com.PostCommentId">
+                                            <i id="xComDeletePost" onclick="xDeleteCom(@com.PostCommentId)" class="fa-solid fa-x" data-com-id="@com.PostCommentId"></i>
+                                            <i id="dngComPost" class="fa fa-exclamation-triangle" aria-hidden="true"></i>
+                                            <form id="confButtonPost" method="post" asp-controller="Users" asp-action="DeleteComPost">
+                                                <input type="hidden" name="PostCommentId" value="@com.PostCommentId" />
+                                                <input type="hidden" id="Username" name="username" value="@postare.Profile.Username" />
+                                                <button type="submit" id="confirmaButtonCom">CONFIRMĂ!</button>
+                                            </form>
+                                        </div>
+                                        <div id="editComBoxPost" class="editComBoxPost-@com.PostCommentId">
+                                            <i id="xComEditPost" onclick="xEditPostCom(@com.PostCommentId)" class="fa-solid fa-x" data-com-id="@com.PostCommentId"></i>
+                                            <label for="note" class="note-label-edit-com"></label>
+                                            <form method="post" asp-controller="Users" asp-action="EditComPost" id="editThreadBoxPost-@postare.Id">
+                                                <input type="hidden" id="PostId" name="PostCommentId" value="@com.PostCommentId" />
+                                                <input type="hidden" id="Username" name="username" value="@postare.Profile.Username" />
+                                                <textarea class="note-textarea-edit-com-post-@com.PostCommentId" placeholder="editeaza thread-ul..." name="CommentText">@com.CommentText</textarea>
+                                                <button class="submit-button-edit-com-post" type="submit">Editează!</button>
+                                            </form>
+                                        </div>
+                                    }
+                                </div>
                             </div>
                             <div id="ConfirmareStergere-@postare.Id">
                                 <i id="xConfirmaStergere" onclick="inchideConfirmaStergerePostare(@postare.Id)" class="fa-solid fa-x"></i>
@@ -279,6 +355,16 @@
                                 <form id="confButton" method="post" asp-controller="Postare" asp-action="Delete">
                                     <input type="hidden" name="postareId" value="@postare.Id" />
                                     <button type="submit" id="confirmaButtonPostare">CONFIRMĂ!</button>
+                                </form>
+                            </div>
+                            <div id="EditPostare-@postare.Id">
+                                <i id="xEditPostare" onclick="inchideEditPostare(@postare.Id)" class="fa-solid fa-x"></i>
+                                <form method="post" asp-controller="Postare" asp-action="EditPostare">
+                                    <img id="pozaDT2-@postare.Id" name="Imagine" value="@postare.Imagine" />
+                                    <input type="hidden" name="Id" value="@postare.Id" />
+                                    <div id="descrierePostare2-@postare.Id"><textarea name="Descriere" placeholder="Descriere..." id="descReal2-@postare.Id"></textarea></div>
+                                    <h5 id="AtentieEdit">* Poza unei postări nu poate fi editată!</h5>
+                                    <button id="ConfirmaEditeazaButon" type="submit">Editează!</button>
                                 </form>
                             </div>
                         }
@@ -538,6 +624,67 @@
     <script src="js/fisaUrmaritori.js"></script>
     <script src="js/postare.js"></script>
     <script>
+        function LikeDislikePostCom(event, form) {
+                   event.preventDefault();
+
+                   const formData = new FormData(form);
+
+                   fetch(form.action, {
+                       method: form.method,
+                       headers: {
+                           "Accept": "application/json",
+                       },
+                       body: formData,
+                   })
+                   .then(response => response.json())
+                   .then(data => {
+
+                       if (data.success) {
+                           const likeSpan = form.querySelector("#NrCMLikePost");
+                           const btn = form.querySelector("i");
+                           likeSpan.textContent = data.likes;
+                           likeSpan.style.color="green";
+                           btn.style.color="green";
+                       } else {
+
+                            const likeSpan = form.querySelector("#NrCMLikePost");
+
+                            if(data.likes==null){
+                             document.querySelector("#PostafisCom").addEventListener("mouseover",()=>{
+                                    likeSpan.style.color="black";
+                                    const btn = form.querySelector("i");
+                                    btn.style.color="black";
+                              });
+                               document.querySelector("#PostafisCom").addEventListener("mouseleave",()=>{
+                                    likeSpan.style.color="white";
+                                    const btn = form.querySelector("i");
+                                    btn.style.color="white";
+                              });
+                                if (likeSpan.textContent == 1){
+                                    likeSpan.textContent=0;
+                                }
+                                else{
+                                    likeSpan.textContent= likeSpan.textContent-1;
+                                }
+
+                            }
+                             else{
+                             document.querySelector("#PostafisCom").addEventListener("mouseover",()=>{
+                                    likeSpan.style.color="black";
+                                    const btn = form.querySelector("i");
+                                    btn.style.color="black";
+                              });
+                               document.querySelector("#PostafisCom").addEventListener("mouseleave",()=>{
+                                    likeSpan.style.color="white";
+                                    const btn = form.querySelector("i");
+                                    btn.style.color="white";
+                              });
+                               likeSpan.textContent = data.likes;
+                             }
+                       }
+                   })
+                   .catch(error => console.error("Eroare la cerere:", error));
+               }
                 function LikeDislikePost(event, form) {
             event.preventDefault();
 

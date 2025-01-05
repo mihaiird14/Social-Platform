@@ -186,5 +186,67 @@ namespace Social_Life.Controllers
 
             return RedirectToAction("Index", "Profile");
         }
+        [HttpPost]
+        public IActionResult EditCom(PostsComment comentariu)
+        {
+            var exCom = db.PostsComments.FirstOrDefault(t => t.PostCommentId == comentariu.PostCommentId);
+            if (exCom == null)
+            {
+                return NotFound("Thread not found.");
+            }
+            if (comentariu.CommentText == null)
+            {
+                TempData["EditTh"] = "Comentariul este obligatoriu!";
+                return RedirectToAction("Index", "Profile");
+            }
+            if (comentariu.CommentText.Length < 5 || comentariu.CommentText.Length > 100)
+            {
+                TempData["EditTh"] = "Comentariul trebuie sa fie intre 5 si 100 caractere";
+                return RedirectToAction("Index", "Profile");
+            }
+            TempData["EditTh"] = null;
+            exCom.Edited = true;
+            exCom.CommentText = comentariu.CommentText;
+            db.SaveChanges();
+
+            return RedirectToAction("Index", "Profile");
+        }
+        [HttpPost]
+        public IActionResult ToggleLikeComment(int PostCommentId)
+        {
+            var comentariu = db.PostsComments.FirstOrDefault(p => p.PostCommentId == PostCommentId);
+            if (comentariu == null)
+            {
+                return NotFound();
+            }
+            var userId = User.FindFirstValue(ClaimTypes.NameIdentifier);
+
+            if (string.IsNullOrEmpty(userId))
+            {
+                return NotFound();
+            }
+            var userLike = db.PostCommentsLikes.FirstOrDefault(tl => tl.Comment_Id == PostCommentId && tl.User_id == userId);
+
+
+            if (userLike != null)
+            {
+                comentariu.Likes -= 1;
+                db.PostCommentsLikes.Remove(userLike);
+                db.SaveChanges();
+                return Json(new { success = false });
+            }
+            var newLike = new PostCommentsLike
+            {
+                Comment_Id = PostCommentId,
+                User_id = userId,
+                Data = DateTime.UtcNow
+            };
+
+            db.PostCommentsLikes.Add(newLike);
+            comentariu.Likes += 1;
+
+            db.SaveChanges();
+            return Json(new { success = true, liked = true, likes = comentariu.Likes });
+        }
     }
 }

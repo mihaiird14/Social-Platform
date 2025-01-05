@@ -300,17 +300,20 @@
                                             <div class="dropdown-comentarii">
                                                 <i id="meniuComentarii" class="fa fa-ellipsis-v dropdown-toggle-comentarii" aria-hidden="true"></i>
                                                 <div class="dropdown-menu-comentarii">
-                                                    <form class="edit-thread-form-com" data-com-id="#" style="display: inline;" data-thread-id="#">
-                                                        <input type="hidden" name="id" value="#" />
-                                                        <button type="submit" id="EditCom" class="dropdown-item-comentarii"><i class="fas fa-edit"></i>Editează</button>
-                                                    </form>
+                                                    @if (com.Id_User == user_Id)
+                                                    {
+                                                        <form class="edit-thread-form-com" data-com-id="#" style="display: inline;" data-thread-id="#">
+                                                            <input type="hidden" name="id" value="#" />
+                                                            <button onclick="editComPost(@com.PostCommentId)" type="submit" id="EditCom" class="dropdown-item-comentarii"><i class="fas fa-edit"></i>Editează</button>
+                                                        </form>
+                                                    }
                                                     <form style="display: inline;" data-thread-id="#">
                                                         <input type="hidden" name="id" value="#" />
                                                         <button type="submit" id="DeleteCom" class="dropdown-item-comentarii"><i class="fa-solid fa-flag"></i>Raportează</button>
                                                     </form>
                                                     <form  class="delete-thread-form-com" style="display: inline;" data-com-id="#" data-thread-id="#">
                                                         <input type="hidden" name="PostCommentId" value="@com.PostCommentId" />
-                                                        <button onclick="editPostComm(@com.PostCommentId)" type="submit" id="DeleteCom" class="dropdown-item-comentarii"><i class="fa fa-trash" aria-hidden="true"></i>Șterge</button>
+                                                        <button onclick="deletePostComm(@com.PostCommentId)" type="submit" id="DeleteCom" class="dropdown-item-comentarii"><i class="fa fa-trash" aria-hidden="true"></i>Șterge</button>
                                                     </form>
                                                 </div>
                                             </div>
@@ -323,14 +326,33 @@
                                                     <em>(editat)</em>
                                                 }
                                             </p>
-
+                                            @{
+                                                var userLikedPCom = db.PostCommentsLikes.Any(like => like.Comment_Id == com.PostCommentId && like.User_id == UserManager.GetUserId(User));
+                                            }
+                                            <form id="Postclike" method="post" asp-controller="Postare" asp-action="ToggleLikeComment" onsubmit="LikeDislikePostCom(event, this)">
+                                                <input type="hidden" name="PostCommentId" value="@com.PostCommentId" />
+                                                <button type="submit" id="LikeComButton">
+                                                    <i id="ilike" class="fas fa-thumbs-up" liked="@(userLikedPCom ? "liked":"disliked")">
+                                                        <span id="NrCMLikePost">@com.Likes</span>
+                                                    </i>
+                                                </button>
+                                            </form>
                                         </div>
-                                       <div id="deleteComBoxPost" class="delete-com-post-@com.PostCommentId">
-                                            <i id="xComDeletePost" class="fa-solid fa-x" data-com-id="@com.PostCommentId"></i>
+                                        <div id="deleteComBoxPost" class="delete-com-post-@com.PostCommentId">
+                                            <i id="xComDeletePost" onclick="xDeleteCom(@com.PostCommentId)" class="fa-solid fa-x" data-com-id="@com.PostCommentId"></i>
                                             <i id="dngComPost" class="fa fa-exclamation-triangle" aria-hidden="true"></i>
                                             <form id="confButtonPost" method="post" asp-controller="Postare" asp-action="DeleteCom">
                                                 <input type="hidden" name="PostCommentId" value="@com.PostCommentId" />
                                                 <button type="submit" id="confirmaButtonCom">CONFIRMĂ!</button>
+                                            </form>
+                                        </div>
+                                        <div id="editComBoxPost" class="editComBoxPost-@com.PostCommentId">
+                                            <i id="xComEditPost" onclick="xEditPostCom(@com.PostCommentId)" class="fa-solid fa-x" data-com-id="@com.PostCommentId"></i>
+                                            <label for="note" class="note-label-edit-com"></label>
+                                            <form method="post" asp-controller="Postare" asp-action="EditCom" id="editThreadBoxPost-@postare.Id">
+                                                <input type="hidden" id="PostId" name="PostCommentId" value="@com.PostCommentId" />
+                                                <textarea class="note-textarea-edit-com-post-@com.PostCommentId" placeholder="editeaza thread-ul..." name="CommentText">@com.CommentText</textarea>
+                                                <button class="submit-button-edit-com-post" type="submit">Editează!</button>
                                             </form>
                                         </div>
                                     }
@@ -355,7 +377,7 @@
                                 </form>
                             </div>
                         }
-                     </div>
+                    </div>
                 }
             }
             else
@@ -403,7 +425,7 @@
                         <div id="thread-box" class="thread-@thread.ThreadId">
                             <img src="@thread.Profile?.ProfileImage" alt="Profil" class="profile-picture">
                             <p class="profile-name">@thread.Profile?.Username</p>
-                  
+
                             <div id="dropdownThread">
                                 <i id="btnMenu" onclick="openMenuThreads(@thread.ThreadId)" class="fa fa-ellipsis-v dropdown-toggle"></i>
                                 <div id="dropdownMenuThread-@thread.ThreadId">
@@ -486,10 +508,13 @@
                                     <div class="dropdown-comentarii">
                                         <i id="meniuComentarii" class="fa fa-ellipsis-v dropdown-toggle-comentarii" aria-hidden="true"></i>
                                         <div class="dropdown-menu-comentarii">
-                                            <form class="edit-thread-form-com" data-com-id="@com.ThreadCommentId" style="display: inline;" data-thread-id="@thread.ThreadId">
-                                                <input type="hidden" name="id" value="@thread.ThreadId" />
-                                                <button type="submit" id="EditCom" class="dropdown-item-comentarii"><i class="fas fa-edit"></i>Editează</button>
-                                            </form>
+                                            @if (com.Id_User == user_Id)
+                                            {
+                                                <form class="edit-thread-form-com" data-com-id="@com.ThreadCommentId" style="display: inline;" data-thread-id="@thread.ThreadId">
+                                                    <input type="hidden" name="id" value="@thread.ThreadId" />
+                                                    <button type="submit" id="EditCom" class="dropdown-item-comentarii"><i class="fas fa-edit"></i>Editează</button>
+                                                </form>
+                                            }
                                             <form  style="display: inline;" data-thread-id="@thread.ThreadId">
                                                 <input type="hidden" name="id" value="@thread.ThreadId" />
                                                 <button type="submit" id="DeleteCom" class="dropdown-item-comentarii"><i class="fa-solid fa-flag"></i>Raportează</button>
@@ -643,7 +668,67 @@
     <script src="js/CommentBox.js"></script>
     <script src="js/fisaUrmaritori.js"></script>
     <script>
+        function LikeDislikePostCom(event, form) {
+               event.preventDefault();
 
+               const formData = new FormData(form);
+
+               fetch(form.action, {
+                   method: form.method,
+                   headers: {
+                       "Accept": "application/json",
+                   },
+                   body: formData,
+               })
+               .then(response => response.json())
+               .then(data => {
+
+                   if (data.success) {
+                       const likeSpan = form.querySelector("#NrCMLikePost");
+                       const btn = form.querySelector("i");
+                       likeSpan.textContent = data.likes;
+                       likeSpan.style.color="green";
+                       btn.style.color="green";
+                   } else {
+
+                        const likeSpan = form.querySelector("#NrCMLikePost");
+
+                        if(data.likes==null){
+                         document.querySelector("#PostafisCom").addEventListener("mouseover",()=>{
+                                likeSpan.style.color="black";
+                                const btn = form.querySelector("i");
+                                btn.style.color="black";
+                          });
+                           document.querySelector("#PostafisCom").addEventListener("mouseleave",()=>{
+                                likeSpan.style.color="white";
+                                const btn = form.querySelector("i");
+                                btn.style.color="white";
+                          });
+                            if (likeSpan.textContent == 1){
+                                likeSpan.textContent=0;
+                            }
+                            else{
+                                likeSpan.textContent= likeSpan.textContent-1;
+                            }
+
+                        }
+                         else{
+                         document.querySelector("#PostafisCom").addEventListener("mouseover",()=>{
+                                likeSpan.style.color="black";
+                                const btn = form.querySelector("i");
+                                btn.style.color="black";
+                          });
+                           document.querySelector("#PostafisCom").addEventListener("mouseleave",()=>{
+                                likeSpan.style.color="white";
+                                const btn = form.querySelector("i");
+                                btn.style.color="white";
+                          });
+                           likeSpan.textContent = data.likes;
+                         }
+                   }
+               })
+               .catch(error => console.error("Eroare la cerere:", error));
+           }
             function LikeDislikePost(event, form) {
             event.preventDefault();
 

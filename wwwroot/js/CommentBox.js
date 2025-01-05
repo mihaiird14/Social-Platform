@@ -1,4 +1,5 @@
 ﻿function CommentBox(event, id) {
+    xFollow();
     if (event != null) {
         event.preventDefault();
     }
@@ -64,10 +65,10 @@ document.addEventListener("DOMContentLoaded", function () {
         t.addEventListener('submit', function (e) {
             e.preventDefault();
             const comId = this.getAttribute('data-com-id');
-            document.querySelector('.delete-com-' + comId).style.height = document.querySelector('.afisCom-' + comId).scrollHeight + "px";
+            document.querySelector('.editComBox-' + comId).style.display = 'none';
+            document.querySelector('.delete-com-' + comId).style.height = document.querySelector('.afisCom-' + comId).style.height + "px";
             document.querySelector('.delete-com-' + comId).style.display = 'flex';
             document.querySelector('.afisCom-' + comId).style.display = 'none';
-            document.querySelector('.editComBox-' + comId).style.display = 'none';
         });
     });
     ed.forEach(edd => {

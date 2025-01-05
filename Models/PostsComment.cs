@@ -14,5 +14,6 @@ namespace Social_Life.Models
         public DateTime Date { set; get; }
         public bool Edited { set; get; } = false;
         public int Likes { set; get; } = 0;
+        public virtual ICollection<PostCommentsLike>? Post_Comment_Likes { get; set; }
     }
 }
