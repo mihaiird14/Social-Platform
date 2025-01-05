@@ -176,3 +176,4 @@
 		thread-uri si postari
 	- Fix numarul de comentarii pentru fiecare postare
 	- Fix bug care lasa userii neautentificati sa posteze comentarii la postari
+	- Adaugare cerere urmarire

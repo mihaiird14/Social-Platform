@@ -22,6 +22,11 @@ namespace Social_Life.Controllers
         {
             var currentUserId = User.FindFirstValue(ClaimTypes.NameIdentifier);
 
+            var profileToFollow = db.Profiles.FirstOrDefault(p => p.Id_User == userToFollowId);
+            if (profileToFollow == null)
+            {
+                return NotFound("Profilul nu a fost găsit.");
+            }
 
             var existingFollow = db.Follows
                 .FirstOrDefault(f => f.Id_Urmaritor == currentUserId && f.Id_Urmarit == userToFollowId);
@@ -33,30 +38,42 @@ namespace Social_Life.Controllers
             }
             else
             {
-                var follow = new Follow
+                if (!profileToFollow.ProfilPublic)
                 {
-                    Id_Urmaritor = currentUserId,
-                    Id_Urmarit = userToFollowId,
-                    Data = DateTime.Now
-                };
-                db.Follows.Add(follow);
-                db.SaveChanges();
+                    
+                    var notification = new Notification
+                    {
+                        Id_User = userToFollowId, 
+                        Id_User2 = currentUserId, 
+                        NotificationType = "FollowRequest12",
+                        Message = "Ai o cerere de urmărire de la un utilizator.",
+                        Date = DateTime.Now,
+                        Accepted = false
+                    };
+
+                    db.Notifications.Add(notification);
+                    db.SaveChanges();
+
+                    TempData["Message"] = "Cererea de urmărire a fost trimisă.";
+                    return RedirectToAction("Index", "Users", new { username = profileToFollow.Username });
+                }
+                else
+                {
+                    var follow = new Follow
+                    {
+                        Id_Urmaritor = currentUserId,
+                        Id_Urmarit = userToFollowId,
+                        Data = DateTime.Now
+                    };
+
+                    db.Follows.Add(follow);
+                    db.SaveChanges();
+                }
             }
 
-            db.SaveChanges();
-            var username = db.Users
-       .Where(u => u.Id == userToFollowId)
-       .Select(u => u.UserName)
-       .FirstOrDefault();
-
-            if (string.IsNullOrEmpty(username))
-            {
-                return NotFound("Utilizatorul nu a fost găsit.");
-            }
-
-            return RedirectToAction("Index", "Users", new { username = username });
-
-
+            TempData["Message"] = "Acțiunea a fost finalizată.";
+            return RedirectToAction("Index", "Users", new { username = profileToFollow.Username });
         }
+
     }
 }

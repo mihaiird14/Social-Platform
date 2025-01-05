@@ -169,6 +169,7 @@
             @{
                 var currentUserId = User.FindFirstValue(ClaimTypes.NameIdentifier);
                 var urmareste = db.Follows.Any(f => f.Id_Urmaritor == currentUserId && f.Id_Urmarit == Model.Id_User);
+                var asteptare = db.Notifications.Any(n => n.Id_User == Model.Id_User && n.Id_User2 == currentUserId && !n.Accepted);
             }
 
             <form method="post" asp-controller="Follow" asp-action="ToggleFollow">
@@ -178,9 +179,11 @@
                 {
                     <button type="submit" id="EditProfil" class="btn btn-danger">Unfollow</button>
                 }
-
+                else if (asteptare)
+                {
+                    <button type="button" id="EditProfil" class="btn btn-secondary" disabled>În așteptare</button>
+                }
                 else
-
                 {
                     <button type="submit" id="EditProfil" class="btn btn-primary">Follow</button>
                 }

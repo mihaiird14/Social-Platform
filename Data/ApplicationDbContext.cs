@@ -23,6 +23,7 @@ namespace Social_Life.Data
         public DbSet<PostareLike> PostareLikes { get; set; }
         public DbSet<PostsComment> PostsComments { get; set; }
         public DbSet<PostCommentsLike> PostCommentsLikes { get; set; }
+        public DbSet<Notification> Notifications { get; set; }
         protected override void OnModelCreating(ModelBuilder builder)
         {
 
@@ -126,6 +127,11 @@ namespace Social_Life.Data
                 .HasOne(tl => tl.PostsComment)
                 .WithMany(p => p.Post_Comment_Likes)
                 .HasForeignKey(tl => tl.Comment_Id)
+                .OnDelete(DeleteBehavior.Restrict);
+            builder.Entity<Notification>()
+                .HasOne(n => n.Profile1)
+                .WithMany(p => p.Notifications)
+                .HasForeignKey(n => n.Id_User)
                 .OnDelete(DeleteBehavior.Restrict);
         }
     }
