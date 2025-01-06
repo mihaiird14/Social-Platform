@@ -1,0 +1,483 @@
+﻿.CommentBox{
+    display: none;
+    position: absolute;
+    border: 2px solid #00ffcc;
+    width: 60vw;
+    height: 90vh;
+    margin-top: -470px;
+    margin-left: -100px;
+    background-color: #1a1a1a;
+    z-index: 100000;
+    justify-content: center;
+    flex-direction: column;
+    justify-content: flex-start;
+    overflow: auto;
+}
+#xCom{
+    position: absolute;
+    color:white;
+    align-self: flex-start;
+    margin-left: 55vw;
+    margin-top: 3vh;
+}
+#xCom:hover{
+    color:red;
+}
+#ComBoxContinut {
+    color: white;
+    align-self: center;
+    align-items:flex-start;
+    border: 2px solid white;
+    border-radius: 20px;
+    width: 500px;
+    margin-top: 30px;
+    padding: 0;
+}
+#comImg {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-right: 15px;
+    margin-left: 15px;
+    margin-top: 10px;
+}
+
+#username {
+    font-size: 1.0em;
+    text-decoration: underline;
+    margin-left: 80px;
+    margin-top: -39px;
+    color: white;
+}
+#continut {
+    margin-left: 80px;
+    margin-top: 20px;
+    margin-right: 30px;
+    overflow: hidden;
+    word-wrap: break-word;
+}
+#ComOra {
+    text-align: right;
+    justify-content: right;
+    margin-right: 20px;
+    margin-bottom: 15px;
+}
+#addCom {
+    position: relative;
+    background: none;
+    border: 2px solid white;
+    border-radius: 20px;
+    width: 30vw;
+    min-height: 5vh;
+    color: white;
+    overflow: hidden;
+    word-wrap: break-word;
+    text-align: center;
+    vertical-align: middle;
+}
+#addCom::placeholder {
+    color: white;
+    opacity: 0.7;
+    text-align: center;
+
+}
+#formCom {
+    align-self: center;
+    margin-top: 20px;
+    margin-right: 90px;
+}
+#ButonCom {
+    position: absolute;
+    background: transparent;
+    font-weight: 600;
+    text-decoration: none;
+    border: 1px solid white;
+    border-radius: 25px;
+    outline: none;
+    color: white;
+    text-align: center;
+    min-height: 5vh;
+    width: 8vw;
+    margin-top: 0.2vh;
+    margin-left: 5px;
+}
+#ButonCom:hover {
+    color: #36353d;
+    border: 1px solid white;
+    background-color: white;
+}
+#afisCom {
+    position: relative;
+    border: 2px solid white;
+    width: 400px;
+    align-self: center;
+    margin-top: 20px;
+    margin-left: -90px;
+    border-radius: 25px;
+    word-wrap: break-word;
+}
+#afisCom:hover{
+    background-color: white;
+}
+#afisCom:hover #afisComText{
+    color: black;
+}
+#afisComText{
+    color:white;
+    text-align: center;
+}
+#afisUser{
+    color:white;
+    text-decoration: underline;
+    margin-left: 10px;
+    font-size: 12px;
+}
+#afisCom:hover #afisUser {
+    color: black;
+}
+#afisOra{
+    color:white;
+    font-size: 10px;
+    text-align: right;
+    margin-right: 12px;
+}
+#afisCom:hover #afisOra {
+    color: black;
+}
+#meniuComentarii{
+    position: absolute;
+    margin-top: -5px;
+    margin-left: -10px;
+    font-size: 12px;
+}
+#afisCom:hover #meniuComentarii {
+    color: black;
+}
+.dropdown-menu-comentarii {
+    display: none;
+    position: absolute;
+    right: -30%;
+    top: 60%;
+    margin-right: -100px;
+    background-color: white;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    z-index: 1000;
+    transform: translate(30%,-15%);
+}
+.dropdown-comentarii {
+    padding: 0;
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    cursor: pointer;
+    z-index: 10000;
+    padding: 5px;
+}
+.dropdown-item-comentarii {
+    display: block;
+    color: white;
+    text-align: left;
+    cursor: pointer;
+    border: 1px solid #00ffcc;
+    background: black;
+    width: 120%;
+}
+#EditCom:hover {
+    background-color: white;
+    color: black;
+}
+#EditCom:hover i {
+    color: black;
+}
+#DeleteCom:hover {
+    background-color: red;
+    color: black;
+}
+
+#DeleteCom:hover i {
+    color: black;
+}
+#deleteComBox {
+    display: none;
+    border: 2px solid white;
+    width: 400px;
+    align-self: center;
+    margin-top: 20px;
+    margin-left: -90px;
+    border-radius: 25px;
+    word-wrap: break-word;
+    flex-direction: column;
+}
+#xComDelete {
+    position: relative;
+    color: white;
+    align-self: flex-start;
+    font-size: 13px;
+    margin-left: 29vw;
+    margin-top: 1.5vh;
+}
+#xComDelete:hover{
+    color: red;
+}
+#dngCom {
+    position: relative;
+    color: white;
+    font-size: 30px;
+    align-self: center;
+    font-size: 25px;
+    margin-top: -1vh;
+}
+#confirmaButtonCom {
+    position: relative;
+    font-size: 15px;
+    align-self: center;
+    margin-top: 4vh;
+    border-radius: 25px;
+    background: none;
+    color: white;
+    background-color: red;
+    border: 1px solid red;
+    margin-bottom: 10px;
+}
+#confirmaButtonCom:hover {
+    transform: scale(1.2);
+    transition: transform ease-in 0.1s;
+}
+#editComBox {
+    display: none;
+    border: 2px solid white;
+    width: 400px;
+    align-self: center;
+    margin-top: 20px;
+    margin-left: -90px;
+    border-radius: 25px;
+    word-wrap: break-word;
+    height: 300px;
+}
+.submit-button-edit-com {
+    position: relative;
+    background: transparent;
+    font-weight: 600;
+    text-decoration: none;
+    border: 1px solid white;
+    border-radius: 25px;
+    margin-left: 9vw;
+    margin-top: 11vh;
+    outline: none;
+    color: white;
+    transition: color 0.3s 0.1s ease-out;
+    text-align: center;
+    width: 10vw;
+    height: 20px;
+    transform: translate(0%, -40%);
+}
+.submit-button-edit-com:hover {
+    color: #36353d;
+    border: 1px solid white;
+    background-color: white;
+}
+[class^="note-textarea-edit-com-"] {
+    position: absolute;
+    background: none;
+    color: white;
+    border-radius: 20px;
+    border: 2px solid white;
+    text-align: center;
+    vertical-align: middle;
+    margin-left: 2vw;
+    margin-top: 2vh;
+    overflow: hidden;
+    resize: none;
+    width: 300px;
+}
+#xComEdit {
+    font-size: 13px;
+    align-self: center;
+    transform: translate(3770%,-270%);
+}
+
+#xComEdit:hover {
+    color: red;
+}
+#clike {
+    position: absolute;
+    align-self: center;
+    margin-left: 40px;
+    margin-top: -30px;
+}
+
+#clike button {
+    background: none;
+    border: none;
+    color: #007bff;
+}
+#afisCom:hover #NrCMLike {
+    color: black;
+}
+#afisCom:hover #ilike{
+    color: black;
+}
+#afisCom:hover i[liked="disliked"] {
+    color: black;
+}
+#PostafisCom {
+    position: relative;
+    border: 2px solid white;
+    width: 31.5vw;
+    align-self: center;
+    margin-top: 4vh;
+    transform: translate(30%,0%);
+    border-radius: 25px;
+    word-wrap: break-word;
+}
+#PostafisCom:hover {
+    background-color: white;
+}
+
+#PostafisCom:hover #afisComText {
+    color: black;
+}
+#PostafisCom:hover #afisOra {
+    color: black;
+}
+#PostafisCom:hover #afisUser {
+    color: black;
+}
+.PostCommentBox{
+    margin-top: 2vh;
+    width:100%;
+    overflow: auto;
+    overflow-x: hidden;
+}
+.PostCommentBox #formCom{
+    margin-left: 12vw;
+    display: flex;
+    flex-direction: row;
+}
+.PostCommentBox #ButonCom{
+    position: relative;
+}
+#PostafisCom:hover #meniuComentarii {
+    color: black;
+}
+#PostafisCom{
+    margin-left: 2vw;
+}
+#deleteComBoxPost {
+    display: none;
+    border: 2px solid white;
+    width: 31.5vw;
+    align-self: center;
+    margin-top: 20px;
+    transform: translate(37%,0%);
+    border-radius: 25px;
+    word-wrap: break-word;
+    align-content: center;
+    flex-direction: column;
+    align-items: flex-start;
+}
+#dngComPost {
+    color: white;
+    font-size: 30px;
+    margin-top: -2vh;
+    font-size: 25px;
+    align-self: center;
+
+}
+#xComDeletePost {
+    color: white;
+    align-self: flex-start;
+    font-size: 13px;
+    margin-left: 29vw;
+    margin-top: 1.5vh;
+}
+
+#xComDeletePost:hover {
+    color: red;
+}
+#deleteComBoxPost #confirmaButtonCom{
+    margin-top: 2vh;
+    margin-left: 12vw;
+}
+#editComBoxPost {
+    display: none;
+    border: 2px solid white;
+    width: 400px;
+    align-self: center;
+    margin-top: 20px;
+    margin-left: 12vw;
+    border-radius: 25px;
+    word-wrap: break-word;
+    height: 300px;
+}
+#xComEditPost {
+    font-size: 13px;
+    align-self: center;
+    transform: translate(3770%,-270%);
+}
+
+#xComEditPost:hover {
+    color: red;
+}
+[class^="note-textarea-edit-com-post-"] {
+    position: relative;
+    background: none;
+    color: white;
+    border-radius: 20px;
+    border: 2px solid white;
+    text-align: center;
+    vertical-align: middle;
+    margin-left: 2vw;
+    margin-top: 2vh;
+    overflow: hidden;
+    resize: none;
+    width: 300px;
+}
+.submit-button-edit-com-post {
+    position: relative;
+    background: transparent;
+    font-weight: 600;
+    text-decoration: none;
+    border: 1px solid white;
+    border-radius: 25px;
+    margin-left: 9vw;
+    margin-top: 4vh;
+    outline: none;
+    color: white;
+    transition: color 0.3s 0.1s ease-out;
+    text-align: center;
+    width: 10vw;
+    height: 20px;
+    transform: translate(0%, -40%);
+}
+.submit-button-edit-com-post:hover {
+    color: #36353d;
+    border: 1px solid white;
+    background-color: white;
+}
+#Postclike {
+    align-self: center;
+    margin-top: -5vh;
+    margin-left: 1vw;
+}
+
+#Postclike button {
+    background: none;
+    border: none;
+    color: #007bff;
+}
+#PostafisCom:hover #NrCMLikePost {
+    color: black;
+}
+
+#PostafisCom:hover #ilike {
+    color: black;
+}
+
+
+#PostafisCom:hover i[liked="disliked"] {
+    color: black;
+}

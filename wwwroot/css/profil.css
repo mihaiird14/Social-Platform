@@ -1,0 +1,442 @@
+﻿body {
+    background-color: #1a1a1a;
+    overflow-x: hidden;
+}
+#header{
+    width: 100%;
+    height: 10vh;
+    background-color: rgba(51, 47, 52, 0.002);
+}
+#logo{
+    width: 15%;
+    position: fixed;
+    z-index: 100;
+}
+.sideMenu {
+    background-color: #1a1a1a;
+    border-right: 2px solid #00ffcc;
+    width: 17%;
+    height: 100vh;
+    margin-top: -11vh;
+    position: fixed;
+    z-index: 2;
+    display: flex;
+    flex-direction: column;
+    margin-left: -2vh;
+    transform: translateX(-100%);
+    animation: slideIn 1s cubic-bezier(0.68, -0.55, 0.27, 1.55) forwards;
+}
+@keyframes slideIn {
+    0% {
+        transform: translateX(-100%);
+    }
+
+    80% {
+        transform: translateX(10%);
+    }
+
+    100% {
+        transform: translateX(0); 
+    }
+}
+
+#buton1{
+    margin-top: 70%;
+    height: 8vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+#buton{
+    height: 8vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+a{
+    text-decoration: none;
+    text-align: center;
+    font-size: 3vh;
+    color: white;
+}
+#buton:hover, #buton1:hover {
+    background-color: #00ffcc;
+}
+#buton:hover a, #buton1:hover a {
+    
+    color: #0d0d0d;
+    border-radius: 5px;
+}
+i{
+    color: white;
+    margin: 1vh;
+}
+#buton:hover i, #buton1:hover i{
+    color: black;
+}
+.paginaPrincipala{
+    height: 100vh;
+    margin-top: -11vh;
+    margin-right: -6px;
+}
+#pozaDefaultProfil{
+    border-radius: 100%;
+    height: 24vh;
+    margin-left: 24%;
+    margin-top: 6vh;
+    width: 13%;
+}
+#Stats{
+    width: 40vw;
+    height: 20vh;
+    margin-left: 40vw;
+    margin-top: 2vh;
+}
+#HV{
+    margin: 1px;
+    color: white;
+}
+#Vizibile{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    gap: 5vh;
+}
+#Postari,#Urmaritori,#Urmariri{
+    text-align: center;
+    margin-top: 2vh;
+}
+#Privat{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    gap: 11vh;
+}
+#Visible2 {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    gap: 11vh;
+}
+#GrupStats,#NoteStats{
+    text-align: center;
+    margin-top: 3vh;
+}
+#user{
+    color: white;
+
+}
+#NumeUser{
+    margin-left: 48.5%;
+    margin-top: -26vh;
+    display: flex;
+    flex-direction: row;
+}
+#EditProfil, #Arhiva {
+    background: transparent;
+    font-weight: 600;
+    text-decoration: none;
+    border: 1px solid white;
+    border-radius: 25px;
+    margin-left: 3vh;
+    margin-top: 1.5vw;
+    outline: none;
+    color: white;
+    transition: color 0.3s 0.1s ease-out;
+    text-align: center;
+    width: 10vw;
+    height: 36px;
+}
+#AddPoza, #AddNotita{
+    background: transparent;
+    font-weight: 600;
+    text-decoration: none;
+    border: 1px solid white;
+    border-radius: 25px;
+    margin-left: 0vh;
+    margin-top: 0.5vw;
+    outline: none;
+    color: white;
+    transition: color 0.3s 0.1s ease-out;
+    text-align: center;
+    width: 10vw;
+    height: 36px;
+}
+#AddPoza:hover, #AddNotita:hover, #EditProfil:hover, #Arhiva:hover {
+    color: #36353d;
+    border: 1px solid white;
+    background-color: white;
+}
+#bio{
+    margin-top: -3vh;
+    width: 80%;
+    margin-left: 25%;
+}
+#bio >p {
+    margin: 0;
+    color: white;
+}
+#bio > h3{
+    margin: 1px;
+    color: white;
+}
+#sectiuni {
+    
+    justify-content: center;
+    align-items: center;
+    height: 6vh;
+    width: 85%;
+    margin-left: 16%;
+    margin-top: 3vh;
+    display: flex;
+    flex-direction: row;
+}
+    #sectiuni p {
+        border: 2px solid #00ffcc;
+        text-align: center;
+        padding: 10px;
+        color: white;
+    }
+#sectiuni p:first-child{
+    flex: 2;
+}
+#sectiuni p:nth-child(2){
+    flex: 2;
+}
+#sectiuni p:nth-child(3){
+    flex: 2;
+}
+#sectiuni p:hover{
+    background-color: white;
+    color: black;
+}
+#PostariPage{
+    display: none;
+    flex-direction: column;
+    min-height: 50vh;
+    margin-left: 13%;
+    width: 85%;
+    align-items: center;
+}
+#MentiuniPage,#NotitePage{
+    display: none;
+    flex-direction: column;
+    min-height: 50vh;
+    margin-left: 13%;
+    width: 85%;
+    align-items: center;
+}
+#nuPoze{
+    margin-top: 2vh;
+    height: 25vh;
+    width: 20%;
+}
+#nuPozeText{
+    color: white;
+    font-weight: 600;
+}
+#AddNotita2 {
+    background: transparent;
+    font-weight: 600;
+    text-decoration: none;
+    border: 1px solid white;
+    border-radius: 25px;
+    margin-left: 0vh;
+    margin-top: 0.5vw;
+    outline: none;
+    color: white;
+    transition: color 0.3s 0.1s ease-out;
+    text-align: center;
+    width: 10vw;
+    height: 36px;
+    transform: translate(320%,40%);
+}
+#AddPoza2 {
+    background: transparent;
+    font-weight: 600;
+    text-decoration: none;
+    border: 1px solid white;
+    border-radius: 25px;
+    margin-left: 0vh;
+    margin-top: 0.5vw;
+    outline: none;
+    color: white;
+    transition: color 0.3s 0.1s ease-out;
+    text-align: center;
+    width: 10vw;
+    height: 36px;
+    transform: translate(320%,40%);
+}
+#AddNotita2:hover {
+    color: #36353d;
+    border: 1px solid white;
+    background-color: white;
+}
+#AddPoza2:hover {
+    color: #36353d;
+    border: 1px solid white;
+    background-color: white;
+}
+#eroare {
+    display: flex;
+    position: absolute;
+    height: 6vh;
+    top:0;
+    left: 0;
+    width: 100vw;
+    z-index: 100;
+    background: rgba(255, 0, 0, 0.5);
+    justify-content: center;
+    align-items: center;
+}
+#addPostareDiv {
+    position: absolute;
+    display: none;
+    justify-content: center;
+    background-color: #1a1a1a;
+    width: 50vw;
+    margin-top: -45vh;
+    border: 1px solid #00ffcc;
+    height: 90vh;
+}
+#addPostareDiv h3{
+    position: absolute;
+    color: white;
+    text-align: center;
+}
+#addPostareForm{
+    margin-top: 55vh;
+    margin-left: -1vw;
+}
+input[type="file"]::file-selector-button {
+    background: none;
+    color: white;
+    border: 1px solid white;
+    border-radius: 25px;
+    transition: color 0.3s 0.1s ease-out;
+    text-align: center;
+    width: 10vw;
+    height: 5vh;
+    margin-left: 6vw;
+}
+
+input[type="file"]::file-selector-button:hover {
+    color: #36353d;
+    border: 1px solid white;
+    background-color: white;
+}
+
+input[type="file"] {
+    color: #1a1a1a
+}
+#pozaVizualizare{
+    align-self: center;
+    position: absolute;
+    min-width: 20vw;
+    max-width: 40vw;
+    height: 40vh;
+    margin-top: -30vh;
+    border: 1px solid white;
+}
+#stergePoza {
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: none;
+    color: white;
+    border: 1px solid white;
+    border-radius: 25px;
+    transition: color 0.3s 0.1s ease-out;
+    text-align: center;
+    width: 10vw;
+    height: 5vh;
+    margin-top: 55vh;
+    margin-left: 12vw;
+}
+#stergePoza:hover {
+    color: #36353d;
+    border: 1px solid white;
+    background-color: white;
+}
+#textAddDesc{
+    position:absolute;
+    margin-top: 5vh;
+    margin-left: 4vw;
+    color: white;
+}
+#TextareaDesc {
+    position: absolute;
+    margin-top: 17vh;
+    margin-left: -24vw;
+    width: 30vw;
+    text-align: center;
+    border-radius: 20px;
+    overflow: hidden;
+    word-wrap: break-word;
+    background-color: #1a1a1a;
+    border: 1px solid white;
+    color: white;
+}
+#TextareaDesc::placeholder {
+    text-align: center;
+    opacity: 0.7;
+}
+#btnPosteaza {
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: none;
+    color: white;
+    border: 1px solid white;
+    border-radius: 25px;
+    transition: color 0.3s 0.1s ease-out;
+    text-align: center;
+    width: 10vw;
+    height: 5vh;
+    margin-top: 22vh;
+    margin-left: 6vw;
+}
+#btnPosteaza:hover {
+    color: #36353d;
+    border: 1px solid white;
+    background-color: white;
+}
+#xPostare {
+    position: absolute;
+    margin-left: 45vw;
+    margin-top: 3vh;
+}
+#xPostare:hover{
+    color: red;
+}
+.grid-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1vw; 
+    margin-top: 5vh;
+    margin-left: 3vw;
+}
+.pozaPostata{
+    border: 2px solid white;
+}
+.pozaPostata img{
+    width: 20vw;
+    height: 30vh;
+}
+
+@keyframes notificare{
+    0% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(1.5);
+    }
+
+    100% {
+        transform: scale(1);
+    }
+}

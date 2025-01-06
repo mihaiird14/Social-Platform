@@ -1,0 +1,112 @@
+﻿@model Social_Life.Models.Thread2;
+@inject UserManager<ApplicationUser> UserManager
+@using System.Security.Claims
+@using Newtonsoft.Json;
+@inject ApplicationDbContext db
+@{
+    var user_Id = User.FindFirst(System.Security.Claims.ClaimTypes.NameIdentifier)?.Value;
+    var profile = db.Profiles.FirstOrDefault(p => p.Id_User == user_Id);
+}
+@{
+    ApplicationUser currentUser = null;
+
+    if (User.Identity.IsAuthenticated)
+    {
+        var userId = User.FindFirst(ClaimTypes.NameIdentifier)?.Value;
+        currentUser = await UserManager.FindByIdAsync(userId);
+    }
+}
+@using Microsoft.AspNetCore.Identity
+@using Social_Life.Data
+@inject SignInManager<ApplicationUser> SignInManager
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>SOCIAL LIFE</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="css/profil.css">
+    <link rel="stylesheet" href="css/setari.css">
+    <style>
+        ::-webkit-scrollbar {
+            width: 4px;
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background-color: #00ffcc;
+            border-radius: 5px;
+            width: 6px;
+            height: 40px;
+        }
+
+        ::-webkit-scrollbar-track {
+            background-color: transparent;
+            border-radius: 20px;
+        }
+
+        scrollbar-width: thin;
+        scrollbar-color: #00ffcc transparent;
+    </style>
+</head>
+<body>
+    <div id="header">
+        <img id="logo" src="imagini/logoAlb.png">
+    </div>
+    <div class="sideMenu">
+        <div id="buton1">
+            <i class="fa fa-home" aria-hidden="true"></i>
+            <a href="#">FOR YOU</a>
+        </div>
+        <div id="buton">
+            <i class="fa fa-search" aria-hidden="true"></i>
+            <a href="@Url.Action("Search1", "Search")">CAUTĂ</a>
+        </div>
+        <div id="buton">
+            <i class="fa fa-user" aria-hidden="true"></i>
+            <a href="@Url.Action("Index", "Profile")">PROFIL</a>
+        </div>
+        <div id="buton">
+            <i class="fa fa-users" aria-hidden="true"></i>
+            <a href="#">GRUPURI</a>
+        </div>
+        <div id="buton">
+            <i class="fa fa-cog" aria-hidden="true"></i>
+            <a asp-controller="Setari" asp-action="Index">SETĂRI</a>
+
+        </div>
+        <div id="buton">
+            <a href="Identity/Account/Logout">DECONECTEAZĂ-TE</a>
+        </div>
+    </div>
+    <div id="SetariProfil">
+        <h3>Confidențialitate Profil</h3>
+        @if(profile.ProfilPublic){
+            <h4>Profilul dumneavoastră este public</h4>
+            <h4>Setați profilul dumneavoastră pe modul <b>privat</b>
+                @{
+                    var isPublic = profile.ProfilPublic;
+                    <form asp-action="SetarePublic" asp-controller="Setari" method="post" id="privacyForm" asp-controller="Profile">
+                        <button type="submit" id="EditProfil">
+                            Privat
+                        </button>
+                    </form>
+                }
+            </h4>
+        }
+        else{
+            <h4>Profilul dumneavoastră este privat</h4>
+            <h4>Modificați profilul într-unul <b>public</b>
+                @{
+                    var isPublic = profile.ProfilPublic;
+                    <form asp-action="SetarePublic" asp-controller="Setari" method="post" id="privacyForm" asp-controller="Profile">
+                        <button type="submit" id="EditProfil">
+                            Public
+                        </button>
+                    </form>
+                }
+            </h4>
+        }
+    </div>
+</body>
+</html>

@@ -1,0 +1,917 @@
+﻿@{
+    ViewBag.PageName = "Index";
+}
+@model Social_Life.Models.Thread2;
+@inject UserManager<ApplicationUser> UserManager
+@using System.Security.Claims
+@using Newtonsoft.Json;
+@inject ApplicationDbContext db
+@{
+    var user_Id = User.FindFirst(System.Security.Claims.ClaimTypes.NameIdentifier)?.Value;
+    var profile = db.Profiles.FirstOrDefault(p => p.Id_User == user_Id);
+}
+@{
+    ApplicationUser currentUser = null;
+
+    if (User.Identity.IsAuthenticated)
+    {
+        var userId = User.FindFirst(ClaimTypes.NameIdentifier)?.Value;
+        currentUser = await UserManager.FindByIdAsync(userId);
+    }
+}
+@using Microsoft.AspNetCore.Identity
+@using Social_Life.Data
+@inject SignInManager<ApplicationUser> SignInManager
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>SOCIAL LIFE</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="css/profil.css">
+    <link rel="stylesheet" href="css/threadForm.css">
+    <link rel="stylesheet" href="css/profileThread.css">
+    <link rel="stylesheet" href="css/editThread.css">
+    <link rel="stylesheet" href="css/CommentBox.css">
+    <link rel="stylesheet" href="css/fisaUrmaritori.css">
+    <link rel="stylesheet" href="css/profilePostare.css" />
+
+    <style>
+        #liked{
+        color: green;
+        }
+        i[liked="liked"]{
+        color: green;
+        }
+        #disliked{
+        color: white;
+        }
+        ::-webkit-scrollbar {
+        width: 4px; 
+        }
+
+        ::-webkit-scrollbar-thumb {
+        background-color: #00ffcc;
+        border-radius: 5px; 
+        width: 6px; 
+        height: 40px;
+        }
+
+        ::-webkit-scrollbar-track {
+        background-color: transparent;
+        border-radius: 20px;
+        }
+
+        scrollbar-width: thin; 
+        scrollbar-color: #00ffcc transparent;
+    </style>
+    @if (SignInManager.IsSignedIn(User))
+    {
+        <style>
+            #user{
+            margin-top: 4.3vh;
+            }
+            #NumeUser{
+            margin-top: -27vh;
+            }
+            #Stats{
+            margin-top: -1vh;
+            }
+        </style>
+    }
+    else
+    {
+        <style>
+            #Privat{
+            visibility: hidden;
+            }
+            #NumeUser{
+            margin-top: -24vh;
+            }
+
+        </style>
+    }
+</head>
+<body>
+    @if(TempData["EditTh"]!=null){
+        <div id="eroare">
+            @TempData["EditTh"]
+        </div>
+    }
+    <div id="header">
+        <img id="logo" src="imagini/logoAlb.png">
+    </div>
+    <div class="sideMenu">
+        @if (SignInManager.IsSignedIn(User))
+        {
+            <div id="buton1">
+                <i class="fa fa-home" aria-hidden="true"></i>
+                <a href="#">FOR YOU</a>
+            </div>
+            <div id="buton">
+                <i class="fa fa-search" aria-hidden="true"></i>
+                <a href="@Url.Action("Search1", "Search")">CAUTĂ</a>
+            </div>
+            <div id="buton" onclick="afisUrmariri()">
+                <i class="fas fa-user-friends"></i>
+                <a href="#">URMĂRITORI</a>
+            </div>
+            <div id="buton" onclick="afisUrmaritori()">
+                <i class="fas fa-user-plus"></i>
+                <a href="#">URMĂRIRI</a>
+            </div>
+            <div id="buton" class="notif">
+                <i class="fa-solid fa-bell" aria-hidden="true"></i>
+                <a asp-controller="Notification" asp-action="Index">NOTIFICĂRI</a>
+                @if(@db.Notifications.Any(n=>n.IsRead==false && n.Id_User==user_Id)){
+                    <style>
+                        .notif i {
+                            color: red;
+                            animation: notificare 1s infinite ease-in-out;
+                        }
+                    </style>
+
+                }
+            </div>
+            <div id="buton">
+                <i class="fa fa-users" aria-hidden="true"></i>
+                <a href="#">GRUPURI</a>
+            </div>
+            <div id="buton">
+                <i class="fa fa-cog" aria-hidden="true"></i>
+                <a asp-controller="Setari" asp-action="Index">SETĂRI</a>
+            </div>
+            <div id="buton">
+                <a href="Identity/Account/Logout">DECONECTEAZĂ-TE</a>
+            </div>
+        }
+        else{
+            <div id="buton1">
+                <i class="fa-solid fa-right-to-bracket"></i>
+                <a href="/Identity/Account/Login">AUTENTIFICARE</a>
+            </div>
+            <div id="buton">
+                <i class="fa fa-search" aria-hidden="true"></i>
+                <a href="@Url.Action("Search1", "Search")">CAUTĂ</a>
+            </div>
+        }
+    </div>
+    <div class="paginaPrincipala">
+        @if (SignInManager.IsSignedIn(User)){
+            <img id="pozaDefaultProfil" src="@profile.ProfileImage">
+        }
+        else{
+            <img id="pozaDefaultProfil" src="~/imagini/pozaDefaultProfil.jpg">
+        }
+        <div id="NumeUser">
+            @if (SignInManager.IsSignedIn(User))
+            {
+                @if(profile.ProfilPublic==true){
+                    <h4 id="user">@User.Identity?.Name</h4>
+                }
+                else{
+                    <h4 id="user"><i class="fa-solid fa-lock"></i> @User.Identity?.Name</h4>
+                }
+
+            }
+            <a href="/Profile/Edit"><button id="EditProfil">Editează</button></a>
+            <button id="Arhiva">Arhivă</button>
+            @if (!SignInManager.IsSignedIn(User)){
+                <style>
+                    #Arhiva,#EditProfil{
+                    visibility: hidden;
+                    }
+                    #Stats{
+                    margin-top: -15px;
+                    }
+                </style>
+            }
+        </div>
+        <div id="Stats">
+            <div id="Vizibile">
+                <div id="Postari">
+                    <h4 id="HV">@(db.Postari.Where(t=>t.UserId==user_Id).Count())</h4>
+                    <h4 id="HV">POSTĂRI</h4>
+                </div>
+                @if(SignInManager.IsSignedIn(User)){
+                    <div id="Urmaritori">
+                        <h4 id="HV">@((db.Follows.Where(t=> t.Id_Urmarit==user_Id)).Count())</h4>
+                        <h4 id="HV">URMĂRITORI</h4>
+                    </div>
+                    <div id="Urmariri">
+                        <h4 id="HV">@((db.Follows.Where(t => t.Id_Urmaritor == user_Id)).Count())</h4>
+                        <h4 id="HV">URMĂRIRI</h4>
+                    </div>
+                }
+                else{
+                    <div id="Urmaritori">
+                        <h4 id="HV">0</h4>
+                        <h4 id="HV">URMĂRITORI</h4>
+                    </div>
+                    <div id="Urmariri">
+                        <h4 id="HV">0</h4>
+                        <h4 id="HV">URMĂRIRI</h4>
+                    </div>
+                }
+            </div>
+            <div id="Privat">
+                <div id="GrupStats">
+                    <h4 id="HV">0</h4>
+                    <h4 id="HV">GRUPURI</h4>
+                </div>
+                <div id="NoteStats">
+                    <h4 id="HV">@ViewBag.NrThread</h4>
+                    <h4 id="HV">THREADS</h4>
+                </div>
+            </div>
+        </div>
+        <div id="bio">
+            @if (currentUser != null)
+            {
+                <br />
+                <h3>@profile?.Nume @profile?.Prenume</h3>
+                <br />
+                <p>@profile?.Bio</p>
+            }
+        </div>
+        <div id="sectiuni">
+            <p onclick="afisPagina1()">POSTĂRI</p>
+            <!-- <p onclick="afisPagina2()">MENȚIUNI</p> -->
+            <p onclick="afisPagina3()">THREADS</p>
+        </div>
+
+        <div id="PostariPage">
+            @if (ViewBag.NrPostari == 0)
+            {
+                <img id="nuPoze" src="imagini/logoPozeAlb.png">
+                <h3 id="nuPozeText">NU AI POZE ÎNCĂRCATE!</h3>
+                @if (SignInManager.IsSignedIn(User)){
+                    <button id="AddPoza" onclick="postareFunction()">Adauga</button>
+                }
+            }
+            else{
+                <button id="AddPoza2" onclick="postareFunction()">Adauga</button>
+            }
+            @if (SignInManager.IsSignedIn(User))
+            {
+                <div id="addPostareDiv">
+                    <i id="xPostare" class="fa-solid fa-x" onclick="xPostare()"></i>
+                    <h3>Adauga Poza!</h3>
+                    <br />
+                    <img id="pozaVizualizare"/>
+                    <br />
+                    <form method="post" asp-controller="Postare" asp-action="NewPostare" id="addPostareForm" enctype="multipart/form-data">
+                        <input id="PozaInput" type="file" name="imagine" accept="image/*" />
+                        <h3 id="textAddDesc">Adauga O Descriere</h3>
+                        <textarea id="TextareaDesc" name="descriere" placeholder="Descriere..."></textarea>
+                        <button id="btnPosteaza" type="submit">Posteaza</button>
+                    </form>   
+                </div>
+                @if (ViewBag.NrPostari != 0)
+                {
+                    <div class="grid-container">
+                        @foreach (var postare in db.Postari.Where(t => t.UserId == user_Id).OrderByDescending(t => t.Data)){
+                            <div class="pozaPostata" id="postare-@postare.Id" onclick="arataPostareDetaliata(@postare.Id)">           
+                                <img id="img-@postare.Id" src="@postare.Imagine" />
+                                <p id="descAscuns-@postare.Id" style="display:none">@postare.Descriere</p>
+                            </div>
+                            <div id="PostareDetaliata-@postare.Id">
+                                <i id="xVizualizare" class="fa-solid fa-x" onclick="xPostareDeschisa(@postare.Id)"></i>
+                                <i id="btnMenuPostare" onclick="openDropdownPostari(@postare.Id)" class="fa fa-ellipsis-v dropdown-toggle"></i>
+                                <div id="dropdownPostare-@postare.Id" class="ddPostare">
+                                    <div id="EditeazaPostare" onclick="openEditeazaPostarea(@postare.Id)"><i class="fas fa-edit"></i>Editează</div>
+                                    <div id="StergePostare"><i class="fa-solid fa-flag"></i>Raportează</div>
+                                    <div id="StergePostare" onclick="openConfirmareStergerePostare(@postare.Id)"><i class="fa fa-trash" aria-hidden="true"></i>Șterge</div>
+                                </div>
+                                <img id="pozaDT-@postare.Id" />
+                                <div id="butoanePostare">
+                                    <div id="descrierePostare-@postare.Id"><p id="descReal-@postare.Id"></p></div>
+                                    @{
+                                        var userLiked = db.PostareLikes2.Any(like => like.PostareId == postare.Id && like.ProfileId == UserManager.GetUserId(User));
+                                    }
+                                    <form id="likeFormPost" method="post" asp-controller="Postare" asp-action="LikePostare" onsubmit="LikeDislikePost(event,this)">
+                                        <input type="hidden" name="postareId" value="@postare.Id" />
+                                        <button type="submit" id="btnLikePostare"><i id="@(userLiked ? "liked":"disliked")" class="fas fa-thumbs-up"><span id="NrLikePost"> @postare.NrLikePostare </span></i></button>
+                                    </form>
+                                    <div id="btnLikePostare"> <i class="fa-solid fa-comment"> @postare.NrComentarii </i></div>
+                                </div>
+                                <div id="PostCommentBox-@postare.Id" class="PostCommentBox">
+                                    <form id="formCom" asp-controller="Postare" asp-action="NewCom">
+                                        <input type="hidden" id="Id" name="PostId" value="@postare.Id" />
+                                        <textarea id="addCom" name="CommentText" placeholder="Adauga Comentariu..."></textarea>
+                                        <button type="submit" id="ButonCom">Adauga</button>
+                                    </form>
+                                    @foreach (var com in db.PostsComments.Where(c => c.PostId == postare.Id).OrderByDescending(t => t.Date))
+                                    {
+                                        com.Profile = db.Profiles.FirstOrDefault(p => p.Id_User == com.Id_User);
+                                        <div id="PostafisCom" class="afisComPost-@com.PostCommentId">
+                                            <div class="dropdown-comentarii">
+                                                <i id="meniuComentarii" class="fa fa-ellipsis-v dropdown-toggle-comentarii" aria-hidden="true"></i>
+                                                <div class="dropdown-menu-comentarii">
+                                                    @if (com.Id_User == user_Id)
+                                                    {
+                                                        <form class="edit-thread-form-com" data-com-id="#" style="display: inline;" data-thread-id="#">
+                                                            <input type="hidden" name="id" value="#" />
+                                                            <button onclick="editComPost(@com.PostCommentId)" type="submit" id="EditCom" class="dropdown-item-comentarii"><i class="fas fa-edit"></i>Editează</button>
+                                                        </form>
+                                                    }
+                                                    <form style="display: inline;" data-thread-id="#">
+                                                        <input type="hidden" name="id" value="#" />
+                                                        <button type="submit" id="DeleteCom" class="dropdown-item-comentarii"><i class="fa-solid fa-flag"></i>Raportează</button>
+                                                    </form>
+                                                    <form  class="delete-thread-form-com" style="display: inline;" data-com-id="#" data-thread-id="#">
+                                                        <input type="hidden" name="PostCommentId" value="@com.PostCommentId" />
+                                                        <button onclick="deletePostComm(@com.PostCommentId)" type="submit" id="DeleteCom" class="dropdown-item-comentarii"><i class="fa fa-trash" aria-hidden="true"></i>Șterge</button>
+                                                    </form>
+                                                </div>
+                                            </div>
+                                            <p id="afisUser">@com.Profile?.Username</p>
+                                            <p id="afisComText">@com.CommentText</p>
+                                            <p id="afisOra">
+                                                @com.Date
+                                                @if (com.Edited == true)
+                                                {
+                                                    <em>(editat)</em>
+                                                }
+                                            </p>
+                                            @{
+                                                var userLikedPCom = db.PostCommentsLikes.Any(like => like.Comment_Id == com.PostCommentId && like.User_id == UserManager.GetUserId(User));
+                                            }
+                                            <form id="Postclike" method="post" asp-controller="Postare" asp-action="ToggleLikeComment" onsubmit="LikeDislikePostCom(event, this)">
+                                                <input type="hidden" name="PostCommentId" value="@com.PostCommentId" />
+                                                <button type="submit" id="LikeComButton">
+                                                    <i id="ilike" class="fas fa-thumbs-up" liked="@(userLikedPCom ? "liked":"disliked")">
+                                                        <span id="NrCMLikePost">@com.Likes</span>
+                                                    </i>
+                                                </button>
+                                            </form>
+                                        </div>
+                                        <div id="deleteComBoxPost" class="delete-com-post-@com.PostCommentId">
+                                            <i id="xComDeletePost" onclick="xDeleteCom(@com.PostCommentId)" class="fa-solid fa-x" data-com-id="@com.PostCommentId"></i>
+                                            <i id="dngComPost" class="fa fa-exclamation-triangle" aria-hidden="true"></i>
+                                            <form id="confButtonPost" method="post" asp-controller="Postare" asp-action="DeleteCom">
+                                                <input type="hidden" name="PostCommentId" value="@com.PostCommentId" />
+                                                <button type="submit" id="confirmaButtonCom">CONFIRMĂ!</button>
+                                            </form>
+                                        </div>
+                                        <div id="editComBoxPost" class="editComBoxPost-@com.PostCommentId">
+                                            <i id="xComEditPost" onclick="xEditPostCom(@com.PostCommentId)" class="fa-solid fa-x" data-com-id="@com.PostCommentId"></i>
+                                            <label for="note" class="note-label-edit-com"></label>
+                                            <form method="post" asp-controller="Postare" asp-action="EditCom" id="editThreadBoxPost-@postare.Id">
+                                                <input type="hidden" id="PostId" name="PostCommentId" value="@com.PostCommentId" />
+                                                <textarea class="note-textarea-edit-com-post-@com.PostCommentId" placeholder="editeaza thread-ul..." name="CommentText">@com.CommentText</textarea>
+                                                <button class="submit-button-edit-com-post" type="submit">Editează!</button>
+                                            </form>
+                                        </div>
+                                    }
+                                </div>
+                            </div>
+                            <div id="ConfirmareStergere-@postare.Id">
+                                <i id="xConfirmaStergere" onclick="inchideConfirmaStergerePostare(@postare.Id)" class="fa-solid fa-x"></i>
+                                <i id="dngPostare" class="fa fa-exclamation-triangle" aria-hidden="true"></i>
+                                <form id="confButton" method="post" asp-controller="Postare" asp-action="Delete">
+                                    <input type="hidden" name="postareId" value="@postare.Id" />
+                                    <button type="submit" id="confirmaButtonPostare">CONFIRMĂ!</button>
+                                </form>
+                            </div>
+                            <div id="EditPostare-@postare.Id">
+                                <i id="xEditPostare" onclick="inchideEditPostare(@postare.Id)" class="fa-solid fa-x"></i>
+                                <form method="post" asp-controller="Postare" asp-action="EditPostare">
+                                    <img id="pozaDT2-@postare.Id" name="Imagine" value="@postare.Imagine" />
+                                    <input type="hidden" name="Id" value="@postare.Id" />
+                                    <div id="descrierePostare2-@postare.Id"><textarea name="Descriere" placeholder="Descriere..." id="descReal2-@postare.Id"></textarea></div>
+                                    <h5 id="AtentieEdit">* Poza unei postări nu poate fi editată!</h5>
+                                    <button id="ConfirmaEditeazaButon" type="submit">Editează!</button>
+                                </form>
+                            </div>
+                        }
+                    </div>
+                }
+            }
+            else
+            {
+                <a href="Identity/Account/Login"><button id="AddPoza">Adauga</button></a>
+            }
+        </div>
+        <div id="MentiuniPage">
+            <img id="nuPoze" src="imagini/logoPozeAlb.png">
+            <h3 id="nuPozeText">NU EȘTI MENȚIONAT ÎN NICIO POZĂ!</h3>
+        </div>
+        <div id="NotitePage">
+            <form method="post" id="threadbox" asp-action="New" >
+
+                <i id="xThread" class="fa-solid fa-x" onclick="threadCloseFunction()"></i>
+                <label  asp-for="ThreadText" class="note-label">ADAUGĂ UN THREAD</label>
+                <textarea asp-for ="ThreadText" id="note" class="note-textarea" placeholder="Scrie un thread..." name="ThreadText"></textarea>
+                @if (ViewBag.ErrorMessage != null){
+                    <span asp-validation-for="ThreadText" class="text-danger"> @ViewBag.ErrorMessage</span>
+                }
+                else{
+                    <script>
+                        sessionStorage.setItem('addThread', 'off');
+                    </script>
+                }
+                <button class="submit-button" type="submit">Trimite</button>
+            </form>
+            @if(ViewBag.NrThread ==0){
+                <img id="nuPoze" src="imagini/thread.png">
+                <h3 id="nuPozeText">NU AI SCRIS NICIUN THREAD!</h3>
+                @if (SignInManager.IsSignedIn(User))
+                {
+                    <button id="AddNotita" onclick="threadfunction()">Adauga</button>
+                }
+                else
+                {
+                    <a href="Identity/Account/Login"><button id="AddNotita">Adauga</button></a>
+                }
+            }
+            else{
+                <button id="AddNotita2" onclick="threadfunction()">Adauga</button>
+                <div id="thread-list">
+                    @foreach (var thread in db.Threads.Where(t => t.Id_User == user_Id).OrderByDescending(t => t.Date))
+                    {
+                        <div id="thread-box" class="thread-@thread.ThreadId">
+                            <img src="@thread.Profile?.ProfileImage" alt="Profil" class="profile-picture">
+                            <p class="profile-name">@thread.Profile?.Username</p>
+
+                            <div id="dropdownThread">
+                                <i id="btnMenu" onclick="openMenuThreads(@thread.ThreadId)" class="fa fa-ellipsis-v dropdown-toggle"></i>
+                                <div id="dropdownMenuThread-@thread.ThreadId">
+                                    <form class="edit-thread-form" style="display: inline;" data-thread-id="@thread.ThreadId">
+                                        <input type="hidden" name="id" value="@thread.ThreadId" />
+                                        <button type="submit" id="EditBT" class=" dropdown-item"><i class="fas fa-edit"></i>Editează</button>
+                                    </form>
+                                    <form method="post" style="display: inline;" data-thread-id="@thread.ThreadId">
+                                        <input type="hidden" name="id" value="@thread.ThreadId" />
+                                        <button type="submit" id="DeleteBT" class="dropdown-item"><i class="fa-solid fa-flag"></i>Raportează</button>
+                                    </form>
+                                    <form method="post" class="delete-thread-form" style="display: inline;" data-thread-id="@thread.ThreadId">
+                                        <input type="hidden" name="id" value="@thread.ThreadId" />
+                                        <button type="submit" id="DeleteBT" class="dropdown-item"><i class="fa fa-trash" aria-hidden="true"></i>Șterge</button>
+                                    </form>
+                                </div>
+                            </div>
+                            <p id="ThreadContinut">@thread.ThreadText</p>
+                            <p id="ora">
+                                <small>@thread.Date.ToString("dd MMM yyyy, HH:mm")</small>&nbsp;
+                                @if(thread.Edited==true){
+                                    <em>    (editat)</em>
+                                }
+                            </p>
+                            @{
+                                var userLiked = db.ThreadLikes.Any(like => like.ThreadId == thread.ThreadId && like.ProfileId == UserManager.GetUserId(User));
+                            }
+                            <div class="ButoaneThread">
+                                <form id="flike" method="post" asp-controller="Thread" asp-action="ToggleLike" onsubmit="LikeDislike(event, this)">
+                                    <input type="hidden" name="threadId" value="@thread.ThreadId" />
+                                    <button type="submit" id="LikeButton">
+                                        <i id="@(userLiked ? "liked":"disliked")" class="fas fa-thumbs-up">
+                                            <span id="NrLike">@thread.ThreadLikes</span>
+                                        </i>
+                                    </button>
+                                </form>
+                                <form id="fThread" method="post" onsubmit="CommentBox(event,@thread.ThreadId)">
+                                    <input type="hidden" name="threadId" value="@thread.ThreadId" />
+                                    <button type="submit" id="ThreadButton">
+                                        <i class="fa-solid fa-comment">
+                                            <span id="NrLike">@thread.ThreadComments</span>
+                                        </i>
+                                    </button>
+                                </form>
+                            </div>
+                        </div>
+                        <div id="deleteBox" class="delete-@thread.ThreadId" >
+                            <i id="xDelete" class="fa-solid fa-x" data-thread-id="@thread.ThreadId"></i>
+                            <i id="dng" class="fa fa-exclamation-triangle"  aria-hidden="true"></i>
+                            <form id="confButton" method="post" asp-controller="Thread" asp-action="Delete" asp-route-id="@thread.ThreadId">
+                                <input type="hidden" name="threadId" value="@thread.ThreadId" />
+                                <button type="submit" id="confirmaButton">CONFIRMĂ!</button>
+                            </form>
+                        </div>
+                        <div id="editBox" class="editThreadBox-@thread.ThreadId">
+                            <i id="xEdit" class="fa-solid fa-x" data-thread-id="@thread.ThreadId"></i>
+                            <label for="note" class="note-label-edit">EDITEAZĂ THREAD-UL</label>
+                            <form method="post" asp-controller="Thread" asp-action="EditThread" id="editThreadBox-@thread.ThreadId">   
+                                <input type="hidden" id="ThreadId" name="ThreadId" value="@thread.ThreadId" />
+                                <textarea class="note-textarea-edit-@thread.ThreadId" placeholder="editeaza thread-ul..." name="ThreadText">@thread.ThreadText</textarea>
+                                <button class="submit-button-edit" type="submit">Editează!</button>
+                            </form>
+                        </div>
+                        <div id="CommentBox-@thread.ThreadId" class="CommentBox">
+                            <i id="xCom" class="fa-solid fa-x" onclick="xCom(@thread.ThreadId)"></i>
+                            <div id="ComBoxContinut">
+                                <img alt="Profil" id="comImg">
+                                <p id="username"></p>
+                                <p id="continut"></p>
+                                <p id="ComOra"></p>
+                            </div>
+                            <form id="formCom" asp-controller="Thread" asp-action="NewCom" >
+                                <input type="hidden" id="ThreadId" name="ThreadId" value="@thread.ThreadId" />
+                                <textarea id="addCom" name="CommentText" placeholder="Adauga Comentariu..."></textarea>
+                                <button type="submit" id="ButonCom">Adauga</button>
+                            </form>
+                            @foreach (var com in db.ThreadComments.Where(c => c.ThreadId == thread.ThreadId).OrderByDescending(t => t.Date)){
+                                com.Profile = db.Profiles.FirstOrDefault(p => p.Id_User == com.Id_User);
+                                <div id="afisCom" class="afisCom-@com.ThreadCommentId">
+                                    <div class="dropdown-comentarii">
+                                        <i id="meniuComentarii" class="fa fa-ellipsis-v dropdown-toggle-comentarii" aria-hidden="true"></i>
+                                        <div class="dropdown-menu-comentarii">
+                                            @if (com.Id_User == user_Id)
+                                            {
+                                                <form class="edit-thread-form-com" data-com-id="@com.ThreadCommentId" style="display: inline;" data-thread-id="@thread.ThreadId">
+                                                    <input type="hidden" name="id" value="@thread.ThreadId" />
+                                                    <button type="submit" id="EditCom" class="dropdown-item-comentarii"><i class="fas fa-edit"></i>Editează</button>
+                                                </form>
+                                            }
+                                            <form  style="display: inline;" data-thread-id="@thread.ThreadId">
+                                                <input type="hidden" name="id" value="@thread.ThreadId" />
+                                                <button type="submit" id="DeleteCom" class="dropdown-item-comentarii"><i class="fa-solid fa-flag"></i>Raportează</button>
+                                            </form>
+                                            <form class="delete-thread-form-com" style="display: inline;" data-com-id="@com.ThreadCommentId" data-thread-id="@thread.ThreadId">
+                                                <input type="hidden" name="ThreadCommentId" value="@com.ThreadCommentId" />
+                                                <button type="submit" id="DeleteCom" class="dropdown-item-comentarii"><i class="fa fa-trash" aria-hidden="true"></i>Șterge</button>
+                                            </form>
+                                        </div>
+                                    </div>
+                                    <p id="afisUser">@com.Profile?.Username</p>
+                                    <p id="afisComText">@com.CommentText</p>
+                                    <p id="afisOra">@com.Date
+                                        @if (com.Edited == true)
+                                        {
+                                            <em>(editat)</em>
+                                        }
+                                    </p>
+                                    @{
+                                        var userCMLiked = db.ThreadCommentsLikes.Any(like => like.Comment_Id == com.ThreadCommentId && like.User_id == UserManager.GetUserId(User));
+                                    }
+                                    <form id="clike" method="post" asp-controller="Thread" asp-action="ToggleLikeComment" onsubmit="LikeDislikeCom(event, this)">
+                                        <input type="hidden" name="ThreadCommentId" value="@com.ThreadCommentId" />
+                                        <button type="submit" id="LikeComButton">
+                                            <i id="ilike" class="fas fa-thumbs-up" liked="@(userCMLiked ? "liked":"disliked")">
+                                                <span id="NrCMLike">@com.Likes</span>
+                                            </i>
+                                        </button>
+                                    </form>
+                                </div>
+                                <div id="deleteComBox" class="delete-com-@com.ThreadCommentId">
+                                    <i id="xComDelete" class="fa-solid fa-x" data-com-id="@com.ThreadCommentId"></i>
+                                    <i id="dngCom" class="fa fa-exclamation-triangle" aria-hidden="true"></i>
+                                    <form id="confButton" method="post" asp-controller="Thread" asp-action="DeleteCom" asp-route-id="@thread.ThreadId">
+                                        <input type="hidden" name="ThreadCommentId" value="@com.ThreadCommentId" />
+                                        <button type="submit" id="confirmaButtonCom">CONFIRMĂ!</button>
+                                    </form>
+                                </div>
+                                <div id="editComBox" class="editComBox-@com.ThreadCommentId">
+                                    <i id="xComEdit" class="fa-solid fa-x" data-com-id="@com.ThreadCommentId"></i>
+                                    <label for="note" class="note-label-edit-com"></label>
+                                    <form method="post" asp-controller="Thread" asp-action="EditCom" id="editThreadBox-@thread.ThreadId">
+                                        <input type="hidden" id="ThreadId" name="ThreadCommentId" value="@com.ThreadCommentId" />
+                                        <textarea class="note-textarea-edit-com-@com.ThreadCommentId" placeholder="editeaza thread-ul..." name="CommentText">@com.CommentText</textarea>
+                                        <button class="submit-button-edit-com" type="submit">Editează!</button>
+                                    </form>
+                                </div>
+                            }
+                        </div>
+                    }
+                </div>
+
+            }
+        </div>
+        <div id="FisaUrmaritori">
+            <i onclick="xFollow()" id="xFollow" class="fa-solid fa-x" aria-hidden="true"></i>
+            <form id="SearchBox" method="get" asp-controller="Profile" asp-action="SearchFollow">
+                <div class="input-group mb-3">
+                    <input id="SearchChenar" type="text" class="form-control" name="query" placeholder="Cauta..." value="@ViewBag.Query" />
+                    <button class="btn btn-primary" type="submit"><i id="SearchIcon" class="fa fa-search" aria-hidden="true"></i></button>
+                </div>
+            </form>
+            <br />
+            @if(TempData["ListaF"]==null){
+                @foreach (var x in db.Follows.Where(p => p.Id_Urmaritor == user_Id).OrderByDescending(p=>p.Data))
+                {
+                    x.Urmarit = db.Profiles.FirstOrDefault(t => t.Id_User == x.Id_Urmarit);
+                    <a id="link" onclick="xFollow()" href="/Users?username=@x.Urmarit.Username"><div id="fUsername">
+                        <img id="fPoza" src="@x.Urmarit.ProfileImage" />
+                        <br />
+                        <p>@x.Urmarit.Username</p>
+                        <form method="post" asp-controller="Profile" asp-action="DeleteFollower">
+                            <input type="hidden" name="IdUrmaritor" value="@x.Id_Urmaritor" />
+                            <input type="hidden" name="IdUrmarit" value="@x.Id_Urmarit" />
+                            <button id="deleteF" type="submit">Șterge</button>
+                        </form>
+                    </div></a>
+                    <br />
+                }
+            }
+            else{
+                @foreach (var x in JsonConvert.DeserializeObject<List<Profile>>(TempData["ListaF"]?.ToString()).OrderBy(p => p.Username))
+                {
+                   <a id="link" onclick="xFollow()" href="/Users?username=@x.Username"> <div id="fUsername">
+                        <img id="fPoza" src="@x.ProfileImage" />
+                        <br />
+                        <p>@x.Username</p>
+                        <form method="post" asp-controller="Profile" asp-action="DeleteFollower">
+                        <input type="hidden" name="IdUrmaritor" value="@user_Id" />
+                        <input type="hidden" name="IdUrmarit" value="@x.Id_User" />
+                        <button id="deleteF" type="submit">Șterge</button>
+                        </form>
+                    </div></a>
+                    <br />
+                }
+            }
+        </div>
+        <div id="FisaUrmariri">
+            <i onclick="xFollow()" id="xFollow" class="fa-solid fa-x" aria-hidden="true"></i>
+            <form id="SearchBox" method="get" asp-controller="Profile" asp-action="SearchFollowing">
+                <div class="input-group mb-3">
+                    <input id="SearchChenar" type="text" class="form-control" name="query" placeholder="Cauta..." value="@ViewBag.Query" />
+                    <button class="btn btn-primary" type="submit"><i id="SearchIcon" class="fa fa-search" aria-hidden="true"></i></button>
+                </div>
+            </form>
+            <br />
+            @if (TempData["ListaFF"] == null)
+            {
+                @foreach (var x in db.Follows.Where(p => p.Id_Urmarit == user_Id).OrderByDescending(p => p.Data))
+                {
+                    x.Urmaritor = db.Profiles.FirstOrDefault(t => t.Id_User == x.Id_Urmaritor);
+                    <a id="link" onclick="xFollow()" href="/Users?username=@x.Urmaritor.Username">
+                        <div id="fUsername">
+                            <img id="fPoza" src="@x.Urmaritor.ProfileImage" />
+                            <br />
+                            <p>@x.Urmaritor.Username</p>
+                            <form method="post" asp-controller="Profile" asp-action="DeleteFollower2">
+                                <input type="hidden" name="IdUrmaritor" value="@x.Id_Urmaritor" />
+                                <input type="hidden" name="IdUrmarit" value="@x.Id_Urmarit" />
+                                <button id="deleteF" type="submit">Șterge</button>
+                            </form>
+                        </div>
+                    </a>
+                    <br />
+                }
+            }
+            else
+            {
+                @foreach (var x in JsonConvert.DeserializeObject<List<Profile>>(TempData["ListaFF"]?.ToString()).OrderBy(p => p.Username))
+                {
+                    <a id="link" onclick="xFollow()" href="/Users?username=@x.Username">
+                        <div id="fUsername">
+                            <img id="fPoza" src="@x.ProfileImage" />
+                            <br />
+                            <p>@x.Username</p>
+                            <form method="post" asp-controller="Profile" asp-action="DeleteFollower2">
+                                <input type="hidden" name="IdUrmaritor" value="@x.Id_User" />
+                                <input type="hidden" name="IdUrmarit" value="@user_Id" />
+                                <button id="deleteF" type="submit">Șterge</button>
+                            </form>
+                        </div>
+                    </a>
+                    <br />
+                }
+            }
+        </div>
+    </div>
+    <script src="js/postare.js"></script>
+    <script src="js/thread.js"></script>
+    <script src="js/profil.js"></script>
+    <script src="js/CommentBox.js"></script>
+    <script src="js/fisaUrmaritori.js"></script>
+    <script>
+        function LikeDislikePostCom(event, form) {
+               event.preventDefault();
+
+               const formData = new FormData(form);
+
+               fetch(form.action, {
+                   method: form.method,
+                   headers: {
+                       "Accept": "application/json",
+                   },
+                   body: formData,
+               })
+               .then(response => response.json())
+               .then(data => {
+
+                   if (data.success) {
+                       const likeSpan = form.querySelector("#NrCMLikePost");
+                       const btn = form.querySelector("i");
+                       likeSpan.textContent = data.likes;
+                       likeSpan.style.color="green";
+                       btn.style.color="green";
+                   } else {
+
+                        const likeSpan = form.querySelector("#NrCMLikePost");
+
+                        if(data.likes==null){
+                         document.querySelector("#PostafisCom").addEventListener("mouseover",()=>{
+                                likeSpan.style.color="black";
+                                const btn = form.querySelector("i");
+                                btn.style.color="black";
+                          });
+                           document.querySelector("#PostafisCom").addEventListener("mouseleave",()=>{
+                                likeSpan.style.color="white";
+                                const btn = form.querySelector("i");
+                                btn.style.color="white";
+                          });
+                            if (likeSpan.textContent == 1){
+                                likeSpan.textContent=0;
+                            }
+                            else{
+                                likeSpan.textContent= likeSpan.textContent-1;
+                            }
+
+                        }
+                         else{
+                         document.querySelector("#PostafisCom").addEventListener("mouseover",()=>{
+                                likeSpan.style.color="black";
+                                const btn = form.querySelector("i");
+                                btn.style.color="black";
+                          });
+                           document.querySelector("#PostafisCom").addEventListener("mouseleave",()=>{
+                                likeSpan.style.color="white";
+                                const btn = form.querySelector("i");
+                                btn.style.color="white";
+                          });
+                           likeSpan.textContent = data.likes;
+                         }
+                   }
+               })
+               .catch(error => console.error("Eroare la cerere:", error));
+           }
+            function LikeDislikePost(event, form) {
+            event.preventDefault();
+
+            const formData = new FormData(form);
+
+            fetch(form.action, {
+                method: form.method,
+                headers: {
+                    "Accept": "application/json",
+                },
+                body: formData,
+            })
+                .then(response => response.json())
+                .then(data => {
+
+                    if (data.success) {
+                        const likeSpan = form.querySelector("#NrLikePost");
+                        const btn = form.querySelector("i");
+                        likeSpan.textContent = data.likes;
+                        likeSpan.style.color = "green";
+                        btn.style.color = "green";
+                    } else {
+
+                        const likeSpan = form.querySelector("#NrLikePost");
+
+                        if (data.likes == null) {
+                            likeSpan.style.color = "white";
+                            const btn = form.querySelector("i");
+                            btn.style.color = "white";
+                            if (likeSpan.textContent == 1) {
+                                likeSpan.textContent = 0;
+                            }
+                            else {
+                                likeSpan.textContent = likeSpan.textContent - 1;
+                            }
+
+                        }
+                        else {
+
+                            likeSpan.style.color = "white";
+                            const btn = form.querySelector("i");
+                            btn.style.color = "white";
+                            likeSpan.textContent = data.likes;
+                        }
+                    }
+                })
+                .catch(error => console.error("Eroare la cerere:", error));
+        }
+
+        const imageUpload = document.getElementById('PozaInput');
+        const imagePreview = document.getElementById('pozaVizualizare');
+       
+        imageUpload.addEventListener('change', function(event) {
+            const file = event.target.files[0];
+            if (file) {
+                const reader = new FileReader();
+
+                reader.onload = function(e) {
+                    imagePreview.src = e.target.result;
+                    imagePreview.style.display = 'block';
+                };
+
+                reader.readAsDataURL(file);
+            }
+        });
+        function LikeDislike(event, form) {
+            event.preventDefault(); 
+
+            const formData = new FormData(form); 
+            const threadId = formData.get("threadId"); 
+
+            fetch(form.action, {
+                method: form.method, 
+                headers: {
+                    "Accept": "application/json",
+                },
+                body: formData, 
+            })
+            .then(response => response.json())
+            .then(data => {
+                
+                if (data.success) {
+                    const likeSpan = form.querySelector("#NrLike");
+                    const btn = form.querySelector("i");
+                    likeSpan.textContent = data.likes;
+                    likeSpan.style.color="green";
+                    btn.style.color="green";
+                } else {
+                    
+                     const likeSpan = form.querySelector("#NrLike");
+             
+                     if(data.likes==null){
+                          likeSpan.style.color="white";
+                         const btn = form.querySelector("i");
+                        btn.style.color="white";
+                         if (likeSpan.textContent == 1){
+                             likeSpan.textContent=0;
+                         }
+                         else{
+                             likeSpan.textContent= likeSpan.textContent-1;
+                         }
+                       
+                     }
+                      else{
+                         
+                         likeSpan.style.color="white";
+                         const btn = form.querySelector("i");
+                        btn.style.color="white";
+                        likeSpan.textContent = data.likes;
+                      }
+                }
+            })
+            .catch(error => console.error("Eroare la cerere:", error));
+        }
+        function LikeDislikeCom(event, form) {
+            event.preventDefault();
+
+            const formData = new FormData(form);
+            const comId = formData.get("ThreadCommentId");
+
+            fetch(form.action, {
+                method: form.method,
+                headers: {
+                    "Accept": "application/json",
+                },
+                body: formData,
+            })
+            .then(response => response.json())
+            .then(data => {
+                if (data.success) {
+                    const likeSpan = form.querySelector("#NrCMLike");
+                    const btn = form.querySelector("i");
+                    likeSpan.textContent = data.likes;
+                    likeSpan.style.color="green";
+                    btn.style.color="green";
+                } else {
+                     const likeSpan = form.querySelector("#NrCMLike");
+                 if(data.likes==null){
+                          document.querySelector("#afisCom").addEventListener("mouseenter",()=>{
+                                likeSpan.style.color="black";
+                                const btn = form.querySelector("i");
+                                btn.style.color="black";
+                          });
+                          document.querySelector("#afisCom").addEventListener("mouseleave",()=>{
+                                likeSpan.style.color="white";
+                                const btn = form.querySelector("i");
+                                btn.style.color="white";
+                          });
+                        if (likeSpan.textContent == 1){
+                            likeSpan.textContent=0;
+                        }
+                        else{
+                            likeSpan.textContent= likeSpan.textContent-1;
+                        }
+
+                     }
+                      else{
+                           document.querySelector("#afisCom").addEventListener("mouseover",()=>{
+                                     likeSpan.style.color="black";
+                                const btn = form.querySelector("i");
+                                btn.style.color="black";
+                          });
+                           document.querySelector("#afisCom").addEventListener("mouseleave",()=>{
+                                likeSpan.style.color="white";
+                                const btn = form.querySelector("i");
+                                btn.style.color="white";
+                          });
+                        likeSpan.textContent = data.likes;
+                      }
+                }
+            })
+            .catch(error => console.error("Eroare la cerere:", error));
+        }
+
+    </script>
+</body>
+</html>

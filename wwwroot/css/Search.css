@@ -1,0 +1,138 @@
+body {
+    background-color: #1a1a1a;
+    overflow-x: hidden;
+}
+
+#header {
+    width: 100%;
+    height: 10vh;
+    background-color: rgba(51, 47, 52, 0.002);
+}
+
+#logo {
+    width: 15%;
+    position: fixed;
+    z-index: 100;
+}
+
+.sideMenu {
+    background-color: #1a1a1a;
+    border-right: 2px solid #00ffcc;
+    width: 17%;
+    height: 100vh;
+    margin-top: -11vh;
+    position: fixed;
+    z-index: 2;
+    display: flex;
+    flex-direction: column;
+    margin-left: -2vh;
+    transform: translateX(-100%);
+    animation: slideIn 1s cubic-bezier(0.68, -0.55, 0.27, 1.55) forwards;
+}
+
+@keyframes slideIn {
+    0% {
+        transform: translateX(-100%);
+    }
+
+    80% {
+        transform: translateX(10%);
+    }
+
+    100% {
+        transform: translateX(0);
+    }
+}
+
+#buton1 {
+    margin-top: 70%;
+    height: 8vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#buton {
+    height: 8vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+a {
+    text-decoration: none;
+    text-align: center;
+    font-size: 3vh;
+    color: white;
+}
+
+#buton:hover, #buton1:hover {
+    background-color: #00ffcc;
+}
+
+    #buton:hover a, #buton1:hover a {
+        color: #0d0d0d;
+        border-radius: 5px;
+    }
+
+i {
+    color: white;
+    margin: 1vh;
+}
+
+#buton:hover i, #buton1:hover i {
+    color: black;
+}
+#SearchBox{
+    margin-left: 45vw;
+}
+#SearchChenar{
+    width: 18vw;
+    height: 5vh;
+    border-radius: 25vw;
+    background: none;
+    border: 1px solid #00ffcc;
+    color: white;
+    text-align: center;
+}
+#SearchChenar::placeholder{
+    text-align: center;
+}
+#SearchIcon{
+    color: #00ffcc;
+    font-size: 3vh;
+}
+form button{
+    background: none;
+    border: none;
+}
+#SearchIcon:hover {
+    color: white;
+}
+#UserImage{
+    height: 10vh;
+    border-radius: 50%;
+    align-self: center;
+    margin-left: 1vw;
+}
+#UserSection{
+    display: flex;
+    background: none;
+    border: 1px solid #00ffcc;
+    width: 30vw;
+    margin-left: 39vw;
+    border-radius: 20vh;
+    padding: 2.5vh;
+}
+#UserUsername{
+    align-self: center;
+    margin-left: 7vw;
+    color: white;
+}
+#UserSection:hover{
+    background-color:white;
+    border: 1px solid white;
+}
+#UserSection:hover #UserUsername{
+    color:black;
+}

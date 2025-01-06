@@ -1,0 +1,114 @@
+#pozaEdit {
+    border-radius: 100%;
+    height: 24vh;
+    transform: translate(380%,0%);
+    width: 13%;
+}
+#campPoza {
+    margin-left: 49.5vw;
+    margin-top: 1vh;
+}
+#linie {
+    width: 39.5vw;
+    border-bottom: 2px solid white;
+    margin-left: 35.5vw;
+}
+#campPoza > label{
+    color: white;
+}
+#campPoza > textarea {
+    margin-left: -8vw;
+    margin-top: 1vh;
+    width: 28vw;
+}
+#SaveButton{
+    transform: translate(440%,20%);
+    background: transparent;
+    font-weight: 600;
+    text-decoration: none;
+    border: 1px solid white;
+    border-radius: 25px;
+    outline: none;
+    color: white;
+    transition: color 0.3s 0.1s ease-out;
+    text-align: center;
+    width: 10vw;
+    height: 5vh;
+}
+#SaveButton:hover {
+    color: #36353d;
+    border: 1px solid white;
+    background-color: white;
+}
+#DeleteButton {
+    transform: translate(570%,-78%);
+    background: transparent;
+    font-weight: 600;
+    text-decoration: none;
+    border: 1px solid white;
+    border-radius: 25px;
+    outline: none;
+    color: white;
+    transition: color 0.3s 0.1s ease-out;
+    text-align: center;
+    width: 10vw;
+    height: 5vh;
+}
+#DeleteButton:hover {
+    color: #36353d;
+    border: 1px solid white;
+    background-color: white;
+}
+#Chenar {
+    top: 0;
+    position: fixed;
+    width: 1%;
+    height: 100vh;
+    margin-top: 0vh;
+    margin-left: 34.4vw;
+    border-right: 2px solid white;
+}
+#Chenar2 {
+    top: 0;
+    position: fixed;
+    width: 1%;
+    height: 100vh;
+    margin-top: 0vh;
+    margin-left: 74vw;
+    border-right: 2px solid white;
+}
+#xPage{
+    
+    transform: translate(2000%,-300%);
+}
+#message {
+    color: white;
+    background: none;
+    border: 1px solid white;
+    border-radius: 20px;
+    overflow: hidden;
+    word-wrap: break-word;
+    text-align: center;
+}
+.text-danger{
+    margin-top: 40px;
+    color: red;
+}
+input[type="file"]::file-selector-button {
+    background: none;
+    color: white;
+    border: 1px solid white;
+    border-radius: 25px;
+    transition: color 0.3s 0.1s ease-out;
+    text-align: center;
+    width: 10vw;
+    height: 5vh;
+}
+input[type="file"]::file-selector-button:hover {
+    color: #36353d;
+    border: 1px solid white;
+    background-color: white;
+}
+input[type="file"]{
+    color: #1a1a1a
+}

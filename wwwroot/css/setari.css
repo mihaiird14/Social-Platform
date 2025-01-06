@@ -1,0 +1,17 @@
+#SetariProfil{
+    border: 1px solid white;
+    width: 50vw;
+    margin-left: 33vw;
+    border-radius: 5vw;
+}
+#SetariProfil h3{
+    color: white;
+    text-align: center;
+}
+#SetariProfil h4{
+    color: white;
+    margin-left: 3vw;
+}
+#SetariProfil b{
+    color:red;
+}

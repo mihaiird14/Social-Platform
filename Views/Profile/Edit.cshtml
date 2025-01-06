@@ -1,0 +1,159 @@
+﻿@inject UserManager<ApplicationUser> UserManager
+@model Social_Life.Models.Profile
+@using System.Security.Claims
+@inject ApplicationDbContext db
+@{
+    var user_Id = User.FindFirst(System.Security.Claims.ClaimTypes.NameIdentifier)?.Value;
+    var profile = db.Profiles.FirstOrDefault(p => p.Id_User == user_Id);
+}
+@{
+    ApplicationUser currentUser = null;
+
+    if (User.Identity.IsAuthenticated)
+    {
+        var userId = User.FindFirst(ClaimTypes.NameIdentifier)?.Value;
+        currentUser = await UserManager.FindByIdAsync(userId);
+    }
+}
+@using Microsoft.AspNetCore.Identity
+@using Social_Life.Data
+@inject SignInManager<ApplicationUser> SignInManager
+@inject UserManager<ApplicationUser> UserManager
+<!DOCTYPE html>
+<html>
+<head>
+    <title>SOCIAL LIFE</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="/css/profil.css">
+    <link rel="stylesheet" href="/css/profilEdit.css">
+  
+
+    <style>
+        span{
+            color: red;
+            margin-left: -6vw;
+            margin-top: 3vh;
+        }
+    </style>
+    @if (SignInManager.IsSignedIn(User))
+    {
+        <style>
+            #user {
+                margin-top: 4.3vh;
+            }
+
+            #NumeUser {
+                margin-top: -27vh;
+            }
+
+            #Stats {
+                margin-top: -1vh;
+            }
+        </style>
+    }
+    else
+    {
+        <style>
+            #Privat {
+                visibility: hidden;
+            }
+
+            #NumeUser {
+                margin-top: -24vh;
+            }
+
+        </style>
+    }
+</head>
+<body>
+    <div id="header">
+        <img id="logo" src="~/imagini/logoAlb.png">
+    </div>
+    <div class="sideMenu">
+        <div id="buton1">
+            <i class="fa fa-home" aria-hidden="true"></i>
+            <a href="#">FOR YOU</a>
+        </div>
+        <div id="buton">
+            <i class="fa fa-search" aria-hidden="true"></i>
+            <a href="@Url.Action("Search1", "Search")">CAUTĂ</a>
+        </div>
+        <div id="buton">
+            <i class="fa fa-user" aria-hidden="true"></i>
+            <a href="@Url.Action("Index", "Profile")">PROFIL</a>
+        </div>
+        <div id="buton">
+            <i class="fa fa-users" aria-hidden="true"></i>
+            <a href="#">GRUPURI</a>
+        </div>
+        <div id="buton">
+            <i class="fa fa-cog" aria-hidden="true"></i>
+            <a asp-controller="Setari" asp-action="Index">SETĂRI</a>
+        </div>
+        <div id="buton">
+            <a href="/Identity/Account/Logout">DECONECTEAZĂ-TE</a>
+        </div>
+    </div>
+    
+    <div id="Chenar"></div>
+    <img id="pozaEdit" src="@profile.ProfileImage" alt="Previzualizare Imagine" style="max-width: 300px; max-height: 300px;">
+    <br />
+    <br />
+    <form method="post" asp-action="EditProfile" asp-route-id="@user_Id" enctype="multipart/form-data">
+        <div id="campPoza" class="form-group">
+            <label >Încarcă Imaginea</label>
+            <br />
+            <br />
+            <input id="PozaInput" class="form-control" type="file" name="ProfileImage" accept="image/*" />
+            <span class=" text-danger"></span>
+        </div>
+        <br />
+        <div id="linie"></div>
+        <br />
+        <div id="campPoza" class="form-group">
+            <label >Bio</label>
+            <br />
+            <textarea id="message" name="Bio" rows="4" cols="50" placeholder="...">@profile.Bio</textarea>
+            <br />
+           
+            <span class="text-danger">@TempData["EroareEdit"]</span>
+            
+        </div>
+        <br />
+        <br />
+        <br />
+        <div id="linie"></div>
+        <br />
+        <button id="SaveButton" type="submit">SALVEAZĂ!</button>
+        
+    </form>
+    <form asp-action="DefaultProfile">
+        <button id="DeleteButton" type="submit">ȘTERGE POZA DE PROFIL</button>
+    </form>
+    <div id="Chenar2"></div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.5/jquery.validate.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validation-unobtrusive/3.2.0/jquery.validate.unobtrusive.min.js"></script>
+    <script>
+        const imageUpload = document.getElementById('PozaInput');
+        const imagePreview = document.getElementById('pozaEdit'); 
+        const stergePoza = document.getElementById('DeleteButton');
+
+  
+        imageUpload.addEventListener('change', function(event) {
+            const file = event.target.files[0]; 
+            if (file) {
+                const reader = new FileReader();
+
+                reader.onload = function(e) {
+                    imagePreview.src = e.target.result;
+                    imagePreview.style.display = 'block';
+                };
+
+                reader.readAsDataURL(file);
+            }
+        });
+    </script>
+ </body>
+</html>

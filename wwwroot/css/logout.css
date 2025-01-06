@@ -1,0 +1,48 @@
+body {
+    background-color: #1a1a1a;
+    overflow: visible;
+}
+
+#linie {
+    width: 1%;
+    height: 100vh;
+    transform: translate(5000%, 0%);
+    border-right: 2px solid white;
+}
+
+h1 {
+    color: white;
+    margin-top: -80vh;
+}
+#btn {
+    width: 30% !important;
+}
+img {
+    display: block;
+    position: fixed;
+    width: 25vw;
+    height: 32vh;
+    left: 0;
+    top:0;
+    margin-left: 62vw;
+    margin-top: 35vh;
+}
+
+img {
+    animation: heart-beat 2s infinite ease-in-out;
+
+}
+
+@keyframes heart-beat {
+    0% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(1.25);
+    }
+
+    100% {
+        transform: scale(1);
+    }
+}
