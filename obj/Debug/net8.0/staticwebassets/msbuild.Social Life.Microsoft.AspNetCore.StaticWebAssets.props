@@ -108,6 +108,7 @@
       <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
       <OriginalItemSpec>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\css\logout.css'))</OriginalItemSpec>
     </StaticWebAsset>
+<<<<<<< HEAD
     <StaticWebAsset Include="$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\css\notificari.css'))">
       <SourceType>Package</SourceType>
       <SourceId>Social Life</SourceId>
@@ -126,6 +127,8 @@
       <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
       <OriginalItemSpec>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\css\notificari.css'))</OriginalItemSpec>
     </StaticWebAsset>
+=======
+>>>>>>> a2513c7058a54005c60095c78ee76cac5eedb1fc
     <StaticWebAsset Include="$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\css\profil.css'))">
       <SourceType>Package</SourceType>
       <SourceId>Social Life</SourceId>
@@ -138,8 +141,13 @@
       <RelatedAsset></RelatedAsset>
       <AssetTraitName></AssetTraitName>
       <AssetTraitValue></AssetTraitValue>
+<<<<<<< HEAD
       <Fingerprint>fbir7jw88c</Fingerprint>
       <Integrity>hdeipGo3pvCeOGPMJrDl9YTKFJpgD7fKZwzbPKNvyzY=</Integrity>
+=======
+      <Fingerprint>iuwpwghnrn</Fingerprint>
+      <Integrity>iqLfqgRcLBcFus+drwfMcRJIpQbrahK7hw1ANJLfzT4=</Integrity>
+>>>>>>> a2513c7058a54005c60095c78ee76cac5eedb1fc
       <CopyToOutputDirectory>Never</CopyToOutputDirectory>
       <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
       <OriginalItemSpec>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\css\profil.css'))</OriginalItemSpec>

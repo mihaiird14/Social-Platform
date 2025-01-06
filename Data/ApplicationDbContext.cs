@@ -20,7 +20,11 @@ namespace Social_Life.Data
         public DbSet<ThreadCommentsLike> ThreadCommentsLikes { get; set; }
         public DbSet<Follow> Follows { get; set; }
         public DbSet<Postare> Postari { get; set; }
+<<<<<<< HEAD
         public DbSet<PostareLike2> PostareLikes2 { get; set; }
+=======
+        public DbSet<PostareLike> PostareLikes { get; set; }
+>>>>>>> a2513c7058a54005c60095c78ee76cac5eedb1fc
         public DbSet<PostsComment> PostsComments { get; set; }
         public DbSet<PostCommentsLike> PostCommentsLikes { get; set; }
         public DbSet<Notification> Notifications { get; set; }
@@ -37,7 +41,11 @@ namespace Social_Life.Data
             builder.Entity<Thread2>()
                  .Property(t => t.ThreadId)
                  .ValueGeneratedOnAdd();
+<<<<<<< HEAD
             builder.Entity<PostareLike2>()
+=======
+            builder.Entity<PostareLike>()
+>>>>>>> a2513c7058a54005c60095c78ee76cac5eedb1fc
                  .Property(t => t.PostareLikeId)
                  .ValueGeneratedOnAdd();
             builder.Entity<Profile>()
@@ -96,6 +104,7 @@ namespace Social_Life.Data
                 .HasOne(p => p.Profile)
                 .WithMany(f => f.Postari)
                 .HasForeignKey(p => p.UserId);
+<<<<<<< HEAD
             builder.Entity<PostareLike2>()
                   .HasOne(p => p.Postare)
                   .WithMany(t => t.PostareLike)
@@ -108,6 +117,19 @@ namespace Social_Life.Data
                 .HasForeignKey(p => p.ProfileId)
                 .OnDelete(DeleteBehavior.Restrict);
             builder.Entity<PostsComment>()
+=======
+            builder.Entity<PostareLike>()
+                .HasOne(p => p.Postare)
+                .WithMany(t => t.PostareLike)
+                .HasForeignKey(p => p.PostareLikeId)
+                .OnDelete(DeleteBehavior.Restrict);
+
+            builder.Entity<PostareLike>()
+                .HasOne(tl => tl.Profile)
+                .WithMany(p => p.LikedPosts)
+                .HasForeignKey(p => p.ProfileId);
+        builder.Entity<PostsComment>()
+>>>>>>> a2513c7058a54005c60095c78ee76cac5eedb1fc
                 .HasOne(t=>t.Profile)
                 .WithMany(p=>p.PostsComments)
                 .HasForeignKey(t=>t.Id_User);

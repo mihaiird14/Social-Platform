@@ -3,7 +3,10 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.Data.SqlClient;
 using Microsoft.EntityFrameworkCore;
 using Social_Life.Data;
+<<<<<<< HEAD
 using Social_Life.Migrations;
+=======
+>>>>>>> a2513c7058a54005c60095c78ee76cac5eedb1fc
 using Social_Life.Models;
 using System;
 using System.Net.NetworkInformation;
@@ -31,7 +34,11 @@ namespace Social_Life.Controllers
         [HttpPost]
         public IActionResult Delete(int threadId)
         {
+<<<<<<< HEAD
 
+=======
+       
+>>>>>>> a2513c7058a54005c60095c78ee76cac5eedb1fc
             var thread = db.Threads.FirstOrDefault(t => t.ThreadId == threadId);
 
             if (thread == null)
@@ -54,12 +61,20 @@ namespace Social_Life.Controllers
             }
             existingThread.Edited = true;
             existingThread.ThreadText = thread.ThreadText;
+<<<<<<< HEAD
             if (thread.ThreadText == null)
+=======
+            if(thread.ThreadText == null)
+>>>>>>> a2513c7058a54005c60095c78ee76cac5eedb1fc
             {
                 TempData["EditTh"] = "Thread-ul este obligatoriu!";
                 return RedirectToAction("Index", "Profile");
             }
+<<<<<<< HEAD
             if (thread.ThreadText.Length < 5 || thread.ThreadText.Length > 400)
+=======
+            if(thread.ThreadText.Length<5 || thread.ThreadText.Length > 400)
+>>>>>>> a2513c7058a54005c60095c78ee76cac5eedb1fc
             {
                 TempData["EditTh"] = "Thread-ul trebuie sa fie intre 5 si 400 caractere";
                 return RedirectToAction("Index", "Profile");
@@ -77,7 +92,11 @@ namespace Social_Life.Controllers
             {
                 return NotFound();
             }
+<<<<<<< HEAD
             var userId = User.FindFirstValue(ClaimTypes.NameIdentifier);
+=======
+            var userId = User.FindFirstValue(ClaimTypes.NameIdentifier); 
+>>>>>>> a2513c7058a54005c60095c78ee76cac5eedb1fc
 
             if (string.IsNullOrEmpty(userId))
             {
@@ -91,7 +110,11 @@ namespace Social_Life.Controllers
                 thread.ThreadLikes -= 1;
                 db.ThreadLikes.Remove(userLike);
                 db.SaveChanges();
+<<<<<<< HEAD
                 return Json(new { success = false });
+=======
+                return Json(new { success = false});
+>>>>>>> a2513c7058a54005c60095c78ee76cac5eedb1fc
             }
             var newLike = new ThreadLike
             {
@@ -99,6 +122,7 @@ namespace Social_Life.Controllers
                 ProfileId = userId,
                 LikeDate = DateTime.UtcNow
             };
+<<<<<<< HEAD
             var currentUserId = User.FindFirstValue(ClaimTypes.NameIdentifier);
             if (thread.Id_User != currentUserId)
             {
@@ -112,11 +136,18 @@ namespace Social_Life.Controllers
                 };
                 db.Notifications.Add(notificare);
             }
+=======
+
+>>>>>>> a2513c7058a54005c60095c78ee76cac5eedb1fc
             db.ThreadLikes.Add(newLike);
             thread.ThreadLikes += 1;
 
             db.SaveChanges();
+<<<<<<< HEAD
             return Json(new { success = true, liked = true, likes = thread.ThreadLikes });
+=======
+            return Json(new { success = true, liked= true, likes = thread.ThreadLikes });
+>>>>>>> a2513c7058a54005c60095c78ee76cac5eedb1fc
         }
         [HttpPost]
         public IActionResult NewCom(ThreadComment comentariu)
@@ -133,11 +164,16 @@ namespace Social_Life.Controllers
                 comentariu.Id_User = userId;
                 comentariu.Date = DateTime.Now;
                 thread.ThreadComments += 1;
+<<<<<<< HEAD
                 if (comentariu.CommentText.Length < 5 || comentariu.CommentText.Length > 100)
+=======
+                if(comentariu.CommentText.Length<5 || comentariu.CommentText.Length > 100)
+>>>>>>> a2513c7058a54005c60095c78ee76cac5eedb1fc
                 {
                     TempData["EditTh"] = "Comentariul trebuie sa fie intre 5 si 100 caractere";
                     return RedirectToAction("Index", "Profile");
                 }
+<<<<<<< HEAD
                 var currentUserId = User.FindFirstValue(ClaimTypes.NameIdentifier);
                 if (comentariu.Id_User != currentUserId)
                 {
@@ -151,12 +187,18 @@ namespace Social_Life.Controllers
                     };
                     db.Notifications.Add(notificare);
                 }
+=======
+>>>>>>> a2513c7058a54005c60095c78ee76cac5eedb1fc
                 TempData["EditTh"] = null;
                 db.ThreadComments.Add(comentariu);
                 db.SaveChanges();
                 return RedirectToAction("Index", "Profile");
             }
+<<<<<<< HEAD
             catch (Exception e)
+=======
+            catch(Exception e)
+>>>>>>> a2513c7058a54005c60095c78ee76cac5eedb1fc
             {
                 return RedirectToAction("Index", "Profile");
             }
@@ -164,7 +206,11 @@ namespace Social_Life.Controllers
         [HttpPost]
         public IActionResult DeleteCom(int ThreadCommentId)
         {
+<<<<<<< HEAD
 
+=======
+            
+>>>>>>> a2513c7058a54005c60095c78ee76cac5eedb1fc
             var comentariu = db.ThreadComments.FirstOrDefault(t => t.ThreadCommentId == ThreadCommentId);
             var thread = db.Threads.FirstOrDefault(tl => tl.ThreadId == comentariu.ThreadId);
             if (comentariu == null)
@@ -232,6 +278,7 @@ namespace Social_Life.Controllers
                 User_id = userId,
                 Data = DateTime.UtcNow
             };
+<<<<<<< HEAD
             var currentUserId = User.FindFirstValue(ClaimTypes.NameIdentifier);
             if (currentUserId != comentariu.Id_User)
             {
@@ -245,6 +292,9 @@ namespace Social_Life.Controllers
                 };
                 db.Notifications.Add(notificare);
             }
+=======
+
+>>>>>>> a2513c7058a54005c60095c78ee76cac5eedb1fc
             db.ThreadCommentsLikes.Add(newLike);
             comentariu.Likes += 1;
 

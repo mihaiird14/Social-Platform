@@ -121,6 +121,7 @@
                 <i class="fas fa-user-plus"></i>
                 <a href="#">URMĂRIRI</a>
             </div>
+<<<<<<< HEAD
             <div id="buton" class="notif">
                 <i class="fa-solid fa-bell" aria-hidden="true"></i>
                 <a asp-controller="Notification" asp-action="Index">NOTIFICĂRI</a>
@@ -133,6 +134,11 @@
                     </style>
 
                 }
+=======
+            <div id="buton">
+                <i class="fa-solid fa-bell" aria-hidden="true"></i>
+                <a asp-controller="Notification" asp-action="Index">NOTIFICĂRI</a>
+>>>>>>> a2513c7058a54005c60095c78ee76cac5eedb1fc
             </div>
             <div id="buton">
                 <i class="fa fa-users" aria-hidden="true"></i>
@@ -288,7 +294,11 @@
                                 <div id="butoanePostare">
                                     <div id="descrierePostare-@postare.Id"><p id="descReal-@postare.Id"></p></div>
                                     @{
+<<<<<<< HEAD
                                         var userLiked = db.PostareLikes2.Any(like => like.PostareId == postare.Id && like.ProfileId == UserManager.GetUserId(User));
+=======
+                                        var userLiked = db.PostareLikes.Any(like => like.PostareId == postare.Id && like.ProfileId == UserManager.GetUserId(User));
+>>>>>>> a2513c7058a54005c60095c78ee76cac5eedb1fc
                                     }
                                     <form id="likeFormPost" method="post" asp-controller="Postare" asp-action="LikePostare" onsubmit="LikeDislikePost(event,this)">
                                         <input type="hidden" name="postareId" value="@postare.Id" />

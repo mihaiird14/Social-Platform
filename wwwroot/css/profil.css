@@ -425,6 +425,7 @@ input[type="file"] {
 .pozaPostata img{
     width: 20vw;
     height: 30vh;
+<<<<<<< HEAD
 }
 
 @keyframes notificare{
@@ -439,4 +440,6 @@ input[type="file"] {
     100% {
         transform: scale(1);
     }
+=======
+>>>>>>> a2513c7058a54005c60095c78ee76cac5eedb1fc
 }

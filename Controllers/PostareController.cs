@@ -2,7 +2,10 @@
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using Social_Life.Data;
+<<<<<<< HEAD
 using Social_Life.Migrations;
+=======
+>>>>>>> a2513c7058a54005c60095c78ee76cac5eedb1fc
 using Social_Life.Models;
 using System.Linq;
 using System.Security.Claims;
@@ -42,7 +45,11 @@ namespace Social_Life.Controllers
                 {
                     await imagine.CopyToAsync(fileStream);
                 }
+<<<<<<< HEAD
                 if (descriere.Length < 5 || descriere.Length > 50)
+=======
+                if(descriere.Length<5 || descriere.Length > 50)
+>>>>>>> a2513c7058a54005c60095c78ee76cac5eedb1fc
                 {
                     TempData["EditTh"] = "Descrierea trebuie sa fie intre 5 si 50 caractere";
                     return RedirectToAction("Index", "Profile");
@@ -69,6 +76,10 @@ namespace Social_Life.Controllers
         {
 
             var postare = db.Postari.FirstOrDefault(t => t.Id == postareId);
+<<<<<<< HEAD
+=======
+
+>>>>>>> a2513c7058a54005c60095c78ee76cac5eedb1fc
             if (postare == null)
             {
                 return NotFound("Thread not found.");
@@ -117,22 +128,35 @@ namespace Social_Life.Controllers
             {
                 return NotFound();
             }
+<<<<<<< HEAD
             var userLike = db.PostareLikes2.FirstOrDefault(tl => tl.PostareId == postareId && tl.ProfileId == userId);
+=======
+            var userLike = db.PostareLikes.FirstOrDefault(tl => tl.PostareId == postareId && tl.ProfileId == userId);
+>>>>>>> a2513c7058a54005c60095c78ee76cac5eedb1fc
 
 
             if (userLike != null)
             {
                 postare.NrLikePostare -= 1;
+<<<<<<< HEAD
                 db.PostareLikes2.Remove(userLike);
                 db.SaveChanges();
                 return Json(new { success = false });
             }
             var newLike = new PostareLike2
+=======
+                db.PostareLikes.Remove(userLike);
+                db.SaveChanges();
+                return Json(new { success = false });
+            }
+            var newLike = new PostareLike
+>>>>>>> a2513c7058a54005c60095c78ee76cac5eedb1fc
             {
                 PostareId = postareId,
                 ProfileId = userId,
                 LikeDate = DateTime.UtcNow
             };
+<<<<<<< HEAD
             var currentUserId = User.FindFirstValue(ClaimTypes.NameIdentifier);
             if (postare.UserId != currentUserId)
             {
@@ -147,6 +171,10 @@ namespace Social_Life.Controllers
                 db.Notifications.Add(notificare);
             }
             db.PostareLikes2.Add(newLike);
+=======
+
+            db.PostareLikes.Add(newLike);
+>>>>>>> a2513c7058a54005c60095c78ee76cac5eedb1fc
             postare.NrLikePostare += 1;
 
             db.SaveChanges();
@@ -171,7 +199,10 @@ namespace Social_Life.Controllers
                     TempData["EditTh"] = "Comentariul trebuie sa fie intre 5 si 100 caractere";
                     return RedirectToAction("Index", "Profile");
                 }
+<<<<<<< HEAD
 
+=======
+>>>>>>> a2513c7058a54005c60095c78ee76cac5eedb1fc
                 postare.NrComentarii += 1;
                 TempData["EditTh"] = null;
                 db.PostsComments.Add(comentariu);
@@ -254,6 +285,7 @@ namespace Social_Life.Controllers
                 User_id = userId,
                 Data = DateTime.UtcNow
             };
+<<<<<<< HEAD
             var currentUserId = User.FindFirstValue(ClaimTypes.NameIdentifier);
             if (currentUserId != comentariu.Id_User)
             {
@@ -267,6 +299,9 @@ namespace Social_Life.Controllers
                 };
                 db.Notifications.Add(notificare);
             }
+=======
+
+>>>>>>> a2513c7058a54005c60095c78ee76cac5eedb1fc
             db.PostCommentsLikes.Add(newLike);
             comentariu.Likes += 1;
 

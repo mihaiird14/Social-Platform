@@ -4,7 +4,10 @@ wwwroot\css\editThread.css
 wwwroot\css\fisaUrmaritori.css
 wwwroot\css\login.css
 wwwroot\css\logout.css
+<<<<<<< HEAD
 wwwroot\css\notificari.css
+=======
+>>>>>>> a2513c7058a54005c60095c78ee76cac5eedb1fc
 wwwroot\css\profil.css
 wwwroot\css\profilEdit.css
 wwwroot\css\profilePostare.css

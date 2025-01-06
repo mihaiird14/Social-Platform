@@ -32,7 +32,10 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <link rel="stylesheet" href="css/profil.css">
     <link rel="stylesheet" href="css/setari.css">
+<<<<<<< HEAD
     <link rel="stylesheet" href="css/notificari.css">
+=======
+>>>>>>> a2513c7058a54005c60095c78ee76cac5eedb1fc
     <style>
         ::-webkit-scrollbar {
             width: 4px;
@@ -84,6 +87,7 @@
             <a href="Identity/Account/Logout">DECONECTEAZĂ-TE</a>
         </div>
     </div>
+<<<<<<< HEAD
     <div id="Notificari">
         @foreach (var notification in db.Notifications.Where(t => t.Id_User == user_Id).OrderByDescending(t => t.Date))
         {
@@ -115,6 +119,43 @@
                 <br />
             }
         }
+=======
+    <div id="SetariProfil">
+       
+
+            @foreach (var notification in db.Notifications.Where(t => t.Id_User == user_Id).OrderByDescending(t => t.Date))
+            {
+               
+                <li>
+                    <p>@notification.Message</p>
+                @if (notification.NotificationType == "FollowRequest12")
+                {
+                    <form method="post" asp-controller="Notification" asp-action="HandleFollowRequest">
+                        <input type="hidden" name="notificationId" value="@notification.NotificationId" />
+
+
+                        <button type="submit" name="accept" value="true" class="btn btn-success">Acceptă</button>
+                        <button type="submit" name="accept" value="false" class="btn btn-danger">Respinge</button>
+
+                    </form>
+                }
+
+                </li>
+            }
+           @* @foreach (var notification in db.Notifications.Where(n => n.Id_User == user_Id &&(n.NotificationType == "FollowAccepted" || n.NotificationType == "FollowRejected"))
+            .OrderByDescending(n => n.Date))
+            {
+                <li>
+                    <p>@notification.Message</p>
+                </li>
+
+            }
+            *@
+
+        @*
+         *@
+       
+>>>>>>> a2513c7058a54005c60095c78ee76cac5eedb1fc
     </div>
 </body>
 </html>

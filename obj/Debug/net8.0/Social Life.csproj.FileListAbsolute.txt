@@ -643,6 +643,7 @@ C:\Users\mihai\OneDrive\Desktop\DAW\Social Life\bin\Debug\net8.0\Microsoft.AspNe
 C:\Users\mihai\OneDrive\Desktop\DAW\Social Life\bin\Debug\net8.0\Microsoft.AspNetCore.Mvc.NewtonsoftJson.dll
 C:\Users\mihai\OneDrive\Desktop\DAW\Social Life\bin\Debug\net8.0\Newtonsoft.Json.Bson.dll
 C:\Users\mihai\OneDrive\Desktop\DAW\Social Life\obj\Debug\net8.0\Social Life.sourcelink.json
+<<<<<<< HEAD
 C:\Users\mihai\OneDrive\Desktop\DAW\Social-Platform-main\bin\Debug\net8.0\appsettings.Development.json
 C:\Users\mihai\OneDrive\Desktop\DAW\Social-Platform-main\bin\Debug\net8.0\appsettings.json
 C:\Users\mihai\OneDrive\Desktop\DAW\Social-Platform-main\bin\Debug\net8.0\Social Life.staticwebassets.runtime.json
@@ -969,3 +970,5 @@ C:\Users\mihai\OneDrive\Desktop\DAW\Social-Platform-main\obj\Debug\net8.0\refint
 C:\Users\mihai\OneDrive\Desktop\DAW\Social-Platform-main\obj\Debug\net8.0\Social Life.pdb
 C:\Users\mihai\OneDrive\Desktop\DAW\Social-Platform-main\obj\Debug\net8.0\Social Life.genruntimeconfig.cache
 C:\Users\mihai\OneDrive\Desktop\DAW\Social-Platform-main\obj\Debug\net8.0\ref\Social Life.dll
+=======
+>>>>>>> a2513c7058a54005c60095c78ee76cac5eedb1fc

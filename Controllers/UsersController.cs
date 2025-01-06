@@ -1,9 +1,13 @@
 ﻿using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using Social_Life.Data;
+<<<<<<< HEAD
 using Social_Life.Migrations;
 using Social_Life.Models;
 using System.Security.Claims;
+=======
+using Social_Life.Models;
+>>>>>>> a2513c7058a54005c60095c78ee76cac5eedb1fc
 namespace Social_Life.Controllers
 {
     public class UsersController : Controller
@@ -68,6 +72,7 @@ namespace Social_Life.Controllers
                     TempData["EditTh"] = "Comentariul trebuie sa fie intre 5 si 100 caractere";
                     return RedirectToAction("Index", "Users", new { username = thread.Profile.Username });
                 }
+<<<<<<< HEAD
                 var currentUserId = User.FindFirstValue(ClaimTypes.NameIdentifier);
 
                 var notificare = new Notification
@@ -79,6 +84,8 @@ namespace Social_Life.Controllers
                     Date = DateTime.Now
                 };
                 db.Notifications.Add(notificare);
+=======
+>>>>>>> a2513c7058a54005c60095c78ee76cac5eedb1fc
                 TempData["EditTh"] = null;
                 db.ThreadComments.Add(comentariu);
                 db.SaveChanges();
@@ -96,7 +103,11 @@ namespace Social_Life.Controllers
 
             var comentariu = db.ThreadComments.FirstOrDefault(t => t.ThreadCommentId == ThreadCommentId);
             var thread = db.Threads.FirstOrDefault(tl => tl.ThreadId == comentariu.ThreadId);
+<<<<<<< HEAD
 
+=======
+           
+>>>>>>> a2513c7058a54005c60095c78ee76cac5eedb1fc
             if (comentariu == null)
             {
                 return NotFound("Thread not found.");
@@ -105,10 +116,17 @@ namespace Social_Life.Controllers
             db.ThreadComments.Remove(comentariu);
             db.SaveChanges();
 
+<<<<<<< HEAD
             return RedirectToAction("Index", "Users", new { username = username });
         }
         [HttpPost]
         public IActionResult EditCom_User(ThreadComment comentariu, string username)
+=======
+            return RedirectToAction("Index", "Users", new { username = username});
+        }
+        [HttpPost]
+        public IActionResult EditCom_User(ThreadComment comentariu,string username)
+>>>>>>> a2513c7058a54005c60095c78ee76cac5eedb1fc
         {
             var exCom = db.ThreadComments.FirstOrDefault(t => t.ThreadCommentId == comentariu.ThreadCommentId);
             if (exCom == null)
@@ -151,6 +169,7 @@ namespace Social_Life.Controllers
                     TempData["EditTh"] = "Comentariul trebuie sa fie intre 5 si 100 caractere";
                     return RedirectToAction("Index", "Users", new { username = username });
                 }
+<<<<<<< HEAD
                 var currentUserId = User.FindFirstValue(ClaimTypes.NameIdentifier);
 
                 var notificare = new Notification
@@ -163,6 +182,8 @@ namespace Social_Life.Controllers
                 };
                 db.Notifications.Add(notificare);
 
+=======
+>>>>>>> a2513c7058a54005c60095c78ee76cac5eedb1fc
                 postare.NrComentarii += 1;
                 TempData["EditTh"] = null;
                 db.PostsComments.Add(comentariu);
@@ -191,7 +212,11 @@ namespace Social_Life.Controllers
             return RedirectToAction("Index", "Users", new { username = username });
         }
         [HttpPost]
+<<<<<<< HEAD
         public IActionResult EditComPost(PostsComment comentariu, string username)
+=======
+        public IActionResult EditComPost(PostsComment comentariu,string username)
+>>>>>>> a2513c7058a54005c60095c78ee76cac5eedb1fc
         {
             var exCom = db.PostsComments.FirstOrDefault(t => t.PostCommentId == comentariu.PostCommentId);
             if (exCom == null)

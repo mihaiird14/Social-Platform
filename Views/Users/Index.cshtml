@@ -234,7 +234,11 @@
             <br />
             <p>@Model?.Bio</p>
         </div>
+<<<<<<< HEAD
         @if (Model.ProfilPublic || urmareste || User.IsInRole("Admin")) 
+=======
+        @if (Model.ProfilPublic || urmareste)
+>>>>>>> a2513c7058a54005c60095c78ee76cac5eedb1fc
         {
             <div id="sectiuni">
                 <p onclick="afisPagina1()">POSTĂRI</p>
@@ -262,15 +266,22 @@
                                 <i id="btnMenuPostare" onclick="openDropdownPostari(@postare.Id)" class="fa fa-ellipsis-v dropdown-toggle"></i>
                                 <div id="dropdownPostare-@postare.Id" class="ddPostare">
                                     <div id="StergePostare"><i class="fa-solid fa-flag"></i>Raportează</div>
+<<<<<<< HEAD
                                     @if (User.IsInRole("Admin")){
                                         <div id="StergePostare" onclick="openConfirmareStergerePostare(@postare.Id)"><i class="fa fa-trash" aria-hidden="true"></i>Șterge</div>
                                     }
+=======
+>>>>>>> a2513c7058a54005c60095c78ee76cac5eedb1fc
                                 </div>
                                 <img id="pozaDT-@postare.Id" />
                                 <div id="butoanePostare">
                                     <div id="descrierePostare-@postare.Id"><p id="descReal-@postare.Id"></p></div>
                                     @{
+<<<<<<< HEAD
                                         var userLiked = db.PostareLikes2.Any(like => like.PostareId == postare.Id && like.ProfileId == UserManager.GetUserId(User));
+=======
+                                        var userLiked = db.PostareLikes.Any(like => like.PostareId == postare.Id && like.ProfileId == UserManager.GetUserId(User));
+>>>>>>> a2513c7058a54005c60095c78ee76cac5eedb1fc
                                     }
                                     <form id="likeFormPost" method="post" asp-controller="Postare" asp-action="LikePostare" onsubmit="LikeDislikePost(event,this)">
                                         <input type="hidden" name="postareId" value="@postare.Id" />
@@ -306,12 +317,15 @@
                                                         <input type="hidden" name="id" value="#" />
                                                         <button type="submit" id="DeleteCom" class="dropdown-item-comentarii"><i class="fa-solid fa-flag"></i>Raportează</button>
                                                     </form>
+<<<<<<< HEAD
                                                     @if (User.IsInRole("Admin")){
                                                         <form class="delete-thread-form-com" style="display: inline;" data-com-id="#" data-thread-id="#">
                                                             <input type="hidden" name="PostCommentId" value="@com.PostCommentId" />
                                                             <button onclick="deletePostComm(@com.PostCommentId)" type="submit" id="DeleteCom" class="dropdown-item-comentarii"><i class="fa fa-trash" aria-hidden="true"></i>Șterge</button>
                                                         </form>
                                                     }
+=======
+>>>>>>> a2513c7058a54005c60095c78ee76cac5eedb1fc
                                                     @if (SignInManager.IsSignedIn(User) && user_Id == com.Profile.Id_User)
                                                     {
                                                         <form class="delete-thread-form-com" style="display: inline;" data-com-id="#" data-thread-id="#">
@@ -424,12 +438,15 @@
                                             <input type="hidden" name="id" value="@thread.ThreadId" />
                                             <button type="submit" id="DeleteBT" class="dropdown-item"><i class="fa-solid fa-flag"></i>Raportează</button>
                                         </form>
+<<<<<<< HEAD
                                         @if (User.IsInRole("Admin")){
                                             <form method="post" class="delete-thread-form" style="display: inline;" data-thread-id="@thread.ThreadId">
                                                 <input type="hidden" name="id" value="@thread.ThreadId" />
                                                 <button type="submit" id="DeleteBT" class="dropdown-item"><i class="fa fa-trash" aria-hidden="true"></i>Șterge</button>
                                             </form>
                                         }
+=======
+>>>>>>> a2513c7058a54005c60095c78ee76cac5eedb1fc
                                     </div>
                                 </div>
                                 <p id="ThreadContinut">@thread.ThreadText</p>
@@ -468,6 +485,7 @@
                                     </form>
                                 </div>
                             </div>
+<<<<<<< HEAD
                             <div id="deleteBox" class="delete-@thread.ThreadId">
                                 <i id="xDelete" class="fa-solid fa-x" data-thread-id="@thread.ThreadId"></i>
                                 <i id="dng" class="fa fa-exclamation-triangle" aria-hidden="true"></i>
@@ -476,6 +494,8 @@
                                     <button type="submit" id="confirmaButton">CONFIRMĂ!</button>
                                 </form>
                             </div>
+=======
+>>>>>>> a2513c7058a54005c60095c78ee76cac5eedb1fc
                             <div id="CommentBox-@thread.ThreadId" class="CommentBox">
                                 <i id="xCom" class="fa-solid fa-x" onclick="xCom(@thread.ThreadId)"></i>
                                 <div id="ComBoxContinut">
@@ -510,12 +530,15 @@
                                                     <input type="hidden" name="id" value="@thread.ThreadId" />
                                                     <button type="submit" id="DeleteCom" class="dropdown-item-comentarii"><i class="fa-solid fa-flag"></i>Raportează</button>
                                                 </form>
+<<<<<<< HEAD
                                                 @if(User.IsInRole("Admin")){
                                                     <form class="delete-thread-form-com" style="display: inline;" data-com-id="@com.ThreadCommentId" data-thread-id="@thread.ThreadId">
                                                         <input type="hidden" name="ThreadCommentId" value="@com.ThreadCommentId" />
                                                         <button type="submit" id="DeleteCom" class="dropdown-item-comentarii"><i class="fa fa-trash" aria-hidden="true"></i>Șterge</button>
                                                     </form>
                                                 }
+=======
+>>>>>>> a2513c7058a54005c60095c78ee76cac5eedb1fc
                                                 @if (SignInManager.IsSignedIn(User) && user_Id == com.Profile.Id_User)
                                                 {
                                                     <form class="delete-thread-form-com" style="display: inline;" data-com-id="@com.ThreadCommentId" data-thread-id="@thread.ThreadId">

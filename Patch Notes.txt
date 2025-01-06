@@ -176,6 +176,7 @@
 		thread-uri si postari
 	- Fix numarul de comentarii pentru fiecare postare
 	- Fix bug care lasa userii neautentificati sa posteze comentarii la postari
+<<<<<<< HEAD
 	- Adaugare cerere urmarire
 06.01.2025
 	- Fix bug care nu lasa se dai o cerere de urmarire daca il mai urmarise in trecut
@@ -186,3 +187,6 @@
 	- Adaugare notificari pentru inceput de urmarire la conturile publice
 	- Admin-ul poate acum sa stearga thread-urile,postarile,comentariile altor useri
 	- Admin-ul poae vizualiza orice profil, chiar daca e privat
+=======
+	- Adaugare cerere urmarire
+>>>>>>> a2513c7058a54005c60095c78ee76cac5eedb1fc

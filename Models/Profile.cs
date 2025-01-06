@@ -26,7 +26,11 @@ namespace Social_Life.Models
         public virtual ICollection<Follow>? Urmaritori { get; set; }
         public virtual ICollection<Follow>? Urmariti { get; set; }
         public virtual ICollection<Postare>? Postari { get; set; }
+<<<<<<< HEAD
         public virtual ICollection<PostareLike2> LikedPosts { get; set; }
+=======
+        public virtual ICollection<PostareLike> LikedPosts { get; set; }
+>>>>>>> a2513c7058a54005c60095c78ee76cac5eedb1fc
         public virtual ICollection<PostsComment>?PostsComments { get; set; }
         public virtual ICollection<PostCommentsLike> Post_Com_Likes { get; set; }
         public virtual ICollection<Notification>? Notifications { get; set; }

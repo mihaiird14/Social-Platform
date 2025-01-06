@@ -33,10 +33,13 @@
       "PackagePath": "staticwebassets\\css\\logout.css"
     },
     {
+<<<<<<< HEAD
       "Id": "C:\\Users\\mihai\\OneDrive\\Desktop\\DAW\\Social Life\\wwwroot\\css\\notificari.css",
       "PackagePath": "staticwebassets\\css\\notificari.css"
     },
     {
+=======
+>>>>>>> a2513c7058a54005c60095c78ee76cac5eedb1fc
       "Id": "C:\\Users\\mihai\\OneDrive\\Desktop\\DAW\\Social Life\\wwwroot\\css\\profil.css",
       "PackagePath": "staticwebassets\\css\\profil.css"
     },

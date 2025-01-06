@@ -367,14 +367,21 @@ namespace Social_Life.Migrations
                     b.ToTable("Postari");
                 });
 
+<<<<<<< HEAD
             modelBuilder.Entity("Social_Life.Models.PostareLike2", b =>
+=======
+            modelBuilder.Entity("Social_Life.Models.PostareLike", b =>
+>>>>>>> a2513c7058a54005c60095c78ee76cac5eedb1fc
                 {
                     b.Property<int>("PostareLikeId")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("int");
 
+<<<<<<< HEAD
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("PostareLikeId"));
 
+=======
+>>>>>>> a2513c7058a54005c60095c78ee76cac5eedb1fc
                     b.Property<DateTime>("LikeDate")
                         .HasColumnType("datetime2");
 
@@ -387,11 +394,17 @@ namespace Social_Life.Migrations
 
                     b.HasKey("PostareLikeId");
 
+<<<<<<< HEAD
                     b.HasIndex("PostareId");
 
                     b.HasIndex("ProfileId");
 
                     b.ToTable("PostareLikes2");
+=======
+                    b.HasIndex("ProfileId");
+
+                    b.ToTable("PostareLikes");
+>>>>>>> a2513c7058a54005c60095c78ee76cac5eedb1fc
                 });
 
             modelBuilder.Entity("Social_Life.Models.PostsComment", b =>
@@ -710,18 +723,31 @@ namespace Social_Life.Migrations
                     b.Navigation("Profile");
                 });
 
+<<<<<<< HEAD
             modelBuilder.Entity("Social_Life.Models.PostareLike2", b =>
                 {
                     b.HasOne("Social_Life.Models.Postare", "Postare")
                         .WithMany("PostareLike")
                         .HasForeignKey("PostareId")
                         .OnDelete(DeleteBehavior.Cascade)
+=======
+            modelBuilder.Entity("Social_Life.Models.PostareLike", b =>
+                {
+                    b.HasOne("Social_Life.Models.Postare", "Postare")
+                        .WithMany("PostareLike")
+                        .HasForeignKey("PostareLikeId")
+                        .OnDelete(DeleteBehavior.Restrict)
+>>>>>>> a2513c7058a54005c60095c78ee76cac5eedb1fc
                         .IsRequired();
 
                     b.HasOne("Social_Life.Models.Profile", "Profile")
                         .WithMany("LikedPosts")
                         .HasForeignKey("ProfileId")
+<<<<<<< HEAD
                         .OnDelete(DeleteBehavior.Restrict)
+=======
+                        .OnDelete(DeleteBehavior.Cascade)
+>>>>>>> a2513c7058a54005c60095c78ee76cac5eedb1fc
                         .IsRequired();
 
                     b.Navigation("Postare");
